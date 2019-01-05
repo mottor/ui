@@ -1,0 +1,30 @@
+a {
+    color: $link-color;
+    text-decoration: none;
+    /* Remove gaps in links underline in iOS 8+ and Safari 8+. */
+    -webkit-text-decoration-skip: objects;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+
+    &:visited {
+        color: $link-color;
+    }
+
+    &:focus,
+    &:active,
+    &:hover {
+        color: $link-hover-color;
+        text-decoration: underline;
+    }
+}
+
+/*----------------*/
+
+p {
+    margin: 0;
+}
+
+p ~ p {
+    margin-top: 10px; // todo: fix margin
+}

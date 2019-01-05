@@ -1,0 +1,14 @@
+// 1. Override bootstrap's default variables
+$base-font-size: 16px;
+
+// 2. Fonts (optional)
+
+// 3. Import mottor-ui
+@import "../../scss/main";
+
+// 4. Everything else that merging to bootstrap
+
+.test {
+    zoom: 1;
+    color: #f0f;
+}

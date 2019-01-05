@@ -1,0 +1,35 @@
+html {
+    cursor: default;
+    font-weight: normal;
+    font-style: normal;
+    font-size: $base-font-size;
+    font-family: $base-font-family;
+    line-height: $base-line-height;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+* { //}, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: $body-background;
+    color: $color-text;
+}
+
+div[contenteditable=true], input, textarea {
+    user-select: text;
+    outline: none;
+}
+
+.allow-user-select {
+    cursor: default;
+    user-select: text;
+    -webkit-touch-callout: default;
+}
+
+#nocss {
+    display: none;
+}

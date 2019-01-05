@@ -1,0 +1,66 @@
+<html>
+<head>
+    <style type="text/css">
+        #main-loader {
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100000;
+            background: #fefefe;
+            touch-action: none;
+        }
+        .main-loader__text {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/css/default/mottor-ui.css"/>
+</head>
+<body>
+    <div id="main-loader">
+        <div class="main-loader__text">Loading...</div>
+    </div>
+
+    <div id="nocss">
+        Your browser was unable to load all style resources. They may
+        have been blocked by your firewall, proxy or browser configuration.<br />
+        Press Ctrl+F5 or Ctrl+Shift+R to have your browser try again and if
+        that doesn't work, check out our <a href="http://help.trello.com/article/771-loading-resources-from-trellos-cdn">troubleshooting guide</a>.
+        <hr />
+    </div>
+
+    <noscript>
+        <h1>To use app, please enable JavaScript!</h1>
+    </noscript>
+
+    <div class="mha" style="margin-top: 100px; width: 700px; padding: 40px; border: 1px solid #ccc;">
+        <div>doc!</div>
+        <div class="test allow-user-select">add some text</div>
+        <table>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+        </table>
+        <div class="mt4 allow-user-select">
+            <p>para1 <a href="#">Link text</a></p>
+            <p>para2</p>
+            <p>para3</p>
+        </div>
+        <div class="mt4">
+            <button>Кнопка 1</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById('main-loader').style.display = 'none';
+    </script>
+</body>
+</html>

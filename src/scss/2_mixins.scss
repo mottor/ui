@@ -1,0 +1,44 @@
+@mixin word-wrap() {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+@function roundEven($num) {
+    @return round($num / 2) * 2;
+}
+
+@function roundStep($num) {
+    @return round($num / $step) * $step;
+}
+
+@function positiveOrZero($val) {
+    @if $val >= 0 {
+        @return $val;
+    } @else {
+        @return 0;
+    }
+}
+
+@mixin angle-up($sides, $main, $color) {
+    width: 0;
+    height: 0;
+    border-left: $sides solid transparent;
+    border-right: $sides solid transparent;
+    border-top: 0;
+    border-bottom: $main solid $color;
+}
+
+@mixin angle-down($sides, $main, $color) {
+    width: 0;
+    height: 0;
+    border-left: $sides solid transparent;
+    border-right: $sides solid transparent;
+    border-top: $main solid $color;
+    border-bottom: 0;
+}

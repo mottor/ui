@@ -1,0 +1,120 @@
+.bg-none {
+    background: none;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.pos-rel {
+    position: relative;
+}
+
+.pos-abs {
+    position: absolute;
+}
+
+.pos-fix {
+    position: fixed;
+}
+
+.cur-point {
+    cursor: pointer;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+/*---------------------*/
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-muted {
+    color: $color-text-muted;
+}
+
+.text-primary {
+    color: $color-primary;
+}
+
+.text-danger {
+    color: $color-danger;
+}
+
+.text-small {
+    font-size: var(--font-size-small);
+}
+
+/*---------------------*/
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-none {
+    float: none;
+}
+
+.clear-both {
+    clear: both;
+}
+
+/*---------------------*/
+
+.inline-block {
+    display: inline-block;
+}
+
+.flex {
+    display: flex;
+}
+
+.block {
+    display: block;
+}
+
+/*---------------------*/
+
+.full-width {
+    width: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.mha {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@for $i from 1 to 5 {
+    .mt#{$i} {
+        margin-top: ($i * 10px);
+    }
+
+    .ml#{$i} {
+        margin-left: ($i * 10px);
+    }
+}

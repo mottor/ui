@@ -1,0 +1,22 @@
+$step: 4px !default;
+
+$body-background: #fefefe !default;
+
+$color-text: #333 !default;
+$color-text-muted: #777 !default;
+
+$color-primary: #267fd9 !default;
+$color-danger: #db5757 !default;
+
+$base-font-size: 16px !default;
+$base-font-family:
+    /* Basic web fallback */
+    "Helvetica Neue", Helvetica, Arial, sans-serif,
+    /* Emoji */
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
+    !default;
+$base-monospaced-font-family: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace !default;
+$base-line-height: 1 !default;
+
+$link-color: #2a79ff !default;
+$link-hover-color: #0057ec !default;
