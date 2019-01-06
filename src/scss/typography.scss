@@ -27,6 +27,10 @@ h1, .header-1 {
     font-weight: 200;
 }
 
+.header-1-wrap {
+    margin-top: -(($header-1-line-height - $header-1-font-size)/2);
+}
+
 h2, .header-2 {
     font-size: $header-2-font-size;
     line-height: $header-2-line-height;

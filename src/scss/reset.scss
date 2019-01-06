@@ -63,8 +63,9 @@ svg:not(:root) {
  * Address differences between Firefox and other browsers.
  */
 hr {
-    box-sizing: content-box;
-    height: 0;
+    height: 1px;
+    border: 0;
+    background: #ccc;
 }
 
 /**
