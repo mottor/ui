@@ -2,8 +2,6 @@
 <html lang="en-US">
 <head>
     <meta charset="utf-8"/>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-    <meta http-equiv="Content-language" content="ru"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
     <meta name="viewport" content="minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,width=device-width,user-scalable=0,minimal-ui"/>
     <style id="fail-message-styles" type="text/css">
@@ -46,7 +44,7 @@
     <link rel="stylesheet" type="text/css" href="/css/default/mui.css"/>
 </head>
 <body>
-
+<!--content-start-->
 <div class="script-fail-message__wrap" id="nocss">
     <div class="script-fail-message">
         Your browser was unable to load all style resources. They may
@@ -55,7 +53,7 @@
         that doesn't work, check out our <a href="http://help.trello.com/article/771-loading-resources-from-trellos-cdn">troubleshooting guide</a>.
     </div>
 </div>
-<noscript>
+<noscript id="nojs">
     <div class="script-fail-message__wrap">
         <div class="script-fail-message">To use app, please enable JavaScript!</div>
     </div>
@@ -82,14 +80,12 @@
     <div class="mt3">
         <button>Кнопка 1</button>
     </div>
-
-    <div id="scripts-wrap" style="display:none;">
-        <!--all scripts here!-->
-        <script type="text/javascript">
-            console.log('zz');
-        </script>
-    </div>
 </div>
-
+<!--content-end-->
+<div id="scripts-wrap" style="display:none;">
+    <script type="text/javascript">
+        console.log('zz');
+    </script>
+</div>
 </body>
 </html>
