@@ -1,5 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-language" content="ru"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <meta name="viewport" content="minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,width=device-width,user-scalable=0,minimal-ui"/>
     <style id="fail-message-styles" type="text/css">
         .script-fail-message__wrap {
             position: fixed;
@@ -10,6 +16,7 @@
             background: #fafafa;
             font: 18px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
+
         .script-fail-message {
             position: absolute;
             top: 50%;
@@ -18,13 +25,16 @@
             z-index: 100000;
             padding: 20px;
         }
+
         .script-fail-message a {
             color: #267fd9;
             text-decoration: none;
         }
+
         .script-fail-message a:hover {
             text-decoration: underline;
         }
+
         @media (max-width: 700px) {
             .script-fail-message {
                 position: static;
@@ -36,42 +46,50 @@
     <link rel="stylesheet" type="text/css" href="/css/default/mui.css"/>
 </head>
 <body>
-    <div class="script-fail-message__wrap" id="nocss">
-        <div class="script-fail-message">
+
+<div class="script-fail-message__wrap" id="nocss">
+    <div class="script-fail-message">
         Your browser was unable to load all style resources. They may
-        have been blocked by your firewall, proxy or browser configuration.<br /><br />
+        have been blocked by your firewall, proxy or browser configuration.<br/><br/>
         Press Ctrl+F5 or Ctrl+Shift+R to have your browser try again and if
         that doesn't work, check out our <a href="http://help.trello.com/article/771-loading-resources-from-trellos-cdn">troubleshooting guide</a>.
-        </div>
     </div>
-    <noscript>
-        <div class="script-fail-message__wrap">
-            <div class="script-fail-message">To use app, please enable JavaScript!</div>
-        </div>
-    </noscript>
+</div>
+<noscript>
+    <div class="script-fail-message__wrap">
+        <div class="script-fail-message">To use app, please enable JavaScript!</div>
+    </div>
+</noscript>
 
-    <div class="mha" style="margin-top: 100px; width: 700px; padding: 40px; border: 1px solid #ccc;">
-        <div>doc!</div>
-        <div class="test allow-user-select">add some text</div>
-        <table class="mt3">
-            <tr>
-                <th>One</th>
-                <th>Two</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-            </tr>
-        </table>
-        <div class="mt3 allow-user-select">
-            <p>para1 <a href="#">Link text</a></p>
-            <p>para2</p>
-            <p>para3</p>
-        </div>
-        <div class="mt3">
-            <button>Кнопка 1</button>
-        </div>
+<div class="mha" style="margin-top: 100px; width: 700px; padding: 40px; border: 1px solid #ccc;">
+    <div>doc!</div>
+    <div class="test allow-user-select">add some text</div>
+    <table class="mt3">
+        <tr>
+            <th>One</th>
+            <th>Two</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+    </table>
+    <div class="mt3 allow-user-select">
+        <p>para1 <a href="#">Link text</a></p>
+        <p>para2</p>
+        <p>para3</p>
     </div>
+    <div class="mt3">
+        <button>Кнопка 1</button>
+    </div>
+
+    <div id="scripts-wrap" style="display:none;">
+        <!--all scripts here!-->
+        <script type="text/javascript">
+            console.log('zz');
+        </script>
+    </div>
+</div>
 
 </body>
 </html>
