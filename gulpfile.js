@@ -5,8 +5,8 @@ const _if = require('gulp-if');
 const del = require('del');
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require("browser-sync").create();
-const autoprefixer = require("autoprefixer");
-// const autoprefixer = require('gulp-autoprefixer');
+// const autoprefixer = require("autoprefixer");
+const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require("cssnano");
 const plumber = require("gulp-plumber");
 const postcss = require("gulp-postcss");
@@ -14,13 +14,14 @@ const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 // const fs = require('fs');
 const util = require('gulp-util');
-// const csso = require('gulp-csso');
+const csso = require('gulp-csso');
 
 const dirRoot = process.cwd();
 const prod = util.env.prod;
 
 var config = {
-    standalone: true
+    standalone: true,
+    basename: 'mui'
 };
 
 //---------------------------
@@ -61,16 +62,16 @@ function compileStyle() {
     return gulp
         .src(config.dirThemes + '/**/theme.scss')
         .pipe(plumber())
-        .pipe(_if(!prod, sourcemaps.init()))
+        // .pipe(_if(!prod, sourcemaps.init()))
         .pipe(sass({
-            outputStyle: 'compressed',
-            sourceComments: false
+            outputStyle: prod ? 'compressed' : 'expanded',
+            sourceComments: !prod
         }).on('error', sass.logError))
-        .pipe(rename({basename: 'mottor-ui'}))
-        // .pipe(autoprefixer({browsers: 'last 3 versions'}))
-        // .pipe(csso())
-        .pipe(postcss([autoprefixer({browsers: 'last 3 versions'}), cssnano()]))
-        .pipe(_if(!prod, sourcemaps.write()))
+        .pipe(rename({basename: config.basename}))
+        .pipe(autoprefixer({browsers: 'last 3 versions'}))
+        .pipe(_if(prod, csso()))
+        // .pipe(postcss([autoprefixer({browsers: 'last 3 versions'}), cssnano()]))
+        // .pipe(_if(!prod, sourcemaps.write()))
         .pipe(gulp.dest(config.dirBuild + '/css'))
         .pipe(browserSync.stream())
         ;
