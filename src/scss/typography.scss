@@ -23,9 +23,29 @@ a {
 
 p {
     margin: 0;
-    line-height: $paragraph-line-height;
+    line-height: ($paragraph-line-height * 1em);
 }
 
 p + p {
     margin-top: $paragraph-margin; // todo: fix margin
+}
+
+.text-s, .text-s p {
+    font-size: $font-size-s;
+    line-height: $line-height-s;
+}
+
+.text, .text-m, .text p, .text-m p {
+    font-size: $font-size-m;
+    line-height: $line-height-m;
+}
+
+.text-l, .text-l p {
+    font-size: $font-size-l;
+    line-height: $line-height-l;
+}
+
+.text-xl, .text-xl p {
+    font-size: $font-size-xl;
+    line-height: $line-height-xl;
 }

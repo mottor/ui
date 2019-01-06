@@ -22,10 +22,14 @@ $paragraph-margin: 1em !default;
 
 $font-size-small: 85% !default;
 $font-size-s: $base-font-size - 2;
+$font-size-m: $base-font-size;
 $font-size-l: $base-font-size + 2;
 $font-size-xl: $font-size-l + 2;
 
-$line-height-s: $font-size-s * $paragraph-line-height;
+$line-height-s: roundEven($font-size-s * $paragraph-line-height);
+$line-height-m: roundEven($font-size-m * $paragraph-line-height);
+$line-height-l: roundEven($font-size-l * $paragraph-line-height);
+$line-height-xl: roundEven($font-size-xl * $paragraph-line-height);
 
 $link-color: #2a79ff !default;
 $link-hover-color: #0057ec !default;
