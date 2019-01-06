@@ -31,5 +31,15 @@ $line-height-m: roundEven($font-size-m * $paragraph-line-height);
 $line-height-l: roundEven($font-size-l * $paragraph-line-height);
 $line-height-xl: roundEven($font-size-xl * $paragraph-line-height);
 
+$header-1-font-size: $base-font-size * 2.625;
+$header-2-font-size: $base-font-size * 2;
+$header-3-font-size: $base-font-size * 1.375;
+$header-4-font-size: $base-font-size;
+
+$header-1-line-height: roundEven($header-1-font-size * 1.19);
+$header-2-line-height: roundEven($header-2-font-size * 1.25);
+$header-3-line-height: roundEven($header-3-font-size * 1.364);
+$header-4-line-height: roundEven($header-4-font-size * 1.625);
+
 $link-color: #2a79ff !default;
 $link-hover-color: #0057ec !default;
