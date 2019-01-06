@@ -18,6 +18,7 @@ html {
 body {
     background-color: $body-background;
     color: $color-text;
+    -webkit-font-smoothing: antialiased;
 }
 
 div[contenteditable=true], input, textarea {

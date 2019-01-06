@@ -4,7 +4,6 @@ $body-background: #fefefe !default;
 
 $color-text: #333 !default;
 $color-text-muted: #777 !default;
-
 $color-primary: #267fd9 !default;
 $color-danger: #db5757 !default;
 
@@ -18,7 +17,15 @@ $base-font-family:
 $base-monospaced-font-family: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace !default;
 $base-line-height: 1 !default;
 
-$font-size-small: 85%;
+$paragraph-line-height: 1.5625 !default;
+$paragraph-margin: 1em !default;
+
+$font-size-small: 85% !default;
+$font-size-s: $base-font-size - 2;
+$font-size-l: $base-font-size + 2;
+$font-size-xl: $font-size-l + 2;
+
+$line-height-s: $font-size-s * $paragraph-line-height;
 
 $link-color: #2a79ff !default;
 $link-hover-color: #0057ec !default;

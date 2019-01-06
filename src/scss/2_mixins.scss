@@ -1,14 +1,3 @@
-@mixin word-wrap() {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    -ms-word-break: break-all;
-    word-break: break-word;
-    -ms-hyphens: auto;
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-}
-
 @function roundEven($num) {
     @return round($num / 2) * 2;
 }
@@ -25,7 +14,27 @@
     }
 }
 
-@mixin angle-up($sides, $main, $color) {
+@mixin word-wrap() {
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    hyphens: auto;
+}
+
+@mixin ellipsis() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin angleUp($sides, $main, $color) {
     width: 0;
     height: 0;
     border-left: $sides solid transparent;
@@ -34,7 +43,7 @@
     border-bottom: $main solid $color;
 }
 
-@mixin angle-down($sides, $main, $color) {
+@mixin angleDown($sides, $main, $color) {
     width: 0;
     height: 0;
     border-left: $sides solid transparent;

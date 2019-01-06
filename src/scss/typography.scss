@@ -23,8 +23,9 @@ a {
 
 p {
     margin: 0;
+    line-height: $paragraph-line-height;
 }
 
-p ~ p {
-    margin-top: 10px; // todo: fix margin
+p + p {
+    margin-top: $paragraph-margin; // todo: fix margin
 }
