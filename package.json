@@ -1,5 +1,7 @@
 {
-  "name": "Mottor UI",
+  "name": "mottor-ui",
+  "version": "1.0.0",
+  "description": "mottor ui components",
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.6.3"
   },
@@ -25,5 +27,11 @@
     "gulp-uglify": "^3.0.1",
     "gulp-util": "^3.0.8",
     "gulp-wrap": "^0.14.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@collab.lpmotor.ru:7999/lpm/mottor-ui.git"
+  },
+  "author": "Alexandr Bakulin",
+  "license": "ISC"
 }
