@@ -5,6 +5,7 @@ $button-radius: $step;
 .button {
     cursor: pointer;
     text-align: center;
+    font-size: $base-font-size;
     height: $button-height;
     padding: 0 $button-sides-padding;
     border-radius: $button-radius;
