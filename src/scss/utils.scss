@@ -45,15 +45,15 @@
 }
 
 .text-muted {
-    color: $color-text-muted;
+    color: $disabled-text-color;
 }
 
 .text-primary {
-    color: $color-primary;
+    color: $primary-text-color;
 }
 
-.text-danger {
-    color: $color-danger;
+.text-secondary {
+    color: $secondary-text-color;
 }
 
 .text-small {

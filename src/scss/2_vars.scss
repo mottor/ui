@@ -1,22 +1,60 @@
 $step: 4px !default;
 
-$body-background: #fefefe !default;
-
-$color-text: #333 !default;
-$color-text-muted: #777 !default;
-$color-primary: #267fd9 !default;
-$color-danger: #db5757 !default;
-
+// =============================
+// Base
+$base-line-height: 1 !default;
 $base-font-size: 16px !default;
 $base-font-family:
     /* Basic web fallback */
     "Helvetica Neue", Helvetica, Arial, sans-serif,
-    /* Emoji */
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
-    !default;
+        /* Emoji */
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
 $base-monospaced-font-family: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace !default;
-$base-line-height: 1 !default;
 
+
+// =============================
+// Colors
+$color-white: #fff !default;
+$color-gray: #f2f2f2 !default;
+$color-dark-gray: #e5e5e5 !default;
+$body-bg-color: $color-gray !default;
+
+// Основной текст — цвет для набора основного текста, текста в активных контролах,
+// текста в полях ввода, надписей и иконок на кнопках.
+$primary-text-color: #333 !default;
+$primary-text-color--on-dark: #fff !default;
+
+// Дополнительный текст — для подписей, комментариев, заголовков таблиц.
+$secondary-text-color: #808080 !default;
+$secondary-text-color--on-dark: rgba(255,255,255,.5) !default;
+
+// Неактивный — для текста в заблокированных контролах, ватермарков и вспомогательных иконок.
+// Например, лупа в поле поиска, стрелка в выпадашке.
+$disabled-text-color: #a0a0a0 !default;
+$disabled-text-color--on-dark: rgba(255,255,255,.37) !default;
+
+// Цвет ссылок
+$link-color: #3072C4 !default;
+$link-hover-color: $link-color !default;
+
+// Зеленый — для сообщений об успехе, удачном завершении
+$success-bg-color: #E2F7DC;
+$success-card-bg-color: #3F9726;
+$success-text-color: #228007;
+
+// Красный — для сообщений об ошибке, невозможности продолжить, неудачном завершении.
+$fail-bg-color: #FFD6D6;
+$fail-card-bg-color: #D70C17;
+$fail-text-color: #CE0014;
+
+// Акцентный цвет - чтобы привлечь внимание пользователя к важной информации
+$accent-bg-color: #FFF0BC;
+$accent-card-bg-color: #F69C00;
+$accent-text-color: #D97E00;
+
+
+// =============================
+// Text
 $paragraph-line-height: 1.5625 !default;
 $paragraph-margin: 1em !default;
 
@@ -31,6 +69,9 @@ $line-height-m: roundEven($font-size-m * $paragraph-line-height);
 $line-height-l: roundEven($font-size-l * $paragraph-line-height);
 $line-height-xl: roundEven($font-size-xl * $paragraph-line-height);
 
+
+// =============================
+// Headers
 $header-1-font-size: $base-font-size * 2.625;
 $header-2-font-size: $base-font-size * 2;
 $header-3-font-size: $base-font-size * 1.375;
@@ -40,6 +81,3 @@ $header-1-line-height: roundEven($header-1-font-size * 1.19);
 $header-2-line-height: roundEven($header-2-font-size * 1.25);
 $header-3-line-height: roundEven($header-3-font-size * 1.364);
 $header-4-line-height: roundEven($header-4-font-size * 1.625);
-
-$link-color: #2a79ff !default;
-$link-hover-color: #0057ec !default;
