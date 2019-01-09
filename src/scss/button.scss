@@ -7,7 +7,6 @@ $button-radius: $step;
     text-align: center;
     font-size: $base-font-size;
     height: $button-height;
-    padding: 0 $button-sides-padding;
     border-radius: $button-radius;
     background: #f0f;
     display: inline-block;
@@ -15,14 +14,27 @@ $button-radius: $step;
     text-decoration: none;
     outline: none;
     box-shadow: none;
+    overflow: hidden;
+    position: relative;
 
     &:active {
-        line-height: $button-height + 2;
+        //line-height: $button-height + 2;
     }
 
     &:focus {
         outline: none;
     }
+}
+
+.button-text {
+    padding: 0 $button-sides-padding;
+    display: block;
+    height: 100%;
+    position: relative;
+}
+
+.button:active .button-text {
+    top: 1px;
 }
 
 .button-primary {
