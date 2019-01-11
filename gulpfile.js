@@ -15,6 +15,7 @@ const sass = require("gulp-sass");
 // const fs = require('fs');
 const util = require('gulp-util');
 const csso = require('gulp-csso');
+const include = require('gulp-include');
 
 const dirRoot = process.cwd();
 const prod = util.env.prod;
@@ -32,8 +33,10 @@ util.log('Env', prod ? util.colors.red('Production') : util.colors.green('Dev'))
 config.dirBuild = dirRoot + '/build';
 config.dirTmp = dirRoot + '/tmp';
 config.dirSrc = dirRoot + '/src';
+config.dirUiKit = config.dirSrc + '/ui-kit';
 config.dirHtml = config.dirSrc + '/html';
-config.dirThemes = config.dirSrc + '/themes';
+config.dirDocs = config.dirSrc + '/docs';
+config.dirThemes = config.dirUiKit + '/themes';
 
 //---------------------------
 
@@ -41,16 +44,38 @@ function clean() {
     return del(config.dirTmp + '*');
 }
 
-function compileHtml() {
-    return gulp.src(config.dirHtml + '/*')
+function compileDocsHtml() {
+    return gulp.src([config.dirDocs + '/**/*.html', '!' + config.dirDocs + '/includes/**/*'])
+        .pipe(include({includePaths: [config.dirDocs + '/includes']}).on('error', console.log))
         .pipe(gulp.dest(config.dirBuild));
 }
 
-function watchHtml() {
-    gulp.watch(config.dirHtml + '/*', compileHtml);
+function watchDocsHtml() {
+    gulp.watch(config.dirDocs + '/**/*.html', compileDocsHtml);
 }
 
-function compileScript(done) {
+function compileDocsStyle() {
+    return gulp
+        .src(config.dirDocs + '/scss/main.scss')
+        .pipe(plumber())
+        .pipe(sass({
+            outputStyle: prod ? 'compressed' : 'expanded',
+            sourceComments: !prod
+        }).on('error', sass.logError))
+        .pipe(rename('docs.css'))
+        .pipe(autoprefixer({browsers: 'last 3 versions'}))
+        .pipe(gulp.dest(config.dirBuild + '/css'))
+        .pipe(browserSync.stream())
+        ;
+}
+
+function watchDocsStyle() {
+    gulp.watch(config.dirDocs + "/scss/**/*.scss", compileDocsStyle);
+}
+
+// -------------------------
+
+function compileUiScript(done) {
     done();
 }
 
@@ -58,7 +83,7 @@ function watchScript() {
 
 }
 
-function compileStyle() {
+function compileUiStyle() {
     return gulp
         .src(config.dirThemes + '/**/theme.scss')
         .pipe(plumber())
@@ -77,13 +102,29 @@ function compileStyle() {
         ;
 }
 
-function watchStyle() {
-    gulp.watch(config.dirSrc + "/**/*.scss", compileStyle);
+function watchUiStyle() {
+    gulp.watch(config.dirUiKit + "/**/*.scss", compileUiStyle);
 }
 
 function browserReload() {
     browserSync.reload();
 }
+
+function watchForBrowserReload() {
+    gulp.watch(config.dirBuild + "**/*.html").on('change', browserReload);
+}
+
+const buildDocs = gulp.series(clean, gulp.parallel(compileDocsHtml, compileDocsStyle));
+const watchDocs = gulp.parallel(watchDocsHtml, watchDocsStyle);
+
+exports.buildDocs = buildDocs;
+exports.watchDocs = watchDocs;
+
+const buildUi = gulp.series(clean, gulp.parallel(compileUiScript, compileUiStyle));
+const watchUi = gulp.parallel(watchUiStyle);
+
+exports.build = buildUi;
+exports.watch = watchUi;
 
 function startServer() {
     browserSync.init({
@@ -91,15 +132,9 @@ function startServer() {
             baseDir: config.dirBuild
         }
     });
-    watchStyle();
-    watchHtml();
-    gulp.watch(config.dirBuild + "**/*.html").on('change', browserReload);
+    watchUi();
+    watchDocs();
+    watchForBrowserReload();
 }
-
-const build = gulp.series(clean, gulp.parallel(compileHtml, compileScript, compileStyle));
-const watch = gulp.series(build, gulp.parallel(watchStyle));
-const serve = gulp.series(build, startServer);
-
-exports.build = build;
-exports.watch = watch;
+const serve = gulp.series(buildDocs, buildUi, startServer);
 exports.serve = serve;

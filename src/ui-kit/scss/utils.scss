@@ -125,4 +125,12 @@
     .ml#{$i} {
         margin-left: ($i * 10px);
     }
+
+    .mr#{$i} {
+        margin-right: ($i * 10px);
+    }
+
+    .mb#{$i} {
+        margin-bottom: ($i * 10px);
+    }
 }

@@ -1,6 +1,6 @@
 $button-height: roundEven($base-font-size * 2.5);
 $button-sides-padding: roundEven($base-font-size * 1.4);
-$button-radius: $step;
+$button-radius: round($base-font-size/3);
 
 .button {
     cursor: pointer;
@@ -21,8 +21,9 @@ $button-radius: $step;
         //line-height: $button-height + 2;
     }
 
-    &:focus {
+    &:focus, &.button--focused {
         outline: none;
+        box-shadow: inset 0 0 0 1px #fff, 0 0 0 2px #5199db;
     }
 }
 
@@ -33,7 +34,7 @@ $button-radius: $step;
     position: relative;
 }
 
-.button:active .button-text {
+.button--active .button-text, .button:active .button-text {
     top: 1px;
 }
 
@@ -41,11 +42,11 @@ $button-radius: $step;
     background: #5181b8;
     color: #fff;
 
-    &:hover {
+    &:hover, &.button--hover {
         background: #5b88bd;
     }
 
-    &:active {
+    &:active, &.button--active {
         background: #4872a3;
     }
 }
@@ -61,4 +62,22 @@ $button-radius: $step;
     &:active {
         background: #dae2ea;
     }
+}
+
+// после всех дизайнов, чтобы перебивать их
+.button--disabled {
+    background: #f2f2f2;
+    color: #808080;
+    cursor: default;
+    pointer-events: none;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.button--disabled:hover,
+.button--disabled:active {
+    @extend .button--disabled;
+}
+
+.button--loading {
+    @extend .button--disabled;
 }
