@@ -27,7 +27,7 @@ $button-l--border-radius: round($font-size-l * $button-corders-ratio);
     font-size: $base-font-size;
     height: $button-height;
     border-radius: $button-radius;
-    background: #f0f;
+    background: #c00;
     display: inline-block;
     line-height: $button-height;
     text-decoration: none;
@@ -105,8 +105,8 @@ $button-l--border-radius: round($font-size-l * $button-corders-ratio);
 
 // после всех дизайнов, чтобы перебивать их
 .button--disabled {
-    background: #f2f2f2;
-    color: #808080;
+    background: $color-gray;
+    color: $secondary-text-color;
     cursor: default;
     pointer-events: none;
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
