@@ -1,15 +1,52 @@
+$docs-width: 600px;
+$docs-min-padding: 30px;
+$docs-block-margin: 2em auto 0;
+
 body.docs {
     background: #fff;
 }
 
-.docs-content {
-    width: 600px;
+.content-wrap {
     padding: 80px 0;
+}
+
+.docs-content {
+    width: $docs-width;
+    padding: 30px 0;
     margin: 0 auto;
 }
 
 .docs-block {
-    margin: 1em 0;
+    width: 600px;
+    margin: $docs-block-margin;
+}
+
+@media (max-width: $docs-width + 2*$docs-min-padding) {
+    .docs-block {
+        width: 100%;
+        padding-right: $docs-min-padding;
+        padding-left: $docs-min-padding;
+    }
+}
+
+.docs-block:first-child {
+    margin-top: 0;
+}
+
+.docs-block-gray {
+    margin: $docs-block-margin;
+    background-color: #f7f5f2;
+    padding: 2em 0;
+}
+
+.example {
+    background-color: #f7f5f2;
+    padding: 2em;
+    border-radius: 4px;
+}
+
+.docs h1 {
+    margin-bottom: 1.2em;
 }
 
 .docs h2 {
@@ -24,6 +61,10 @@ body.docs {
 
 .docs-example-table td {
     padding: 0 30px 20px 0;
+}
+
+.docs-example-table.vat td {
+    vertical-align: top;
 }
 
 .docs-example-table td:last-child {
