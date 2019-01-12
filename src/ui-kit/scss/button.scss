@@ -1,6 +1,25 @@
-$button-height: roundEven($base-font-size * 2.5);
-$button-sides-padding: roundEven($base-font-size * 1.4);
-$button-radius: round($base-font-size/3);
+$button-height-ratio: 2.3;
+$button-padding-ratio: 1.3;
+$button-corders-ratio: 0.3;
+
+$button-height: roundEven($base-font-size * $button-height-ratio);
+$button-sides-padding: roundEven($base-font-size * $button-padding-ratio);
+$button-radius: round($base-font-size * $button-corders-ratio);
+
+$button-l--height: roundEven($font-size-l * $button-height-ratio);
+$button-l--sides-padding: roundEven($font-size-l * $button-padding-ratio);
+$button-l--border-radius: round($font-size-l * $button-corders-ratio);
+
+@mixin buttonSize($font-size) {
+    font-size: $font-size;
+    height: roundEven($font-size * $button-height-ratio);
+    line-height: roundEven($font-size * $button-height-ratio);
+    border-radius: round($font-size * $button-corders-ratio);
+
+    .button-text {
+        padding: 0 round($font-size * $button-padding-ratio);
+    }
+}
 
 .button {
     cursor: pointer;
@@ -23,6 +42,9 @@ $button-radius: round($base-font-size/3);
 
     &:focus, &.button--focused {
         outline: none;
+    }
+
+    &.button--focused {
         box-shadow: inset 0 0 0 1px #fff, 0 0 0 2px #5199db;
     }
 }
@@ -34,9 +56,26 @@ $button-radius: round($base-font-size/3);
     position: relative;
 }
 
-.button--active .button-text, .button:active .button-text {
+.button:active .button-text, .button--active .button-text {
     top: 1px;
+    box-shadow: inset 0 2px 1px rgba(0,0,0,.1);
 }
+
+// -----------------------------
+
+.button-s {
+    @include buttonSize($font-size-s);
+}
+
+.button-l {
+    @include buttonSize($font-size-l);
+}
+
+.button-xl {
+    @include buttonSize($font-size-xl);
+}
+
+// -----------------------------
 
 .button-primary {
     background: #5181b8;
