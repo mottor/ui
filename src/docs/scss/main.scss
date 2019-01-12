@@ -1,0 +1,35 @@
+body.docs {
+    background: #fff;
+}
+
+.docs-content {
+    width: 600px;
+    padding: 80px 0;
+    margin: 0 auto;
+}
+
+.docs-block {
+    margin: 1em 0;
+}
+
+.docs h2 {
+    margin-top: 1em;
+    margin-bottom: 0.4em;
+}
+
+.docs h3 {
+    margin-top: 0.8em;
+    margin-bottom: 0.3em;
+}
+
+.docs-example-table td {
+    padding: 0 30px 20px 0;
+}
+
+.docs-example-table td:last-child {
+    padding-right: 0;
+}
+
+.docs-example-table tr:last-child td {
+    padding-bottom: 0;
+}

@@ -35,3 +35,15 @@ div[contenteditable=true], input, textarea {
 #nocss {
     display: none;
 }
+
+.font-size-marker, .theme-name-marker {
+    display: inline-block;
+}
+.font-size-marker:before {
+    display: inline-block;
+    content: '#{$base-font-size}';
+}
+.theme-name-marker:before {
+    display: inline-block;
+    content: '#{$theme-name}';
+}
