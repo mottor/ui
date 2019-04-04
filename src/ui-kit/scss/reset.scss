@@ -1,14 +1,23 @@
-.hidden, [hidden] {
-    display: none !important;
-}
+/**
 
-:focus {
-    outline: none;
+Links
+=====
+https://github.com/necolas/normalize.css/blob/master/normalize.css
+https://github.com/sass/libsass.com/blob/master/sass/_normalize.scss
+https://github.com/sindresorhus/modern-normalize/blob/master/modern-normalize.css
+
+https://csswizardry.com/2012/06/single-direction-margin-declarations/
+*/
+
+:root {
+    /* Use a more readable tab size (opinionated). */
+    -moz-tab-size: 4;
+    tab-size: 4;
 }
 
 html {
     /* Prevent adjustments of font size after orientation changes in IE and iOS. */
-    text-size-adjust: 100%; /* 2 */
+    text-size-adjust: 100%;
 }
 
 body {
@@ -16,7 +25,7 @@ body {
     margin: 0;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
@@ -24,8 +33,12 @@ b, strong, .bold {
     font-weight: bold;
 }
 
+i, em, .italic {
+    font-style: italic;
+}
+
 small {
-    font-size: 85%;
+    font-size: 80%;
 }
 
 /**
@@ -33,51 +46,40 @@ small {
  */
 sub,
 sup {
-    font-size: 85%;
+    font-size: 75%;
     line-height: 0;
     position: relative;
     vertical-align: baseline;
 }
 
 sup {
-    top: -0.4em;
+    top: -0.5em;
 }
 
 sub {
-    bottom: -0.2em;
+    bottom: -0.25em;
 }
 
 img {
-    /* Remove the border on images inside links in IE 10-. */
-    border: 0;
+    border-style: none; /* Remove the border on images inside links in IE 10-. */
 }
 
-/**
- * Correct overflow not hidden in IE 9/10/11.
- */
 svg:not(:root) {
-    overflow: hidden;
+    overflow: hidden; /* Correct overflow not hidden in IE 9/10/11. */
 }
 
-/**
- * Address differences between Firefox and other browsers.
- */
 hr {
-    height: 1px;
+    height: 0;
     border: 0;
     background: #ccc;
+    box-sizing: content-box; /* Add the correct box sizing in Firefox */
+    overflow: visible; /* Show the overflow in Edge and IE. */
 }
 
-/**
- * Contain overflow in all browsers.
- */
 pre {
-    overflow: auto;
+    overflow: auto; /* Contain overflow in all browsers. */
 }
 
-/**
- * Address odd `em`-unit font size rendering in all browsers.
- */
 code,
 pre {
     font-family: $base-monospaced-font-family;
@@ -92,74 +94,53 @@ pre {
  * styling of `select`, unless a `border` property is set.
  */
 
-/**
- * 1. Correct color not being inherited.
- *    Known issue: affects color of disabled elements.
- * 2. Correct font properties not being inherited.
- * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
- */
 button,
 input,
 optgroup,
 select,
 textarea {
-    color: inherit; /* 1 */
-    font: inherit; /* 2 */
-    margin: 0; /* 3 */
+    color: inherit; /* Correct color not being inherited */
+    font: inherit; /* Correct font properties not being inherited */
+    margin: 0; /* Remove the margin in Firefox and Safari */
 }
 
-button {
-/**
- * Address `overflow` set to `hidden` in IE 8/9/10/11.
- */
-    overflow: visible;
-    border: 0;
-    padding: 0;
+button, input {
+    overflow: visible; /* Show the overflow in IE */
 }
 
-/**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
- * Correct `select` style inheritance in Firefox.
- */
 button,
 select {
-    text-transform: none;
+    text-transform: none; /* Remove the inheritance of text transform in Edge, Firefox, and IE. */
 }
-
-/**
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
- * 3. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- */
 
 button,
-html input[type="button"], /* 1 */
-input[type="reset"],
-input[type="submit"],
+[type="button"], /* 1 */
+[type="reset"],
+[type="submit"],
 ::-webkit-file-upload-button {
-    appearance: button; /* 2 */
+    /* Correct inability to style clickable `input` types in iOS. */
+    -webkit-appearance: button;
+    appearance: button;
     cursor: pointer; /* 3 */
-}
-
-/* Change font properties to `inherit` in Safari. */
-::-webkit-file-upload-button {
     font: inherit;
 }
 
 [type=search] {
     /* Correct the odd appearance in Chrome and Safari. */
-    appearance: none;
+    -webkit-appearance: textfield;
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
 }
 
 /**
  * Re-set default cursor for disabled elements.
  */
-button[disabled],
-input[disabled],
+[disabled],
 .disabled {
     cursor: default;
 }
@@ -169,16 +150,8 @@ input[disabled],
  */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-    border: 0;
+    border-style: none;
     padding: 0;
-}
-
-/**
- * Address Firefox 4+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
-input {
-    line-height: normal;
 }
 
 /**
@@ -188,8 +161,8 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-input[type="checkbox"],
-input[type="radio"] {
+[type="checkbox"],
+[type="radio"] {
     box-sizing: border-box; /* 1 */
     padding: 0; /* 2 */
 }
@@ -198,37 +171,35 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+    height: auto;
 }
 
-/**
- * Define consistent border, margin, and padding.
- */
-fieldset {
-    border: 0;
-    padding: 0;
-}
-
-/**
- * Remove default vertical scrollbar in IE 8/9/10/11.
- */
 textarea {
-    overflow: auto;
+    overflow: auto; /*  Remove default vertical scrollbar in IE 8/9/10/11. */
 }
 
-/**
- * Remove most spacing between table cells.
- */
 table {
     border-collapse: collapse;
     border-spacing: 0;
+    font: inherit;
     //border-color: transparent;
-    //font: inherit;
     //line-height: inherit;
 }
 
-td,
-th {
+td, th {
     padding: 0;
+}
+
+td {
+    vertical-align: top;
+}
+
+th {
+    text-align: left;
+}
+
+a {
+    background-color: transparent; /* Remove the gray background on active links in IE 10. */
 }
 
 /* Avoid 300ms click delay on touch devices that support the `touch-action` CSS property. */
@@ -239,4 +210,8 @@ label,
 select,
 textarea {
     touch-action: manipulation;
+}
+
+[hidden], .hidden {
+    display: none !important;
 }

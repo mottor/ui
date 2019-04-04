@@ -2,9 +2,19 @@
     background: none;
 }
 
-.italic {
-    font-style: italic;
+.cur-pointer {
+    cursor: pointer;
 }
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+.line-height-1 {
+    line-height: 1;
+}
+
+/*---------------------*/
 
 .pos-rel {
     position: relative;
@@ -16,18 +26,6 @@
 
 .pos-fix {
     position: fixed;
-}
-
-.cur-point {
-    cursor: pointer;
-}
-
-.no-wrap {
-    white-space: nowrap;
-}
-
-.line-height-1 {
-    line-height: 1;
 }
 
 /*---------------------*/
@@ -86,15 +84,19 @@
 
 /*---------------------*/
 
-.inline-block {
+.display-inline {
+    display: inline;
+}
+
+.display-inline-block {
     display: inline-block;
 }
 
-.flex {
+.display-flex {
     display: flex;
 }
 
-.block {
+.display-block {
     display: block;
 }
 
@@ -117,6 +119,10 @@
     margin: 0;
 }
 
+.p0 {
+    padding: 0;
+}
+
 @for $i from 0 to 6 {
     .mt#{$i} {
         margin-top: ($i * 10px);
@@ -132,5 +138,21 @@
 
     .mb#{$i} {
         margin-bottom: ($i * 10px);
+    }
+
+    .pt#{$i} {
+        padding-top: ($i * 10px);
+    }
+
+    .pl#{$i} {
+        padding-left: ($i * 10px);
+    }
+
+    .pr#{$i} {
+        padding-right: ($i * 10px);
+    }
+
+    .pb#{$i} {
+        padding-bottom: ($i * 10px);
     }
 }
