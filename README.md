@@ -16,6 +16,8 @@
 
     ./gulp build --prod
     
+Сборка складывается в ./build/css/{theme-name}/mui.css
+    
 Запуск для разработки с сервером и browserSync
 
     ./gulp serve
