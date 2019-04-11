@@ -12,6 +12,7 @@ const util = require('gulp-util');
 const csso = require('gulp-csso');
 const cssimport = require('gulp-cssimport');
 const include = require('gulp-include');
+const sassVariables = require('gulp-sass-variables');
 // const replace = require('gulp-replace');
 // const sourcemaps = require('gulp-sourcemaps');
 // const autoprefixer = require("autoprefixer");
@@ -20,7 +21,7 @@ const include = require('gulp-include');
 // const fs = require('fs');
 
 const dirRoot = process.cwd();
-const prod = util.env.prod;
+const prod = process.argv.indexOf('--prod') >= 0;
 
 var config = {
     standalone: true,
@@ -90,6 +91,9 @@ function compileUiStyle() {
         .src(config.dirThemes + '/**/theme.scss')
         .pipe(plumber())
         // .pipe(_if(!prod, sourcemaps.init()))
+        .pipe(sassVariables({
+            $env: prod ? 'prod' : 'dev'
+        }))
         .pipe(sass({
             outputStyle: prod ? 'compressed' : 'expanded',
             sourceComments: !prod
