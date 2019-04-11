@@ -10,7 +10,7 @@ $base-font-size: 16px;
 $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
 // 2. Import base CSS
-@import "../../base/0.scss";
+@import "../../base/0_start";
 
 // 3. Anything else
 .test {
