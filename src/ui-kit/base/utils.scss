@@ -125,34 +125,34 @@
 
 @for $i from 0 to 6 {
     .mt#{$i} {
-        margin-top: ($i * 10px);
+        margin-top: ($i * $indentStep);
     }
 
     .ml#{$i} {
-        margin-left: ($i * 10px);
+        margin-left: ($i * $indentStep);
     }
 
     .mr#{$i} {
-        margin-right: ($i * 10px);
+        margin-right: ($i * $indentStep);
     }
 
     .mb#{$i} {
-        margin-bottom: ($i * 10px);
+        margin-bottom: ($i * $indentStep);
     }
 
     .pt#{$i} {
-        padding-top: ($i * 10px);
+        padding-top: ($i * $indentStep);
     }
 
     .pl#{$i} {
-        padding-left: ($i * 10px);
+        padding-left: ($i * $indentStep);
     }
 
     .pr#{$i} {
-        padding-right: ($i * 10px);
+        padding-right: ($i * $indentStep);
     }
 
     .pb#{$i} {
-        padding-bottom: ($i * 10px);
+        padding-bottom: ($i * $indentStep);
     }
 }

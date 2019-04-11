@@ -62,6 +62,7 @@ $button-l--border-radius: round($font-size-l * $button-corders-ratio);
 }
 
 // -----------------------------
+// Размеры
 
 .button-s {
     @include buttonSize($font-size-s);
@@ -76,6 +77,7 @@ $button-l--border-radius: round($font-size-l * $button-corders-ratio);
 }
 
 // -----------------------------
+// Типы
 
 .button-primary {
     background: #5181b8;
@@ -103,7 +105,9 @@ $button-l--border-radius: round($font-size-l * $button-corders-ratio);
     }
 }
 
-// после всех дизайнов, чтобы перебивать их
+// =========================
+// Неактивная
+// идет после всех дизайнов, чтобы перебивать их
 .button--disabled {
     background: $color-gray;
     color: $secondary-text-color;
@@ -117,6 +121,8 @@ $button-l--border-radius: round($font-size-l * $button-corders-ratio);
     @extend .button--disabled;
 }
 
+// Загрузка
+// Наследует disabled + имеет доп. стили
 .button--loading {
     @extend .button--disabled;
 }

@@ -1,6 +1,7 @@
 $env: 'dev' !default;
 $theme-name: 'override-me!' !default;
 $step: 4px !default;
+$indentStep: 10px !default;
 
 // =============================
 // Base
@@ -9,7 +10,7 @@ $base-font-size: 14px !default;
 $base-font-family:
     /* Basic web fallback */
     "Helvetica Neue", Helvetica, Arial, sans-serif,
-        /* Emoji */
+    /* Emoji */
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
 $base-monospaced-font-family: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace !default;
 

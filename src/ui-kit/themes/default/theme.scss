@@ -4,14 +4,15 @@
 // @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700&subset=cyrillic');
 
 // 1. Override default variables
+// для $base-font-family нужно задавать в конце шрифты emoji: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
 $theme-name: 'default';
 $base-font-size: 16px;
 $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
-// 2. Import mottor-ui
-@import "../../scss/main";
+// 2. Import base CSS
+@import "../../base/0.scss";
 
-// 3. Everything else
+// 3. Anything else
 .test {
     zoom: 1;
     color: #f0f;
