@@ -3,19 +3,21 @@
 const gulp = require('gulp');
 const _if = require('gulp-if');
 const del = require('del');
-const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require("browser-sync").create();
-// const autoprefixer = require("autoprefixer");
 const autoprefixer = require('gulp-autoprefixer');
-const cssnano = require("cssnano");
 const plumber = require("gulp-plumber");
-const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
-// const fs = require('fs');
 const util = require('gulp-util');
 const csso = require('gulp-csso');
+const cssimport = require('gulp-cssimport');
 const include = require('gulp-include');
+// const replace = require('gulp-replace');
+// const sourcemaps = require('gulp-sourcemaps');
+// const autoprefixer = require("autoprefixer");
+// const cssnano = require("cssnano");
+// const postcss = require("gulp-postcss");
+// const fs = require('fs');
 
 const dirRoot = process.cwd();
 const prod = util.env.prod;
@@ -92,6 +94,7 @@ function compileUiStyle() {
             outputStyle: prod ? 'compressed' : 'expanded',
             sourceComments: !prod
         }).on('error', sass.logError))
+        .pipe(_if(prod, cssimport()))
         .pipe(rename({basename: config.basename}))
         .pipe(autoprefixer({browsers: 'last 3 versions'}))
         .pipe(_if(prod, csso()))

@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic');
-//@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700&subset=cyrillic');
+//Для разработки можно подключать шрифт здесь с помощью @import
+//Для продакшена нужно через link на самой странице
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700&subset=cyrillic');
 
-// 1. Override bootstrap's default variables
+// 1. Override default variables
 $theme-name: 'default';
 $base-font-size: 16px;
-// $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-$base-font-family: Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
 // 2. Import mottor-ui
 @import "../../scss/main";
