@@ -9,15 +9,16 @@ https://github.com/sindresorhus/modern-normalize/blob/master/modern-normalize.cs
 https://csswizardry.com/2012/06/single-direction-margin-declarations/
 */
 
-:root {
-    /* Use a more readable tab size (opinionated). */
-    -moz-tab-size: 4;
-    tab-size: 4;
-}
+//:root {
+//    // CSS property is used to customize the width of a tab (U+0009) character.
+//    -moz-tab-size: 4;
+//    tab-size: 4;
+//}
 
 html {
-    /* Prevent adjustments of font size after orientation changes in IE and iOS. */
+    // Prevent adjustments of font size after orientation changes in IE and iOS.
     text-size-adjust: 100%;
+    tab-size: 4;
 }
 
 body {
@@ -29,12 +30,20 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
 b, strong, .bold {
     font-weight: bold;
 }
 
 i, em, .italic {
     font-style: italic;
+}
+
+.strike {
+    text-decoration: line-through;
 }
 
 small {
@@ -61,17 +70,17 @@ sub {
 }
 
 img {
-    border-style: none; /* Remove the border on images inside links in IE 10-. */
+    border-style: none; // Remove the border on images inside links in IE 10-.
 }
 
 svg:not(:root) {
-    overflow: hidden; /* Correct overflow not hidden in IE 9/10/11. */
+    overflow: hidden; // Correct overflow not hidden in IE 9/10/11.
 }
 
 hr {
-    height: 0;
+    height: 1px;
     border: 0;
-    background: #ccc;
+    background: #ddd;
     box-sizing: content-box; /* Add the correct box sizing in Firefox */
     overflow: visible; /* Show the overflow in Edge and IE. */
     padding: 0;
@@ -79,7 +88,8 @@ hr {
 }
 
 pre {
-    overflow: auto; /* Contain overflow in all browsers. */
+    margin: 0;
+    overflow: auto; // Contain overflow in all browsers.
 }
 
 code,
@@ -95,35 +105,35 @@ pre {
  * Known limitation: by default, Chrome and Safari on OS X allow very limited
  * styling of `select`, unless a `border` property is set.
  */
-
 button,
 input,
 optgroup,
 select,
 textarea {
-    color: inherit; /* Correct color not being inherited */
-    font: inherit; /* Correct font properties not being inherited */
-    margin: 0; /* Remove the margin in Firefox and Safari */
+    color: inherit; // Correct color not being inherited
+    font: inherit; // Correct font properties not being inherited
+    margin: 0; // Remove the margin in Firefox and Safari
+    padding: 0;
+    box-sizing: border-box;
 }
 
 button, input {
-    overflow: visible; /* Show the overflow in IE */
+    overflow: visible; // Show the overflow in IE
 }
 
 button,
 select {
-    text-transform: none; /* Remove the inheritance of text transform in Edge, Firefox, and IE. */
+    text-transform: none; // Remove the inheritance of text transform in Edge, Firefox, and IE.
 }
 
 button,
-[type="button"], /* 1 */
+[type="button"],
 [type="reset"],
 [type="submit"],
 ::-webkit-file-upload-button {
-    /* Correct inability to style clickable `input` types in iOS. */
     -webkit-appearance: button;
     appearance: button;
-    cursor: pointer; /* 3 */
+    cursor: pointer;
     font: inherit;
 }
 
@@ -177,7 +187,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 textarea {
-    overflow: auto; /*  Remove default vertical scrollbar in IE 8/9/10/11. */
+    overflow: auto; // Remove default vertical scrollbar in IE 8/9/10/11.
 }
 
 table {
@@ -198,10 +208,6 @@ td {
 
 th {
     text-align: left;
-}
-
-a {
-    background-color: transparent; /* Remove the gray background on active links in IE 10. */
 }
 
 /* Avoid 300ms click delay on touch devices that support the `touch-action` CSS property. */

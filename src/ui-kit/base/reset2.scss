@@ -10,16 +10,18 @@ html {
     -webkit-touch-callout: none;
     -ms-content-zooming: none;
     -ms-touch-action: pan-x pan-y;
+    letter-spacing: 0;
 }
 
 :focus {
     outline: none;
 }
 
+/*
 * { //}, *:before, *:after {
     box-sizing: inherit;
     font: inherit;
-}
+} */
 
 body {
     background-color: $body-bg-color;
