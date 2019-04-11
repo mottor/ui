@@ -1,12 +1,15 @@
 
 Сборка
 
-    gulp build
+    ./gulp build
     
+Сборка для продакшена
+
+    ./gulp build --prod
     
 Запуск для разработки с сервером и browserSync
 
-    gulp serve
+    ./gulp serve
     
 Список всех тасков:
 
