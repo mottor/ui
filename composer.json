@@ -1,0 +1,6 @@
+{
+    "name": "mottor/ui",
+    "description": "Mottor UI-kit",
+    "type": "library",
+    "require": {}
+}
