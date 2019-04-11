@@ -4,10 +4,9 @@
 // @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700&subset=cyrillic');
 
 // 1. Override default variables
-// для $base-font-family нужно задавать в конце шрифты emoji: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
-$theme-name: 'default';
+$theme-name: 'example';
 $base-font-size: 16px;
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // 2. Import base CSS
 @import "../../base/0_start";
