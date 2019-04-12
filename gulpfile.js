@@ -12,16 +12,19 @@ const util = require('gulp-util');
 const csso = require('gulp-csso');
 const cssimport = require('gulp-cssimport');
 const include = require('gulp-include');
+const fs = require('fs');
+const exec = require('child_process').exec;
 const sassVariables = require('gulp-sass-variables');
+
 // const replace = require('gulp-replace');
 // const sourcemaps = require('gulp-sourcemaps');
-// const autoprefixer = require("autoprefixer");
 // const cssnano = require("cssnano");
 // const postcss = require("gulp-postcss");
-// const fs = require('fs');
 
 const dirRoot = process.cwd();
-const prod = process.argv.indexOf('--prod') >= 0;
+const prod = ['y', 'yes', 'true', '1'].indexOf((process.env.UI_PROD || 'no').toLowerCase()) >= 0; //process.argv.indexOf('--prod') >= 0;
+const theme = process.env.UI_THEME || null;
+const version = process.env.UI_VERSION || 'v1.0';
 
 var config = {
     standalone: true,
@@ -30,17 +33,32 @@ var config = {
 
 //---------------------------
 
-util.log('Root =', dirRoot);
-util.log('Env', prod ? util.colors.red('Production') : util.colors.green('Dev'));
+util.log('Root:', dirRoot);
+util.log('Env:', prod ? util.colors.red('Prod') : util.colors.green('Dev'));
 
-config.dirBuild = dirRoot + '/build';
+config.dirBuild = dirRoot + '/docs/build';
+config.dirBuildHtml = dirRoot + '/docs/build';
 config.dirTmp = dirRoot + '/tmp';
 config.dirSrc = dirRoot + '/src';
-config.dirUiKit = config.dirSrc + '/ui-kit';
+config.dirKit = config.dirSrc + '/kit';
 config.dirHtml = config.dirSrc + '/html';
-config.dirDocs = config.dirSrc + '/docs';
-config.dirThemes = config.dirUiKit + '/themes';
+config.dirDocs = config.dirSrc + '/html';
+config.dirThemes = config.dirKit + '/themes';
 
+if (null !== theme && fs.existsSync(config.dirThemes + '/' + theme)) {
+    util.log('Theme:', util.colors.green(theme));
+    util.log('Version:', util.colors.green(version));
+    config.dirBuild += '/themes/' + theme + '/' + version;
+    config.dirThemes += '/' + theme;
+    config.exactTheme = true;
+} else {
+    config.dirBuild += '/full';
+    config.exactTheme = false;
+}
+
+util.log('Build dir:', config.dirBuild);
+util.log('Theme dir:', config.dirThemes);
+util.log('=============');
 //---------------------------
 
 function clean() {
@@ -50,7 +68,7 @@ function clean() {
 function compileDocsHtml() {
     return gulp.src([config.dirDocs + '/**/*.html', '!' + config.dirDocs + '/includes/**/*'])
         .pipe(include({includePaths: [config.dirDocs + '/includes']}).on('error', console.log))
-        .pipe(gulp.dest(config.dirBuild));
+        .pipe(gulp.dest(config.dirBuildHtml));
 }
 
 function watchDocsHtml() {
@@ -67,7 +85,7 @@ function compileDocsStyle() {
         }).on('error', sass.logError))
         .pipe(rename('docs.css'))
         .pipe(autoprefixer({browsers: 'last 3 versions'}))
-        .pipe(gulp.dest(config.dirBuild + '/css'))
+        .pipe(gulp.dest(config.dirBuildHtml + '/css'))
         .pipe(browserSync.stream())
         ;
 }
@@ -77,6 +95,14 @@ function watchDocsStyle() {
 }
 
 // -------------------------
+
+function gitAdd(cb) {
+    exec('git add ' + config.dirBuild, function (err, stdout, stderr) {
+        // console.log(stdout);
+        // console.log(stderr);
+        cb(err);
+    });
+}
 
 function compileUiScript(done) {
     done();
@@ -88,7 +114,7 @@ function watchScript() {
 
 function compileUiStyle() {
     return gulp
-        .src(config.dirThemes + '/**/theme.scss')
+        .src(config.dirThemes + (config.exactTheme ? '/' : '/**/') + 'theme.scss')
         .pipe(plumber())
         // .pipe(_if(!prod, sourcemaps.init()))
         .pipe(sassVariables({
@@ -110,7 +136,7 @@ function compileUiStyle() {
 }
 
 function watchUiStyle() {
-    gulp.watch(config.dirUiKit + "/**/*.scss", compileUiStyle);
+    gulp.watch(config.dirKit + "/**/*.scss", compileUiStyle);
 }
 
 function browserReload() {
@@ -127,7 +153,7 @@ const watchDocs = gulp.parallel(watchDocsHtml, watchDocsStyle);
 exports.buildDocs = buildDocs;
 exports.watchDocs = watchDocs;
 
-const buildUi = gulp.series(clean, gulp.parallel(compileUiScript, compileUiStyle));
+const buildUi = gulp.series(clean, gulp.parallel(compileUiScript, compileUiStyle), gitAdd);
 const watchUi = gulp.parallel(watchUiStyle);
 
 exports.build = buildUi;
@@ -136,7 +162,7 @@ exports.watch = watchUi;
 function startServer() {
     browserSync.init({
         server: {
-            baseDir: config.dirBuild
+            baseDir: config.dirBuildHtml
         }
     });
     watchUi();
