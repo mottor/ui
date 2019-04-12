@@ -28,7 +28,7 @@ const version = process.env.UI_VERSION || 'v1.0';
 
 var config = {
     standalone: true,
-    basename: 'a'
+    basename: 'mui'
 };
 
 //---------------------------
