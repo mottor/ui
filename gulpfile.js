@@ -28,7 +28,7 @@ const version = process.env.UI_VERSION || 'v1.0';
 
 var config = {
     standalone: true,
-    basename: 'mui'
+    basename: 'mottorUI'
 };
 
 //---------------------------
@@ -54,6 +54,10 @@ if (null !== theme && fs.existsSync(config.dirThemes + '/' + theme)) {
 } else {
     config.dirBuild += '/full';
     config.exactTheme = false;
+}
+
+if (process.env.UI_BUILD_DIR) {
+    config.dirBuild = process.env.UI_BUILD_DIR;
 }
 
 util.log('Build dir:', config.dirBuild);
@@ -153,8 +157,8 @@ const watchDocs = gulp.parallel(watchDocsHtml, watchDocsStyle);
 exports.buildDocs = buildDocs;
 exports.watchDocs = watchDocs;
 
-const buildUi = gulp.series(clean, gulp.parallel(compileUiScript, compileUiStyle), gitAdd);
-const watchUi = gulp.parallel(watchUiStyle);
+const buildUi = gulp.series(clean, gulp.parallel(compileUiScript, compileUiStyle)/*, gitAdd*/);
+const watchUi = gulp.series(buildUi, watchUiStyle);
 
 exports.build = buildUi;
 exports.watch = watchUi;

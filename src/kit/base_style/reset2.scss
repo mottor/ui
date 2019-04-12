@@ -11,6 +11,7 @@ html {
     -ms-content-zooming: none;
     -ms-touch-action: pan-x pan-y;
     letter-spacing: 0;
+    -webkit-print-color-adjust: exact;
 }
 
 :focus {
