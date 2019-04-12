@@ -28,7 +28,7 @@ const version = process.env.UI_VERSION || 'v1.0';
 
 var config = {
     standalone: true,
-    basename: 'mui'
+    basename: 'a'
 };
 
 //---------------------------
@@ -125,12 +125,12 @@ function compileUiStyle() {
             sourceComments: !prod
         }).on('error', sass.logError))
         .pipe(_if(prod, cssimport()))
-        .pipe(rename({basename: config.basename}))
+        .pipe(rename({basename: config.basename + (prod ? '.min' : '')}))
         .pipe(autoprefixer({browsers: 'last 3 versions'}))
         .pipe(_if(prod, csso()))
         // .pipe(postcss([autoprefixer({browsers: 'last 3 versions'}), cssnano()]))
         // .pipe(_if(!prod, sourcemaps.write()))
-        .pipe(gulp.dest(config.dirBuild + '/css'))
+        .pipe(gulp.dest(config.dirBuild)) // убрал + '/css', чтобы не складывалось в папку
         .pipe(browserSync.stream())
         ;
 }
