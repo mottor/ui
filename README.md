@@ -14,17 +14,17 @@ Mottor UI-kit
 
 Сборка
 
-    ./gulp build
+    UI_VERSION=v1.0 UI_THEME=example ./gulp serve
     
 Сборка для продакшена
 
-    ./gulp build --prod
+    UI_PROD=yes UI_VERSION=v1.0 UI_THEME=example ./gulp serve
     
 Сборка складывается в ./build/css/{theme-name}/mui.css
     
 Запуск для разработки с сервером и browserSync
 
-    ./gulp serve
+    UI_PROD=no UI_VERSION=v1.0 UI_THEME=example ./gulp serve
     
 Список всех тасков:
 
