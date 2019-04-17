@@ -1,0 +1,79 @@
+$hotdog-item-size: 46px;
+$hotdog-icon-size: 22px;
+$hotdog-icon-margin: ($hotdog-item-size - $hotdog-icon-size) / 2;
+$hotdog-panel-angle-size: 8px;
+
+.hotdog-root {
+    position: relative;
+}
+
+.hotdog-panel {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    border-radius: $hotdog-item-size;
+    padding: 0 4px;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,.5);
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: calc(50% - #{$hotdog-panel-angle-size});
+    }
+}
+
+.hotdog-panel--angle-bottom:after {
+    @include angleDown($hotdog-panel-angle-size, $hotdog-panel-angle-size, #111);
+    bottom: -$hotdog-panel-angle-size;
+}
+
+.hotdog-panel__item {
+    width: $hotdog-item-size;
+    height: $hotdog-item-size;
+    float: left;
+    cursor: pointer;
+    box-sizing: content-box;
+}
+
+.hotdog-panel__item:first-child {
+    border-top-left-radius: $hotdog-item-size;
+    border-bottom-left-radius: $hotdog-item-size;
+}
+
+.hotdog-panel__item:last-child {
+    border-top-right-radius: $hotdog-item-size;
+    border-bottom-right-radius: $hotdog-item-size;
+}
+
+.hotdog-panel__icon {
+    display: block;
+    width: $hotdog-icon-size;
+    height: $hotdog-icon-size;
+    background: rgba(204, 204, 204, 0.34);
+    border-radius: 3px;
+    transform: translate(50%, 50%);
+    box-sizing: border-box;
+}
+
+.hotdog-panel__item:hover .hotdog-panel__icon {
+    background: #3dbfe8;
+}
+
+.hotdog--dark {
+    &.hotdog-panel {
+        background: rgba(3,8,15,.92);
+
+        &:after {
+            border-top: $hotdog-panel-angle-size solid rgba(3,8,15,.92);
+        }
+    }
+
+    .hotdog-panel__item {
+        border-left: 1px solid rgba(255,255,255,.15);
+    }
+
+    .hotdog-panel__item:first-child {
+        border-left: none;
+    }
+}
