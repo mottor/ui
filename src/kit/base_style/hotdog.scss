@@ -1,79 +1,338 @@
-$hotdog-item-size: 46px;
-$hotdog-icon-size: 22px;
-$hotdog-icon-margin: ($hotdog-item-size - $hotdog-icon-size) / 2;
-$hotdog-panel-angle-size: 8px;
+$svg-button-width: 40px;
+$svg-button-height: 48px;
+$svg-hover-color: #2a79ff;
 
-.hotdog-root {
+$flow-panel--side-padding: 5px;
+$flow-panel--height: $svg-button-height;
+$flow-panel--full-border-radius: ($flow-panel--height/2);
+//$hotdog-icon-size: 22px;
+//$hotdog-icon-margin: ($svg-button-height - $hotdog-icon-size) / 2;
+//$hotdog-panel-angle-size: 8px;
+$flow-panel-delimiter--vert-padding: 10px;
+$hotdog-delimiter-horizontal-padding: 5px;
+$flow-panel--default-border-radius: 5px;
+$flow-panel-stick-indent: 6px;
+
+$flow-subpanel--border-radius: 8px;
+$flow-subpanel--padding: 16px;
+$flow-subpanel--indent: 10px;
+
+$flow-subpanel--angle-size: 8px;
+$flow-subpanel--angle-stroke-size: 1px;
+$flow-panel--white-outline: rgba(255,255,255,.2);
+
+.svg-button {
+    cursor: pointer;
+    color: #333333;
+    width: $svg-button-width;
+    height: $svg-button-height;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.svg-button--hover {
+    color: $svg-hover-color;
+}
+
+.svg-button--disabled {
+    cursor: default;
+}
+
+.theme--light {
+    .svg-button {
+        color: #333;
+
+        &:hover {
+            @extend .svg-button--hover;
+        }
+    }
+
+    .svg-button--disabled, .svg-button--disabled:hover {
+        color: #888;
+    }
+}
+
+.theme--dark {
+    .svg-button {
+        color: #fff;
+
+        &:hover {
+            @extend .svg-button--hover;
+        }
+    }
+
+    .svg-button--disabled, .svg-button--disabled:hover {
+        color: #aaa;
+    }
+}
+
+// ------------------------------
+.flow-panel__basement {
+    // этот элемент определяет точку, от которой позиционируется панель
+    // для редактирования сайта - это самое его начало (верхняя точка)
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    height: 0;
+}
+
+.flow-panel__point {
+    // этот элемент лежит внутри .flow-panel-basement и позиционируется относительно него
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: rgba(255, 0, 255, 0.8);
+
+    // для позиционирования панели
+    // надо задать
+    // - transform: translate(130px, 540px);
+    // - width = такой же как ширина блока
+}
+
+// контейнер вбирает в себя несколкьо панелек
+.flow-panel__container {
+    position: absolute;
+    display: flex;
+    transform: translate(-50%,0);
+    left: 50%;
+}
+
+.flow-panel__container--place-above {
+    top: (-1 * $flow-panel--height);
+}
+.flow-panel__container--place-down {
+    top: 0;
+}
+
+.flow-panel{
+    //line-height: $hotdog-height; padding: 0 16px;
+    height: $flow-panel--height;
+    border-radius: $flow-panel--default-border-radius;
+    box-shadow:
+        0 0 0 1px $flow-panel--white-outline, // белая обводка на случай если темный фон
+        0 3px 5px 0 rgba(0, 0, 0, 0.4); // темная тень от панельки
+    background: #0af;
+    //margin: 0 4px;
+    //float: left;
+    //display: inline-block;
+}
+
+.flow-panel--full-rounded {
+    border-radius: $flow-panel--full-border-radius;
+}
+
+.flow-panel--stick-from-left {
+    position: absolute;
+    left: (-1 * $flow-panel-stick-indent);
+    transform: translate(-100%,0);
+}
+.flow-panel--stick-from-right {
+    position: absolute;
+    left: calc(100% + #{$flow-panel-stick-indent});
+}
+
+.flow-panel__item{
+    float: left;
+    box-sizing: content-box;
     position: relative;
 }
 
-.hotdog-panel {
+.flow-panel__item:first-child, .flow-panel__item--first {
+    border-top-left-radius: $flow-panel--full-border-radius;
+    border-bottom-left-radius: $flow-panel--full-border-radius;
+    //padding-left: $flow-panel--side-padding;
+}
+
+.flow-panel__item:last-child, .flow-panel__item--last {
+    border-top-right-radius: $flow-panel--full-border-radius;
+    border-bottom-right-radius: $flow-panel--full-border-radius;
+    //padding-right: $flow-panel--side-padding;
+}
+
+.flow-panel__item--text {
+    line-height: $flow-panel--height;
+    padding: 0 10px;
+}
+
+.flow-panel__item-delimiter {
+    float: left;
+    height: 100%;
+    padding-right: $hotdog-delimiter-horizontal-padding;
+    padding-left: $hotdog-delimiter-horizontal-padding;
+
+    &:after {
+        content: '';
+        display: block;
+        background: #0af;
+        width: 1px;
+        height: 100%;
+    }
+}
+
+.flow-panel__item-delimiter--v1 {
+    .flow-panel__item-delimiter {
+        padding-top: $flow-panel-delimiter--vert-padding;
+        padding-bottom: $flow-panel-delimiter--vert-padding;
+    }
+}
+.flow-panel__item-delimiter--v2 {
+    .flow-panel__item-delimiter {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.flow-sub-panel {
     position: absolute;
-    top: 100px;
-    left: 100px;
-    border-radius: $hotdog-item-size;
-    padding: 0 4px;
-    box-shadow: 0 3px 5px 0 rgba(0,0,0,.5);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: $flow-subpanel--border-radius;
+    padding: $flow-subpanel--padding;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.5);
+    display: none;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        transform: translate(-50%,0);
+        left: 50%;
+
+        width: 0;
+        height: 0;
+        border-left: $flow-subpanel--angle-stroke-size solid transparent;
+        border-right: $flow-subpanel--angle-stroke-size solid transparent;
+        border-top: 0;
+        border-bottom: $flow-subpanel--angle-stroke-size solid $flow-panel--white-outline;
+    }
 
     &:after {
         content: '';
         display: block;
         position: absolute;
-        left: calc(50% - #{$hotdog-panel-angle-size});
+        transform: translate(-50%,0);
+        left: 50%;
+
+        width: 0;
+        height: 0;
+        border-left: $flow-subpanel--angle-size solid transparent;
+        border-right: $flow-subpanel--angle-size solid transparent;
+        border-top: 0;
+        border-bottom: $flow-subpanel--angle-size solid #f0f;
     }
 }
 
-.hotdog-panel--angle-bottom:after {
-    @include angleDown($hotdog-panel-angle-size, $hotdog-panel-angle-size, #111);
-    bottom: -$hotdog-panel-angle-size;
-}
-
-.hotdog-panel__item {
-    width: $hotdog-item-size;
-    height: $hotdog-item-size;
-    float: left;
-    cursor: pointer;
-    box-sizing: content-box;
-}
-
-.hotdog-panel__item:first-child {
-    border-top-left-radius: $hotdog-item-size;
-    border-bottom-left-radius: $hotdog-item-size;
-}
-
-.hotdog-panel__item:last-child {
-    border-top-right-radius: $hotdog-item-size;
-    border-bottom-right-radius: $hotdog-item-size;
-}
-
-.hotdog-panel__icon {
+.flow-panel__item--opened .flow-sub-panel {
     display: block;
-    width: $hotdog-icon-size;
-    height: $hotdog-icon-size;
-    background: rgba(204, 204, 204, 0.34);
-    border-radius: 3px;
-    transform: translate(50%, 50%);
-    box-sizing: border-box;
 }
 
-.hotdog-panel__item:hover .hotdog-panel__icon {
-    background: #3dbfe8;
+.flow-sub-panel--drop-up .flow-sub-panel {
+    bottom: calc(100% + #{$flow-subpanel--indent});
+    &:before {
+        bottom: (-1 * $flow-subpanel--angle-stroke-size);
+        border-bottom: 0;
+        border-top: $flow-subpanel--angle-stroke-size solid $flow-panel--white-outline;
+    }
+
+    &:after {
+        bottom: (-1 * $flow-subpanel--angle-size);
+        border-bottom: 0;
+        border-top: $flow-subpanel--angle-size solid #f0f;
+    }
 }
 
-.hotdog--dark {
-    &.hotdog-panel {
-        background: rgba(3,8,15,.92);
+.flow-sub-panel--drop-down .flow-sub-panel {
+    top: calc(100% + #{$flow-subpanel--indent});
+    &:before {
+        top: (-1 * $flow-subpanel--angle-stroke-size);
+        border-bottom: $flow-subpanel--angle-stroke-size solid $flow-panel--white-outline;
+    }
 
+    &:after {
+        top: (-1 * $flow-subpanel--angle-size);
+        border-bottom: $flow-subpanel--angle-size solid #f0f;
+    }
+}
+
+// =============================
+// =============================
+
+$dark-hotdog--bg: rgba(3,8,15,.92);
+$dark-hotdog--color-primary: #fff;
+$dark-hotdog--delimiter-color: rgba(255,255,255,.3);
+
+.theme--dark {
+    .flow-panel {
+        color: $dark-hotdog--color-primary;
+    }
+
+    .flow-panel {
+        background: $dark-hotdog--bg;
+    }
+
+    .flow-sub-panel {
+        background: $dark-hotdog--bg;
+
+        //&:before {
+        //    @include angleUp(9px, 9px, $dark-hotdog--delimiter-color);
+        //}
+        //&:after {
+        //    @include angleUp(8px, 8px, $dark-hotdog--bg);
+        //}
+    }
+
+    .flow-sub-panel--drop-up .flow-sub-panel {
         &:after {
-            border-top: $hotdog-panel-angle-size solid rgba(3,8,15,.92);
+            bottom: (-1 * $flow-subpanel--angle-size);
+            border-bottom: 0;
+            border-top: $flow-subpanel--angle-size solid $dark-hotdog--bg;
         }
     }
 
-    .hotdog-panel__item {
-        border-left: 1px solid rgba(255,255,255,.15);
+    .flow-sub-panel--drop-down .flow-sub-panel {
+        &:after {
+            top: (-1 * $flow-subpanel--angle-size);
+            border-bottom: $flow-subpanel--angle-size solid $dark-hotdog--bg;
+        }
     }
 
-    .hotdog-panel__item:first-child {
-        border-left: none;
+    .hotdog-panel__item--text {
+        color: $dark-hotdog--color-primary;
+    }
+
+    .flow-panel__item-delimiter:after {
+        background: $dark-hotdog--delimiter-color;
+    }
+
+    //.hotdog-panel__item {
+    //    border-left: 1px solid rgba(255,255,255,.15);
+    //}
+    //
+    //.hotdog-panel__item:first-child {
+    //    border-left: none;
+    //}
+}
+
+.theme--light {
+    .hotdog-panel {
+        background: #fff;
+    }
+
+    .hotdog-panel__item--text {
+        color: #333;
+    }
+
+    .hotdog-panel__item-delimiter:after {
+        background: rgba(0,0,0,.3);
     }
 }
