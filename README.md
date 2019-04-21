@@ -26,6 +26,10 @@ Mottor UI-kit
 
     UI_PROD=no UI_VERSION=v1.0 UI_THEME=example ./gulp serve
     
+Сборка для вставки в Мотор
+
+    UI_PROD=n UI_VERSION=v1.0.4 UI_THEME=example UI_BUILD_DIR=/Users/user/Sites/lpmotor1/web/css/mottor-ui ./gulp build
+    
 Список всех тасков:
 
 * buildDocs
