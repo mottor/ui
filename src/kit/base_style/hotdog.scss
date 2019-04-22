@@ -2,14 +2,12 @@ $svg-button-width: 40px;
 $svg-button-height: 48px;
 $svg-hover-color: #2a79ff;
 
-$flow-panel--side-padding: 5px;
+$flow-panel--side-padding: 5px; // доп. паддинги по краям, когда панель полностью загругленная
 $flow-panel--height: $svg-button-height;
 $flow-panel--full-border-radius: ($flow-panel--height/2);
-//$hotdog-icon-size: 22px;
-//$hotdog-icon-margin: ($svg-button-height - $hotdog-icon-size) / 2;
-//$hotdog-panel-angle-size: 8px;
+
 $flow-panel-delimiter--vert-padding: 10px;
-$hotdog-delimiter-horizontal-padding: 5px;
+$flow-panel-delimiter--horiz-padding: 5px;
 $flow-panel--default-border-radius: 5px;
 $flow-panel-stick-indent: 6px;
 
@@ -19,11 +17,11 @@ $flow-subpanel--indent: 10px;
 
 $flow-subpanel--angle-size: 8px;
 $flow-subpanel--angle-stroke-size: 1px;
-$flow-panel--white-outline: rgba(255,255,255,.2);
+$flow-panel--white-outline: rgba(255, 255, 255, .2);
 
 .svg-button {
     cursor: pointer;
-    color: #333333;
+    color: #333;
     width: $svg-button-width;
     height: $svg-button-height;
     box-sizing: border-box;
@@ -90,10 +88,9 @@ $flow-panel--white-outline: rgba(255,255,255,.2);
     position: absolute;
     width: 1px;
     height: 1px;
-    background: rgba(255, 0, 255, 0.8);
+    background: transparent;
 
-    // для позиционирования панели
-    // надо задать
+    // для позиционирования панели надо задать
     // - transform: translate(130px, 540px);
     // - width = такой же как ширина блока
 }
@@ -102,24 +99,25 @@ $flow-panel--white-outline: rgba(255,255,255,.2);
 .flow-panel__container {
     position: absolute;
     display: flex;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
     left: 50%;
+    top: -1px;
 }
 
 .flow-panel__container--place-above {
     top: (-1 * $flow-panel--height);
 }
+
 .flow-panel__container--place-down {
     top: 0;
 }
 
-.flow-panel{
+.flow-panel {
     //line-height: $hotdog-height; padding: 0 16px;
     height: $flow-panel--height;
     border-radius: $flow-panel--default-border-radius;
-    box-shadow:
-        0 0 0 1px $flow-panel--white-outline, // белая обводка на случай если темный фон
-        0 3px 5px 0 rgba(0, 0, 0, 0.4); // темная тень от панельки
+    box-shadow: 0 0 0 1px $flow-panel--white-outline, // белая обводка на случай если темный фон
+    0 3px 5px 0 rgba(0, 0, 0, 0.4); // темная тень от панельки
     background: #0af;
     //margin: 0 4px;
     //float: left;
@@ -133,14 +131,15 @@ $flow-panel--white-outline: rgba(255,255,255,.2);
 .flow-panel--stick-from-left {
     position: absolute;
     left: (-1 * $flow-panel-stick-indent);
-    transform: translate(-100%,0);
+    transform: translate(-100%, 0);
 }
+
 .flow-panel--stick-from-right {
     position: absolute;
     left: calc(100% + #{$flow-panel-stick-indent});
 }
 
-.flow-panel__item{
+.flow-panel__item {
     float: left;
     box-sizing: content-box;
     position: relative;
@@ -166,8 +165,8 @@ $flow-panel--white-outline: rgba(255,255,255,.2);
 .flow-panel__item-delimiter {
     float: left;
     height: 100%;
-    padding-right: $hotdog-delimiter-horizontal-padding;
-    padding-left: $hotdog-delimiter-horizontal-padding;
+    padding-right: $flow-panel-delimiter--horiz-padding;
+    padding-left: $flow-panel-delimiter--horiz-padding;
 
     &:after {
         content: '';
@@ -184,6 +183,7 @@ $flow-panel--white-outline: rgba(255,255,255,.2);
         padding-bottom: $flow-panel-delimiter--vert-padding;
     }
 }
+
 .flow-panel__item-delimiter--v2 {
     .flow-panel__item-delimiter {
         padding-top: 0;
@@ -198,14 +198,14 @@ $flow-panel--white-outline: rgba(255,255,255,.2);
     border-radius: $flow-subpanel--border-radius;
     padding: $flow-subpanel--padding;
     box-sizing: border-box;
-    box-shadow: 0 0 5px 0 rgba(0,0,0,.5);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
     display: none;
 
     &:before {
         content: '';
         display: block;
         position: absolute;
-        transform: translate(-50%,0);
+        transform: translate(-50%, 0);
         left: 50%;
 
         width: 0;
@@ -220,7 +220,7 @@ $flow-panel--white-outline: rgba(255,255,255,.2);
         content: '';
         display: block;
         position: absolute;
-        transform: translate(-50%,0);
+        transform: translate(-50%, 0);
         left: 50%;
 
         width: 0;
@@ -267,16 +267,20 @@ $flow-panel--white-outline: rgba(255,255,255,.2);
 // =============================
 // =============================
 
-$dark-hotdog--bg: rgba(3,8,15,.92);
+.debug {
+    .flow-panel__point {
+        background: rgba(255, 0, 255, 0.8);
+        height: 1px;
+    }
+}
+
+$dark-hotdog--bg: rgba(3, 8, 15, .92);
 $dark-hotdog--color-primary: #fff;
-$dark-hotdog--delimiter-color: rgba(255,255,255,.3);
+$dark-hotdog--delimiter-color: rgba(255, 255, 255, .3);
 
 .theme--dark {
     .flow-panel {
         color: $dark-hotdog--color-primary;
-    }
-
-    .flow-panel {
         background: $dark-hotdog--bg;
     }
 
@@ -333,6 +337,38 @@ $dark-hotdog--delimiter-color: rgba(255,255,255,.3);
     }
 
     .hotdog-panel__item-delimiter:after {
-        background: rgba(0,0,0,.3);
+        background: rgba(0, 0, 0, .3);
+    }
+
+    .flow-panel {
+        color: #222;
+        background: #fff;
+    }
+
+    .flow-sub-panel {
+        background: #fff;
+    }
+
+    .flow-panel__item--text {
+        color: #222;
+    }
+
+    //.flow-panel__item-delimiter:after {
+    //    background: $dark-hotdog--delimiter-color;
+    //}
+
+    .flow-sub-panel--drop-up .flow-sub-panel {
+        &:after {
+            bottom: (-1 * $flow-subpanel--angle-size);
+            border-bottom: 0;
+            border-top: $flow-subpanel--angle-size solid #fff;
+        }
+    }
+
+    .flow-sub-panel--drop-down .flow-sub-panel {
+        &:after {
+            top: (-1 * $flow-subpanel--angle-size);
+            border-bottom: $flow-subpanel--angle-size solid #fff;
+        }
     }
 }
