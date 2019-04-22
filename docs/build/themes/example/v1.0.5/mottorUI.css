@@ -1005,6 +1005,17 @@ p + p {
   line-height: 1.4;
 }
 
+/* line 5, src/kit/base_style/bootstrap-fallback.scss */
+textarea {
+  line-height: 20px;
+  font-size: 14px;
+}
+
+/* line 10, src/kit/base_style/bootstrap-fallback.scss */
+.blk_text .blk-data p {
+  line-height: 1.4;
+}
+
 /* line 22, src/kit/base_style/hotdog.scss */
 .svg-button {
   cursor: pointer;
