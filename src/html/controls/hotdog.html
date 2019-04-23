@@ -36,7 +36,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="ed-toolbar__item ed-toolbar__item--openable">
+                <div class="ed-toolbar__item ed-toolbar__item--openable js-ed-toolbar__item--openable">
                     <div class="svg-button ed-toolbar__item-button">
                         <svg class="hotdog-panel__icon" viewBox="0 0 24 24" id="img__settings-24" width="100%" height="100%">
                             <path fill="currentColor" fill-rule="evenodd" d="M6 9.17V5a1 1 0 1 0-2 0v4.17a3.001 3.001 0 0 0 0 5.66V19a1 1 0 0 0 2 0v-4.17a3.001 3.001 0 0 0 0-5.66zm7 5V5a1 1 0 0 0-2 0v9.17a3.001 3.001 0 1 0 2 0zm7-4.34V19a1 1 0 0 1-2 0V9.83a3.001 3.001 0 1 1 2 0zM19 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-7 10a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm-7-5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path>
@@ -66,11 +66,11 @@
     </div>
 </div>
 
-<div class="ed-rightbar__basement">
-    <div class="ed-rightbar">
-        <div class="ed-rightbar__header">
-            <div class="ed-rightbar__nav clearfix">
-                <div class="ed-rightbar__nav-item ed-rightbar__nav-item--active">
+<div class="ed-sidebar__basement">
+    <div class="ed-sidebar">
+        <div class="ed-sidebar__header">
+            <div class="ed-sidebar__nav clearfix">
+                <div class="ed-sidebar__nav-item js-ed-sidebar__nav-item ed-sidebar__nav-item--active">
                     <div class="svg-button ed-toolbar__item-button">
                         <svg class="hotdog-panel__icon" viewBox="0 0 24 24" id="img__search-24" width="100%" height="100%">
                             <g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2">
@@ -80,7 +80,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="ed-rightbar__nav-item">
+                <div class="ed-sidebar__nav-item js-ed-sidebar__nav-item">
                     <div class="svg-button ed-toolbar__item-button">
                         <svg class="hotdog-panel__icon" viewBox="0 0 24 24" id="img__search-24" width="100%" height="100%">
                             <g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2">
@@ -90,9 +90,9 @@
                         </svg>
                     </div>
                 </div>
-                <div class="ed-rightbar__nav-underline"></div>
+                <div class="ed-sidebar__nav-underline"></div>
             </div>
-            <div class="ed-rightbar__close">
+            <div class="ed-sidebar__close">
                 <div class="svg-button ed-toolbar__item-button">
                     <svg viewBox="0 0 14 14" id="img__close-black" width="100%" height="100%">
                         <g fill="none" fill-rule="evenodd">
@@ -103,15 +103,15 @@
                 </div>
             </div>
         </div>
-        <div class="ed-rightbar__body">
-            <div class="ed-rightbar__tabs-content-wrap clearfix">
-                <div class="ed-rightbar__tab-content scrollable">
-                    <div class="ed-rightbar__tab-content-head">Заголовок 1</div>
-                    <div class="ed-rightbar__tab-content-body">cont1</div>
+        <div class="ed-sidebar__body">
+            <div class="ed-sidebar__tabs-content-wrap clearfix">
+                <div class="ed-sidebar__tab-content scrollable">
+                    <div class="ed-sidebar__tab-content-head">Заголовок 1</div>
+                    <div class="ed-sidebar__tab-content-body">cont1</div>
                 </div>
-                <div class="ed-rightbar__tab-content scrollable">
-                    <div class="ed-rightbar__tab-content-head">Заголовок 2 zz zz zz zz zz zz zz zz zz zz zz zz zz zz zz zz zz zz zz</div>
-                    <div class="ed-rightbar__tab-content-body">
+                <div class="ed-sidebar__tab-content scrollable">
+                    <div class="ed-sidebar__tab-content-head">Заголовок 2 zz zz zz zz zz zz zz zz zz zz zz zz zz zz zz zz zz zz zz</div>
+                    <div class="ed-sidebar__tab-content-body">
                         cont2<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z<br/>z----------z
                     </div>
                 </div>
@@ -122,20 +122,20 @@
 
 <script type="text/javascript" src="/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
-    $(document).on('click', '.ed-toolbar__item--openable', function () {
+    $(document).on('click', '.js-ed-toolbar__item--openable', function () {
         $(this).toggleClass('ed-toolbar__item--is-opened');
     });
 
-    $(document).on('click', '.ed-rightbar__nav-item', function () {
-        $('.ed-rightbar .ed-rightbar__nav-item--active').removeClass('ed-rightbar__nav-item--active');
-        $(this).addClass('ed-rightbar__nav-item--active');
+    $(document).on('click', '.js-ed-sidebar__nav-item', function () {
+        $('.ed-sidebar .ed-sidebar__nav-item--active').removeClass('ed-sidebar__nav-item--active');
+        $(this).addClass('ed-sidebar__nav-item--active');
         var index = $(this).index();
-        var w = $('.ed-rightbar__tab-content:first').width();
-        $('.ed-rightbar__tabs-content-wrap').css('left', -index * w);
+        var w = $('.ed-sidebar__tab-content:first').width();
+        $('.ed-sidebar__tabs-content-wrap').css('left', -index * w);
     });
 
-    $(document).on('click', '.ed-rightbar__close', function (e) {
-        $('.ed-rightbar').css('right', '-100%');
+    $(document).on('click', '.ed-sidebar__close', function (e) {
+        $('.ed-sidebar').css('right', '-100%');
         return false;
     });
 </script>

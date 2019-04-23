@@ -1,11 +1,11 @@
-$ed-rightbar--width: 300px;
-$ed-rightbar--header-height: 50px;
+$ed-sidebar--width: 300px;
+$ed-sidebar--header-height: 50px;
 
 // ===============================
 
 // панель позиционируется относительно этого элемента
 // для редактирования сайта - это вся правая часть (ниже серой панельки)
-.ed-rightbar__basement {
+.ed-sidebar__basement {
     position: fixed;
     top: 0;
     right: 0;
@@ -13,12 +13,12 @@ $ed-rightbar--header-height: 50px;
     width: 0;
 }
 
-.ed-rightbar {
+.ed-sidebar {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-    width: $ed-rightbar--width;
+    width: $ed-sidebar--width;
     box-sizing: content-box;
     //border-left: 1px solid #ddd;
     box-shadow: 0 0 10px 0 rgba(0,0,0,.3);
@@ -27,22 +27,22 @@ $ed-rightbar--header-height: 50px;
 
 // ----------------------
 
-.ed-rightbar__header {
+.ed-sidebar__header {
     background: #eee;
-    //height: $ed-rightbar--header-height;
+    //height: $ed-sidebar--header-height;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
 }
 
-.ed-rightbar__nav {
+.ed-sidebar__nav {
     height: 100%;
     display: flex;
     justify-content: center;
 }
 
-.ed-rightbar__nav-item {
+.ed-sidebar__nav-item {
     //width: 50px;
     height: 100%;
     //float: left;
@@ -50,7 +50,7 @@ $ed-rightbar--header-height: 50px;
     //cursor: pointer;
 }
 
-.ed-rightbar__nav-item--active {
+.ed-sidebar__nav-item--active {
     &:after {
         display: block;
         content: '';
@@ -65,7 +65,7 @@ $ed-rightbar--header-height: 50px;
 
 // ----------------------
 
-.ed-rightbar__close {
+.ed-sidebar__close {
     position: absolute;
     top:0;
     right: 0;
@@ -74,17 +74,17 @@ $ed-rightbar--header-height: 50px;
 
 // ----------------------
 
-.ed-rightbar__body {
+.ed-sidebar__body {
     background: #fff;
     position: absolute;
-    top: $ed-rightbar--header-height;
+    top: $ed-sidebar--header-height;
     left: 0;
     right: 0;
     bottom: 0;
     overflow: hidden;
 }
 
-.ed-rightbar__tabs-content-wrap {
+.ed-sidebar__tabs-content-wrap {
     position: absolute;
     top: 0;
     left: 0;
@@ -94,15 +94,15 @@ $ed-rightbar--header-height: 50px;
     //transition: left 0.1s ease;
 }
 
-.ed-rightbar__tab-content {
-    width: $ed-rightbar--width;
+.ed-sidebar__tab-content {
+    width: $ed-sidebar--width;
     height: 100%;
     float: left;
     overflow: hidden;
     position: relative;
 }
 
-.ed-rightbar__tab-content-head {
+.ed-sidebar__tab-content-head {
     padding: 0 10px 0 20px;
     color: #aaa;
     position: absolute;
@@ -118,7 +118,7 @@ $ed-rightbar--header-height: 50px;
     overflow: hidden;
 }
 
-.ed-rightbar__tab-content-body {
+.ed-sidebar__tab-content-body {
     //padding: 0 20px 20px;
     position: absolute;
     top:41px;
