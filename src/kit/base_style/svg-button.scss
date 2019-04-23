@@ -1,0 +1,60 @@
+// vars in 2_vars.scss
+// -------------------
+.svg-button {
+    cursor: pointer;
+    color: #333;
+    width: $svg-button--width;
+    height: $svg-button--height;
+    padding: ($svg-button--height - $svg-button--svg-size)/2 ($svg-button--width - $svg-button--svg-size)/2;
+    box-sizing: border-box;
+
+    svg {
+        width: $svg-button--svg-size;
+        height: $svg-button--svg-size;
+    }
+}
+
+.svg-button--flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.svg-button--hover {
+    color: $svg-button--hover-color;
+}
+
+.svg-button--disabled {
+    cursor: default;
+}
+
+.theme--light {
+    .svg-button {
+        color: #333;
+
+        &:hover {
+            @extend .svg-button--hover;
+        }
+    }
+
+    .svg-button--disabled, .svg-button--disabled:hover {
+        color: #888;
+    }
+}
+
+.theme--dark {
+    .svg-button {
+        color: #fff;
+
+        &:hover {
+            @extend .svg-button--hover;
+        }
+    }
+
+    .svg-button--disabled, .svg-button--disabled:hover {
+        color: #aaa;
+    }
+}

@@ -84,3 +84,16 @@ $header-1-line-height: roundEven($header-1-font-size * 1.19);
 $header-2-line-height: roundEven($header-2-font-size * 1.25);
 $header-3-line-height: roundEven($header-3-font-size * 1.364);
 $header-4-line-height: roundEven($header-4-font-size * 1.625);
+
+// =============================
+// SVG buttons
+$svg-button--width: 40px;
+$svg-button--height: 48px;
+$svg-button--svg-size: 24px;
+$svg-button--hover-color: #2a79ff;
+
+// =============================
+// Editor panels
+$dark-flow-panel--bg: rgba(3, 8, 15, .92);
+$dark-flow-panel--color-primary: #fff;
+$dark-flow-panel--delimiter-color: rgba(255, 255, 255, .3);

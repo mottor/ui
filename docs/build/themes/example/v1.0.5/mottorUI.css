@@ -1000,6 +1000,73 @@ p + p {
           box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
+/* line 3, src/kit/base_style/svg-button.scss */
+.svg-button {
+  cursor: pointer;
+  color: #333;
+  width: 40px;
+  height: 48px;
+  padding: 12px 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* line 11, src/kit/base_style/svg-button.scss */
+.svg-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* line 17, src/kit/base_style/svg-button.scss */
+.svg-button--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding: 0;
+}
+
+/* line 26, src/kit/base_style/svg-button.scss */
+.svg-button--hover, .theme--light .svg-button:hover, .theme--dark .svg-button:hover {
+  color: #2a79ff;
+}
+
+/* line 30, src/kit/base_style/svg-button.scss */
+.svg-button--disabled {
+  cursor: default;
+}
+
+/* line 35, src/kit/base_style/svg-button.scss */
+.theme--light .svg-button {
+  color: #333;
+}
+
+/* line 43, src/kit/base_style/svg-button.scss */
+.theme--light .svg-button--disabled, .theme--light .svg-button--disabled:hover {
+  color: #888;
+}
+
+/* line 49, src/kit/base_style/svg-button.scss */
+.theme--dark .svg-button {
+  color: #fff;
+}
+
+/* line 57, src/kit/base_style/svg-button.scss */
+.theme--dark .svg-button--disabled, .theme--dark .svg-button--disabled:hover {
+  color: #aaa;
+}
+
 /* line 1, src/kit/base_style/bootstrap-fallback.scss */
 .alert {
   line-height: 1.4;
@@ -1016,85 +1083,23 @@ textarea {
   line-height: 1.4;
 }
 
-/* line 22, src/kit/base_style/hotdog.scss */
-.svg-button {
-  cursor: pointer;
-  color: #333;
-  width: 40px;
-  height: 48px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-}
-
-/* line 34, src/kit/base_style/hotdog.scss */
-.svg-button svg {
-  width: 24px;
-  height: 24px;
-}
-
-/* line 40, src/kit/base_style/hotdog.scss */
-.svg-button--hover, .theme--light .svg-button:hover, .theme--dark .svg-button:hover {
-  color: #2a79ff;
-}
-
-/* line 44, src/kit/base_style/hotdog.scss */
-.svg-button--disabled {
-  cursor: default;
-}
-
-/* line 49, src/kit/base_style/hotdog.scss */
-.theme--light .svg-button {
-  color: #333;
-}
-
-/* line 57, src/kit/base_style/hotdog.scss */
-.theme--light .svg-button--disabled, .theme--light .svg-button--disabled:hover {
-  color: #888;
-}
-
-/* line 63, src/kit/base_style/hotdog.scss */
-.theme--dark .svg-button {
-  color: #fff;
-}
-
-/* line 71, src/kit/base_style/hotdog.scss */
-.theme--dark .svg-button--disabled, .theme--dark .svg-button--disabled:hover {
-  color: #aaa;
-}
-
-/* line 77, src/kit/base_style/hotdog.scss */
-.flow-panel__basement {
-  position: relative;
+/* line 13, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__basement {
   z-index: 1000;
   width: 100%;
   height: 0;
 }
 
-/* line 86, src/kit/base_style/hotdog.scss */
-.flow-panel__marker {
+/* line 20, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__marker {
   position: absolute;
   width: 1px;
   height: 1px;
   background: transparent;
 }
 
-/* line 99, src/kit/base_style/hotdog.scss */
-.flow-panel__container {
+/* line 33, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__container {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1106,32 +1111,51 @@ textarea {
   top: -1px;
 }
 
-/* line 107, src/kit/base_style/hotdog.scss */
-.flow-panel__container--place-above {
+/* line 41, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__container--place-from-left {
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+  left: 0;
+}
+
+/* line 46, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__container--place-from-right {
+  left: 100%;
+  -webkit-transform: translate(-100%, 0);
+      -ms-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
+}
+
+/* line 51, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__container--place-above {
   top: -48px;
 }
 
-/* line 111, src/kit/base_style/hotdog.scss */
-.flow-panel__container--place-down {
+/* line 55, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__container--place-down {
   top: 0;
 }
 
-/* line 115, src/kit/base_style/hotdog.scss */
-.flow-panel {
+/* line 59, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar {
   height: 48px;
   border-radius: 5px;
   -webkit-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.4);
           box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.4);
   background: #0af;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-/* line 127, src/kit/base_style/hotdog.scss */
-.flow-panel--full-rounded {
+/* line 71, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar--full-rounded {
   border-radius: 24px;
 }
 
-/* line 131, src/kit/base_style/hotdog.scss */
-.flow-panel--stick-from-left {
+/* line 75, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar--stick-from-left {
   position: absolute;
   left: -6px;
   -webkit-transform: translate(-100%, 0);
@@ -1139,48 +1163,50 @@ textarea {
           transform: translate(-100%, 0);
 }
 
-/* line 137, src/kit/base_style/hotdog.scss */
-.flow-panel--stick-from-right {
+/* line 81, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar--stick-from-right {
   position: absolute;
   left: calc(100% + 6px);
 }
 
-/* line 142, src/kit/base_style/hotdog.scss */
-.flow-panel__item {
+/* line 86, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__item {
   float: left;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   position: relative;
 }
 
-/* line 148, src/kit/base_style/hotdog.scss */
-.flow-panel__item:first-child, .flow-panel__item--first {
+/* line 92, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__item:first-child, .ed-toolbar__item--first {
   border-top-left-radius: 24px;
   border-bottom-left-radius: 24px;
+  padding-left: 5px;
 }
 
-/* line 154, src/kit/base_style/hotdog.scss */
-.flow-panel__item:last-child, .flow-panel__item--last {
+/* line 98, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__item:last-child, .ed-toolbar__item--last {
   border-top-right-radius: 24px;
   border-bottom-right-radius: 24px;
+  padding-right: 5px;
 }
 
-/* line 160, src/kit/base_style/hotdog.scss */
-.flow-panel__item--text {
+/* line 104, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__item--text {
   line-height: 48px;
-  padding: 0 10px;
+  padding: 0 12px;
 }
 
-/* line 165, src/kit/base_style/hotdog.scss */
-.flow-panel__item-delimiter {
+/* line 109, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__item-delimiter {
   float: left;
   height: 100%;
   padding-right: 5px;
   padding-left: 5px;
 }
 
-/* line 171, src/kit/base_style/hotdog.scss */
-.flow-panel__item-delimiter:after {
+/* line 115, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__item-delimiter:after {
   content: '';
   display: block;
   background: #0af;
@@ -1188,20 +1214,68 @@ textarea {
   height: 100%;
 }
 
-/* line 181, src/kit/base_style/hotdog.scss */
-.flow-panel__item-delimiter--v1 .flow-panel__item-delimiter {
+/* line 125, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__item-delimiter--v1 .ed-toolbar__item-delimiter {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-/* line 188, src/kit/base_style/hotdog.scss */
-.flow-panel__item-delimiter--v2 .flow-panel__item-delimiter {
+/* line 132, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__item-delimiter--v2 .ed-toolbar__item-delimiter {
   padding-top: 0;
   padding-bottom: 0;
 }
 
-/* line 194, src/kit/base_style/hotdog.scss */
-.flow-sub-panel {
+/* line 142, src/kit/base_style/editor/toolbar.scss */
+.debug .ed-toolbar__marker {
+  background: rgba(255, 0, 255, 0.8);
+  height: 1px;
+}
+
+/* line 149, src/kit/base_style/editor/toolbar.scss */
+.theme--dark .ed-toolbar {
+  color: #fff;
+  background: rgba(3, 8, 15, 0.92);
+}
+
+/* line 154, src/kit/base_style/editor/toolbar.scss */
+.theme--dark .hotdog-panel__item--text {
+  color: #fff;
+}
+
+/* line 158, src/kit/base_style/editor/toolbar.scss */
+.theme--dark .ed-toolbar__item-delimiter:after {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* line 172, src/kit/base_style/editor/toolbar.scss */
+.theme--light .hotdog-panel {
+  background: #fff;
+}
+
+/* line 176, src/kit/base_style/editor/toolbar.scss */
+.theme--light .hotdog-panel__item--text {
+  color: #333;
+}
+
+/* line 180, src/kit/base_style/editor/toolbar.scss */
+.theme--light .hotdog-panel__item-delimiter:after {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* line 184, src/kit/base_style/editor/toolbar.scss */
+.theme--light .ed-toolbar {
+  color: #222;
+  background: #fff;
+}
+
+/* line 189, src/kit/base_style/editor/toolbar.scss */
+.theme--light .ed-toolbar__item--text {
+  color: #222;
+}
+
+/* line 8, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -1215,8 +1289,8 @@ textarea {
   display: none;
 }
 
-/* line 203, src/kit/base_style/hotdog.scss */
-.flow-sub-panel:before {
+/* line 17, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover:before {
   content: '';
   display: block;
   position: absolute;
@@ -1232,8 +1306,8 @@ textarea {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* line 218, src/kit/base_style/hotdog.scss */
-.flow-sub-panel:after {
+/* line 32, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover:after {
   content: '';
   display: block;
   position: absolute;
@@ -1249,163 +1323,124 @@ textarea {
   border-bottom: 8px solid #f0f;
 }
 
-/* line 234, src/kit/base_style/hotdog.scss */
-.flow-sub-panel--basic {
-  padding: 16px;
-}
-
-/* line 238, src/kit/base_style/hotdog.scss */
-.flow-panel__item--is-opened .flow-sub-panel {
+/* line 48, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar__item--is-opened .ed-toolbar-popover {
   display: block;
 }
 
-/* line 242, src/kit/base_style/hotdog.scss */
-.flow-sub-panel--drop-up .flow-sub-panel {
+/* line 52, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover--basic {
+  padding: 16px;
+}
+
+/* line 56, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover--drop-up .ed-toolbar-popover {
   bottom: calc(100% + 10px);
 }
 
-/* line 244, src/kit/base_style/hotdog.scss */
-.flow-sub-panel--drop-up .flow-sub-panel:before {
+/* line 58, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover--drop-up .ed-toolbar-popover:before {
   bottom: -1px;
   border-bottom: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* line 250, src/kit/base_style/hotdog.scss */
-.flow-sub-panel--drop-up .flow-sub-panel:after {
+/* line 64, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover--drop-up .ed-toolbar-popover:after {
   bottom: -8px;
   border-bottom: 0;
   border-top: 8px solid #f0f;
 }
 
-/* line 257, src/kit/base_style/hotdog.scss */
-.flow-sub-panel--drop-down .flow-sub-panel {
+/* line 71, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover--drop-down .ed-toolbar-popover {
   top: calc(100% + 10px);
 }
 
-/* line 259, src/kit/base_style/hotdog.scss */
-.flow-sub-panel--drop-down .flow-sub-panel:before {
+/* line 73, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover--drop-down .ed-toolbar-popover:before {
   top: -1px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* line 264, src/kit/base_style/hotdog.scss */
-.flow-sub-panel--drop-down .flow-sub-panel:after {
+/* line 78, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover--drop-down .ed-toolbar-popover:after {
   top: -8px;
   border-bottom: 8px solid #f0f;
 }
 
-/* line 274, src/kit/base_style/hotdog.scss */
-.debug .flow-panel__marker {
-  background: rgba(255, 0, 255, 0.8);
-  height: 1px;
-}
-
-/* line 285, src/kit/base_style/hotdog.scss */
-.theme--dark .flow-panel {
-  color: #fff;
+/* line 86, src/kit/base_style/editor/toolbar-popover.scss */
+.theme--dark .ed-toolbar-popover {
   background: rgba(3, 8, 15, 0.92);
 }
 
-/* line 290, src/kit/base_style/hotdog.scss */
-.theme--dark .flow-sub-panel {
-  background: rgba(3, 8, 15, 0.92);
-}
-
-/* line 302, src/kit/base_style/hotdog.scss */
-.theme--dark .flow-sub-panel--drop-up .flow-sub-panel:after {
+/* line 98, src/kit/base_style/editor/toolbar-popover.scss */
+.theme--dark .ed-toolbar-popover--drop-up .ed-toolbar-popover:after {
   bottom: -8px;
   border-bottom: 0;
   border-top: 8px solid rgba(3, 8, 15, 0.92);
 }
 
-/* line 310, src/kit/base_style/hotdog.scss */
-.theme--dark .flow-sub-panel--drop-down .flow-sub-panel:after {
+/* line 106, src/kit/base_style/editor/toolbar-popover.scss */
+.theme--dark .ed-toolbar-popover--drop-down .ed-toolbar-popover:after {
   top: -8px;
   border-bottom: 8px solid rgba(3, 8, 15, 0.92);
 }
 
-/* line 316, src/kit/base_style/hotdog.scss */
-.theme--dark .hotdog-panel__item--text {
-  color: #fff;
-}
-
-/* line 320, src/kit/base_style/hotdog.scss */
-.theme--dark .flow-panel__item-delimiter:after {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-/* line 334, src/kit/base_style/hotdog.scss */
-.theme--light .hotdog-panel {
+/* line 114, src/kit/base_style/editor/toolbar-popover.scss */
+.theme--light .ed-toolbar-popover {
   background: #fff;
 }
 
-/* line 338, src/kit/base_style/hotdog.scss */
-.theme--light .hotdog-panel__item--text {
-  color: #333;
-}
-
-/* line 342, src/kit/base_style/hotdog.scss */
-.theme--light .hotdog-panel__item-delimiter:after {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-/* line 346, src/kit/base_style/hotdog.scss */
-.theme--light .flow-panel {
-  color: #222;
-  background: #fff;
-}
-
-/* line 351, src/kit/base_style/hotdog.scss */
-.theme--light .flow-sub-panel {
-  background: #fff;
-}
-
-/* line 355, src/kit/base_style/hotdog.scss */
-.theme--light .flow-panel__item--text {
-  color: #222;
-}
-
-/* line 364, src/kit/base_style/hotdog.scss */
-.theme--light .flow-sub-panel--drop-up .flow-sub-panel:after {
+/* line 119, src/kit/base_style/editor/toolbar-popover.scss */
+.theme--light .ed-toolbar-popover--drop-up .ed-toolbar-popover:after {
   bottom: -8px;
   border-bottom: 0;
   border-top: 8px solid #fff;
 }
 
-/* line 372, src/kit/base_style/hotdog.scss */
-.theme--light .flow-sub-panel--drop-down .flow-sub-panel:after {
+/* line 127, src/kit/base_style/editor/toolbar-popover.scss */
+.theme--light .ed-toolbar-popover--drop-down .ed-toolbar-popover:after {
   top: -8px;
   border-bottom: 8px solid #fff;
 }
 
-/* line 4, src/kit/base_style/hotdog-full-panel.scss */
-.conf-panel {
+/* line 8, src/kit/base_style/editor/rightbar.scss */
+.ed-rightbar__basement {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 400px;
+  width: 0;
+}
+
+/* line 16, src/kit/base_style/editor/rightbar.scss */
+.ed-rightbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
-  border-left: 1px solid #ddd;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   -webkit-transition: right 1s ease;
   -o-transition: right 1s ease;
   transition: right 1s ease;
 }
 
-/* line 17, src/kit/base_style/hotdog-full-panel.scss */
-.conf-panel__header {
+/* line 30, src/kit/base_style/editor/rightbar.scss */
+.ed-rightbar__header {
   background: #eee;
-  height: 50px;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
 }
 
-/* line 26, src/kit/base_style/hotdog-full-panel.scss */
-.conf-panel__nav {
+/* line 39, src/kit/base_style/editor/rightbar.scss */
+.ed-rightbar__nav {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1415,14 +1450,14 @@ textarea {
           justify-content: center;
 }
 
-/* line 32, src/kit/base_style/hotdog-full-panel.scss */
-.conf-panel__nav-item {
+/* line 45, src/kit/base_style/editor/rightbar.scss */
+.ed-rightbar__nav-item {
   height: 100%;
   position: relative;
 }
 
-/* line 41, src/kit/base_style/hotdog-full-panel.scss */
-.conf-panel__nav-item--active:after {
+/* line 54, src/kit/base_style/editor/rightbar.scss */
+.ed-rightbar__nav-item--active:after {
   display: block;
   content: '';
   position: absolute;
@@ -1433,16 +1468,16 @@ textarea {
   background: #0af;
 }
 
-/* line 55, src/kit/base_style/hotdog-full-panel.scss */
-.conf-panel__close {
+/* line 68, src/kit/base_style/editor/rightbar.scss */
+.ed-rightbar__close {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
 }
 
-/* line 64, src/kit/base_style/hotdog-full-panel.scss */
-.conf-panel__body {
+/* line 77, src/kit/base_style/editor/rightbar.scss */
+.ed-rightbar__body {
   background: #fff;
   position: absolute;
   top: 50px;
@@ -1452,8 +1487,8 @@ textarea {
   overflow: hidden;
 }
 
-/* line 74, src/kit/base_style/hotdog-full-panel.scss */
-.conf-panel__tabs-content-wrap {
+/* line 87, src/kit/base_style/editor/rightbar.scss */
+.ed-rightbar__tabs-content-wrap {
   position: absolute;
   top: 0;
   left: 0;
@@ -1466,17 +1501,17 @@ textarea {
           justify-content: left;
 }
 
-/* line 84, src/kit/base_style/hotdog-full-panel.scss */
-.conf-panel__tab-content {
-  width: 400px;
+/* line 97, src/kit/base_style/editor/rightbar.scss */
+.ed-rightbar__tab-content {
+  width: 300px;
   height: 100%;
   float: left;
   overflow: hidden;
   position: relative;
 }
 
-/* line 92, src/kit/base_style/hotdog-full-panel.scss */
-.conf-panel__tab-content-head {
+/* line 105, src/kit/base_style/editor/rightbar.scss */
+.ed-rightbar__tab-content-head {
   padding: 0 10px 0 20px;
   color: #aaa;
   position: absolute;
@@ -1494,8 +1529,8 @@ textarea {
   overflow: hidden;
 }
 
-/* line 108, src/kit/base_style/hotdog-full-panel.scss */
-.conf-panel__tab-content-body {
+/* line 121, src/kit/base_style/editor/rightbar.scss */
+.ed-rightbar__tab-content-body {
   position: absolute;
   top: 41px;
   left: 0;

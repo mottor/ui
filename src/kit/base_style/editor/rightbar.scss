@@ -1,35 +1,48 @@
-$conf-panel--width: 400px;
-$conf-panel--header-height: 50px;
+$ed-rightbar--width: 300px;
+$ed-rightbar--header-height: 50px;
 
-.conf-panel {
+// ===============================
+
+// панель позиционируется относительно этого элемента
+// для редактирования сайта - это вся правая часть (ниже серой панельки)
+.ed-rightbar__basement {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
-    width: $conf-panel--width;
+    width: 0;
+}
+
+.ed-rightbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: $ed-rightbar--width;
     box-sizing: content-box;
-    border-left: 1px solid #ddd;
+    //border-left: 1px solid #ddd;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.3);
     transition: right 1s ease;
 }
 
 // ----------------------
 
-.conf-panel__header {
+.ed-rightbar__header {
     background: #eee;
-    height: $conf-panel--header-height;
+    //height: $ed-rightbar--header-height;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
 }
 
-.conf-panel__nav {
+.ed-rightbar__nav {
     height: 100%;
     display: flex;
     justify-content: center;
 }
 
-.conf-panel__nav-item {
+.ed-rightbar__nav-item {
     //width: 50px;
     height: 100%;
     //float: left;
@@ -37,7 +50,7 @@ $conf-panel--header-height: 50px;
     //cursor: pointer;
 }
 
-.conf-panel__nav-item--active {
+.ed-rightbar__nav-item--active {
     &:after {
         display: block;
         content: '';
@@ -52,7 +65,7 @@ $conf-panel--header-height: 50px;
 
 // ----------------------
 
-.conf-panel__close {
+.ed-rightbar__close {
     position: absolute;
     top:0;
     right: 0;
@@ -61,17 +74,17 @@ $conf-panel--header-height: 50px;
 
 // ----------------------
 
-.conf-panel__body {
+.ed-rightbar__body {
     background: #fff;
     position: absolute;
-    top: $conf-panel--header-height;
+    top: $ed-rightbar--header-height;
     left: 0;
     right: 0;
     bottom: 0;
     overflow: hidden;
 }
 
-.conf-panel__tabs-content-wrap {
+.ed-rightbar__tabs-content-wrap {
     position: absolute;
     top: 0;
     left: 0;
@@ -81,15 +94,15 @@ $conf-panel--header-height: 50px;
     //transition: left 0.1s ease;
 }
 
-.conf-panel__tab-content {
-    width: $conf-panel--width;
+.ed-rightbar__tab-content {
+    width: $ed-rightbar--width;
     height: 100%;
     float: left;
     overflow: hidden;
     position: relative;
 }
 
-.conf-panel__tab-content-head {
+.ed-rightbar__tab-content-head {
     padding: 0 10px 0 20px;
     color: #aaa;
     position: absolute;
@@ -105,7 +118,7 @@ $conf-panel--header-height: 50px;
     overflow: hidden;
 }
 
-.conf-panel__tab-content-body {
+.ed-rightbar__tab-content-body {
     //padding: 0 20px 20px;
     position: absolute;
     top:41px;

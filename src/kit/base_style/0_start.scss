@@ -8,8 +8,10 @@
 @import "typography";
 @import "animation";
 @import "button";
+@import "svg-button";
 
 @import "bootstrap-fallback";
 
-@import "hotdog";
-@import "hotdog-full-panel";
+@import "editor/toolbar";
+@import "editor/toolbar-popover";
+@import "editor/rightbar";
