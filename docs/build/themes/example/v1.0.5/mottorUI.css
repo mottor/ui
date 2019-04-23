@@ -1086,7 +1086,7 @@ textarea {
 }
 
 /* line 86, src/kit/base_style/hotdog.scss */
-.flow-panel__point {
+.flow-panel__marker {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -1208,7 +1208,6 @@ textarea {
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   border-radius: 8px;
-  padding: 16px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
@@ -1216,7 +1215,7 @@ textarea {
   display: none;
 }
 
-/* line 204, src/kit/base_style/hotdog.scss */
+/* line 203, src/kit/base_style/hotdog.scss */
 .flow-sub-panel:before {
   content: '';
   display: block;
@@ -1233,7 +1232,7 @@ textarea {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* line 219, src/kit/base_style/hotdog.scss */
+/* line 218, src/kit/base_style/hotdog.scss */
 .flow-sub-panel:after {
   content: '';
   display: block;
@@ -1250,129 +1249,259 @@ textarea {
   border-bottom: 8px solid #f0f;
 }
 
-/* line 235, src/kit/base_style/hotdog.scss */
-.flow-panel__item--opened .flow-sub-panel {
+/* line 234, src/kit/base_style/hotdog.scss */
+.flow-sub-panel--basic {
+  padding: 16px;
+}
+
+/* line 238, src/kit/base_style/hotdog.scss */
+.flow-panel__item--is-opened .flow-sub-panel {
   display: block;
 }
 
-/* line 239, src/kit/base_style/hotdog.scss */
+/* line 242, src/kit/base_style/hotdog.scss */
 .flow-sub-panel--drop-up .flow-sub-panel {
   bottom: calc(100% + 10px);
 }
 
-/* line 241, src/kit/base_style/hotdog.scss */
+/* line 244, src/kit/base_style/hotdog.scss */
 .flow-sub-panel--drop-up .flow-sub-panel:before {
   bottom: -1px;
   border-bottom: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* line 247, src/kit/base_style/hotdog.scss */
+/* line 250, src/kit/base_style/hotdog.scss */
 .flow-sub-panel--drop-up .flow-sub-panel:after {
   bottom: -8px;
   border-bottom: 0;
   border-top: 8px solid #f0f;
 }
 
-/* line 254, src/kit/base_style/hotdog.scss */
+/* line 257, src/kit/base_style/hotdog.scss */
 .flow-sub-panel--drop-down .flow-sub-panel {
   top: calc(100% + 10px);
 }
 
-/* line 256, src/kit/base_style/hotdog.scss */
+/* line 259, src/kit/base_style/hotdog.scss */
 .flow-sub-panel--drop-down .flow-sub-panel:before {
   top: -1px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* line 261, src/kit/base_style/hotdog.scss */
+/* line 264, src/kit/base_style/hotdog.scss */
 .flow-sub-panel--drop-down .flow-sub-panel:after {
   top: -8px;
   border-bottom: 8px solid #f0f;
 }
 
-/* line 271, src/kit/base_style/hotdog.scss */
-.debug .flow-panel__point {
+/* line 274, src/kit/base_style/hotdog.scss */
+.debug .flow-panel__marker {
   background: rgba(255, 0, 255, 0.8);
   height: 1px;
 }
 
-/* line 282, src/kit/base_style/hotdog.scss */
+/* line 285, src/kit/base_style/hotdog.scss */
 .theme--dark .flow-panel {
   color: #fff;
   background: rgba(3, 8, 15, 0.92);
 }
 
-/* line 287, src/kit/base_style/hotdog.scss */
+/* line 290, src/kit/base_style/hotdog.scss */
 .theme--dark .flow-sub-panel {
   background: rgba(3, 8, 15, 0.92);
 }
 
-/* line 299, src/kit/base_style/hotdog.scss */
+/* line 302, src/kit/base_style/hotdog.scss */
 .theme--dark .flow-sub-panel--drop-up .flow-sub-panel:after {
   bottom: -8px;
   border-bottom: 0;
   border-top: 8px solid rgba(3, 8, 15, 0.92);
 }
 
-/* line 307, src/kit/base_style/hotdog.scss */
+/* line 310, src/kit/base_style/hotdog.scss */
 .theme--dark .flow-sub-panel--drop-down .flow-sub-panel:after {
   top: -8px;
   border-bottom: 8px solid rgba(3, 8, 15, 0.92);
 }
 
-/* line 313, src/kit/base_style/hotdog.scss */
+/* line 316, src/kit/base_style/hotdog.scss */
 .theme--dark .hotdog-panel__item--text {
   color: #fff;
 }
 
-/* line 317, src/kit/base_style/hotdog.scss */
+/* line 320, src/kit/base_style/hotdog.scss */
 .theme--dark .flow-panel__item-delimiter:after {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* line 331, src/kit/base_style/hotdog.scss */
+/* line 334, src/kit/base_style/hotdog.scss */
 .theme--light .hotdog-panel {
   background: #fff;
 }
 
-/* line 335, src/kit/base_style/hotdog.scss */
+/* line 338, src/kit/base_style/hotdog.scss */
 .theme--light .hotdog-panel__item--text {
   color: #333;
 }
 
-/* line 339, src/kit/base_style/hotdog.scss */
+/* line 342, src/kit/base_style/hotdog.scss */
 .theme--light .hotdog-panel__item-delimiter:after {
   background: rgba(0, 0, 0, 0.3);
 }
 
-/* line 343, src/kit/base_style/hotdog.scss */
+/* line 346, src/kit/base_style/hotdog.scss */
 .theme--light .flow-panel {
   color: #222;
   background: #fff;
 }
 
-/* line 348, src/kit/base_style/hotdog.scss */
+/* line 351, src/kit/base_style/hotdog.scss */
 .theme--light .flow-sub-panel {
   background: #fff;
 }
 
-/* line 352, src/kit/base_style/hotdog.scss */
+/* line 355, src/kit/base_style/hotdog.scss */
 .theme--light .flow-panel__item--text {
   color: #222;
 }
 
-/* line 361, src/kit/base_style/hotdog.scss */
+/* line 364, src/kit/base_style/hotdog.scss */
 .theme--light .flow-sub-panel--drop-up .flow-sub-panel:after {
   bottom: -8px;
   border-bottom: 0;
   border-top: 8px solid #fff;
 }
 
-/* line 369, src/kit/base_style/hotdog.scss */
+/* line 372, src/kit/base_style/hotdog.scss */
 .theme--light .flow-sub-panel--drop-down .flow-sub-panel:after {
   top: -8px;
   border-bottom: 8px solid #fff;
+}
+
+/* line 4, src/kit/base_style/hotdog-full-panel.scss */
+.conf-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border-left: 1px solid #ddd;
+  -webkit-transition: right 1s ease;
+  -o-transition: right 1s ease;
+  transition: right 1s ease;
+}
+
+/* line 17, src/kit/base_style/hotdog-full-panel.scss */
+.conf-panel__header {
+  background: #eee;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* line 26, src/kit/base_style/hotdog-full-panel.scss */
+.conf-panel__nav {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 32, src/kit/base_style/hotdog-full-panel.scss */
+.conf-panel__nav-item {
+  height: 100%;
+  position: relative;
+}
+
+/* line 41, src/kit/base_style/hotdog-full-panel.scss */
+.conf-panel__nav-item--active:after {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #0af;
+}
+
+/* line 55, src/kit/base_style/hotdog-full-panel.scss */
+.conf-panel__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 64, src/kit/base_style/hotdog-full-panel.scss */
+.conf-panel__body {
+  background: #fff;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+/* line 74, src/kit/base_style/hotdog-full-panel.scss */
+.conf-panel__tabs-content-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+/* line 84, src/kit/base_style/hotdog-full-panel.scss */
+.conf-panel__tab-content {
+  width: 400px;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 92, src/kit/base_style/hotdog-full-panel.scss */
+.conf-panel__tab-content-head {
+  padding: 0 10px 0 20px;
+  color: #aaa;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  line-height: 40px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* line 108, src/kit/base_style/hotdog-full-panel.scss */
+.conf-panel__tab-content-body {
+  position: absolute;
+  top: 41px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
 }
 
 /* line 16, src/kit/themes/example/theme.scss */

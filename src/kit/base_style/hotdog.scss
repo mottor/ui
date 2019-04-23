@@ -83,7 +83,7 @@ $flow-panel--white-outline: rgba(255, 255, 255, .2);
     height: 0;
 }
 
-.flow-panel__point {
+.flow-panel__marker {
     // этот элемент лежит внутри .flow-panel-basement и позиционируется относительно него
     position: absolute;
     width: 1px;
@@ -196,7 +196,6 @@ $flow-panel--white-outline: rgba(255, 255, 255, .2);
     left: 50%;
     transform: translateX(-50%);
     border-radius: $flow-subpanel--border-radius;
-    padding: $flow-subpanel--padding;
     box-sizing: border-box;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
     display: none;
@@ -232,7 +231,11 @@ $flow-panel--white-outline: rgba(255, 255, 255, .2);
     }
 }
 
-.flow-panel__item--opened .flow-sub-panel {
+.flow-sub-panel--basic {
+    padding: $flow-subpanel--padding;
+}
+
+.flow-panel__item--is-opened .flow-sub-panel {
     display: block;
 }
 
@@ -268,7 +271,7 @@ $flow-panel--white-outline: rgba(255, 255, 255, .2);
 // =============================
 
 .debug {
-    .flow-panel__point {
+    .flow-panel__marker {
         background: rgba(255, 0, 255, 0.8);
         height: 1px;
     }

@@ -1,0 +1,116 @@
+$conf-panel--width: 400px;
+$conf-panel--header-height: 50px;
+
+.conf-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: $conf-panel--width;
+    box-sizing: content-box;
+    border-left: 1px solid #ddd;
+    transition: right 1s ease;
+}
+
+// ----------------------
+
+.conf-panel__header {
+    background: #eee;
+    height: $conf-panel--header-height;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.conf-panel__nav {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.conf-panel__nav-item {
+    //width: 50px;
+    height: 100%;
+    //float: left;
+    position: relative;
+    //cursor: pointer;
+}
+
+.conf-panel__nav-item--active {
+    &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: #0af;
+    }
+}
+
+// ----------------------
+
+.conf-panel__close {
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom: 0;
+}
+
+// ----------------------
+
+.conf-panel__body {
+    background: #fff;
+    position: absolute;
+    top: $conf-panel--header-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.conf-panel__tabs-content-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: left;
+    //transition: left 0.1s ease;
+}
+
+.conf-panel__tab-content {
+    width: $conf-panel--width;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.conf-panel__tab-content-head {
+    padding: 0 10px 0 20px;
+    color: #aaa;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: content-box;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.conf-panel__tab-content-body {
+    //padding: 0 20px 20px;
+    position: absolute;
+    top:41px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+}

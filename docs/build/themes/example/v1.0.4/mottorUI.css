@@ -1071,7 +1071,7 @@ p + p {
 }
 
 /* line 88, src/kit/base_style/hotdog.scss */
-.flow-panel__point {
+.flow-panel__marker {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -1236,7 +1236,7 @@ p + p {
 }
 
 /* line 236, src/kit/base_style/hotdog.scss */
-.flow-panel__item--opened .flow-sub-panel {
+.flow-panel__item--is-opened .flow-sub-panel {
   display: block;
 }
 
