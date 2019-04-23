@@ -1098,6 +1098,11 @@ textarea {
   font-family: inherit;
 }
 
+/* line 17, src/kit/base_style/bootstrap-fallback.scss */
+.ui-icon, .ui-widget-content .ui-icon {
+  opacity: .3;
+}
+
 /* line 13, src/kit/base_style/editor/toolbar.scss */
 .ed-toolbar__basement {
   z-index: 1000;
