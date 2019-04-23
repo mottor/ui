@@ -1083,6 +1083,21 @@ textarea {
   line-height: 1.4;
 }
 
+/* line 14, src/kit/base_style/bootstrap-fallback.scss */
+.ui-widget {
+  font-family: inherit;
+}
+
+/* line 15, src/kit/base_style/bootstrap-fallback.scss */
+.ui-spinner input {
+  font-family: inherit;
+}
+
+/* line 16, src/kit/base_style/bootstrap-fallback.scss */
+.minicolors-theme-bootstrap .minicolors-input {
+  font-family: inherit;
+}
+
 /* line 13, src/kit/base_style/editor/toolbar.scss */
 .ed-toolbar__basement {
   z-index: 1000;
@@ -1405,8 +1420,8 @@ textarea {
   border-bottom: 8px solid #fff;
 }
 
-/* line 8, src/kit/base_style/editor/rightbar.scss */
-.ed-rightbar__basement {
+/* line 8, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__basement {
   position: fixed;
   top: 0;
   right: 0;
@@ -1414,8 +1429,8 @@ textarea {
   width: 0;
 }
 
-/* line 16, src/kit/base_style/editor/rightbar.scss */
-.ed-rightbar {
+/* line 16, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar {
   position: absolute;
   top: 0;
   right: 0;
@@ -1430,8 +1445,8 @@ textarea {
   transition: right 1s ease;
 }
 
-/* line 30, src/kit/base_style/editor/rightbar.scss */
-.ed-rightbar__header {
+/* line 30, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__header {
   background: #eee;
   position: absolute;
   top: 0;
@@ -1439,8 +1454,8 @@ textarea {
   right: 0;
 }
 
-/* line 39, src/kit/base_style/editor/rightbar.scss */
-.ed-rightbar__nav {
+/* line 39, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__nav {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1450,14 +1465,14 @@ textarea {
           justify-content: center;
 }
 
-/* line 45, src/kit/base_style/editor/rightbar.scss */
-.ed-rightbar__nav-item {
+/* line 45, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__nav-item {
   height: 100%;
   position: relative;
 }
 
-/* line 54, src/kit/base_style/editor/rightbar.scss */
-.ed-rightbar__nav-item--active:after {
+/* line 54, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__nav-item--active:after {
   display: block;
   content: '';
   position: absolute;
@@ -1468,16 +1483,16 @@ textarea {
   background: #0af;
 }
 
-/* line 68, src/kit/base_style/editor/rightbar.scss */
-.ed-rightbar__close {
+/* line 68, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__close {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
 }
 
-/* line 77, src/kit/base_style/editor/rightbar.scss */
-.ed-rightbar__body {
+/* line 77, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__body {
   background: #fff;
   position: absolute;
   top: 50px;
@@ -1487,8 +1502,8 @@ textarea {
   overflow: hidden;
 }
 
-/* line 87, src/kit/base_style/editor/rightbar.scss */
-.ed-rightbar__tabs-content-wrap {
+/* line 87, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__tabs-content-wrap {
   position: absolute;
   top: 0;
   left: 0;
@@ -1501,8 +1516,8 @@ textarea {
           justify-content: left;
 }
 
-/* line 97, src/kit/base_style/editor/rightbar.scss */
-.ed-rightbar__tab-content {
+/* line 97, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__tab-content {
   width: 300px;
   height: 100%;
   float: left;
@@ -1510,8 +1525,8 @@ textarea {
   position: relative;
 }
 
-/* line 105, src/kit/base_style/editor/rightbar.scss */
-.ed-rightbar__tab-content-head {
+/* line 105, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__tab-content-head {
   padding: 0 10px 0 20px;
   color: #aaa;
   position: absolute;
@@ -1529,8 +1544,8 @@ textarea {
   overflow: hidden;
 }
 
-/* line 121, src/kit/base_style/editor/rightbar.scss */
-.ed-rightbar__tab-content-body {
+/* line 121, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__tab-content-body {
   position: absolute;
   top: 41px;
   left: 0;
