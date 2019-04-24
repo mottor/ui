@@ -190,8 +190,8 @@ td, th {
     padding: 0;
 }
 
-td {
-    vertical-align: top;
+tbody, td, tr {
+    vertical-align: inherit;
 }
 
 th {

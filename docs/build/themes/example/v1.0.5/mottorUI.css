@@ -235,8 +235,8 @@ td, th {
 }
 
 /* line 193, src/kit/base_style/reset.scss */
-td {
-  vertical-align: top;
+tbody, td, tr {
+  vertical-align: inherit;
 }
 
 /* line 197, src/kit/base_style/reset.scss */
@@ -325,6 +325,14 @@ body {
 /* line 47, src/kit/base_style/reset2.scss */
 #nocss {
   display: none;
+}
+
+/* line 51, src/kit/base_style/reset2.scss */
+#nojs {
+  display: block;
+  margin: 75px auto;
+  text-align: center;
+  max-width: 600px;
 }
 
 /* line 1, src/kit/base_style/utils.scss */
