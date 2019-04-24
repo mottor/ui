@@ -1,6 +1,6 @@
 html {
     cursor: default;
-    @include boxSizingBorderBox;
+    box-sizing: border-box;
     user-select: none;
     -webkit-touch-callout: none;
     -ms-content-zooming: none;
@@ -15,7 +15,7 @@ html {
 
 // это очень спорная настройка
 // она в debug-панели захламляет дерево наследования
-// но так мы сразу для всех элементов стандартизируем box-sizing
+// но так мы сразу для всех элементов стандартизируем box-sizing (может когда-нибудь выпилим)
 * {
     box-sizing: border-box;
 }

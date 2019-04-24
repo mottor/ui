@@ -51,7 +51,3 @@
     border-top: $main solid $color;
     border-bottom: 0;
 }
-
-@mixin boxSizingBorderBox() {
-    box-sizing: border-box;
-}
