@@ -45,12 +45,48 @@ $ed-toolbar-popover--angle-stroke-size: 1px;
     }
 }
 
-.ed-toolbar__item--is-opened .ed-toolbar-popover {
-    display: block;
-}
-
+// ------------------
 .ed-toolbar-popover--basic {
     padding: $ed-toolbar-popover--padding;
+}
+
+.ed-toolbar-popover--menu {}
+.ed-toolbar-popover-menu-item {
+    cursor: pointer;
+
+    span {
+        // используется span чтобы для первого и последнего элементов задавать паддинги
+        padding: 0 20px;
+        height: 34px;
+        line-height: 34px;
+    }
+
+    &:hover {
+        color: $svg-button--hover-color;
+    }
+}
+
+.ed-toolbar-popover-menu-item:first-child, .ed-toolbar-popover-menu-item--first {
+    padding-top: 5px;
+}
+
+.ed-toolbar-popover-menu-item:last-child, .ed-toolbar-popover-menu-item--last {
+    padding-bottom: 5px;
+}
+
+// ------------------------------
+// для первой и последней кнопки тулбара добавляются паддинги
+// из-за этого у них поповер будет смещен
+.ed-toolbar__item:first-child .ed-toolbar-popover, .ed-toolbar__item--first .ed-toolbar-popover {
+    left: calc(50% + #{$ed-toolbar--side-padding/2});
+}
+.ed-toolbar__item:last-child .ed-toolbar-popover, .ed-toolbar__item--last .ed-toolbar-popover {
+    left: calc(50% - #{$ed-toolbar--side-padding/2});
+}
+// ------------------------------
+
+.ed-toolbar__item--is-opened .ed-toolbar-popover {
+    display: block;
 }
 
 .ed-toolbar-popover--drop-up .ed-toolbar-popover {
@@ -80,6 +116,8 @@ $ed-toolbar-popover--angle-stroke-size: 1px;
         border-bottom: $ed-toolbar-popover--angle-size solid #f0f;
     }
 }
+
+
 
 
 .theme--dark {

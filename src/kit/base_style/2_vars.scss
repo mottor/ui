@@ -94,6 +94,10 @@ $svg-button--hover-color: #2a79ff;
 
 // =============================
 // Editor panels
+
+// доп. паддинги по краям, когда панель полностью загругленная.
+$ed-toolbar--side-padding: 6px; // Лучше указывать четное значение
+
 $dark-flow-panel--bg: rgba(3, 8, 15, .92);
 $dark-flow-panel--color-primary: #fff;
 $dark-flow-panel--delimiter-color: rgba(255, 255, 255, .3);

@@ -15,3 +15,27 @@ textarea {
 .ui-spinner input {font-family: inherit;}
 .minicolors-theme-bootstrap .minicolors-input {font-family: inherit;}
 .ui-icon, .ui-widget-content .ui-icon {opacity: .3;}
+
+table.ui_radio {
+    td {
+        vertical-align: middle;
+    }
+
+    .ui_label {
+        padding-left: 6px;
+        display: block;
+        line-height: 1.2;
+    }
+
+    & + .ui_radio {
+        margin-top: 6px;
+    }
+}
+
+.ui_error {
+    line-height: 1.5;
+}
+
+.btn-group>.btn {
+    box-sizing: border-box;
+}
