@@ -39,3 +39,11 @@ Mottor UI-kit
 * build
 * watch
 * serve
+
+## Build with Tagging
+
+    UI_PROD=no UI_VERSION=v1.0.9 UI_THEME=example ./gulp build
+    git add docs/build/themes/*
+    git commit -m "1.0.9"
+    git tag -a 1.0.9
+    git push -u origin master --tags
