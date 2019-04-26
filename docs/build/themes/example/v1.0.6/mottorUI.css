@@ -1,0 +1,1636 @@
+/* line 2, src/kit/base_style/dev.scss */
+.font-size-marker, .theme-name-marker {
+  display: inline-block;
+}
+
+/* line 5, src/kit/base_style/dev.scss */
+.font-size-marker:before {
+  display: inline-block;
+  content: "14px";
+}
+
+/* line 9, src/kit/base_style/dev.scss */
+.theme-name-marker:before {
+  display: inline-block;
+  content: "example";
+}
+
+/**
+
+Links
+=====
+https://github.com/necolas/normalize.css/blob/master/normalize.css
+https://github.com/sass/libsass.com/blob/master/sass/_normalize.scss
+https://github.com/sindresorhus/modern-normalize/blob/master/modern-normalize.css
+https://gist.github.com/DavidWells/18e73022e723037a50d6
+
+https://csswizardry.com/2012/06/single-direction-margin-declarations/
+*/
+/* line 19, src/kit/base_style/reset.scss */
+html {
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
+}
+
+/* line 25, src/kit/base_style/reset.scss */
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 30, src/kit/base_style/reset.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+/* line 34, src/kit/base_style/reset.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 38, src/kit/base_style/reset.scss */
+b, strong, .bold {
+  font-weight: bold;
+}
+
+/* line 42, src/kit/base_style/reset.scss */
+i, em, .italic {
+  font-style: italic;
+}
+
+/* line 46, src/kit/base_style/reset.scss */
+.strike {
+  text-decoration: line-through;
+}
+
+/* line 50, src/kit/base_style/reset.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 57, src/kit/base_style/reset.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 65, src/kit/base_style/reset.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 69, src/kit/base_style/reset.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 73, src/kit/base_style/reset.scss */
+img {
+  border-style: none;
+}
+
+/* line 77, src/kit/base_style/reset.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 81, src/kit/base_style/reset.scss */
+hr {
+  height: 1px;
+  border: 0;
+  background: #ddd;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  /* Add the correct box sizing in Firefox */
+  overflow: visible;
+  /* Show the overflow in Edge and IE. */
+  padding: 0;
+  margin: 4px 0;
+}
+
+/* line 91, src/kit/base_style/reset.scss */
+pre {
+  margin: 0;
+  overflow: auto;
+}
+
+/* line 96, src/kit/base_style/reset.scss */
+code,
+pre {
+  font-family: "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+  font-size: inherit;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/* line 109, src/kit/base_style/reset.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* line 121, src/kit/base_style/reset.scss */
+button, input {
+  overflow: visible;
+}
+
+/* line 125, src/kit/base_style/reset.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/* line 130, src/kit/base_style/reset.scss */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"],
+::-webkit-file-upload-button {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 144, src/kit/base_style/reset.scss */
+[disabled],
+.disabled {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 152, src/kit/base_style/reset.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 165, src/kit/base_style/reset.scss */
+[type="checkbox"],
+[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/* line 171, src/kit/base_style/reset.scss */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  height: auto;
+}
+
+/* line 178, src/kit/base_style/reset.scss */
+textarea {
+  overflow: auto;
+}
+
+/* line 182, src/kit/base_style/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font: inherit;
+}
+
+/* line 190, src/kit/base_style/reset.scss */
+td, th {
+  padding: 0;
+}
+
+/* line 194, src/kit/base_style/reset.scss */
+tbody, td, tr {
+  vertical-align: inherit;
+}
+
+/* line 198, src/kit/base_style/reset.scss */
+th {
+  text-align: left;
+}
+
+/* Avoid 300ms click delay on touch devices that support the `touch-action` CSS property. */
+/* line 203, src/kit/base_style/reset.scss */
+a,
+button,
+input,
+label,
+select,
+textarea {
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+}
+
+/* line 212, src/kit/base_style/reset.scss */
+[hidden], .hidden {
+  display: none;
+}
+
+/* line 216, src/kit/base_style/reset.scss */
+ul, ol {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 1, src/kit/base_style/reset2.scss */
+html {
+  cursor: default;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-touch-callout: none;
+  -ms-content-zooming: none;
+  -ms-touch-action: pan-x pan-y;
+  letter-spacing: 0;
+  -webkit-print-color-adjust: exact;
+}
+
+/* line 12, src/kit/base_style/reset2.scss */
+:focus {
+  outline: none;
+}
+
+/* line 19, src/kit/base_style/reset2.scss */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* line 23, src/kit/base_style/reset2.scss */
+body {
+  background-color: #edeef0;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -ms-touch-action: none;
+      touch-action: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* line 36, src/kit/base_style/reset2.scss */
+[contenteditable], input, textarea {
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+  outline: none;
+}
+
+/* line 41, src/kit/base_style/reset2.scss */
+.allow-user-select {
+  cursor: default;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+  -webkit-touch-callout: default;
+}
+
+/* line 47, src/kit/base_style/reset2.scss */
+#nocss {
+  display: none;
+}
+
+/* line 51, src/kit/base_style/reset2.scss */
+#nojs {
+  display: block;
+  margin: 75px auto;
+  text-align: center;
+  max-width: 600px;
+}
+
+/* line 1, src/kit/base_style/utils.scss */
+.bg-none {
+  background: none;
+}
+
+/* line 5, src/kit/base_style/utils.scss */
+.cur-pointer {
+  cursor: pointer;
+}
+
+/* line 9, src/kit/base_style/utils.scss */
+.no-wrap {
+  white-space: nowrap;
+}
+
+/* line 13, src/kit/base_style/utils.scss */
+.line-height-1 {
+  line-height: 1;
+}
+
+/*---------------------*/
+/* line 19, src/kit/base_style/utils.scss */
+.pos-rel {
+  position: relative;
+}
+
+/* line 23, src/kit/base_style/utils.scss */
+.pos-abs {
+  position: absolute;
+}
+
+/* line 27, src/kit/base_style/utils.scss */
+.pos-fix {
+  position: fixed;
+}
+
+/*---------------------*/
+/* line 33, src/kit/base_style/utils.scss */
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+/* line 37, src/kit/base_style/utils.scss */
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+/* line 41, src/kit/base_style/utils.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 45, src/kit/base_style/utils.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 49, src/kit/base_style/utils.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 53, src/kit/base_style/utils.scss */
+.text-muted {
+  color: #a0a0a0;
+}
+
+/* line 57, src/kit/base_style/utils.scss */
+.text-primary {
+  color: #333;
+}
+
+/* line 61, src/kit/base_style/utils.scss */
+.text-secondary {
+  color: #808080;
+}
+
+/* line 65, src/kit/base_style/utils.scss */
+.text-small {
+  font-size: var(85%);
+}
+
+/*---------------------*/
+/* line 71, src/kit/base_style/utils.scss */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 77, src/kit/base_style/utils.scss */
+.float-left {
+  float: left;
+}
+
+/* line 81, src/kit/base_style/utils.scss */
+.float-right {
+  float: right;
+}
+
+/* line 85, src/kit/base_style/utils.scss */
+.float-none {
+  float: none;
+}
+
+/* line 89, src/kit/base_style/utils.scss */
+.clear-both {
+  clear: both;
+}
+
+/*---------------------*/
+/* line 95, src/kit/base_style/utils.scss */
+.display-inline {
+  display: inline;
+}
+
+/* line 99, src/kit/base_style/utils.scss */
+.display-inline-block {
+  display: inline-block;
+}
+
+/* line 103, src/kit/base_style/utils.scss */
+.display-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 107, src/kit/base_style/utils.scss */
+.display-block {
+  display: block;
+}
+
+/*---------------------*/
+/* line 113, src/kit/base_style/utils.scss */
+.full-width {
+  width: 100%;
+}
+
+/* line 117, src/kit/base_style/utils.scss */
+.full-height {
+  height: 100%;
+}
+
+/* line 121, src/kit/base_style/utils.scss */
+.mha {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 126, src/kit/base_style/utils.scss */
+.m0 {
+  margin: 0;
+}
+
+/* line 130, src/kit/base_style/utils.scss */
+.p0 {
+  padding: 0;
+}
+
+/* line 135, src/kit/base_style/utils.scss */
+.mt0 {
+  margin-top: 0px;
+}
+
+/* line 139, src/kit/base_style/utils.scss */
+.ml0 {
+  margin-left: 0px;
+}
+
+/* line 143, src/kit/base_style/utils.scss */
+.mr0 {
+  margin-right: 0px;
+}
+
+/* line 147, src/kit/base_style/utils.scss */
+.mb0 {
+  margin-bottom: 0px;
+}
+
+/* line 151, src/kit/base_style/utils.scss */
+.pt0 {
+  padding-top: 0px;
+}
+
+/* line 155, src/kit/base_style/utils.scss */
+.pl0 {
+  padding-left: 0px;
+}
+
+/* line 159, src/kit/base_style/utils.scss */
+.pr0 {
+  padding-right: 0px;
+}
+
+/* line 163, src/kit/base_style/utils.scss */
+.pb0 {
+  padding-bottom: 0px;
+}
+
+/* line 135, src/kit/base_style/utils.scss */
+.mt1 {
+  margin-top: 10px;
+}
+
+/* line 139, src/kit/base_style/utils.scss */
+.ml1 {
+  margin-left: 10px;
+}
+
+/* line 143, src/kit/base_style/utils.scss */
+.mr1 {
+  margin-right: 10px;
+}
+
+/* line 147, src/kit/base_style/utils.scss */
+.mb1 {
+  margin-bottom: 10px;
+}
+
+/* line 151, src/kit/base_style/utils.scss */
+.pt1 {
+  padding-top: 10px;
+}
+
+/* line 155, src/kit/base_style/utils.scss */
+.pl1 {
+  padding-left: 10px;
+}
+
+/* line 159, src/kit/base_style/utils.scss */
+.pr1 {
+  padding-right: 10px;
+}
+
+/* line 163, src/kit/base_style/utils.scss */
+.pb1 {
+  padding-bottom: 10px;
+}
+
+/* line 135, src/kit/base_style/utils.scss */
+.mt2 {
+  margin-top: 20px;
+}
+
+/* line 139, src/kit/base_style/utils.scss */
+.ml2 {
+  margin-left: 20px;
+}
+
+/* line 143, src/kit/base_style/utils.scss */
+.mr2 {
+  margin-right: 20px;
+}
+
+/* line 147, src/kit/base_style/utils.scss */
+.mb2 {
+  margin-bottom: 20px;
+}
+
+/* line 151, src/kit/base_style/utils.scss */
+.pt2 {
+  padding-top: 20px;
+}
+
+/* line 155, src/kit/base_style/utils.scss */
+.pl2 {
+  padding-left: 20px;
+}
+
+/* line 159, src/kit/base_style/utils.scss */
+.pr2 {
+  padding-right: 20px;
+}
+
+/* line 163, src/kit/base_style/utils.scss */
+.pb2 {
+  padding-bottom: 20px;
+}
+
+/* line 135, src/kit/base_style/utils.scss */
+.mt3 {
+  margin-top: 30px;
+}
+
+/* line 139, src/kit/base_style/utils.scss */
+.ml3 {
+  margin-left: 30px;
+}
+
+/* line 143, src/kit/base_style/utils.scss */
+.mr3 {
+  margin-right: 30px;
+}
+
+/* line 147, src/kit/base_style/utils.scss */
+.mb3 {
+  margin-bottom: 30px;
+}
+
+/* line 151, src/kit/base_style/utils.scss */
+.pt3 {
+  padding-top: 30px;
+}
+
+/* line 155, src/kit/base_style/utils.scss */
+.pl3 {
+  padding-left: 30px;
+}
+
+/* line 159, src/kit/base_style/utils.scss */
+.pr3 {
+  padding-right: 30px;
+}
+
+/* line 163, src/kit/base_style/utils.scss */
+.pb3 {
+  padding-bottom: 30px;
+}
+
+/* line 135, src/kit/base_style/utils.scss */
+.mt4 {
+  margin-top: 40px;
+}
+
+/* line 139, src/kit/base_style/utils.scss */
+.ml4 {
+  margin-left: 40px;
+}
+
+/* line 143, src/kit/base_style/utils.scss */
+.mr4 {
+  margin-right: 40px;
+}
+
+/* line 147, src/kit/base_style/utils.scss */
+.mb4 {
+  margin-bottom: 40px;
+}
+
+/* line 151, src/kit/base_style/utils.scss */
+.pt4 {
+  padding-top: 40px;
+}
+
+/* line 155, src/kit/base_style/utils.scss */
+.pl4 {
+  padding-left: 40px;
+}
+
+/* line 159, src/kit/base_style/utils.scss */
+.pr4 {
+  padding-right: 40px;
+}
+
+/* line 163, src/kit/base_style/utils.scss */
+.pb4 {
+  padding-bottom: 40px;
+}
+
+/* line 135, src/kit/base_style/utils.scss */
+.mt5 {
+  margin-top: 50px;
+}
+
+/* line 139, src/kit/base_style/utils.scss */
+.ml5 {
+  margin-left: 50px;
+}
+
+/* line 143, src/kit/base_style/utils.scss */
+.mr5 {
+  margin-right: 50px;
+}
+
+/* line 147, src/kit/base_style/utils.scss */
+.mb5 {
+  margin-bottom: 50px;
+}
+
+/* line 151, src/kit/base_style/utils.scss */
+.pt5 {
+  padding-top: 50px;
+}
+
+/* line 155, src/kit/base_style/utils.scss */
+.pl5 {
+  padding-left: 50px;
+}
+
+/* line 159, src/kit/base_style/utils.scss */
+.pr5 {
+  padding-right: 50px;
+}
+
+/* line 163, src/kit/base_style/utils.scss */
+.pb5 {
+  padding-bottom: 50px;
+}
+
+/* line 1, src/kit/base_style/typography.scss */
+a {
+  color: #3072C4;
+  text-decoration: none;
+  -webkit-text-decoration-skip: objects;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+}
+
+/* line 9, src/kit/base_style/typography.scss */
+a:visited {
+  color: #3072C4;
+}
+
+/* line 13, src/kit/base_style/typography.scss */
+a:focus, a:active, a:hover {
+  outline: none;
+  color: #3072C4;
+  text-decoration: underline;
+}
+
+/*----------------*/
+/* line 24, src/kit/base_style/typography.scss */
+h1, .header-1 {
+  font-size: 36.75px;
+  line-height: 44px;
+  font-weight: 200;
+}
+
+/* line 30, src/kit/base_style/typography.scss */
+.header-1-wrap {
+  margin-top: -3.625px;
+}
+
+/* line 34, src/kit/base_style/typography.scss */
+h2, .header-2 {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 300;
+}
+
+/* line 40, src/kit/base_style/typography.scss */
+h3, .header-3 {
+  font-size: 19.25px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+/* line 46, src/kit/base_style/typography.scss */
+h4, .header-4 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+/*----------------*/
+/* line 54, src/kit/base_style/typography.scss */
+p {
+  margin: 0;
+  line-height: 1.5625em;
+}
+
+/* line 59, src/kit/base_style/typography.scss */
+p + p {
+  margin-top: 1em;
+}
+
+/* line 63, src/kit/base_style/typography.scss */
+.text-s, .text-s p {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+/* line 68, src/kit/base_style/typography.scss */
+.text, .text-m, .text p, .text-m p {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* line 73, src/kit/base_style/typography.scss */
+.text-l, .text-l p {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+/* line 78, src/kit/base_style/typography.scss */
+.text-xl, .text-xl p {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes loading-stripes {
+  from {
+    background-position: 50px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@keyframes loading-stripes {
+  from {
+    background-position: 50px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+/* line 24, src/kit/base_style/button.scss */
+.button {
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  height: 32px;
+  border-radius: 4px;
+  background: #c00;
+  display: inline-block;
+  line-height: 32px;
+  text-decoration: none;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+  border: 0;
+}
+
+/* line 45, src/kit/base_style/button.scss */
+.button:focus, .button.button--focused {
+  outline: none;
+}
+
+/* line 49, src/kit/base_style/button.scss */
+.button.button--focused {
+  -webkit-box-shadow: inset 0 0 0 1px #fff, 0 0 0 2px #5199db;
+          box-shadow: inset 0 0 0 1px #fff, 0 0 0 2px #5199db;
+}
+
+/* line 54, src/kit/base_style/button.scss */
+.button-text {
+  padding: 0 18px;
+  display: block;
+  height: 100%;
+  position: relative;
+}
+
+/* line 61, src/kit/base_style/button.scss */
+.button:active .button-text, .button--active .button-text {
+  top: 1px;
+}
+
+/* line 69, src/kit/base_style/button.scss */
+.button-s {
+  font-size: 12px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 4px;
+}
+
+/* line 19, src/kit/base_style/button.scss */
+.button-s .button-text {
+  padding: 0 16px;
+}
+
+/* line 73, src/kit/base_style/button.scss */
+.button-l {
+  font-size: 16px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 5px;
+}
+
+/* line 19, src/kit/base_style/button.scss */
+.button-l .button-text {
+  padding: 0 21px;
+}
+
+/* line 77, src/kit/base_style/button.scss */
+.button-xl {
+  font-size: 18px;
+  height: 42px;
+  line-height: 42px;
+  border-radius: 5px;
+}
+
+/* line 19, src/kit/base_style/button.scss */
+.button-xl .button-text {
+  padding: 0 23px;
+}
+
+/* line 84, src/kit/base_style/button.scss */
+.button-primary {
+  background: #5181b8;
+  color: #fff;
+}
+
+/* line 88, src/kit/base_style/button.scss */
+.button-primary:hover, .button-primary.button--hover {
+  background: #5b88bd;
+}
+
+/* line 92, src/kit/base_style/button.scss */
+.button-primary:active, .button-primary.button--active {
+  background: #4872a3;
+}
+
+/* line 97, src/kit/base_style/button.scss */
+.button-secondary {
+  background: #e5ebf1;
+  color: #55677d;
+}
+
+/* line 101, src/kit/base_style/button.scss */
+.button-secondary:hover {
+  background: #dfe6ed;
+}
+
+/* line 105, src/kit/base_style/button.scss */
+.button-secondary:active {
+  background: #dae2ea;
+}
+
+/* line 113, src/kit/base_style/button.scss */
+.button--disabled, .button--disabled:hover,
+.button--disabled:active, .button--loading {
+  background: #f2f2f2;
+  color: #808080;
+  cursor: default;
+  pointer-events: none;
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* line 3, src/kit/base_style/svg-button.scss */
+.svg-button {
+  cursor: pointer;
+  color: #333;
+  width: 40px;
+  height: 48px;
+  padding: 12px 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* line 11, src/kit/base_style/svg-button.scss */
+.svg-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* line 17, src/kit/base_style/svg-button.scss */
+.svg-button--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding: 0;
+}
+
+/* line 26, src/kit/base_style/svg-button.scss */
+.svg-button--hover, .theme--light .svg-button:hover, .theme--dark .svg-button:hover {
+  color: #2a79ff;
+}
+
+/* line 30, src/kit/base_style/svg-button.scss */
+.svg-button--disabled {
+  cursor: default;
+}
+
+/* line 35, src/kit/base_style/svg-button.scss */
+.theme--light .svg-button {
+  color: #333;
+}
+
+/* line 43, src/kit/base_style/svg-button.scss */
+.theme--light .svg-button--disabled, .theme--light .svg-button--disabled:hover {
+  color: #888;
+}
+
+/* line 49, src/kit/base_style/svg-button.scss */
+.theme--dark .svg-button {
+  color: #fff;
+}
+
+/* line 57, src/kit/base_style/svg-button.scss */
+.theme--dark .svg-button--disabled, .theme--dark .svg-button--disabled:hover {
+  color: #aaa;
+}
+
+/* line 1, src/kit/base_style/bootstrap-fallback.scss */
+.alert {
+  line-height: 1.4;
+}
+
+/* line 5, src/kit/base_style/bootstrap-fallback.scss */
+textarea {
+  line-height: 20px;
+  font-size: 14px;
+}
+
+/* line 10, src/kit/base_style/bootstrap-fallback.scss */
+.blk_text .blk-data p {
+  line-height: 1.4;
+}
+
+/* line 14, src/kit/base_style/bootstrap-fallback.scss */
+.ui-widget {
+  font-family: inherit;
+}
+
+/* line 15, src/kit/base_style/bootstrap-fallback.scss */
+.ui-spinner input {
+  font-family: inherit;
+}
+
+/* line 16, src/kit/base_style/bootstrap-fallback.scss */
+.minicolors-theme-bootstrap .minicolors-input {
+  font-family: inherit;
+}
+
+/* line 17, src/kit/base_style/bootstrap-fallback.scss */
+.ui-icon, .ui-widget-content .ui-icon {
+  opacity: .3;
+}
+
+/* line 20, src/kit/base_style/bootstrap-fallback.scss */
+table.ui_radio td {
+  vertical-align: middle;
+}
+
+/* line 24, src/kit/base_style/bootstrap-fallback.scss */
+table.ui_radio .ui_label {
+  padding-left: 6px;
+  display: block;
+  line-height: 1.2;
+}
+
+/* line 30, src/kit/base_style/bootstrap-fallback.scss */
+table.ui_radio + .ui_radio {
+  margin-top: 6px;
+}
+
+/* line 35, src/kit/base_style/bootstrap-fallback.scss */
+.ui_error {
+  line-height: 1.5;
+}
+
+/* line 39, src/kit/base_style/bootstrap-fallback.scss */
+.btn-group > .btn {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* line 43, src/kit/base_style/bootstrap-fallback.scss */
+.ui_btn {
+  line-height: 1.45;
+}
+
+/* line 12, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__basement {
+  z-index: 1000;
+  width: 100%;
+  height: 0;
+}
+
+/* line 19, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__marker {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+}
+
+/* line 32, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  left: 50%;
+  top: -1px;
+}
+
+/* line 40, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__container--place-from-left {
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+  left: 0;
+}
+
+/* line 45, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__container--place-from-right {
+  left: 100%;
+  -webkit-transform: translate(-100%, 0);
+      -ms-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
+}
+
+/* line 50, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__container--place-above {
+  top: -48px;
+}
+
+/* line 54, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__container--place-down {
+  top: 0;
+}
+
+/* line 58, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar {
+  height: 48px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.4);
+  background: #0af;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 70, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar--full-rounded {
+  border-radius: 24px;
+}
+
+/* line 74, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar--stick-from-left {
+  position: absolute;
+  left: -6px;
+  -webkit-transform: translate(-100%, 0);
+      -ms-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
+}
+
+/* line 80, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar--stick-from-right {
+  position: absolute;
+  left: calc(100% + 6px);
+}
+
+/* line 85, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__item {
+  float: left;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  position: relative;
+}
+
+/* line 91, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__item:first-child, .ed-toolbar__item--first {
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  padding-left: 6px;
+}
+
+/* line 97, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__item:last-child, .ed-toolbar__item--last {
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+  padding-right: 6px;
+}
+
+/* line 103, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__item--text {
+  line-height: 48px;
+  padding: 0 12px;
+}
+
+/* line 108, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__item-delimiter {
+  float: left;
+  height: 100%;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+/* line 114, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__item-delimiter:after {
+  content: '';
+  display: block;
+  background: #0af;
+  width: 1px;
+  height: 100%;
+}
+
+/* line 124, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__item-delimiter--v1 .ed-toolbar__item-delimiter {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 131, src/kit/base_style/editor/toolbar.scss */
+.ed-toolbar__item-delimiter--v2 .ed-toolbar__item-delimiter {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* line 141, src/kit/base_style/editor/toolbar.scss */
+.debug .ed-toolbar__marker {
+  background: rgba(255, 0, 255, 0.8);
+  height: 1px;
+}
+
+/* line 148, src/kit/base_style/editor/toolbar.scss */
+.theme--dark .ed-toolbar {
+  color: #fff;
+  background: rgba(3, 8, 15, 0.92);
+}
+
+/* line 153, src/kit/base_style/editor/toolbar.scss */
+.theme--dark .hotdog-panel__item--text {
+  color: #fff;
+}
+
+/* line 157, src/kit/base_style/editor/toolbar.scss */
+.theme--dark .ed-toolbar__item-delimiter:after {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* line 171, src/kit/base_style/editor/toolbar.scss */
+.theme--light .hotdog-panel {
+  background: #fff;
+}
+
+/* line 175, src/kit/base_style/editor/toolbar.scss */
+.theme--light .hotdog-panel__item--text {
+  color: #333;
+}
+
+/* line 179, src/kit/base_style/editor/toolbar.scss */
+.theme--light .hotdog-panel__item-delimiter:after {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* line 183, src/kit/base_style/editor/toolbar.scss */
+.theme--light .ed-toolbar {
+  color: #222;
+  background: #fff;
+}
+
+/* line 188, src/kit/base_style/editor/toolbar.scss */
+.theme--light .ed-toolbar__item--text {
+  color: #222;
+}
+
+/* line 8, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+/* line 17, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover:before {
+  content: '';
+  display: block;
+  position: absolute;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-top: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* line 32, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover:after {
+  content: '';
+  display: block;
+  position: absolute;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 0;
+  border-bottom: 8px solid #f0f;
+}
+
+/* line 49, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover--basic {
+  padding: 16px;
+}
+
+/* line 54, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover-menu-item {
+  cursor: pointer;
+}
+
+/* line 57, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover-menu-item span {
+  padding: 0 20px;
+  height: 34px;
+  line-height: 34px;
+}
+
+/* line 64, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover-menu-item:hover {
+  color: #2a79ff;
+}
+
+/* line 69, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover-menu-item:first-child, .ed-toolbar-popover-menu-item--first {
+  padding-top: 5px;
+}
+
+/* line 73, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover-menu-item:last-child, .ed-toolbar-popover-menu-item--last {
+  padding-bottom: 5px;
+}
+
+/* line 80, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar__item:first-child .ed-toolbar-popover, .ed-toolbar__item--first .ed-toolbar-popover {
+  left: calc(50% + 3px);
+}
+
+/* line 83, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar__item:last-child .ed-toolbar-popover, .ed-toolbar__item--last .ed-toolbar-popover {
+  left: calc(50% - 3px);
+}
+
+/* line 88, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar__item--is-opened .ed-toolbar-popover {
+  display: block;
+}
+
+/* line 92, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover--drop-up .ed-toolbar-popover {
+  bottom: calc(100% + 10px);
+}
+
+/* line 94, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover--drop-up .ed-toolbar-popover:before {
+  bottom: -1px;
+  border-bottom: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* line 100, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover--drop-up .ed-toolbar-popover:after {
+  bottom: -8px;
+  border-bottom: 0;
+  border-top: 8px solid #f0f;
+}
+
+/* line 107, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover--drop-down .ed-toolbar-popover {
+  top: calc(100% + 10px);
+}
+
+/* line 109, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover--drop-down .ed-toolbar-popover:before {
+  top: -1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* line 114, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover--drop-down .ed-toolbar-popover:after {
+  top: -8px;
+  border-bottom: 8px solid #f0f;
+}
+
+/* line 124, src/kit/base_style/editor/toolbar-popover.scss */
+.theme--dark .ed-toolbar-popover {
+  background: rgba(3, 8, 15, 0.92);
+}
+
+/* line 136, src/kit/base_style/editor/toolbar-popover.scss */
+.theme--dark .ed-toolbar-popover--drop-up .ed-toolbar-popover:after {
+  bottom: -8px;
+  border-bottom: 0;
+  border-top: 8px solid rgba(3, 8, 15, 0.92);
+}
+
+/* line 144, src/kit/base_style/editor/toolbar-popover.scss */
+.theme--dark .ed-toolbar-popover--drop-down .ed-toolbar-popover:after {
+  top: -8px;
+  border-bottom: 8px solid rgba(3, 8, 15, 0.92);
+}
+
+/* line 152, src/kit/base_style/editor/toolbar-popover.scss */
+.theme--light .ed-toolbar-popover {
+  background: #fff;
+}
+
+/* line 157, src/kit/base_style/editor/toolbar-popover.scss */
+.theme--light .ed-toolbar-popover--drop-up .ed-toolbar-popover:after {
+  bottom: -8px;
+  border-bottom: 0;
+  border-top: 8px solid #fff;
+}
+
+/* line 165, src/kit/base_style/editor/toolbar-popover.scss */
+.theme--light .ed-toolbar-popover--drop-down .ed-toolbar-popover:after {
+  top: -8px;
+  border-bottom: 8px solid #fff;
+}
+
+/* line 8, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__basement {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0;
+}
+
+/* line 16, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  -webkit-transition: right 1s ease;
+  -o-transition: right 1s ease;
+  transition: right 1s ease;
+}
+
+/* line 30, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__header {
+  background: #eee;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* line 39, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__nav {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 45, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__nav-item {
+  height: 100%;
+  position: relative;
+}
+
+/* line 54, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__nav-item--active:after {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #0af;
+}
+
+/* line 68, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 77, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__body {
+  background: #fff;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+/* line 87, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__tabs-content-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+/* line 97, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__tab-content {
+  width: 300px;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 105, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__tab-content-head {
+  padding: 0 10px 0 20px;
+  color: #aaa;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  line-height: 40px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* line 121, src/kit/base_style/editor/sidebar.scss */
+.ed-sidebar__tab-content-body {
+  position: absolute;
+  top: 41px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+/* line 16, src/kit/themes/example/theme.scss */
+.test {
+  zoom: 1;
+  color: #f0f;
+}
