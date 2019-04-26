@@ -166,6 +166,7 @@ input::-moz-focus-inner {
 [type="radio"] {
     box-sizing: border-box; /* 1 */
     padding: 0; /* 2 */
+    margin: 0;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -216,4 +217,9 @@ textarea {
 ul, ol {
     padding: 0;
     margin: 0;
+    margin-left: 1.7em;
+}
+
+ul {
+    list-style-type: disc;
 }
