@@ -28,9 +28,9 @@ Mottor UI-kit
     
 Сборка для вставки в Мотор
 
-    UI_PROD=yes UI_VERSION=v1.0.6 UI_THEME=example UI_BUILD_DIR=/Users/user/Sites/lpmotor1/web/css/mottor-ui ./gulp build
-    UI_PROD=yes UI_VERSION=v1.0.6 UI_THEME=example UI_BUILD_DIR=/Users/sotty/projects/lpmotor1/web/css/mottor-ui ./gulp build
-    UI_PROD=yes UI_VERSION=v1.0.6 UI_THEME=example UI_BUILD_DIR=/home/tony/projects/lpmotor1/web/css/mottor-ui ./gulp build
+    UI_PROD=yes UI_VERSION=v1.0.6 UI_THEME=example UI_BUILD_DIR=/Users/user/Sites/lpmotor1/web/mottor-ui ./gulp build
+    UI_PROD=yes UI_VERSION=v1.0.6 UI_THEME=example UI_BUILD_DIR=/Users/sotty/projects/lpmotor1/web/mottor-ui ./gulp build
+    UI_PROD=yes UI_VERSION=v1.0.6 UI_THEME=example UI_BUILD_DIR=/home/tony/projects/lpmotor1/web/mottor-ui ./gulp build
     
 Список всех тасков:
 
