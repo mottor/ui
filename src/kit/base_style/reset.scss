@@ -22,11 +22,6 @@ html {
     tab-size: 4;
 }
 
-body {
-    padding: 0;
-    margin: 0;
-}
-
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
@@ -207,6 +202,7 @@ input,
 label,
 select,
 textarea {
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action
     touch-action: manipulation;
 }
 

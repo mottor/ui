@@ -2,11 +2,13 @@ html {
     cursor: default;
     box-sizing: border-box;
     user-select: none;
-    -webkit-touch-callout: none;
-    -ms-content-zooming: none;
-    -ms-touch-action: pan-x pan-y;
     letter-spacing: 0;
     -webkit-print-color-adjust: exact;
+
+    // этот стиль взят из РТБ (но нам не подходит, пока админка не адаптивна под мобильные)
+    //-webkit-touch-callout: none;
+    //-ms-content-zooming: none;
+    //-ms-touch-action: pan-x pan-y;
 }
 
 :focus {
@@ -20,17 +22,26 @@ html {
     box-sizing: border-box;
 }
 
+head * {
+    // скрывать все что в head
+    display: none;
+}
+
 body {
     background-color: $body-bg-color;
     color: $primary-text-color;
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
-    touch-action: none;
     font-family: $base-font-family, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     font-weight: normal;
     font-style: normal;
     font-size: $base-font-size;
     line-height: $base-line-height;
+    padding: 0;
+    margin: 0;
+
+    // этот стиль взят из РТБ (но нам не подходит, пока админка не адаптивна под мобильные)
+    // touch-action: none;
 }
 
 [contenteditable], input, textarea {
@@ -41,7 +52,9 @@ body {
 .allow-user-select {
     cursor: default;
     user-select: text;
-    -webkit-touch-callout: default;
+
+    // этот стиль взят из РТБ (но нам не подходит, пока админка не адаптивна под мобильные)
+    // -webkit-touch-callout: default;
 }
 
 #nocss {
