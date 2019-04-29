@@ -134,8 +134,15 @@ function compileUiStyle() {
         .pipe(_if(prod, csso()))
         // .pipe(postcss([autoprefixer({browsers: 'last 3 versions'}), cssnano()]))
         // .pipe(_if(!prod, sourcemaps.write()))
-        .pipe(gulp.dest(config.dirBuild)) // убрал + '/css', чтобы не складывалось в папку
+        .pipe(gulp.dest(config.dirBuild + '/css')) // убрал + '/css', чтобы не складывалось в папку
         .pipe(browserSync.stream())
+        ;
+}
+
+function compileTpl() {
+    return gulp
+        .src(config.dirHtml + '/includes/svg-sprite.html')
+        .pipe(gulp.dest(config.dirBuild + '/html'))
         ;
 }
 
@@ -157,7 +164,7 @@ const watchDocs = gulp.parallel(watchDocsHtml, watchDocsStyle);
 exports.buildDocs = buildDocs;
 exports.watchDocs = watchDocs;
 
-const buildUi = gulp.series(clean, gulp.parallel(compileUiScript, compileUiStyle)/*, gitAdd*/);
+const buildUi = gulp.series(clean, gulp.parallel(compileUiScript, compileUiStyle, compileTpl)/*, gitAdd*/);
 const watchUi = gulp.series(buildUi, watchUiStyle);
 
 exports.build = buildUi;
