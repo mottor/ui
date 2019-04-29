@@ -4,6 +4,7 @@
     <!--=include meta.html -->
 </head>
 <body class="docs debug theme--dark theme--light1">
+<!--=include svg-sprite.tpl -->
 <!--=include nojs-nocss.html -->
 <!--content-start-->
 <div class="content-wrap">
@@ -29,17 +30,14 @@
                 <div class="ed-toolbar__item">
                     <div class="svg-button ed-toolbar__item-button">
                         <svg class="hotdog-panel__icon" viewBox="0 0 24 24" id="img__search-24" width="100%" height="100%">
-                            <g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2">
-                                <circle cx="10" cy="10" r="7"></circle>
-                                <path stroke-linecap="round" d="M15 15l5 5"></path>
-                            </g>
+                            <use xlink:href="#solid-search"></use>
                         </svg>
                     </div>
                 </div>
                 <div class="ed-toolbar__item ed-toolbar__item--openable js-ed-toolbar__item--openable">
                     <div class="svg-button ed-toolbar__item-button">
                         <svg class="hotdog-panel__icon" viewBox="0 0 24 24" id="img__settings-24" width="100%" height="100%">
-                            <path fill="currentColor" fill-rule="evenodd" d="M6 9.17V5a1 1 0 1 0-2 0v4.17a3.001 3.001 0 0 0 0 5.66V19a1 1 0 0 0 2 0v-4.17a3.001 3.001 0 0 0 0-5.66zm7 5V5a1 1 0 0 0-2 0v9.17a3.001 3.001 0 1 0 2 0zm7-4.34V19a1 1 0 0 1-2 0V9.83a3.001 3.001 0 1 1 2 0zM19 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-7 10a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm-7-5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path>
+                            <use xlink:href="#solid-cog"></use>
                         </svg>
                     </div>
                     <div class="ed-toolbar-popover ed-toolbar-popover--basic">
@@ -49,12 +47,8 @@
                 <div class="ed-toolbar__item-delimiter"></div>
                 <div class="ed-toolbar__item ed-toolbar__item--openable js-ed-toolbar__item--openable">
                     <div class="svg-button ed-toolbar__item-button">
-                        <svg viewBox="0 0 24 24" id="img__3dots" width="100%" height="100%">
-                            <g fill="currentColor" fill-rule="evenodd">
-                                <circle cx="5" cy="12" r="2"></circle>
-                                <circle cx="12" cy="12" r="2"></circle>
-                                <circle cx="19" cy="12" r="2"></circle>
-                            </g>
+                        <svg viewBox="0 0 24 24" width="100%" height="100%">
+                            <use xlink:href="#solid-ellipsis-h"></use>
                         </svg>
                     </div>
                     <div class="ed-toolbar-popover ed-toolbar-popover--menu">
@@ -78,20 +72,14 @@
                 <div class="ed-sidebar__nav-item js-ed-sidebar__nav-item ed-sidebar__nav-item--active">
                     <div class="svg-button ed-toolbar__item-button">
                         <svg class="hotdog-panel__icon" viewBox="0 0 24 24" id="img__search-24" width="100%" height="100%">
-                            <g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2">
-                                <circle cx="10" cy="10" r="7"></circle>
-                                <path stroke-linecap="round" d="M15 15l5 5"></path>
-                            </g>
+                            <use xlink:href="#solid-search"></use>
                         </svg>
                     </div>
                 </div>
                 <div class="ed-sidebar__nav-item js-ed-sidebar__nav-item">
                     <div class="svg-button ed-toolbar__item-button">
                         <svg class="hotdog-panel__icon" viewBox="0 0 24 24" id="img__search-24" width="100%" height="100%">
-                            <g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2">
-                                <circle cx="10" cy="10" r="7"></circle>
-                                <path stroke-linecap="round" d="M15 15l5 5"></path>
-                            </g>
+                            <use xlink:href="#solid-search"></use>
                         </svg>
                     </div>
                 </div>
@@ -100,10 +88,7 @@
             <div class="ed-sidebar__close">
                 <div class="svg-button ed-toolbar__item-button">
                     <svg viewBox="0 0 14 14" id="img__close-black" width="100%" height="100%">
-                        <g fill="none" fill-rule="evenodd">
-                            <path fill="#000" d="M14 1.4L12.6 0 7 5.6 1.4 0 0 1.4 5.6 7 0 12.6 1.4 14 7 8.4l5.6 5.6 1.4-1.4L8.4 7"></path>
-                            <path d="M-5-5h24v24H-5"></path>
-                        </g>
+                        <use xlink:href="#solid-times"></use>
                     </svg>
                 </div>
             </div>
@@ -125,7 +110,7 @@
     </div>
 </div>
 
-<script type="text/javascript" src="/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/jquery.min.js"></script>
 <script type="text/javascript">
     $(document).on('click', '.js-ed-toolbar__item--openable', function () {
         $(this).toggleClass('ed-toolbar__item--is-opened');
