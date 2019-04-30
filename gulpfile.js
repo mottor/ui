@@ -139,15 +139,20 @@ function compileUiStyle() {
         ;
 }
 
-function compileTpl() {
+function watchUiStyle() {
+    gulp.watch(config.dirKit + "/**/*.scss", compileUiStyle);
+}
+
+function compileSvg() {
     return gulp
-        .src(config.dirHtml + '/includes/svg-sprite.html')
-        .pipe(gulp.dest(config.dirBuild + '/html'))
+        .src(config.dirKit + '/svg/icon-sprite.svg')
+        .pipe(gulp.dest(config.dirBuild + '/svg'))
+        .pipe(gulp.dest(config.dirBuildHtml + '/svg'))
         ;
 }
 
-function watchUiStyle() {
-    gulp.watch(config.dirKit + "/**/*.scss", compileUiStyle);
+function watchUiSvg() {
+    gulp.watch(config.dirKit + "/svg/*.svg", compileSvg);
 }
 
 function browserReload() {
@@ -164,8 +169,8 @@ const watchDocs = gulp.parallel(watchDocsHtml, watchDocsStyle);
 exports.buildDocs = buildDocs;
 exports.watchDocs = watchDocs;
 
-const buildUi = gulp.series(clean, gulp.parallel(compileUiScript, compileUiStyle, compileTpl)/*, gitAdd*/);
-const watchUi = gulp.series(buildUi, watchUiStyle);
+const buildUi = gulp.series(clean, gulp.parallel(compileUiScript, compileUiStyle, compileSvg)/*, gitAdd*/);
+const watchUi = gulp.series(buildUi, gulp.parallel(watchUiStyle, watchUiSvg));
 
 exports.build = buildUi;
 exports.watch = watchUi;

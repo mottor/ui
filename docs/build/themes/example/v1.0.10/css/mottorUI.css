@@ -1631,6 +1631,11 @@ table.ui_radio + .ui_radio {
   overflow: auto;
 }
 
+/* line 132, src/kit/base_style/editor/sidebar.scss */
+.theme--dark .ed-sidebar__header {
+  background-color: #161e24;
+}
+
 /* line 16, src/kit/themes/example/theme.scss */
 .test {
   zoom: 1;
