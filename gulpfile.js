@@ -15,6 +15,7 @@ const include = require('gulp-include');
 const fs = require('fs');
 const exec = require('child_process').exec;
 const sassVariables = require('gulp-sass-variables');
+const svgSprite = require('gulp-svg-sprite');
 
 // const replace = require('gulp-replace');
 // const sourcemaps = require('gulp-sourcemaps');
@@ -135,6 +136,7 @@ function compileUiStyle() {
         // .pipe(postcss([autoprefixer({browsers: 'last 3 versions'}), cssnano()]))
         // .pipe(_if(!prod, sourcemaps.write()))
         .pipe(gulp.dest(config.dirBuild + '/css')) // убрал + '/css', чтобы не складывалось в папку
+        .pipe(gulp.dest(config.dirBuildHtml + '/css'))
         .pipe(browserSync.stream())
         ;
 }
@@ -144,11 +146,17 @@ function watchUiStyle() {
 }
 
 function compileSvg() {
-    return gulp
-        .src(config.dirKit + '/svg/icon-sprite.svg')
+    return gulp.src(config.dirKit + '/svg/' + '*.svg')
+        .pipe(svgSprite({
+                mode: {
+                    stack: {
+                        sprite: "../sprite.svg"  //sprite file name
+                    }
+                },
+            }
+        ))
         .pipe(gulp.dest(config.dirBuild + '/svg'))
-        .pipe(gulp.dest(config.dirBuildHtml + '/svg'))
-        ;
+        .pipe(gulp.dest(config.dirBuildHtml + '/svg'));
 }
 
 function watchUiSvg() {

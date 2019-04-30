@@ -9,6 +9,7 @@
     box-sizing: border-box;
 
     svg {
+        fill: currentColor;
         width: $svg-button--svg-size;
         height: $svg-button--svg-size;
     }

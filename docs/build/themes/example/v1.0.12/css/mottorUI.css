@@ -1015,11 +1015,12 @@ p + p {
 
 /* line 11, src/kit/base_style/svg-button.scss */
 .svg-button svg {
+  fill: currentColor;
   width: 20px;
   height: 20px;
 }
 
-/* line 17, src/kit/base_style/svg-button.scss */
+/* line 18, src/kit/base_style/svg-button.scss */
 .svg-button--flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1039,32 +1040,32 @@ p + p {
   padding: 0;
 }
 
-/* line 26, src/kit/base_style/svg-button.scss */
+/* line 27, src/kit/base_style/svg-button.scss */
 .svg-button--hover, .theme--light .svg-button:hover, .theme--dark .svg-button:hover {
   color: #2a79ff;
 }
 
-/* line 30, src/kit/base_style/svg-button.scss */
+/* line 31, src/kit/base_style/svg-button.scss */
 .svg-button--disabled {
   cursor: default;
 }
 
-/* line 35, src/kit/base_style/svg-button.scss */
+/* line 36, src/kit/base_style/svg-button.scss */
 .theme--light .svg-button {
   color: #333;
 }
 
-/* line 43, src/kit/base_style/svg-button.scss */
+/* line 44, src/kit/base_style/svg-button.scss */
 .theme--light .svg-button--disabled, .theme--light .svg-button--disabled:hover {
   color: #888;
 }
 
-/* line 49, src/kit/base_style/svg-button.scss */
+/* line 50, src/kit/base_style/svg-button.scss */
 .theme--dark .svg-button {
   color: #fff;
 }
 
-/* line 57, src/kit/base_style/svg-button.scss */
+/* line 58, src/kit/base_style/svg-button.scss */
 .theme--dark .svg-button--disabled, .theme--dark .svg-button--disabled:hover {
   color: #aaa;
 }
