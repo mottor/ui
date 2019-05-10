@@ -11,5 +11,5 @@ docker run -d \
     --name $NAME \
     --net=lpm-network \
     --net-alias $NAME \
-    -v "$CUR_DIR/../build/:/usr/share/nginx/html:ro" \
+    -v "$CUR_DIR/../docs/build/:/usr/share/nginx/html:ro" \
     $TAG
