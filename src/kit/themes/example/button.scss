@@ -3,6 +3,8 @@ $button--s--font-size: $button--m--font-size - 2; // 12
 $button--l--font-size: $button--m--font-size + 2; // 16
 $button--xl--font-size: $button--m--font-size + 6; // 20
 
+$button--default-color: #333;
+$button--border-radius: 4px;
 $button--border-size: 1px;
 $button--height-ratio: 2.5714;
 $button--padding-sides-ratio: 1.2;
@@ -50,15 +52,23 @@ $button--secondary--color: #333;
     cursor: default;
 }
 
+// ============================================================
+
 // Default (с рамкой)
 .mtr-btn {
     background: transparent;
-    border: $button--border-size solid #333;
-    border-radius: 4px;
-    color: #333;
+    border: $button--border-size solid $button--default-color;
+    border-radius: $button--border-radius;
+    color: $button--default-color;
 
     &.mtr-btn--loading::before {
-        border-color: transparent #333 #333 #333;
+        border-color: transparent $button--default-color $button--default-color $button--default-color;
+    }
+}
+
+a.mtr-btn {
+    &:hover, &:active, &:visited, &:focus {
+        text-decoration: none;
     }
 }
 
@@ -124,6 +134,12 @@ $button--secondary--color: #333;
     }
 }
 
+a.mtr-btn--primary {
+    &:hover, &:active, &:visited, &:focus {
+        color: $button--primary--color;
+    }
+}
+
 .mtr-btn--primary-bordered {
     color: $button--primary--bg-color;
     border-color: #5594ff;
@@ -146,6 +162,12 @@ $button--secondary--color: #333;
     }
 }
 
+a.mtr-btn--primary-bordered {
+    &:hover, &:active, &:visited, &:focus {
+        color: $button--primary--bg-color;
+    }
+}
+
 .mtr-btn--primary-flat {
     @include buttonFlat;
     color: $button--primary--bg-color;
@@ -163,6 +185,12 @@ $button--secondary--color: #333;
     }
 
     &.mtr-btn--disabled, &[disabled] {
+        color: $button--primary--bg-color;
+    }
+}
+
+a.mtr-btn--primary-flat {
+    &:visited, &:focus {
         color: $button--primary--bg-color;
     }
 }

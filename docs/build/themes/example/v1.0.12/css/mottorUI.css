@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700&subset=cyrillic");
 /* line 2, src/kit/base_style/dev.scss */
 .font-size-marker, .theme-name-marker {
   display: inline-block;
@@ -50,19 +51,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 33, src/kit/base_style/reset.scss */
 b, strong, .bold {
   font-weight: bold;
+  vertical-align: top;
 }
 
-/* line 37, src/kit/base_style/reset.scss */
+/* line 38, src/kit/base_style/reset.scss */
 i, em, .italic {
   font-style: italic;
 }
 
-/* line 41, src/kit/base_style/reset.scss */
+/* line 42, src/kit/base_style/reset.scss */
 .strike {
   text-decoration: line-through;
 }
 
-/* line 45, src/kit/base_style/reset.scss */
+/* line 46, src/kit/base_style/reset.scss */
 small {
   font-size: 80%;
 }
@@ -70,7 +72,7 @@ small {
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 52, src/kit/base_style/reset.scss */
+/* line 53, src/kit/base_style/reset.scss */
 sub,
 sup {
   font-size: 75%;
@@ -79,27 +81,27 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 60, src/kit/base_style/reset.scss */
+/* line 61, src/kit/base_style/reset.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 64, src/kit/base_style/reset.scss */
+/* line 65, src/kit/base_style/reset.scss */
 sub {
   bottom: -0.25em;
 }
 
-/* line 68, src/kit/base_style/reset.scss */
+/* line 69, src/kit/base_style/reset.scss */
 img {
   border-style: none;
 }
 
-/* line 72, src/kit/base_style/reset.scss */
+/* line 73, src/kit/base_style/reset.scss */
 svg:not(:root) {
   overflow: hidden;
 }
 
-/* line 76, src/kit/base_style/reset.scss */
+/* line 77, src/kit/base_style/reset.scss */
 hr {
   height: 1px;
   border: 0;
@@ -113,13 +115,13 @@ hr {
   margin: 4px 0;
 }
 
-/* line 86, src/kit/base_style/reset.scss */
+/* line 87, src/kit/base_style/reset.scss */
 pre {
   margin: 0;
   overflow: auto;
 }
 
-/* line 91, src/kit/base_style/reset.scss */
+/* line 92, src/kit/base_style/reset.scss */
 code,
 pre {
   font-family: "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
@@ -132,7 +134,7 @@ pre {
  * Known limitation: by default, Chrome and Safari on OS X allow very limited
  * styling of `select`, unless a `border` property is set.
  */
-/* line 104, src/kit/base_style/reset.scss */
+/* line 105, src/kit/base_style/reset.scss */
 button,
 input,
 optgroup,
@@ -145,18 +147,18 @@ textarea {
           box-sizing: border-box;
 }
 
-/* line 116, src/kit/base_style/reset.scss */
+/* line 117, src/kit/base_style/reset.scss */
 button, input {
   overflow: visible;
 }
 
-/* line 120, src/kit/base_style/reset.scss */
+/* line 121, src/kit/base_style/reset.scss */
 button,
 select {
   text-transform: none;
 }
 
-/* line 125, src/kit/base_style/reset.scss */
+/* line 126, src/kit/base_style/reset.scss */
 button,
 [type="button"],
 [type="reset"],
@@ -171,7 +173,7 @@ button,
 /**
  * Re-set default cursor for disabled elements.
  */
-/* line 139, src/kit/base_style/reset.scss */
+/* line 140, src/kit/base_style/reset.scss */
 [disabled],
 .disabled {
   cursor: default;
@@ -180,7 +182,7 @@ button,
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-/* line 147, src/kit/base_style/reset.scss */
+/* line 148, src/kit/base_style/reset.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border-style: none;
@@ -194,7 +196,7 @@ input::-moz-focus-inner {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-/* line 160, src/kit/base_style/reset.scss */
+/* line 161, src/kit/base_style/reset.scss */
 [type="checkbox"],
 [type="radio"] {
   -webkit-box-sizing: border-box;
@@ -205,7 +207,7 @@ input::-moz-focus-inner {
   margin: 0;
 }
 
-/* line 167, src/kit/base_style/reset.scss */
+/* line 168, src/kit/base_style/reset.scss */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -213,35 +215,35 @@ input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-/* line 174, src/kit/base_style/reset.scss */
+/* line 175, src/kit/base_style/reset.scss */
 textarea {
   overflow: auto;
 }
 
-/* line 178, src/kit/base_style/reset.scss */
+/* line 179, src/kit/base_style/reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
   font: inherit;
 }
 
-/* line 186, src/kit/base_style/reset.scss */
+/* line 187, src/kit/base_style/reset.scss */
 td, th {
   padding: 0;
 }
 
-/* line 190, src/kit/base_style/reset.scss */
+/* line 191, src/kit/base_style/reset.scss */
 tbody, td, tr {
   vertical-align: inherit;
 }
 
-/* line 194, src/kit/base_style/reset.scss */
+/* line 195, src/kit/base_style/reset.scss */
 th {
   text-align: left;
 }
 
 /* Avoid 300ms click delay on touch devices that support the `touch-action` CSS property. */
-/* line 199, src/kit/base_style/reset.scss */
+/* line 200, src/kit/base_style/reset.scss */
 a,
 button,
 input,
@@ -252,19 +254,19 @@ textarea {
       touch-action: manipulation;
 }
 
-/* line 209, src/kit/base_style/reset.scss */
+/* line 210, src/kit/base_style/reset.scss */
 [hidden], .hidden {
   display: none;
 }
 
-/* line 213, src/kit/base_style/reset.scss */
+/* line 214, src/kit/base_style/reset.scss */
 ul, ol {
   padding: 0;
   margin: 0;
   margin-left: 1.7em;
 }
 
-/* line 219, src/kit/base_style/reset.scss */
+/* line 220, src/kit/base_style/reset.scss */
 ul {
   list-style-type: disc;
 }
@@ -304,7 +306,7 @@ body {
   color: #333;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Open Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: normal;
   font-style: normal;
   font-size: 14px;
@@ -1564,7 +1566,7 @@ table.ui_radio + .ui_radio {
   overflow: auto;
 }
 
-/* line 54, src/kit/themes/example/button.scss */
+/* line 58, src/kit/themes/example/button.scss */
 .mtr-btn {
   background: transparent;
   border: 1px solid #333;
@@ -1572,12 +1574,17 @@ table.ui_radio + .ui_radio {
   color: #333;
 }
 
-/* line 60, src/kit/themes/example/button.scss */
+/* line 64, src/kit/themes/example/button.scss */
 .mtr-btn.mtr-btn--loading::before {
   border-color: transparent #333 #333 #333;
 }
 
-/* line 78, src/kit/themes/example/button.scss */
+/* line 70, src/kit/themes/example/button.scss */
+a.mtr-btn:hover, a.mtr-btn:active, a.mtr-btn:visited, a.mtr-btn:focus {
+  text-decoration: none;
+}
+
+/* line 88, src/kit/themes/example/button.scss */
 .mtr-btn--m {
   font-size: 14px;
   height: 36px;
@@ -1585,19 +1592,19 @@ table.ui_radio + .ui_radio {
   min-width: 84px;
 }
 
-/* line 28, src/kit/themes/example/button.scss */
+/* line 30, src/kit/themes/example/button.scss */
 .mtr-btn--m:active {
   padding-top: 11px;
   padding-bottom: 9px;
 }
 
-/* line 34, src/kit/themes/example/button.scss */
+/* line 36, src/kit/themes/example/button.scss */
 .mtr-btn--m.mtr-btn--loading::before {
   width: 14px;
   height: 14px;
 }
 
-/* line 83, src/kit/themes/example/button.scss */
+/* line 93, src/kit/themes/example/button.scss */
 .mtr-btn--s {
   font-size: 12px;
   height: 30px;
@@ -1605,19 +1612,19 @@ table.ui_radio + .ui_radio {
   min-width: 72px;
 }
 
-/* line 28, src/kit/themes/example/button.scss */
+/* line 30, src/kit/themes/example/button.scss */
 .mtr-btn--s:active {
   padding-top: 9px;
   padding-bottom: 7px;
 }
 
-/* line 34, src/kit/themes/example/button.scss */
+/* line 36, src/kit/themes/example/button.scss */
 .mtr-btn--s.mtr-btn--loading::before {
   width: 12px;
   height: 12px;
 }
 
-/* line 88, src/kit/themes/example/button.scss */
+/* line 98, src/kit/themes/example/button.scss */
 .mtr-btn--l {
   font-size: 16px;
   height: 42px;
@@ -1625,19 +1632,19 @@ table.ui_radio + .ui_radio {
   min-width: 96px;
 }
 
-/* line 28, src/kit/themes/example/button.scss */
+/* line 30, src/kit/themes/example/button.scss */
 .mtr-btn--l:active {
   padding-top: 13px;
   padding-bottom: 11px;
 }
 
-/* line 34, src/kit/themes/example/button.scss */
+/* line 36, src/kit/themes/example/button.scss */
 .mtr-btn--l.mtr-btn--loading::before {
   width: 16px;
   height: 16px;
 }
 
-/* line 93, src/kit/themes/example/button.scss */
+/* line 103, src/kit/themes/example/button.scss */
 .mtr-btn--xl {
   font-size: 20px;
   height: 52px;
@@ -1645,75 +1652,85 @@ table.ui_radio + .ui_radio {
   min-width: 120px;
 }
 
-/* line 28, src/kit/themes/example/button.scss */
+/* line 30, src/kit/themes/example/button.scss */
 .mtr-btn--xl:active {
   padding-top: 16px;
   padding-bottom: 14px;
 }
 
-/* line 34, src/kit/themes/example/button.scss */
+/* line 36, src/kit/themes/example/button.scss */
 .mtr-btn--xl.mtr-btn--loading::before {
   width: 20px;
   height: 20px;
 }
 
-/* line 103, src/kit/themes/example/button.scss */
+/* line 113, src/kit/themes/example/button.scss */
 .mtr-btn--primary {
   color: #fff;
   border-color: #2a79ff;
   background-color: #2a79ff;
 }
 
-/* line 108, src/kit/themes/example/button.scss */
+/* line 118, src/kit/themes/example/button.scss */
 .mtr-btn--primary:hover {
   border-color: #336eea;
   background-color: #336eea;
 }
 
-/* line 113, src/kit/themes/example/button.scss */
+/* line 123, src/kit/themes/example/button.scss */
 .mtr-btn--primary:active {
   border-color: #3562d5;
   background-color: #3562d5;
 }
 
-/* line 118, src/kit/themes/example/button.scss */
+/* line 128, src/kit/themes/example/button.scss */
 .mtr-btn--primary.mtr-btn--loading::before {
   border-color: transparent #fff #fff #fff;
 }
 
-/* line 122, src/kit/themes/example/button.scss */
+/* line 132, src/kit/themes/example/button.scss */
 .mtr-btn--primary.mtr-btn--disabled, .mtr-btn--primary[disabled] {
   color: #fff;
 }
 
-/* line 127, src/kit/themes/example/button.scss */
+/* line 138, src/kit/themes/example/button.scss */
+a.mtr-btn--primary:hover, a.mtr-btn--primary:active, a.mtr-btn--primary:visited, a.mtr-btn--primary:focus {
+  color: #fff;
+}
+
+/* line 143, src/kit/themes/example/button.scss */
 .mtr-btn--primary-bordered {
   color: #2a79ff;
   border-color: #5594ff;
   background-color: transparent;
 }
 
-/* line 132, src/kit/themes/example/button.scss */
+/* line 148, src/kit/themes/example/button.scss */
 .mtr-btn--primary-bordered:hover {
   background-color: #f7faff;
 }
 
-/* line 136, src/kit/themes/example/button.scss */
+/* line 152, src/kit/themes/example/button.scss */
 .mtr-btn--primary-bordered:active {
   background-color: #f3f7ff;
 }
 
-/* line 140, src/kit/themes/example/button.scss */
+/* line 156, src/kit/themes/example/button.scss */
 .mtr-btn--primary-bordered.mtr-btn--loading::before {
   border-color: transparent #2a79ff #2a79ff #2a79ff;
 }
 
-/* line 144, src/kit/themes/example/button.scss */
+/* line 160, src/kit/themes/example/button.scss */
 .mtr-btn--primary-bordered.mtr-btn--disabled, .mtr-btn--primary-bordered[disabled] {
   color: #2a79ff;
 }
 
-/* line 149, src/kit/themes/example/button.scss */
+/* line 166, src/kit/themes/example/button.scss */
+a.mtr-btn--primary-bordered:hover, a.mtr-btn--primary-bordered:active, a.mtr-btn--primary-bordered:visited, a.mtr-btn--primary-bordered:focus {
+  color: #2a79ff;
+}
+
+/* line 171, src/kit/themes/example/button.scss */
 .mtr-btn--primary-flat {
   min-width: 0;
   padding-right: 0;
@@ -1723,83 +1740,88 @@ table.ui_radio + .ui_radio {
   color: #2a79ff;
 }
 
-/* line 153, src/kit/themes/example/button.scss */
+/* line 175, src/kit/themes/example/button.scss */
 .mtr-btn--primary-flat:hover {
   color: #336eea;
 }
 
-/* line 157, src/kit/themes/example/button.scss */
+/* line 179, src/kit/themes/example/button.scss */
 .mtr-btn--primary-flat:active {
   color: #3562d5;
 }
 
-/* line 161, src/kit/themes/example/button.scss */
+/* line 183, src/kit/themes/example/button.scss */
 .mtr-btn--primary-flat.mtr-btn--loading::before {
   border-color: transparent #2a79ff #2a79ff #2a79ff;
 }
 
-/* line 165, src/kit/themes/example/button.scss */
+/* line 187, src/kit/themes/example/button.scss */
 .mtr-btn--primary-flat.mtr-btn--disabled, .mtr-btn--primary-flat[disabled] {
   color: #2a79ff;
 }
 
-/* line 172, src/kit/themes/example/button.scss */
+/* line 193, src/kit/themes/example/button.scss */
+a.mtr-btn--primary-flat:visited, a.mtr-btn--primary-flat:focus {
+  color: #2a79ff;
+}
+
+/* line 200, src/kit/themes/example/button.scss */
 .mtr-btn--secondary {
   color: #333;
   border-color: #f5f5f5;
   background-color: #f5f5f5;
 }
 
-/* line 177, src/kit/themes/example/button.scss */
+/* line 205, src/kit/themes/example/button.scss */
 .mtr-btn--secondary:hover {
   border-color: #f0f0f0;
   background-color: #f0f0f0;
 }
 
-/* line 182, src/kit/themes/example/button.scss */
+/* line 210, src/kit/themes/example/button.scss */
 .mtr-btn--secondary:active {
   border-color: #ebebeb;
   background-color: #ebebeb;
 }
 
-/* line 187, src/kit/themes/example/button.scss */
+/* line 215, src/kit/themes/example/button.scss */
 .mtr-btn--secondary.mtr-btn--loading::before {
   border-color: transparent #333 #333 #333;
 }
 
-/* line 191, src/kit/themes/example/button.scss */
+/* line 219, src/kit/themes/example/button.scss */
 .mtr-btn--secondary.mtr-btn--disabled, .mtr-btn--secondary[disabled] {
   color: #333;
 }
 
-/* line 196, src/kit/themes/example/button.scss */
+/* line 224, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-bordered {
   color: #333;
   border-color: #cccccc;
   background-color: transparent;
 }
 
-/* line 201, src/kit/themes/example/button.scss */
+/* line 229, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-bordered:hover {
   background-color: #fafafa;
 }
 
-/* line 205, src/kit/themes/example/button.scss */
+/* line 233, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-bordered:active {
   background-color: #f5f5f5;
 }
 
-/* line 209, src/kit/themes/example/button.scss */
+/* line 237, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-bordered.mtr-btn--loading::before {
   border-color: transparent #333 #333 #333;
 }
 
-/* line 213, src/kit/themes/example/button.scss */
+/* line 241, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-bordered.mtr-btn--disabled, .mtr-btn--secondary-bordered[disabled] {
   color: #333;
 }
 
-/* line 218, src/kit/themes/example/button.scss */
+/* line 246, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-flat {
   min-width: 0;
   padding-right: 0;
@@ -1809,83 +1831,83 @@ table.ui_radio + .ui_radio {
   color: #999;
 }
 
-/* line 222, src/kit/themes/example/button.scss */
+/* line 250, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-flat:hover {
   color: #666;
 }
 
-/* line 226, src/kit/themes/example/button.scss */
+/* line 254, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-flat:active {
   color: #333;
 }
 
-/* line 230, src/kit/themes/example/button.scss */
+/* line 258, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-flat.mtr-btn--loading::before {
   border-color: transparent #999 #999 #999;
 }
 
-/* line 234, src/kit/themes/example/button.scss */
+/* line 262, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-flat.mtr-btn--disabled, .mtr-btn--secondary-flat[disabled] {
   color: #999;
 }
 
-/* line 241, src/kit/themes/example/button.scss */
+/* line 269, src/kit/themes/example/button.scss */
 .mtr-btn--danger {
   color: #ffffff;
   border-color: #d92929;
   background-color: #d92929;
 }
 
-/* line 246, src/kit/themes/example/button.scss */
+/* line 274, src/kit/themes/example/button.scss */
 .mtr-btn--danger:hover {
   border-color: #c71414;
   background-color: #c71414;
 }
 
-/* line 251, src/kit/themes/example/button.scss */
+/* line 279, src/kit/themes/example/button.scss */
 .mtr-btn--danger:active {
   border-color: #b80d0d;
   background-color: #b80d0d;
 }
 
-/* line 256, src/kit/themes/example/button.scss */
+/* line 284, src/kit/themes/example/button.scss */
 .mtr-btn--danger.mtr-btn--loading::before {
   border-color: transparent #fff #fff #fff;
 }
 
-/* line 260, src/kit/themes/example/button.scss */
+/* line 288, src/kit/themes/example/button.scss */
 .mtr-btn--danger.mtr-btn--disabled, .mtr-btn--danger[disabled] {
   color: #fff;
 }
 
-/* line 265, src/kit/themes/example/button.scss */
+/* line 293, src/kit/themes/example/button.scss */
 .mtr-btn--danger-bordered {
   color: #d92929;
   border-color: #e15454;
   background-color: transparent;
 }
 
-/* line 270, src/kit/themes/example/button.scss */
+/* line 298, src/kit/themes/example/button.scss */
 .mtr-btn--danger-bordered:hover {
   background-color: #fef7f7;
 }
 
-/* line 274, src/kit/themes/example/button.scss */
+/* line 302, src/kit/themes/example/button.scss */
 .mtr-btn--danger-bordered:active {
   background-color: #fdf2f2;
 }
 
-/* line 278, src/kit/themes/example/button.scss */
+/* line 306, src/kit/themes/example/button.scss */
 .mtr-btn--danger-bordered.mtr-btn--loading::before {
   border-color: transparent #d92929 #d92929 #d92929;
 }
 
-/* line 282, src/kit/themes/example/button.scss */
+/* line 310, src/kit/themes/example/button.scss */
 .mtr-btn--danger-bordered.mtr-btn--disabled, .mtr-btn--danger-bordered[disabled] {
   color: #d92929;
 }
 
-/* line 287, src/kit/themes/example/button.scss */
+/* line 315, src/kit/themes/example/button.scss */
 .mtr-btn--danger-flat {
   min-width: 0;
   padding-right: 0;
@@ -1895,34 +1917,34 @@ table.ui_radio + .ui_radio {
   color: #d92929;
 }
 
-/* line 291, src/kit/themes/example/button.scss */
+/* line 319, src/kit/themes/example/button.scss */
 .mtr-btn--danger-flat:hover {
   color: #c71414;
 }
 
-/* line 295, src/kit/themes/example/button.scss */
+/* line 323, src/kit/themes/example/button.scss */
 .mtr-btn--danger-flat:active {
   color: #d92929;
 }
 
-/* line 299, src/kit/themes/example/button.scss */
+/* line 327, src/kit/themes/example/button.scss */
 .mtr-btn--danger-flat.mtr-btn--loading::before {
   border-color: transparent #d92929 #d92929 #d92929;
 }
 
-/* line 303, src/kit/themes/example/button.scss */
+/* line 331, src/kit/themes/example/button.scss */
 .mtr-btn--danger-flat.mtr-btn--disabled, .mtr-btn--danger-flat[disabled] {
   color: #d92929;
 }
 
-/* line 309, src/kit/themes/example/button.scss */
+/* line 337, src/kit/themes/example/button.scss */
 .mtr-btn--pay {
   color: #404040;
   border-color: #ffd54b;
   background: #ffd54b;
 }
 
-/* line 321, src/kit/themes/example/button.scss */
+/* line 349, src/kit/themes/example/button.scss */
 .mtr-btn--loading {
   opacity: 1;
   position: relative;
@@ -1931,7 +1953,7 @@ table.ui_radio + .ui_radio {
   cursor: default;
 }
 
-/* line 327, src/kit/themes/example/button.scss */
+/* line 355, src/kit/themes/example/button.scss */
 .mtr-btn--loading::before {
   display: block;
   content: '';
@@ -1951,7 +1973,7 @@ table.ui_radio + .ui_radio {
           animation: spinner 0.6s linear infinite;
 }
 
-/* line 347, src/kit/themes/example/button.scss */
+/* line 375, src/kit/themes/example/button.scss */
 .mtr-btn--disabled, .mtr-btn[disabled] {
   opacity: 0.4;
   position: static;
@@ -1959,7 +1981,7 @@ table.ui_radio + .ui_radio {
   cursor: default;
 }
 
-/* line 352, src/kit/themes/example/button.scss */
+/* line 380, src/kit/themes/example/button.scss */
 .mtr-btn--disabled::before, .mtr-btn[disabled]::before {
   display: none;
 }
