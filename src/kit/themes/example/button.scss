@@ -296,6 +296,10 @@ $button--secondary--color: #333;
         color: #d92929;
     }
 
+    &.mtr-btn--loading::before {
+        border-color: transparent #d92929 #d92929 #d92929;
+    }
+
     &.mtr-btn--disabled, &[disabled] {
         color: #d92929;
     }

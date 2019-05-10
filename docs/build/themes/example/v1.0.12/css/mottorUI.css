@@ -1906,18 +1906,23 @@ table.ui_radio + .ui_radio {
 }
 
 /* line 299, src/kit/themes/example/button.scss */
+.mtr-btn--danger-flat.mtr-btn--loading::before {
+  border-color: transparent #d92929 #d92929 #d92929;
+}
+
+/* line 303, src/kit/themes/example/button.scss */
 .mtr-btn--danger-flat.mtr-btn--disabled, .mtr-btn--danger-flat[disabled] {
   color: #d92929;
 }
 
-/* line 305, src/kit/themes/example/button.scss */
+/* line 309, src/kit/themes/example/button.scss */
 .mtr-btn--pay {
   color: #404040;
   border-color: #ffd54b;
   background: #ffd54b;
 }
 
-/* line 317, src/kit/themes/example/button.scss */
+/* line 321, src/kit/themes/example/button.scss */
 .mtr-btn--loading {
   opacity: 1;
   position: relative;
@@ -1926,7 +1931,7 @@ table.ui_radio + .ui_radio {
   cursor: default;
 }
 
-/* line 323, src/kit/themes/example/button.scss */
+/* line 327, src/kit/themes/example/button.scss */
 .mtr-btn--loading::before {
   display: block;
   content: '';
@@ -1946,7 +1951,7 @@ table.ui_radio + .ui_radio {
           animation: spinner 0.6s linear infinite;
 }
 
-/* line 343, src/kit/themes/example/button.scss */
+/* line 347, src/kit/themes/example/button.scss */
 .mtr-btn--disabled, .mtr-btn[disabled] {
   opacity: 0.4;
   position: static;
@@ -1954,7 +1959,7 @@ table.ui_radio + .ui_radio {
   cursor: default;
 }
 
-/* line 348, src/kit/themes/example/button.scss */
+/* line 352, src/kit/themes/example/button.scss */
 .mtr-btn--disabled::before, .mtr-btn[disabled]::before {
   display: none;
 }
