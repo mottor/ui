@@ -836,7 +836,7 @@ p + p {
   line-height: 28px;
 }
 
-@-webkit-keyframes spin {
+@-webkit-keyframes spinner {
   from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -847,7 +847,7 @@ p + p {
   }
 }
 
-@keyframes spin {
+@keyframes spinner {
   from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -876,16 +876,12 @@ p + p {
   }
 }
 
-/* line 24, src/kit/base_style/button.scss */
-.button {
+/* line 30, src/kit/base_style/button.scss */
+.mtr-btn {
   cursor: pointer;
   text-align: center;
-  font-size: 14px;
-  height: 32px;
-  border-radius: 4px;
-  background: #c00;
+  line-height: 1;
   display: inline-block;
-  line-height: 32px;
   text-decoration: none;
   outline: none;
   -webkit-box-shadow: none;
@@ -893,113 +889,25 @@ p + p {
   overflow: hidden;
   position: relative;
   vertical-align: middle;
-  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
-/* line 45, src/kit/base_style/button.scss */
-.button:focus, .button.button--focused {
+/* line 57, src/kit/base_style/button.scss */
+.mtr-btn:focus {
   outline: none;
 }
 
-/* line 49, src/kit/base_style/button.scss */
-.button.button--focused {
+/* line 61, src/kit/base_style/button.scss */
+.mtr-btn.button--focused {
   -webkit-box-shadow: inset 0 0 0 1px #fff, 0 0 0 2px #5199db;
           box-shadow: inset 0 0 0 1px #fff, 0 0 0 2px #5199db;
-}
-
-/* line 54, src/kit/base_style/button.scss */
-.button-text {
-  padding: 0 18px;
-  display: block;
-  height: 100%;
-  position: relative;
-}
-
-/* line 61, src/kit/base_style/button.scss */
-.button:active .button-text, .button--active .button-text {
-  top: 1px;
-}
-
-/* line 69, src/kit/base_style/button.scss */
-.button-s {
-  font-size: 12px;
-  height: 28px;
-  line-height: 28px;
-  border-radius: 4px;
-}
-
-/* line 19, src/kit/base_style/button.scss */
-.button-s .button-text {
-  padding: 0 16px;
-}
-
-/* line 73, src/kit/base_style/button.scss */
-.button-l {
-  font-size: 16px;
-  height: 36px;
-  line-height: 36px;
-  border-radius: 5px;
-}
-
-/* line 19, src/kit/base_style/button.scss */
-.button-l .button-text {
-  padding: 0 21px;
-}
-
-/* line 77, src/kit/base_style/button.scss */
-.button-xl {
-  font-size: 18px;
-  height: 42px;
-  line-height: 42px;
-  border-radius: 5px;
-}
-
-/* line 19, src/kit/base_style/button.scss */
-.button-xl .button-text {
-  padding: 0 23px;
-}
-
-/* line 84, src/kit/base_style/button.scss */
-.button-primary {
-  background: #5181b8;
-  color: #fff;
-}
-
-/* line 88, src/kit/base_style/button.scss */
-.button-primary:hover, .button-primary.button--hover {
-  background: #5b88bd;
-}
-
-/* line 92, src/kit/base_style/button.scss */
-.button-primary:active, .button-primary.button--active {
-  background: #4872a3;
-}
-
-/* line 97, src/kit/base_style/button.scss */
-.button-secondary {
-  background: #e5ebf1;
-  color: #55677d;
-}
-
-/* line 101, src/kit/base_style/button.scss */
-.button-secondary:hover {
-  background: #dfe6ed;
-}
-
-/* line 105, src/kit/base_style/button.scss */
-.button-secondary:active {
-  background: #dae2ea;
-}
-
-/* line 113, src/kit/base_style/button.scss */
-.button--disabled, .button--disabled:hover,
-.button--disabled:active, .button--loading {
-  background: #f2f2f2;
-  color: #808080;
-  cursor: default;
-  pointer-events: none;
-  -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
-          box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
 /* line 3, src/kit/base_style/svg-button.scss */
@@ -1411,91 +1319,115 @@ table.ui_radio + .ui_radio {
   padding-bottom: 5px;
 }
 
-/* line 80, src/kit/base_style/editor/toolbar-popover.scss */
+/* line 77, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar-popover-menu-item--disabled {
+  cursor: default;
+  pointer-events: none;
+}
+
+/* line 85, src/kit/base_style/editor/toolbar-popover.scss */
 .ed-toolbar__item:first-child .ed-toolbar-popover, .ed-toolbar__item--first .ed-toolbar-popover {
   left: calc(50% + 3px);
 }
 
-/* line 83, src/kit/base_style/editor/toolbar-popover.scss */
+/* line 88, src/kit/base_style/editor/toolbar-popover.scss */
 .ed-toolbar__item:last-child .ed-toolbar-popover, .ed-toolbar__item--last .ed-toolbar-popover {
   left: calc(50% - 3px);
 }
 
-/* line 88, src/kit/base_style/editor/toolbar-popover.scss */
+/* line 93, src/kit/base_style/editor/toolbar-popover.scss */
 .ed-toolbar__item--is-opened .ed-toolbar-popover {
   display: block;
 }
 
-/* line 92, src/kit/base_style/editor/toolbar-popover.scss */
+/* line 97, src/kit/base_style/editor/toolbar-popover.scss */
+.ed-toolbar__item--is-disabled {
+  cursor: default;
+  pointer-events: none;
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* line 103, src/kit/base_style/editor/toolbar-popover.scss */
 .ed-toolbar-popover--drop-up .ed-toolbar-popover {
   bottom: calc(100% + 10px);
 }
 
-/* line 94, src/kit/base_style/editor/toolbar-popover.scss */
+/* line 105, src/kit/base_style/editor/toolbar-popover.scss */
 .ed-toolbar-popover--drop-up .ed-toolbar-popover:before {
   bottom: -1px;
   border-bottom: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* line 100, src/kit/base_style/editor/toolbar-popover.scss */
+/* line 111, src/kit/base_style/editor/toolbar-popover.scss */
 .ed-toolbar-popover--drop-up .ed-toolbar-popover:after {
   bottom: -8px;
   border-bottom: 0;
   border-top: 8px solid #f0f;
 }
 
-/* line 107, src/kit/base_style/editor/toolbar-popover.scss */
+/* line 118, src/kit/base_style/editor/toolbar-popover.scss */
 .ed-toolbar-popover--drop-down .ed-toolbar-popover {
   top: calc(100% + 10px);
 }
 
-/* line 109, src/kit/base_style/editor/toolbar-popover.scss */
+/* line 120, src/kit/base_style/editor/toolbar-popover.scss */
 .ed-toolbar-popover--drop-down .ed-toolbar-popover:before {
   top: -1px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* line 114, src/kit/base_style/editor/toolbar-popover.scss */
+/* line 125, src/kit/base_style/editor/toolbar-popover.scss */
 .ed-toolbar-popover--drop-down .ed-toolbar-popover:after {
   top: -8px;
   border-bottom: 8px solid #f0f;
 }
 
-/* line 124, src/kit/base_style/editor/toolbar-popover.scss */
+/* line 135, src/kit/base_style/editor/toolbar-popover.scss */
 .theme--dark .ed-toolbar-popover {
   background: rgba(3, 8, 15, 0.92);
 }
 
-/* line 136, src/kit/base_style/editor/toolbar-popover.scss */
+/* line 147, src/kit/base_style/editor/toolbar-popover.scss */
 .theme--dark .ed-toolbar-popover--drop-up .ed-toolbar-popover:after {
   bottom: -8px;
   border-bottom: 0;
   border-top: 8px solid rgba(3, 8, 15, 0.92);
 }
 
-/* line 144, src/kit/base_style/editor/toolbar-popover.scss */
+/* line 155, src/kit/base_style/editor/toolbar-popover.scss */
 .theme--dark .ed-toolbar-popover--drop-down .ed-toolbar-popover:after {
   top: -8px;
   border-bottom: 8px solid rgba(3, 8, 15, 0.92);
 }
 
-/* line 152, src/kit/base_style/editor/toolbar-popover.scss */
+/* line 161, src/kit/base_style/editor/toolbar-popover.scss */
+.theme--dark .ed-toolbar-popover-menu-item--disabled, .theme--dark .ed-toolbar-popover-menu-item--disabled:hover {
+  color: #aaa;
+}
+
+/* line 167, src/kit/base_style/editor/toolbar-popover.scss */
 .theme--light .ed-toolbar-popover {
   background: #fff;
 }
 
-/* line 157, src/kit/base_style/editor/toolbar-popover.scss */
+/* line 172, src/kit/base_style/editor/toolbar-popover.scss */
 .theme--light .ed-toolbar-popover--drop-up .ed-toolbar-popover:after {
   bottom: -8px;
   border-bottom: 0;
   border-top: 8px solid #fff;
 }
 
-/* line 165, src/kit/base_style/editor/toolbar-popover.scss */
+/* line 180, src/kit/base_style/editor/toolbar-popover.scss */
 .theme--light .ed-toolbar-popover--drop-down .ed-toolbar-popover:after {
   top: -8px;
   border-bottom: 8px solid #fff;
+}
+
+/* line 186, src/kit/base_style/editor/toolbar-popover.scss */
+.theme--light .ed-toolbar-popover-menu-item--disabled, .theme--light .ed-toolbar-popover-menu-item--disabled:hover {
+  color: #888;
 }
 
 /* line 8, src/kit/base_style/editor/sidebar.scss */
@@ -1632,13 +1564,397 @@ table.ui_radio + .ui_radio {
   overflow: auto;
 }
 
-/* line 132, src/kit/base_style/editor/sidebar.scss */
-.theme--dark .ed-sidebar__header {
-  background-color: #161e24;
+/* line 54, src/kit/themes/example/button.scss */
+.mtr-btn {
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #333;
 }
 
-/* line 16, src/kit/themes/example/theme.scss */
-.test {
-  zoom: 1;
-  color: #f0f;
+/* line 60, src/kit/themes/example/button.scss */
+.mtr-btn.mtr-btn--loading::before {
+  border-color: transparent #333 #333 #333;
+}
+
+/* line 78, src/kit/themes/example/button.scss */
+.mtr-btn--m {
+  font-size: 14px;
+  height: 36px;
+  padding: 10px 16px 10px;
+  min-width: 84px;
+}
+
+/* line 28, src/kit/themes/example/button.scss */
+.mtr-btn--m:active {
+  padding-top: 11px;
+  padding-bottom: 9px;
+}
+
+/* line 34, src/kit/themes/example/button.scss */
+.mtr-btn--m.mtr-btn--loading::before {
+  width: 14px;
+  height: 14px;
+}
+
+/* line 83, src/kit/themes/example/button.scss */
+.mtr-btn--s {
+  font-size: 12px;
+  height: 30px;
+  padding: 8px 14px 8px;
+  min-width: 72px;
+}
+
+/* line 28, src/kit/themes/example/button.scss */
+.mtr-btn--s:active {
+  padding-top: 9px;
+  padding-bottom: 7px;
+}
+
+/* line 34, src/kit/themes/example/button.scss */
+.mtr-btn--s.mtr-btn--loading::before {
+  width: 12px;
+  height: 12px;
+}
+
+/* line 88, src/kit/themes/example/button.scss */
+.mtr-btn--l {
+  font-size: 16px;
+  height: 42px;
+  padding: 12px 20px 12px;
+  min-width: 96px;
+}
+
+/* line 28, src/kit/themes/example/button.scss */
+.mtr-btn--l:active {
+  padding-top: 13px;
+  padding-bottom: 11px;
+}
+
+/* line 34, src/kit/themes/example/button.scss */
+.mtr-btn--l.mtr-btn--loading::before {
+  width: 16px;
+  height: 16px;
+}
+
+/* line 93, src/kit/themes/example/button.scss */
+.mtr-btn--xl {
+  font-size: 20px;
+  height: 52px;
+  padding: 15px 24px 15px;
+  min-width: 120px;
+}
+
+/* line 28, src/kit/themes/example/button.scss */
+.mtr-btn--xl:active {
+  padding-top: 16px;
+  padding-bottom: 14px;
+}
+
+/* line 34, src/kit/themes/example/button.scss */
+.mtr-btn--xl.mtr-btn--loading::before {
+  width: 20px;
+  height: 20px;
+}
+
+/* line 103, src/kit/themes/example/button.scss */
+.mtr-btn--primary {
+  color: #fff;
+  border-color: #2a79ff;
+  background-color: #2a79ff;
+}
+
+/* line 108, src/kit/themes/example/button.scss */
+.mtr-btn--primary:hover {
+  border-color: #336eea;
+  background-color: #336eea;
+}
+
+/* line 113, src/kit/themes/example/button.scss */
+.mtr-btn--primary:active {
+  border-color: #3562d5;
+  background-color: #3562d5;
+}
+
+/* line 118, src/kit/themes/example/button.scss */
+.mtr-btn--primary.mtr-btn--loading::before {
+  border-color: transparent #fff #fff #fff;
+}
+
+/* line 122, src/kit/themes/example/button.scss */
+.mtr-btn--primary.mtr-btn--disabled, .mtr-btn--primary[disabled] {
+  color: #fff;
+}
+
+/* line 127, src/kit/themes/example/button.scss */
+.mtr-btn--primary-bordered {
+  color: #2a79ff;
+  border-color: #5594ff;
+  background-color: transparent;
+}
+
+/* line 132, src/kit/themes/example/button.scss */
+.mtr-btn--primary-bordered:hover {
+  background-color: #f7faff;
+}
+
+/* line 136, src/kit/themes/example/button.scss */
+.mtr-btn--primary-bordered:active {
+  background-color: #f3f7ff;
+}
+
+/* line 140, src/kit/themes/example/button.scss */
+.mtr-btn--primary-bordered.mtr-btn--loading::before {
+  border-color: transparent #2a79ff #2a79ff #2a79ff;
+}
+
+/* line 144, src/kit/themes/example/button.scss */
+.mtr-btn--primary-bordered.mtr-btn--disabled, .mtr-btn--primary-bordered[disabled] {
+  color: #2a79ff;
+}
+
+/* line 149, src/kit/themes/example/button.scss */
+.mtr-btn--primary-flat {
+  min-width: 0;
+  padding-right: 0;
+  padding-left: 0;
+  border-color: transparent;
+  background-color: transparent;
+  color: #2a79ff;
+}
+
+/* line 153, src/kit/themes/example/button.scss */
+.mtr-btn--primary-flat:hover {
+  color: #336eea;
+}
+
+/* line 157, src/kit/themes/example/button.scss */
+.mtr-btn--primary-flat:active {
+  color: #3562d5;
+}
+
+/* line 161, src/kit/themes/example/button.scss */
+.mtr-btn--primary-flat.mtr-btn--loading::before {
+  border-color: transparent #2a79ff #2a79ff #2a79ff;
+}
+
+/* line 165, src/kit/themes/example/button.scss */
+.mtr-btn--primary-flat.mtr-btn--disabled, .mtr-btn--primary-flat[disabled] {
+  color: #2a79ff;
+}
+
+/* line 172, src/kit/themes/example/button.scss */
+.mtr-btn--secondary {
+  color: #333;
+  border-color: #f5f5f5;
+  background-color: #f5f5f5;
+}
+
+/* line 177, src/kit/themes/example/button.scss */
+.mtr-btn--secondary:hover {
+  border-color: #f0f0f0;
+  background-color: #f0f0f0;
+}
+
+/* line 182, src/kit/themes/example/button.scss */
+.mtr-btn--secondary:active {
+  border-color: #ebebeb;
+  background-color: #ebebeb;
+}
+
+/* line 187, src/kit/themes/example/button.scss */
+.mtr-btn--secondary.mtr-btn--loading::before {
+  border-color: transparent #333 #333 #333;
+}
+
+/* line 191, src/kit/themes/example/button.scss */
+.mtr-btn--secondary.mtr-btn--disabled, .mtr-btn--secondary[disabled] {
+  color: #333;
+}
+
+/* line 196, src/kit/themes/example/button.scss */
+.mtr-btn--secondary-bordered {
+  color: #333;
+  border-color: #cccccc;
+  background-color: transparent;
+}
+
+/* line 201, src/kit/themes/example/button.scss */
+.mtr-btn--secondary-bordered:hover {
+  background-color: #fafafa;
+}
+
+/* line 205, src/kit/themes/example/button.scss */
+.mtr-btn--secondary-bordered:active {
+  background-color: #f5f5f5;
+}
+
+/* line 209, src/kit/themes/example/button.scss */
+.mtr-btn--secondary-bordered.mtr-btn--loading::before {
+  border-color: transparent #333 #333 #333;
+}
+
+/* line 213, src/kit/themes/example/button.scss */
+.mtr-btn--secondary-bordered.mtr-btn--disabled, .mtr-btn--secondary-bordered[disabled] {
+  color: #333;
+}
+
+/* line 218, src/kit/themes/example/button.scss */
+.mtr-btn--secondary-flat {
+  min-width: 0;
+  padding-right: 0;
+  padding-left: 0;
+  border-color: transparent;
+  background-color: transparent;
+  color: #999;
+}
+
+/* line 222, src/kit/themes/example/button.scss */
+.mtr-btn--secondary-flat:hover {
+  color: #666;
+}
+
+/* line 226, src/kit/themes/example/button.scss */
+.mtr-btn--secondary-flat:active {
+  color: #333;
+}
+
+/* line 230, src/kit/themes/example/button.scss */
+.mtr-btn--secondary-flat.mtr-btn--loading::before {
+  border-color: transparent #999 #999 #999;
+}
+
+/* line 234, src/kit/themes/example/button.scss */
+.mtr-btn--secondary-flat.mtr-btn--disabled, .mtr-btn--secondary-flat[disabled] {
+  color: #999;
+}
+
+/* line 241, src/kit/themes/example/button.scss */
+.mtr-btn--danger {
+  color: #ffffff;
+  border-color: #d92929;
+  background-color: #d92929;
+}
+
+/* line 246, src/kit/themes/example/button.scss */
+.mtr-btn--danger:hover {
+  border-color: #c71414;
+  background-color: #c71414;
+}
+
+/* line 251, src/kit/themes/example/button.scss */
+.mtr-btn--danger:active {
+  border-color: #b80d0d;
+  background-color: #b80d0d;
+}
+
+/* line 256, src/kit/themes/example/button.scss */
+.mtr-btn--danger.mtr-btn--loading::before {
+  border-color: transparent #fff #fff #fff;
+}
+
+/* line 260, src/kit/themes/example/button.scss */
+.mtr-btn--danger.mtr-btn--disabled, .mtr-btn--danger[disabled] {
+  color: #fff;
+}
+
+/* line 265, src/kit/themes/example/button.scss */
+.mtr-btn--danger-bordered {
+  color: #d92929;
+  border-color: #e15454;
+  background-color: transparent;
+}
+
+/* line 270, src/kit/themes/example/button.scss */
+.mtr-btn--danger-bordered:hover {
+  background-color: #fef7f7;
+}
+
+/* line 274, src/kit/themes/example/button.scss */
+.mtr-btn--danger-bordered:active {
+  background-color: #fdf2f2;
+}
+
+/* line 278, src/kit/themes/example/button.scss */
+.mtr-btn--danger-bordered.mtr-btn--loading::before {
+  border-color: transparent #d92929 #d92929 #d92929;
+}
+
+/* line 282, src/kit/themes/example/button.scss */
+.mtr-btn--danger-bordered.mtr-btn--disabled, .mtr-btn--danger-bordered[disabled] {
+  color: #d92929;
+}
+
+/* line 287, src/kit/themes/example/button.scss */
+.mtr-btn--danger-flat {
+  min-width: 0;
+  padding-right: 0;
+  padding-left: 0;
+  border-color: transparent;
+  background-color: transparent;
+  color: #d92929;
+}
+
+/* line 291, src/kit/themes/example/button.scss */
+.mtr-btn--danger-flat:hover {
+  color: #c71414;
+}
+
+/* line 295, src/kit/themes/example/button.scss */
+.mtr-btn--danger-flat:active {
+  color: #d92929;
+}
+
+/* line 299, src/kit/themes/example/button.scss */
+.mtr-btn--danger-flat.mtr-btn--disabled, .mtr-btn--danger-flat[disabled] {
+  color: #d92929;
+}
+
+/* line 305, src/kit/themes/example/button.scss */
+.mtr-btn--pay {
+  color: #404040;
+  border-color: #ffd54b;
+  background: #ffd54b;
+}
+
+/* line 317, src/kit/themes/example/button.scss */
+.mtr-btn--loading {
+  opacity: 1;
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* line 323, src/kit/themes/example/button.scss */
+.mtr-btn--loading::before {
+  display: block;
+  content: '';
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 100%;
+  border: 2px solid transparent;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spinner 0.6s linear infinite;
+          animation: spinner 0.6s linear infinite;
+}
+
+/* line 343, src/kit/themes/example/button.scss */
+.mtr-btn--disabled, .mtr-btn[disabled] {
+  opacity: 0.4;
+  position: static;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* line 348, src/kit/themes/example/button.scss */
+.mtr-btn--disabled::before, .mtr-btn[disabled]::before {
+  display: none;
 }

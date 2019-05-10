@@ -1,0 +1,351 @@
+$button--m--font-size: $base-font-size; // 14
+$button--s--font-size: $button--m--font-size - 2; // 12
+$button--l--font-size: $button--m--font-size + 2; // 16
+$button--xl--font-size: $button--m--font-size + 6; // 20
+
+$button--border-size: 1px;
+$button--height-ratio: 2.5714;
+$button--padding-sides-ratio: 1.2;
+$button--min-width-ratio: 6;
+
+$button--primary--color: #fff;
+$button--primary--bg-color: #2a79ff;
+$button--secondary--color: #333;
+//$button--m--height: roundEven($button--m--font-size * $button--height-ratio);
+//$button--m--padding-sides: roundEven($button--m--font-size * 1.2);
+//$button--m--padding: round(($button--m--height - (2 * $button--border-size) - $button--m--font-size)/2);
+
+@mixin buttonSize($font-size) {
+    $h: roundEven($font-size * $button--height-ratio);
+    $pv: round(($h - (2 * $button--border-size) - $font-size)/2);
+
+    font-size: $font-size;
+    height: $h;
+    //padding: ($pv - 1px) (roundEven($font-size * 1.2)) ($pv + 1px);
+    padding: $pv (roundEven($font-size * $button--padding-sides-ratio)) $pv;
+    min-width: roundEven($font-size * $button--min-width-ratio);
+
+    &:active {
+        //padding: $pv (roundEven($font-size * 1.2)) $pv;
+        padding-top: ($pv + 1);
+        padding-bottom: ($pv - 1);
+    }
+
+    &.mtr-btn--loading::before {
+        width: $font-size;
+        height: $font-size;
+    }
+}
+
+@mixin buttonFlat() {
+    min-width: 0;
+    padding-right: 0;
+    padding-left: 0;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+@mixin buttonDisabled() {
+    pointer-events: none;
+    cursor: default;
+}
+
+// Default (с рамкой)
+.mtr-btn {
+    background: transparent;
+    border: $button--border-size solid #333;
+    border-radius: 4px;
+    color: #333;
+
+    &.mtr-btn--loading::before {
+        border-color: transparent #333 #333 #333;
+    }
+}
+
+// Состояния
+// ---------
+// Normal
+// Hover
+// Focus
+// Active
+// Disabled
+// Loading
+
+
+// Размеры
+// ---------
+// Normal (medium)
+.mtr-btn--m {
+    @include buttonSize($button--m--font-size);
+}
+
+// Small
+.mtr-btn--s {
+    @include buttonSize($button--s--font-size);
+}
+
+// Large
+.mtr-btn--l {
+    @include buttonSize($button--l--font-size);
+}
+
+// Extra Large
+.mtr-btn--xl {
+    @include buttonSize($button--xl--font-size);
+}
+
+
+// Типы
+// после размеров!
+// ---------
+
+// Primary (без рамки, синяя)
+.mtr-btn--primary {
+    color: $button--primary--color;
+    border-color: $button--primary--bg-color;
+    background-color: $button--primary--bg-color;
+
+    &:hover {
+        border-color: #336eea;
+        background-color: #336eea;
+    }
+
+    &:active {
+        border-color: #3562d5;
+        background-color: #3562d5;
+    }
+
+    &.mtr-btn--loading::before {
+        border-color: transparent #fff #fff #fff;
+    }
+
+    &.mtr-btn--disabled, &[disabled] {
+        color: $button--primary--color;
+    }
+}
+
+.mtr-btn--primary-bordered {
+    color: $button--primary--bg-color;
+    border-color: #5594ff;
+    background-color: transparent;
+
+    &:hover {
+        background-color: #f7faff;
+    }
+
+    &:active {
+        background-color: #f3f7ff;
+    }
+
+    &.mtr-btn--loading::before {
+        border-color: transparent $button--primary--bg-color $button--primary--bg-color $button--primary--bg-color;
+    }
+
+    &.mtr-btn--disabled, &[disabled] {
+        color: $button--primary--bg-color;
+    }
+}
+
+.mtr-btn--primary-flat {
+    @include buttonFlat;
+    color: $button--primary--bg-color;
+
+    &:hover {
+        color: #336eea;
+    }
+
+    &:active {
+        color: #3562d5;
+    }
+
+    &.mtr-btn--loading::before {
+        border-color: transparent $button--primary--bg-color $button--primary--bg-color $button--primary--bg-color;
+    }
+
+    &.mtr-btn--disabled, &[disabled] {
+        color: $button--primary--bg-color;
+    }
+}
+
+
+// Secondary (без рамки, серая)
+.mtr-btn--secondary {
+    color: $button--secondary--color;
+    border-color: #f5f5f5;
+    background-color: #f5f5f5;
+
+    &:hover {
+        border-color: #f0f0f0;
+        background-color: #f0f0f0;
+    }
+
+    &:active {
+        border-color: #ebebeb;
+        background-color: #ebebeb;
+    }
+
+    &.mtr-btn--loading::before {
+        border-color: transparent #333 #333 #333;
+    }
+
+    &.mtr-btn--disabled, &[disabled] {
+        color: $button--secondary--color;
+    }
+}
+
+.mtr-btn--secondary-bordered {
+    color: $button--secondary--color;
+    border-color: #cccccc;
+    background-color: transparent;
+
+    &:hover {
+        background-color: #fafafa;
+    }
+
+    &:active {
+        background-color: #f5f5f5;
+    }
+
+    &.mtr-btn--loading::before {
+        border-color: transparent #333 #333 #333;
+    }
+
+    &.mtr-btn--disabled, &[disabled] {
+        color: $button--secondary--color;
+    }
+}
+
+.mtr-btn--secondary-flat {
+    @include buttonFlat;
+    color: #999;
+
+    &:hover {
+        color: #666;
+    }
+
+    &:active {
+        color: #333;
+    }
+
+    &.mtr-btn--loading::before {
+        border-color: transparent #999 #999 #999;
+    }
+
+    &.mtr-btn--disabled, &[disabled] {
+        color: #999;
+    }
+}
+
+// Success
+// Danger
+.mtr-btn--danger {
+    color: #ffffff;
+    border-color: #d92929;
+    background-color: #d92929;
+
+    &:hover {
+        border-color: #c71414;
+        background-color: #c71414;
+    }
+
+    &:active {
+        border-color: #b80d0d;
+        background-color: #b80d0d;
+    }
+
+    &.mtr-btn--loading::before {
+        border-color: transparent #fff #fff #fff;
+    }
+
+    &.mtr-btn--disabled, &[disabled] {
+        color: #fff;
+    }
+}
+
+.mtr-btn--danger-bordered {
+    color: #d92929;
+    border-color: #e15454;
+    background-color: transparent;
+
+    &:hover {
+        background-color: #fef7f7;
+    }
+
+    &:active {
+        background-color: #fdf2f2;
+    }
+
+    &.mtr-btn--loading::before {
+        border-color: transparent #d92929 #d92929 #d92929;
+    }
+
+    &.mtr-btn--disabled, &[disabled] {
+        color: #d92929;
+    }
+}
+
+.mtr-btn--danger-flat {
+    @include buttonFlat;
+    color: #d92929;
+
+    &:hover {
+        color: #c71414;
+    }
+
+    &:active {
+        color: #d92929;
+    }
+
+    &.mtr-btn--disabled, &[disabled] {
+        color: #d92929;
+    }
+}
+
+// Pay
+.mtr-btn--pay { // #ffd54b, #ffbb39
+    color: #404040;
+    border-color: #ffd54b;
+    background: #ffd54b;
+}
+
+// Link (без заливки)
+
+
+
+// Loading
+// идет после всех дизайнов кнопок, чтобы перебивать цвет
+.mtr-btn--loading {
+    opacity: 1;
+    position: relative;
+    color: transparent; // скрываем текст кнопки
+    @include buttonDisabled();
+
+    &::before {
+        display: block;
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        border-radius: 100%;
+        border: 2px solid transparent;
+        width: 20px;
+        height: 20px;
+        animation: spinner 0.6s linear infinite;
+    }
+}
+
+// Disabled
+// идет после всех дизайнов кнопок, чтобы перебивать всё
+.mtr-btn--disabled, .mtr-btn[disabled] {
+    opacity: 0.4;
+    position: static;
+    @include buttonDisabled();
+
+    &::before {
+        display: none;
+    }
+}
