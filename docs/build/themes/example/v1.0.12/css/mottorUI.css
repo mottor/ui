@@ -1584,7 +1584,17 @@ a.mtr-btn:hover, a.mtr-btn:active, a.mtr-btn:visited, a.mtr-btn:focus {
   text-decoration: none;
 }
 
-/* line 88, src/kit/themes/example/button.scss */
+/* line 75, src/kit/themes/example/button.scss */
+.mtr-btn--has-icon {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+/* line 95, src/kit/themes/example/button.scss */
 .mtr-btn--m {
   font-size: 14px;
   height: 36px;
@@ -1604,7 +1614,16 @@ a.mtr-btn:hover, a.mtr-btn:active, a.mtr-btn:visited, a.mtr-btn:focus {
   height: 14px;
 }
 
-/* line 93, src/kit/themes/example/button.scss */
+/* line 98, src/kit/themes/example/button.scss */
+.mtr-btn--m .mtr-btn__icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+/* line 108, src/kit/themes/example/button.scss */
 .mtr-btn--s {
   font-size: 12px;
   height: 30px;
@@ -1624,7 +1643,14 @@ a.mtr-btn:hover, a.mtr-btn:active, a.mtr-btn:visited, a.mtr-btn:focus {
   height: 12px;
 }
 
-/* line 98, src/kit/themes/example/button.scss */
+/* line 111, src/kit/themes/example/button.scss */
+.mtr-btn--s .mtr-btn__icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+/* line 119, src/kit/themes/example/button.scss */
 .mtr-btn--l {
   font-size: 16px;
   height: 42px;
@@ -1644,7 +1670,14 @@ a.mtr-btn:hover, a.mtr-btn:active, a.mtr-btn:visited, a.mtr-btn:focus {
   height: 16px;
 }
 
-/* line 103, src/kit/themes/example/button.scss */
+/* line 122, src/kit/themes/example/button.scss */
+.mtr-btn--l .mtr-btn__icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+/* line 130, src/kit/themes/example/button.scss */
 .mtr-btn--xl {
   font-size: 20px;
   height: 52px;
@@ -1664,73 +1697,80 @@ a.mtr-btn:hover, a.mtr-btn:active, a.mtr-btn:visited, a.mtr-btn:focus {
   height: 20px;
 }
 
-/* line 113, src/kit/themes/example/button.scss */
+/* line 133, src/kit/themes/example/button.scss */
+.mtr-btn--xl .mtr-btn__icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+/* line 146, src/kit/themes/example/button.scss */
 .mtr-btn--primary {
   color: #fff;
   border-color: #2a79ff;
   background-color: #2a79ff;
 }
 
-/* line 118, src/kit/themes/example/button.scss */
+/* line 151, src/kit/themes/example/button.scss */
 .mtr-btn--primary:hover {
   border-color: #336eea;
   background-color: #336eea;
 }
 
-/* line 123, src/kit/themes/example/button.scss */
+/* line 156, src/kit/themes/example/button.scss */
 .mtr-btn--primary:active {
   border-color: #3562d5;
   background-color: #3562d5;
 }
 
-/* line 128, src/kit/themes/example/button.scss */
+/* line 161, src/kit/themes/example/button.scss */
 .mtr-btn--primary.mtr-btn--loading::before {
   border-color: transparent #fff #fff #fff;
 }
 
-/* line 132, src/kit/themes/example/button.scss */
+/* line 165, src/kit/themes/example/button.scss */
 .mtr-btn--primary.mtr-btn--disabled, .mtr-btn--primary[disabled] {
   color: #fff;
 }
 
-/* line 138, src/kit/themes/example/button.scss */
+/* line 171, src/kit/themes/example/button.scss */
 a.mtr-btn--primary:hover, a.mtr-btn--primary:active, a.mtr-btn--primary:visited, a.mtr-btn--primary:focus {
   color: #fff;
 }
 
-/* line 143, src/kit/themes/example/button.scss */
+/* line 176, src/kit/themes/example/button.scss */
 .mtr-btn--primary-bordered {
   color: #2a79ff;
   border-color: #5594ff;
   background-color: transparent;
 }
 
-/* line 148, src/kit/themes/example/button.scss */
+/* line 181, src/kit/themes/example/button.scss */
 .mtr-btn--primary-bordered:hover {
   background-color: #f7faff;
 }
 
-/* line 152, src/kit/themes/example/button.scss */
+/* line 185, src/kit/themes/example/button.scss */
 .mtr-btn--primary-bordered:active {
   background-color: #f3f7ff;
 }
 
-/* line 156, src/kit/themes/example/button.scss */
+/* line 189, src/kit/themes/example/button.scss */
 .mtr-btn--primary-bordered.mtr-btn--loading::before {
   border-color: transparent #2a79ff #2a79ff #2a79ff;
 }
 
-/* line 160, src/kit/themes/example/button.scss */
+/* line 193, src/kit/themes/example/button.scss */
 .mtr-btn--primary-bordered.mtr-btn--disabled, .mtr-btn--primary-bordered[disabled] {
   color: #2a79ff;
 }
 
-/* line 166, src/kit/themes/example/button.scss */
+/* line 199, src/kit/themes/example/button.scss */
 a.mtr-btn--primary-bordered:hover, a.mtr-btn--primary-bordered:active, a.mtr-btn--primary-bordered:visited, a.mtr-btn--primary-bordered:focus {
   color: #2a79ff;
 }
 
-/* line 171, src/kit/themes/example/button.scss */
+/* line 204, src/kit/themes/example/button.scss */
 .mtr-btn--primary-flat {
   min-width: 0;
   padding-right: 0;
@@ -1740,88 +1780,88 @@ a.mtr-btn--primary-bordered:hover, a.mtr-btn--primary-bordered:active, a.mtr-btn
   color: #2a79ff;
 }
 
-/* line 175, src/kit/themes/example/button.scss */
+/* line 208, src/kit/themes/example/button.scss */
 .mtr-btn--primary-flat:hover {
   color: #336eea;
 }
 
-/* line 179, src/kit/themes/example/button.scss */
+/* line 212, src/kit/themes/example/button.scss */
 .mtr-btn--primary-flat:active {
   color: #3562d5;
 }
 
-/* line 183, src/kit/themes/example/button.scss */
+/* line 216, src/kit/themes/example/button.scss */
 .mtr-btn--primary-flat.mtr-btn--loading::before {
   border-color: transparent #2a79ff #2a79ff #2a79ff;
 }
 
-/* line 187, src/kit/themes/example/button.scss */
+/* line 220, src/kit/themes/example/button.scss */
 .mtr-btn--primary-flat.mtr-btn--disabled, .mtr-btn--primary-flat[disabled] {
   color: #2a79ff;
 }
 
-/* line 193, src/kit/themes/example/button.scss */
+/* line 226, src/kit/themes/example/button.scss */
 a.mtr-btn--primary-flat:visited, a.mtr-btn--primary-flat:focus {
   color: #2a79ff;
 }
 
-/* line 200, src/kit/themes/example/button.scss */
+/* line 233, src/kit/themes/example/button.scss */
 .mtr-btn--secondary {
   color: #333;
   border-color: #f5f5f5;
   background-color: #f5f5f5;
 }
 
-/* line 205, src/kit/themes/example/button.scss */
+/* line 238, src/kit/themes/example/button.scss */
 .mtr-btn--secondary:hover {
   border-color: #f0f0f0;
   background-color: #f0f0f0;
 }
 
-/* line 210, src/kit/themes/example/button.scss */
+/* line 243, src/kit/themes/example/button.scss */
 .mtr-btn--secondary:active {
   border-color: #ebebeb;
   background-color: #ebebeb;
 }
 
-/* line 215, src/kit/themes/example/button.scss */
+/* line 248, src/kit/themes/example/button.scss */
 .mtr-btn--secondary.mtr-btn--loading::before {
   border-color: transparent #333 #333 #333;
 }
 
-/* line 219, src/kit/themes/example/button.scss */
+/* line 252, src/kit/themes/example/button.scss */
 .mtr-btn--secondary.mtr-btn--disabled, .mtr-btn--secondary[disabled] {
   color: #333;
 }
 
-/* line 224, src/kit/themes/example/button.scss */
+/* line 257, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-bordered {
   color: #333;
   border-color: #cccccc;
   background-color: transparent;
 }
 
-/* line 229, src/kit/themes/example/button.scss */
+/* line 262, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-bordered:hover {
   background-color: #fafafa;
 }
 
-/* line 233, src/kit/themes/example/button.scss */
+/* line 266, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-bordered:active {
   background-color: #f5f5f5;
 }
 
-/* line 237, src/kit/themes/example/button.scss */
+/* line 270, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-bordered.mtr-btn--loading::before {
   border-color: transparent #333 #333 #333;
 }
 
-/* line 241, src/kit/themes/example/button.scss */
+/* line 274, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-bordered.mtr-btn--disabled, .mtr-btn--secondary-bordered[disabled] {
   color: #333;
 }
 
-/* line 246, src/kit/themes/example/button.scss */
+/* line 279, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-flat {
   min-width: 0;
   padding-right: 0;
@@ -1831,83 +1871,83 @@ a.mtr-btn--primary-flat:visited, a.mtr-btn--primary-flat:focus {
   color: #999;
 }
 
-/* line 250, src/kit/themes/example/button.scss */
+/* line 283, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-flat:hover {
   color: #666;
 }
 
-/* line 254, src/kit/themes/example/button.scss */
+/* line 287, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-flat:active {
   color: #333;
 }
 
-/* line 258, src/kit/themes/example/button.scss */
+/* line 291, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-flat.mtr-btn--loading::before {
   border-color: transparent #999 #999 #999;
 }
 
-/* line 262, src/kit/themes/example/button.scss */
+/* line 295, src/kit/themes/example/button.scss */
 .mtr-btn--secondary-flat.mtr-btn--disabled, .mtr-btn--secondary-flat[disabled] {
   color: #999;
 }
 
-/* line 269, src/kit/themes/example/button.scss */
+/* line 302, src/kit/themes/example/button.scss */
 .mtr-btn--danger {
   color: #ffffff;
   border-color: #d92929;
   background-color: #d92929;
 }
 
-/* line 274, src/kit/themes/example/button.scss */
+/* line 307, src/kit/themes/example/button.scss */
 .mtr-btn--danger:hover {
   border-color: #c71414;
   background-color: #c71414;
 }
 
-/* line 279, src/kit/themes/example/button.scss */
+/* line 312, src/kit/themes/example/button.scss */
 .mtr-btn--danger:active {
   border-color: #b80d0d;
   background-color: #b80d0d;
 }
 
-/* line 284, src/kit/themes/example/button.scss */
+/* line 317, src/kit/themes/example/button.scss */
 .mtr-btn--danger.mtr-btn--loading::before {
   border-color: transparent #fff #fff #fff;
 }
 
-/* line 288, src/kit/themes/example/button.scss */
+/* line 321, src/kit/themes/example/button.scss */
 .mtr-btn--danger.mtr-btn--disabled, .mtr-btn--danger[disabled] {
   color: #fff;
 }
 
-/* line 293, src/kit/themes/example/button.scss */
+/* line 326, src/kit/themes/example/button.scss */
 .mtr-btn--danger-bordered {
   color: #d92929;
   border-color: #e15454;
   background-color: transparent;
 }
 
-/* line 298, src/kit/themes/example/button.scss */
+/* line 331, src/kit/themes/example/button.scss */
 .mtr-btn--danger-bordered:hover {
   background-color: #fef7f7;
 }
 
-/* line 302, src/kit/themes/example/button.scss */
+/* line 335, src/kit/themes/example/button.scss */
 .mtr-btn--danger-bordered:active {
   background-color: #fdf2f2;
 }
 
-/* line 306, src/kit/themes/example/button.scss */
+/* line 339, src/kit/themes/example/button.scss */
 .mtr-btn--danger-bordered.mtr-btn--loading::before {
   border-color: transparent #d92929 #d92929 #d92929;
 }
 
-/* line 310, src/kit/themes/example/button.scss */
+/* line 343, src/kit/themes/example/button.scss */
 .mtr-btn--danger-bordered.mtr-btn--disabled, .mtr-btn--danger-bordered[disabled] {
   color: #d92929;
 }
 
-/* line 315, src/kit/themes/example/button.scss */
+/* line 348, src/kit/themes/example/button.scss */
 .mtr-btn--danger-flat {
   min-width: 0;
   padding-right: 0;
@@ -1917,34 +1957,34 @@ a.mtr-btn--primary-flat:visited, a.mtr-btn--primary-flat:focus {
   color: #d92929;
 }
 
-/* line 319, src/kit/themes/example/button.scss */
+/* line 352, src/kit/themes/example/button.scss */
 .mtr-btn--danger-flat:hover {
   color: #c71414;
 }
 
-/* line 323, src/kit/themes/example/button.scss */
+/* line 356, src/kit/themes/example/button.scss */
 .mtr-btn--danger-flat:active {
   color: #d92929;
 }
 
-/* line 327, src/kit/themes/example/button.scss */
+/* line 360, src/kit/themes/example/button.scss */
 .mtr-btn--danger-flat.mtr-btn--loading::before {
   border-color: transparent #d92929 #d92929 #d92929;
 }
 
-/* line 331, src/kit/themes/example/button.scss */
+/* line 364, src/kit/themes/example/button.scss */
 .mtr-btn--danger-flat.mtr-btn--disabled, .mtr-btn--danger-flat[disabled] {
   color: #d92929;
 }
 
-/* line 337, src/kit/themes/example/button.scss */
+/* line 370, src/kit/themes/example/button.scss */
 .mtr-btn--pay {
   color: #404040;
   border-color: #ffd54b;
   background: #ffd54b;
 }
 
-/* line 349, src/kit/themes/example/button.scss */
+/* line 382, src/kit/themes/example/button.scss */
 .mtr-btn--loading {
   opacity: 1;
   position: relative;
@@ -1953,7 +1993,7 @@ a.mtr-btn--primary-flat:visited, a.mtr-btn--primary-flat:focus {
   cursor: default;
 }
 
-/* line 355, src/kit/themes/example/button.scss */
+/* line 388, src/kit/themes/example/button.scss */
 .mtr-btn--loading::before {
   display: block;
   content: '';
@@ -1973,7 +2013,7 @@ a.mtr-btn--primary-flat:visited, a.mtr-btn--primary-flat:focus {
           animation: spinner 0.6s linear infinite;
 }
 
-/* line 375, src/kit/themes/example/button.scss */
+/* line 408, src/kit/themes/example/button.scss */
 .mtr-btn--disabled, .mtr-btn[disabled] {
   opacity: 0.4;
   position: static;
@@ -1981,7 +2021,7 @@ a.mtr-btn--primary-flat:visited, a.mtr-btn--primary-flat:focus {
   cursor: default;
 }
 
-/* line 380, src/kit/themes/example/button.scss */
+/* line 413, src/kit/themes/example/button.scss */
 .mtr-btn--disabled::before, .mtr-btn[disabled]::before {
   display: none;
 }

@@ -72,6 +72,13 @@ a.mtr-btn {
     }
 }
 
+.mtr-btn--has-icon {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
 // Состояния
 // ---------
 // Normal
@@ -87,21 +94,47 @@ a.mtr-btn {
 // Normal (medium)
 .mtr-btn--m {
     @include buttonSize($button--m--font-size);
+
+    .mtr-btn__icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        margin-top: -1px;
+        margin-bottom: -1px;
+    }
 }
 
 // Small
 .mtr-btn--s {
     @include buttonSize($button--s--font-size);
+
+    .mtr-btn__icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+    }
 }
 
 // Large
 .mtr-btn--l {
     @include buttonSize($button--l--font-size);
+
+    .mtr-btn__icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+    }
 }
 
 // Extra Large
 .mtr-btn--xl {
     @include buttonSize($button--xl--font-size);
+
+    .mtr-btn__icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+    }
 }
 
 
