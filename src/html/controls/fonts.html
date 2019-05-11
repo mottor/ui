@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--=include meta.html -->
+</head>
+<body class="docs">
+<!--=include nojs-nocss.html -->
+<!--content-start-->
+<div class="content-wrap">
+    <div class="docs-block">
+        <table>
+            <tr>
+                <td class="pb4 pr1"><span style="color: #c00">Helvetica Neue</span></td>
+                <td class="pb4 pl1"><span style="color: #c00">Open Sans</span></td>
+            </tr>
+            <tr>
+                <td class="pr1" style="font-family: 'Helvetica Neue'">
+                    <h1>Кнопка</h1>
+                    <h2>Текст-рыба</h2>
+                    <p>Идейные соображения высшего порядка, а также укрепление и развитие структуры позволяет выполнять важные задания по разработке существенных финансовых и административных условий. <strong>Значимость</strong> этих <em>проблем</em> настолько очевидна, что начало повседневной работы по формированию позиции способствует подготовки и реализации существенных финансовых и административных условий. Повседневная практика показывает, что укрепление и развитие структуры представляет собой интересный эксперимент проверки соответствующий условий активизации. Идейные соображения высшего порядка, а также сложившаяся структура организации позволяет выполнять важные задания по разработке систем массового участия.</p>
+                    <p>
+                        <button class="mtr-btn mtr-btn--primary mtr-btn--l">Большая кнёпка</button>
+                    </p>
+                    <p>
+                        <button class="mtr-btn mtr-btn--secondary-bordered mtr-btn--l">Кнопка</button>
+                    </p>
+                </td>
+                <td class="pl1">
+                    <h1>Кнопка</h1>
+                    <h2>Текст-рыба</h2>
+                    <p>Идейные соображения высшего порядка, а также укрепление и развитие структуры позволяет выполнять важные задания по разработке существенных финансовых и административных условий. <strong>Значимость</strong> этих <em>проблем</em> настолько очевидна, что начало повседневной работы по формированию позиции способствует подготовки и реализации существенных финансовых и административных условий. Повседневная практика показывает, что укрепление и развитие структуры представляет собой интересный эксперимент проверки соответствующий условий активизации. Идейные соображения высшего порядка, а также сложившаяся структура организации позволяет выполнять важные задания по разработке систем массового участия.</p>
+                    <p>
+                        <button class="mtr-btn mtr-btn--primary mtr-btn--l">Большая кнёпка</button>
+                    </p>
+                    <p>
+                        <button class="mtr-btn mtr-btn--secondary-bordered mtr-btn--l">Кнопка</button>
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).on('click', '.mtr-btn', function () {
+        var el = $(this), cls = 'mtr-btn--loading';
+        if (!el.hasClass(cls)) {
+            el.addClass(cls);
+            setTimeout(function () {
+                el.removeClass(cls);
+            }, 1000);
+        }
+    });
+</script>
+<!--content-end-->
+</body>
+</html>
