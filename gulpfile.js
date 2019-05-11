@@ -141,6 +141,14 @@ function compileUiStyle() {
         ;
 }
 
+function compileFonts() {
+    return gulp
+        .src(config.dirSrc + '/fonts/**/*')
+        .pipe(gulp.dest(config.dirBuildHtml + '/fonts'))
+        .pipe(browserSync.stream())
+        ;
+}
+
 function watchUiStyle() {
     gulp.watch(config.dirKit + "/**/*.scss", compileUiStyle);
 }
@@ -181,6 +189,7 @@ const buildUi = gulp.series(clean, gulp.parallel(compileUiScript, compileUiStyle
 const watchUi = gulp.series(buildUi, gulp.parallel(watchUiStyle, watchUiSvg));
 
 exports.build = buildUi;
+exports.buildFonts = compileFonts;
 exports.watch = watchUi;
 
 function startServer() {
