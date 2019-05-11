@@ -185,7 +185,7 @@ const watchDocs = gulp.parallel(watchDocsHtml, watchDocsStyle);
 exports.buildDocs = buildDocs;
 exports.watchDocs = watchDocs;
 
-const buildUi = gulp.series(clean, gulp.parallel(compileUiScript, compileUiStyle, compileSvg)/*, gitAdd*/);
+const buildUi = gulp.series(clean, gulp.parallel(compileUiScript, compileUiStyle, compileSvg, compileFonts)/*, gitAdd*/);
 const watchUi = gulp.series(buildUi, gulp.parallel(watchUiStyle, watchUiSvg));
 
 exports.build = buildUi;

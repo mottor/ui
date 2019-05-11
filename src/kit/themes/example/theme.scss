@@ -1,7 +1,8 @@
 // 0. Import fonts
 // Для разработки можно подключать шрифт здесь с помощью @import
 // Для продакшена нужно через <link> на самой странице
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700&subset=cyrillic');
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700&subset=cyrillic');
+//@import url('/fonts/open-sans/font.css');
 
 // 1. Override default variables
 $theme-name: 'example';
