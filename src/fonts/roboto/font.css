@@ -1,0 +1,13 @@
+/*https://google-webfonts-helper.herokuapp.com/fonts/roboto?subsets=latin,cyrillic*/
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('roboto-v19-cyrillic_latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Roboto'), local('Roboto-Regular'),
+    url('roboto-v19-cyrillic_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('roboto-v19-cyrillic_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('roboto-v19-cyrillic_latin-regular.woff') format('woff'), /* Modern Browsers */
+    url('roboto-v19-cyrillic_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('roboto-v19-cyrillic_latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+}

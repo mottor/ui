@@ -1,0 +1,13 @@
+/*https://google-webfonts-helper.herokuapp.com/fonts/ibm-plex-sans?subsets=latin,cyrillic*/
+@font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('ibm-plex-sans-v6-cyrillic_latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('IBM Plex Sans'), local('IBMPlexSans'),
+    url('ibm-plex-sans-v6-cyrillic_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('ibm-plex-sans-v6-cyrillic_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('ibm-plex-sans-v6-cyrillic_latin-regular.woff') format('woff'), /* Modern Browsers */
+    url('ibm-plex-sans-v6-cyrillic_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('ibm-plex-sans-v6-cyrillic_latin-regular.svg#IBMPlexSans') format('svg'); /* Legacy iOS */
+}
