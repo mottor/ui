@@ -10,4 +10,8 @@
     url('open-sans-v16-cyrillic_latin-regular.woff') format('woff'), /* Modern Browsers */
     url('open-sans-v16-cyrillic_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
     url('open-sans-v16-cyrillic_latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display */
+    /* https://css-tricks.com/font-display-masses/ */
+    font-display: swap;
 }

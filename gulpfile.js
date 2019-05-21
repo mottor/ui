@@ -144,6 +144,7 @@ function compileUiStyle() {
 function compileFonts() {
     return gulp
         .src(config.dirSrc + '/fonts/**/*')
+        .pipe(gulp.dest(config.dirBuild + '/fonts'))
         .pipe(gulp.dest(config.dirBuildHtml + '/fonts'))
         .pipe(browserSync.stream())
         ;

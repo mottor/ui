@@ -7,8 +7,7 @@
 // 1. Override default variables
 $theme-name: 'example';
 $base-font-size: 14px;
-//$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-family: "Open Sans", Arial, sans-serif;
+$base-font-family: 'Open Sans', Arial, sans-serif;
 
 // 2. Import base CSS
 @import "../../base_style/0_start";
