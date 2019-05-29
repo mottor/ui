@@ -24,7 +24,8 @@ a {
 h1, .header-1 {
     font-size: $header-1-font-size;
     line-height: $header-1-line-height;
-    font-weight: 200;
+    font-weight: 400;
+    margin: 0 0 $base-header--margin 0;
 }
 
 .header-1-wrap {
@@ -34,48 +35,136 @@ h1, .header-1 {
 h2, .header-2 {
     font-size: $header-2-font-size;
     line-height: $header-2-line-height;
-    font-weight: 300;
+    font-weight: 400;
+    margin: 0 0 $base-header--margin 0;
 }
 
 h3, .header-3 {
     font-size: $header-3-font-size;
     line-height: $header-3-line-height;
-    font-weight: 400;
+    font-weight: 600;
+    margin: 0 0 $base-header--margin 0;
 }
 
 h4, .header-4 {
     font-size: $header-4-font-size;
     line-height: $header-4-line-height;
-    font-weight: 500;
+    font-weight: 600;
+    margin: 0 0 $base-header--margin 0;
 }
+
+.var-dump--h1-font-size:before {content: "#{$header-1-font-size}";}
+.var-dump--h1-line-height:before {content: "#{$header-1-line-height}";}
+
+.var-dump--h2-font-size:before {content: "#{$header-2-font-size}";}
+.var-dump--h2-line-height:before {content: "#{$header-2-line-height}";}
+
+.var-dump--h3-font-size:before {content: "#{$header-3-font-size}";}
+.var-dump--h3-line-height:before {content: "#{$header-3-line-height}";}
+
+.var-dump--h4-font-size:before {content: "#{$header-4-font-size}";}
+.var-dump--h4-line-height:before {content: "#{$header-4-line-height}";}
+
+//@each $__header-key, $__header-val in $header-fonts-list {
+//    h#{$__header-key}, .header-#{$__header-key} {
+//        @each $__css-key, $__css-val in $__header-val {
+//            @if $__css-key == size {
+//                font-size: $__css-val;
+//                line-height: roundStep($__css-val * $base-header--line-height);
+//            } @else if $__css-key == weight {
+//                font-weight: $__css-val;
+//            }
+//        }
+//        margin: 0 0 $base-header--margin 0;
+//    }
+//
+//    .var-dump--h#{$__header-key}-font-size:before { content: '#{$font-size-s}'; }
+//}
 
 /*----------------*/
+.ext-last-margin {
+    margin-bottom: 0;
+}
 
 p {
-    margin: 0;
-    line-height: ($paragraph-line-height * 1em);
+    line-height: ($base-paragraph--line-height * 1em);
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: $base-paragraph--margin;
 }
 
-p + p {
-    margin-top: $paragraph-margin; // todo: fix margin
+p.last {
+    @extend .ext-last-margin;
 }
 
-.text-s, .text-s p {
-    font-size: $font-size-s;
-    line-height: $line-height-s;
+//.text-s, .text-s p {
+//    font-size: $font-size-s;
+//    line-height: $line-height-s;
+//    margin-bottom: $font-size-s;
+//}
+//
+//.text, .text-m, .text p, .text-m p {
+//    font-size: $font-size-m;
+//    line-height: $line-height-m;
+//    margin-bottom: $font-size-m;
+//}
+//
+//.text-l, .text-l p {
+//    font-size: $font-size-l;
+//    line-height: $line-height-l;
+//    margin-bottom: $font-size-l;
+//}
+//
+//.text-xl {
+//    font-size: $font-size-xl;
+//    line-height: $line-height-xl;
+//}
+//
+//.text-xl p {
+//    @extend .text-xl;
+//    margin-bottom: $font-size-xl;
+//    &.last {@extend .last-paragraph-margin;}
+//}
+
+ul, ol {
+    @extend p;
+    margin-left: $base-list--left-margin;
 }
 
-.text, .text-m, .text p, .text-m p {
-    font-size: $font-size-m;
-    line-height: $line-height-m;
+ul {
+    list-style-type: none;
+
+    li {
+        position: relative;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    li:before {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -1 * $base-list--left-margin;
+        content: '\2022';
+    }
 }
 
-.text-l, .text-l p {
-    font-size: $font-size-l;
-    line-height: $line-height-l;
+@each $font-key, $font-val in $fonts-list {
+    .text-#{$font-key} {
+        font-size: $font-val;
+        line-height: roundStep($font-val * $base-paragraph--line-height);
+
+        p, ul, ol {
+            @extend .text-#{$font-key};
+        }
+
+        p.last, ul.last, ol.last {
+            @extend .ext-last-margin;
+        }
+    }
 }
 
-.text-xl, .text-xl p {
-    font-size: $font-size-xl;
-    line-height: $line-height-xl;
+.text-grid {
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='4'><rect x='0' y='3' width='1' height='1' fill='rgba(0,0,0,.1)'/></svg>") repeat rgba(255,0,255,.1);
 }

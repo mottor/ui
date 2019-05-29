@@ -92,7 +92,7 @@ pre {
 code,
 pre {
     font-family: $base-monospaced-font-family;
-    font-size: inherit;
+    font-size: 95%;
 }
 
 /* Forms
@@ -180,6 +180,7 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     font: inherit;
+    vertical-align: top; // по умолчанию выравниваем по верху
     //border-color: transparent;
     //line-height: inherit;
 }
@@ -188,7 +189,7 @@ td, th {
     padding: 0;
 }
 
-tbody, td, tr {
+tbody, tr, th, td {
     vertical-align: inherit;
 }
 

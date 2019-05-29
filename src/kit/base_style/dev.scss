@@ -1,11 +1,27 @@
 // @if($env == 'dev') {
-.font-size-marker, .theme-name-marker {
+.var-dump:before {
     display: inline-block;
 }
+
+.var-dump--step:before { content: '#{$step}'; }
+
+.var-dump--font-size-s:before { content: '#{$font-size-s}'; }
+.var-dump--font-size-m:before { content: '#{$font-size-m}'; }
+.var-dump--font-size-l:before { content: '#{$font-size-l}'; }
+
+.var-dump--p-line-height:before { content: '#{$base-paragraph--line-height}'; }
+.var-dump--p-margin:before { content: '#{$base-paragraph--margin}'; }
+
+.font-family-marker:before {
+    display: inline-block;
+    content: '#{$base-font-family}';
+}
+
 .font-size-marker:before {
     display: inline-block;
     content: '#{$base-font-size}';
 }
+
 .theme-name-marker:before {
     display: inline-block;
     content: '#{$theme-name}';

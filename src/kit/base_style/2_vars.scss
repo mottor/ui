@@ -58,32 +58,48 @@ $accent-text-color: #D97E00;
 
 // =============================
 // Text
-$paragraph-line-height: 1.5625 !default;
-$paragraph-margin: 1em !default;
+$base-paragraph--line-height: 1.5625 !default;
+$base-paragraph--margin: 1em !default;
+$base-list--left-margin: 1em !default;
 
 $font-size-small: 85% !default;
 $font-size-s: $base-font-size - 2;
 $font-size-m: $base-font-size;
 $font-size-l: $base-font-size + 2;
-$font-size-xl: $font-size-l + 2;
 
-$line-height-s: roundEven($font-size-s * $paragraph-line-height);
-$line-height-m: roundEven($font-size-m * $paragraph-line-height);
-$line-height-l: roundEven($font-size-l * $paragraph-line-height);
-$line-height-xl: roundEven($font-size-xl * $paragraph-line-height);
+//$line-height-s: roundStep($font-size-s * $base-paragraph--line-height);
+//$line-height-m: roundStep($font-size-m * $base-paragraph--line-height);
+//$line-height-l: roundStep($font-size-l * $base-paragraph--line-height);
+//$line-height-xl: roundStep($font-size-xl * $base-paragraph--line-height);
 
+$fonts-list: (
+    s: $font-size-s,
+    m: $font-size-m,
+    l: $font-size-l
+);
 
 // =============================
 // Headers
-$header-1-font-size: $base-font-size * 2.625;
-$header-2-font-size: $base-font-size * 2;
-$header-3-font-size: $base-font-size * 1.375;
-$header-4-font-size: $base-font-size;
+$base-header--line-height: 1.25;
+$base-header--margin: (5 * $step) !default;
 
-$header-1-line-height: roundEven($header-1-font-size * 1.19);
-$header-2-line-height: roundEven($header-2-font-size * 1.25);
-$header-3-line-height: roundEven($header-3-font-size * 1.364);
-$header-4-line-height: roundEven($header-4-font-size * 1.625);
+// 300, 400, 600, 700
+//$header-fonts-list: (
+//    1: (size: $base-font-size * 2.625, weight: 300),
+//    2: (size: $base-font-size * 2, weight: 300),
+//    3: (size: $base-font-size * 1.375, weight: 400),
+//    4: (size: $base-font-size, weight: 600)
+//);
+
+$header-1-font-size: roundEven($base-font-size * 2.6);
+$header-2-font-size: roundEven($base-font-size * 2);
+$header-3-font-size: roundEven($base-font-size * 1.4);
+$header-4-font-size: roundEven($base-font-size);
+
+$header-1-line-height: roundStep($header-1-font-size * 1.1);
+$header-2-line-height: roundStep($header-2-font-size * 1.2);
+$header-3-line-height: roundStep($header-3-font-size * 1.3);
+$header-4-line-height: roundStep($header-4-font-size * 1.4);
 
 // =============================
 // SVG buttons
