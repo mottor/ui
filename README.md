@@ -47,3 +47,9 @@ Mottor UI-kit
     git commit -m "1.0.9"
     git tag -a 1.0.9
     git push -u origin master --tags
+
+## Сборка на srv6
+
+    UI_PROD=no UI_VERSION=v1.0.10 UI_THEME=example ./gulp buildDocs
+    UI_PROD=no UI_CSS_NAME=mottor-ui-cera UI_VERSION=v1.0.10 UI_THEME=example ./gulp build
+    UI_PROD=no UI_CSS_NAME=mottor-ui-avenir UI_VERSION=v1.0.10 UI_THEME=example ./gulp build

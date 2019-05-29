@@ -1,0 +1,22 @@
+
+@font-face {
+    font-family: 'Cera Pro';
+    src: url('CeraPro-Regular.eot');
+    src: local('Cera Pro Regular'), local('CeraPro-Regular'),
+        url('CeraPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('CeraPro-Regular.woff') format('woff'),
+        url('CeraPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cera Pro';
+    src: url('CeraPro-Bold.eot');
+    src: local('Cera Pro Bold'), local('CeraPro-Bold'),
+        url('CeraPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('CeraPro-Bold.woff') format('woff'),
+        url('CeraPro-Bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}

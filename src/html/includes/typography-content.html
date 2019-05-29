@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--=include meta.html -->
+</head>
+<body class="docs">
+<!--content-start-->
+<div class="content-wrap">
+    <div class="docs-block">
+        <h1>Типографика</h1>
+        <h2 class="mt4">Шрифт</h2>
+        <p>
+            Используется шрифт: <strong class="var-dump--base-font-family"></strong>.<br/>
+            Базовый размер: <span class="var-dump--base-font-size"></span><br/>
+            Шаг: <span class="var-dump var-dump--step"></span>
+        </p>
+    </div>
+
+
+    <div class="docs-block">
+        <h2>Заголовки</h2>
+        <p>Задача заголовков — структурировать материал на странице. Так он быстрее считывается, в нем легче ориентироваться и искать информацию.</p>
+        <p>Заголовки различных уровней должны хорошо отличаться, чтобы их иерархия была различима на глаз.</p>
+        <p>Заголовок H1 всегда находится во главе страницы, а заголовки младшего уровня (H2, H3, H4...) — внутри материала.</p>
+        <p>Толщина всех заголовков (font-weight) &mdash; 600.</p>
+    </div>
+
+    <div class="docs-block">
+        <div class="example">
+            <table class="vam allow-user-select">
+                <tr>
+                    <td class="pr2">H1</td>
+                    <td class="gray-text-hint pr2">
+                        <span class="var-dump var-dump--h1-font-size"></span>&nbsp;<small>/&nbsp;<span class="var-dump var-dump--h1-line-height"></span></small>
+                    </td>
+                    <td><div class="header-1" style="margin: 0">Заголовок 1</div></td>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="pr2">H2</td>
+                    <td class="gray-text-hint pr2">
+                        <span class="var-dump var-dump--h2-font-size"></span>&nbsp;<small>/&nbsp;<span class="var-dump var-dump--h2-line-height"></span></small>
+                    </td>
+                    <td><div class="header-2" style="margin: 0">Заголовок 2</div></td>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="pr2">H3</td>
+                    <td class="gray-text-hint pr2">
+                        <span class="var-dump var-dump--h3-font-size"></span>&nbsp;<small>/&nbsp;<span class="var-dump var-dump--h3-line-height"></span></small>
+                    </td>
+                    <td><div class="header-3" style="margin: 0">Заголовок 3</div></td>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="pr2">H4</td>
+                    <td class="gray-text-hint pr2">
+                        <span class="var-dump var-dump--h4-font-size"></span>&nbsp;<small>/&nbsp;<span class="var-dump var-dump--h4-line-height"></span></small>
+                    </td>
+                    <td><div class="header-4" style="margin: 0">Заголовок 4</div></td>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="pr1"></td>
+                    <td class="gray-text-hint pr3">
+                        <span class="var-dump var-dump--text-m-size"></span>&nbsp;<small>/&nbsp;<span class="var-dump var-dump--text-m-line-height"></span></small>
+                    </td>
+                    <td>Заголовок 5 <span class="gray-text-hint ml2">(это простой текст)</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="docs-block">
+        <p>Тест в несколько строк (проверяем line-height):</p>
+        <div class="example">
+            <div class="header-1" style="margin: 0">Заголовок 1<br>Две строки</div>
+        </div>
+    </div>
+
+    <div class="docs-block">
+        <div class="example">
+            <div class="header-2" style="margin: 0">Заголовок 2<br>Две строки</div>
+        </div>
+    </div>
+    <div class="docs-block">
+        <div class="example">
+            <div class="header-3" style="margin: 0">Заголовок 3<br>Две строки</div>
+        </div>
+    </div>
+    <div class="docs-block">
+        <div class="example">
+            <div class="header-4" style="margin: 0">Заголовок 4<br>Две строки</div>
+        </div>
+    </div>
+
+    <div class="docs-block mt4">
+        <h2>Основной текст</h2>
+        <p>Основной размер шрифта <code>text-m</code> — <span class="var-dump var-dump--font-size-m"></span>. Его используем в 98% случаев.</p>
+        <p>Для необязательных к прочтению текстов (мелких сносок) допустимо использовать шрифт <code>text-s</code> размером <span class="var-dump var-dump--font-size-s"></span></p>
+        <p>Для крупных сообщений / важной информации — можно использовать шрифт <code>text-l</code> размером <span class="var-dump var-dump--font-size-l"></span></p>
+        <p>Каждый абзац имеет margin снизу размером с font-size.</p>
+    </div>
+
+    <div class="docs-block">
+        <div class="example pr3 text-s">
+            <p class="gray-text-hint">
+                <strong>Уменьшенный текст</strong><br/>
+                <code>text-s</code><br/>
+                <span class="var-dump var-dump--text-s-size"></span> <small>/ <span class="var-dump var-dump--text-s-line-height"></span></small>
+            </p>
+            <p>С учетом сложившейся международной обстановки, новая модель организационной деятельности выявляет срочную потребность стандартных подходов. Господа, существующая теория требует анализа распределения внутренних резервов и ресурсов. Господа, существующая теория требует анализа приоритизации разума над эмоциями.</p>
+            <ul>
+                <li>Пункт 1</li>
+                <li>Пункт два</li>
+            </ul>
+            <p class="last">Ключевые особенности структуры проекта являются только методом политического участия и представлены в исключительно положительном свете. Не следует, однако, забывать, что реализация намеченных плановых заданий  выявляет срочную потребность прогресса профессионального сообщества. Противоположная точка зрения подразумевает, что многие известные личности разоблачены.</p>
+        </div>
+    </div>
+
+    <div class="docs-block">
+        <div class="example pr3 text-m" style="border-left: 3px solid rgba(19, 187, 9, 0.5);">
+            <p class="gray-text-hint">
+                <strong>Обычный текст</strong><br/>
+                <code>text-m</code><br/>
+                <span class="var-dump var-dump--text-m-size"></span> <small>/ <span class="var-dump var-dump--text-m-line-height"></span></small>
+            </p>
+            <p>Лишь реплицированные с зарубежных источников, современные исследования являются только методом политического участия и объявлены нарушающими общечеловеческие нормы этики и морали. Также как глубокий уровень погружения позволяет оценить значение форм воздействия. Но базовый вектор развития прекрасно подходит для реализации соответствующих условий активизации. Прежде всего, разбавленное изрядной долей эмпатии, рациональное мышление прекрасно подходит для реализации соответствующих условий активизации. Сложно сказать, почему диаграммы связей являются только методом политического участия и разоблачены.</p>
+            <ul>
+                <li>Пункт 1</li>
+                <li>Пункт два</li>
+            </ul>
+            <p class="last">Лишь некоторые особенности внутренней политики разоблачены. Мы вынуждены отталкиваться от того, что постоянное информационно-пропагандистское обеспечение нашей деятельности требует от нас анализа первоочередных требований.</p>
+        </div>
+    </div>
+
+    <div class="docs-block">
+        <div class="example pr3 text-l">
+            <p class="gray-text-hint">
+                <strong>Увеличенный текст</strong><br/>
+                <code>text-l</code><br/>
+                <span class="var-dump var-dump--text-l-size"></span> <small>/ <span class="var-dump var-dump--text-l-line-height"></span></small>
+            </p>
+            <p>Прежде всего, социально-экономическое развитие выявляет срочную потребность стандартных подходов. С учетом сложившейся международной обстановки, постоянный количественный рост и сфера нашей активности создает предпосылки для стандартных подходов.</p>
+            <ul>
+                <li>Пункт 1</li>
+                <li>Пункт два</li>
+            </ul>
+            <p class="last">Для современного мира высокое качество позиционных исследований не дает нам иного выбора, кроме определения направлений прогрессивного развития. Банальные, но неопровержимые выводы, а также явные признаки победы институциализации и по сей день остаются уделом либералов, которые жаждут быть заблокированы в рамках своих собственных рациональных ограничений.</p>
+        </div>
+    </div>
+
+    <div class="docs-block">
+        <h2>Длина строки</h2>
+        <p>Длина строки для комфортного чтения c экрана должна равняться 40-80 знакам текста, включая пробелы.</p>
+        <p>Слишком длинные строки усложняют считывание текста: дочитав до конца строки, сложно быстро найти взглядом начало следующей.</p>
+        <p>Короткие строки вынуждают перескакивать на следующую строку слишком часто. Единственный случай, когда короткие строки приемлемы — это малое количество текста.</p>
+    </div>
+
+    <div class="docs-block">
+        <h2>Высота строки</h2>
+        <p>От высоты строки зависит удобство чтения текста. Если строки располагаются слишком близко, то читателю будет сложно найти начало следующей строки. Если расстояние слишком большое, то текстовый блок будет разваливаться.</p>
+        <p>Для высоты строки основного текста мы используем множитель <span class="var-dump var-dump--p-line-height"></span>, умножаем его на размер шрифта + округляем до шага <span class="var-dump--step"></span>.</p>
+    </div>
+
+    <div class="docs-block">
+        <h2>Списки</h2>
+        <p>Используйте списки, чтобы:</p>
+        <ul>
+            <li>упростить чтение текста</li>
+            <li>отделить упорядоченную информацию от общих текстовых блоков</li>
+            <li>выделить для пользователя важные пункты и обратить на них его внимание.</li>
+        </ul>
+    </div>
+
+    <div class="docs-block">
+        <div class="example pr3 text-m">
+            <ul class="last">
+                <li>Пункт 1</li>
+                <li>Пункт два</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="docs-block">
+        <h2>Другие мелочи</h2>
+    </div>
+
+    <div class="docs-block">
+        <h3>Дефис</h3>
+        <p>Для установки дефиса надо использовать код <code>&amp;mdash</code>.</p>
+        <p>Притом перед дефисом надо ставить неразрывный пробел <code>&amp;nbsp</code>, чтобы в случае переноса текста не получилось так, что строка начинается с дефиса.</p>
+    </div>
+
+    <div class="docs-block">
+        <div class="example pr3 text-m">
+            <p class="last">
+                Типографика&nbsp;&mdash; искусство оформления печатного текста, базирующееся на определённых, присущих конкретному языку правилах, посредством набора и вёрстки.
+            </p>
+        </div>
+    </div>
+
+    <div class="docs-block">
+        <h3>Тонкий пробел</h3>
+        <p>Тонкий пробел или 1/8 круглой шпации используется для отделения порядков в числах, наборе инициалов и некоторых других случаях. В HTML тонкий пробел вставляется мнемонимом <code>&thinsp</code>. </p>
+        <p>Когда тонкий пробел недоступен, нужно ставить обычный. За исключением знаков % и №, их в таком случае лучше набирать без отступов.</p>
+
+        <h3>Знак рубля</h3>
+        <p>Используйте знак рубля — ₽. За знаком рубля закреплен юникодовский символ U+20BD, в HTML его можно ввести кодом <code>&amp;#8381</code>.</p>
+    </div>
+</div>
+<!--content-end-->
+</body>
+</html>

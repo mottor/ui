@@ -61,6 +61,10 @@ if (process.env.UI_BUILD_DIR) {
     config.dirBuild = process.env.UI_BUILD_DIR;
 }
 
+if (process.env.UI_CSS_NAME) {
+    config.basename = process.env.UI_CSS_NAME;
+}
+
 util.log('Build dir:', config.dirBuild);
 util.log('Theme dir:', config.dirThemes);
 util.log('=============');
