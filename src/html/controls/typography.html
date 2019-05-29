@@ -10,8 +10,8 @@
         <h1>Типографика</h1>
         <h2 class="mt4">Шрифт</h2>
         <p>
-            Используется шрифт: <strong class="font-family-marker"></strong>.<br/>
-            Базовый размер: <span class="font-size-marker"></span><br/>
+            Используется шрифт: <strong class="var-dump--base-font-family"></strong>.<br/>
+            Базовый размер: <span class="var-dump--base-font-size"></span><br/>
             Шаг: <span class="var-dump var-dump--step"></span>
         </p>
     </div>
@@ -22,36 +22,58 @@
         <p>Задача заголовков — структурировать материал на странице. Так он быстрее считывается, в нем легче ориентироваться и искать информацию.</p>
         <p>Заголовки различных уровней должны хорошо отличаться, чтобы их иерархия была различима на глаз.</p>
         <p>Заголовок H1 всегда находится во главе страницы, а заголовки младшего уровня (H2, H3, H4...) — внутри материала.</p>
-        <p>Размер шрифта у заголовка H4 совпадает с базовым, остальные заголовки крупнее базового.</p>
+        <p>Толщина всех заголовков (font-weight) &mdash; 600.</p>
     </div>
 
     <div class="docs-block">
         <div class="example">
             <table class="vam allow-user-select">
                 <tr>
-                    <td class="pr4">H1, <span class="var-dump var-dump--h1-font-size"></span>&nbsp;/&nbsp;<span class="var-dump var-dump--h1-line-height"></span></td>
+                    <td class="pr2">H1</td>
+                    <td class="gray-text-hint pr2">
+                        <span class="var-dump var-dump--h1-font-size"></span>&nbsp;<small>/&nbsp;<span class="var-dump var-dump--h1-line-height"></span></small>
+                    </td>
                     <td><div class="header-1" style="margin: 0">Заголовок 1</div></td>
                 </tr>
                 <tr>
                     <td colspan="2">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="pr4">H2, <span class="var-dump var-dump--h2-font-size"></span>&nbsp;/&nbsp;<span class="var-dump var-dump--h2-line-height"></span></td>
+                    <td class="pr2">H2</td>
+                    <td class="gray-text-hint pr2">
+                        <span class="var-dump var-dump--h2-font-size"></span>&nbsp;<small>/&nbsp;<span class="var-dump var-dump--h2-line-height"></span></small>
+                    </td>
                     <td><div class="header-2" style="margin: 0">Заголовок 2</div></td>
                 </tr>
                 <tr>
                     <td colspan="2">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="pr4">H3, <span class="var-dump var-dump--h3-font-size"></span>&nbsp;/&nbsp;<span class="var-dump var-dump--h3-line-height"></span></td>
+                    <td class="pr2">H3</td>
+                    <td class="gray-text-hint pr2">
+                        <span class="var-dump var-dump--h3-font-size"></span>&nbsp;<small>/&nbsp;<span class="var-dump var-dump--h3-line-height"></span></small>
+                    </td>
                     <td><div class="header-3" style="margin: 0">Заголовок 3</div></td>
                 </tr>
                 <tr>
                     <td colspan="2">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="pr4">H4, <span class="var-dump var-dump--h4-font-size"></span>&nbsp;/&nbsp;<span class="var-dump var-dump--h4-line-height"></span></td>
+                    <td class="pr2">H4</td>
+                    <td class="gray-text-hint pr2">
+                        <span class="var-dump var-dump--h4-font-size"></span>&nbsp;<small>/&nbsp;<span class="var-dump var-dump--h4-line-height"></span></small>
+                    </td>
                     <td><div class="header-4" style="margin: 0">Заголовок 4</div></td>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="pr1"></td>
+                    <td class="gray-text-hint pr3">
+                        <span class="var-dump var-dump--text-m-size"></span>&nbsp;<small>/&nbsp;<span class="var-dump var-dump--text-m-line-height"></span></small>
+                    </td>
+                    <td>Заголовок 5 <span class="gray-text-hint ml2">(это простой текст)</span></td>
                 </tr>
             </table>
         </div>
@@ -60,23 +82,23 @@
     <div class="docs-block">
         <p>Тест в несколько строк (проверяем line-height):</p>
         <div class="example">
-            <div class="header-1" style="margin: 0">Заголовок 1<br>в ДВЕ строки</div>
+            <div class="header-1" style="margin: 0">Заголовок 1<br>Две строки</div>
         </div>
     </div>
 
     <div class="docs-block">
         <div class="example">
-            <div class="header-2" style="margin: 0">Заголовок 2<br>в ДВЕ строки</div>
+            <div class="header-2" style="margin: 0">Заголовок 2<br>Две строки</div>
         </div>
     </div>
     <div class="docs-block">
         <div class="example">
-            <div class="header-3" style="margin: 0">Заголовок 3<br>в ДВЕ строки</div>
+            <div class="header-3" style="margin: 0">Заголовок 3<br>Две строки</div>
         </div>
     </div>
     <div class="docs-block">
         <div class="example">
-            <div class="header-4" style="margin: 0">Заголовок 4<br>в ДВЕ строки</div>
+            <div class="header-4" style="margin: 0">Заголовок 4<br>Две строки</div>
         </div>
     </div>
 
@@ -90,8 +112,10 @@
 
     <div class="docs-block">
         <div class="example pr3 text-s">
-            <p>
-                <strong>Уменьшенный текст</strong>, <code>text-s</code>, <span class="var-dump var-dump--font-size-s"></span>
+            <p class="gray-text-hint">
+                <strong>Уменьшенный текст</strong><br/>
+                <code>text-s</code><br/>
+                <span class="var-dump var-dump--text-s-size"></span> <small>/ <span class="var-dump var-dump--text-s-line-height"></span></small>
             </p>
             <p>Исчисление предикатов заполняет трагический язык образов учитывая опасность, которую представляли собой писания Дюринга для не окрепшего еще немецкого рабочего движения.</p>
             <ul>
@@ -104,8 +128,10 @@
 
     <div class="docs-block">
         <div class="example pr3 text-m" style="border-left: 3px solid rgba(19, 187, 9, 0.5);">
-            <p>
-                <strong>Обычный текст</strong>, <code>text-m</code>, <span class="var-dump var-dump--font-size-m"></span>
+            <p class="gray-text-hint">
+                <strong>Обычный текст</strong><br/>
+                <code>text-m</code><br/>
+                <span class="var-dump var-dump--text-m-size"></span> <small>/ <span class="var-dump var-dump--text-m-line-height"></span></small>
             </p>
             <p>Исчисление предикатов заполняет трагический язык образов учитывая опасность, которую представляли собой писания Дюринга для не окрепшего еще немецкого рабочего движения.</p>
             <ul>
@@ -118,8 +144,10 @@
 
     <div class="docs-block">
         <div class="example pr3 text-l">
-            <p>
-                <strong>Увеличенный текст</strong>, <code>text-l</code>, <span class="var-dump var-dump--font-size-l"></span>
+            <p class="gray-text-hint">
+                <strong>Увеличенный текст</strong><br/>
+                <code>text-l</code><br/>
+                <span class="var-dump var-dump--text-l-size"></span> <small>/ <span class="var-dump var-dump--text-l-line-height"></span></small>
             </p>
             <p>Исчисление предикатов заполняет трагический язык образов учитывая опасность, которую представляли собой писания Дюринга для не окрепшего еще немецкого рабочего движения.</p>
             <ul>

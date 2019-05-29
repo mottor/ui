@@ -22,48 +22,49 @@ a {
 /*----------------*/
 
 h1, .header-1 {
-    font-size: $header-1-font-size;
-    line-height: $header-1-line-height;
-    font-weight: 400;
+    font-size: $header-1--font-size;
+    line-height: $header-1--line-height;
+    font-weight: 600;
     margin: 0 0 $base-header--margin 0;
 }
 
 .header-1-wrap {
-    margin-top: -(($header-1-line-height - $header-1-font-size)/2);
+    margin-top: -(($header-1--line-height - $header-1--font-size)/2);
 }
 
+.var-dump--h1-font-size:before {content: "#{$header-1--font-size}";}
+.var-dump--h1-line-height:before {content: "#{$header-1--line-height}";}
+
+// --------------
 h2, .header-2 {
-    font-size: $header-2-font-size;
-    line-height: $header-2-line-height;
-    font-weight: 400;
+    font-size: $header-2--font-size;
+    line-height: $header-2--line-height;
+    font-weight: 600;
     margin: 0 0 $base-header--margin 0;
 }
+.var-dump--h2-font-size:before {content: "#{$header-2--font-size}";}
+.var-dump--h2-line-height:before {content: "#{$header-2--line-height}";}
 
+// --------------
 h3, .header-3 {
-    font-size: $header-3-font-size;
-    line-height: $header-3-line-height;
+    font-size: $header-3--font-size;
+    line-height: $header-3--line-height;
     font-weight: 600;
     margin: 0 0 $base-header--margin 0;
 }
+.var-dump--h3-font-size:before {content: "#{$header-3--font-size}";}
+.var-dump--h3-line-height:before {content: "#{$header-3--line-height}";}
 
+// --------------
 h4, .header-4 {
-    font-size: $header-4-font-size;
-    line-height: $header-4-line-height;
+    font-size: $header-4--font-size;
+    line-height: $header-4--line-height;
     font-weight: 600;
     margin: 0 0 $base-header--margin 0;
 }
 
-.var-dump--h1-font-size:before {content: "#{$header-1-font-size}";}
-.var-dump--h1-line-height:before {content: "#{$header-1-line-height}";}
-
-.var-dump--h2-font-size:before {content: "#{$header-2-font-size}";}
-.var-dump--h2-line-height:before {content: "#{$header-2-line-height}";}
-
-.var-dump--h3-font-size:before {content: "#{$header-3-font-size}";}
-.var-dump--h3-line-height:before {content: "#{$header-3-line-height}";}
-
-.var-dump--h4-font-size:before {content: "#{$header-4-font-size}";}
-.var-dump--h4-line-height:before {content: "#{$header-4-line-height}";}
+.var-dump--h4-font-size:before {content: "#{$header-4--font-size}";}
+.var-dump--h4-line-height:before {content: "#{$header-4--line-height}";}
 
 //@each $__header-key, $__header-val in $header-fonts-list {
 //    h#{$__header-key}, .header-#{$__header-key} {
@@ -150,20 +151,59 @@ ul {
     }
 }
 
-@each $font-key, $font-val in $fonts-list {
-    .text-#{$font-key} {
-        font-size: $font-val;
-        line-height: roundStep($font-val * $base-paragraph--line-height);
+.text-s {
+    font-size: $text-s--size;
+    line-height: $text-s--line-height;
 
-        p, ul, ol {
-            @extend .text-#{$font-key};
-        }
+    p, ul, ol {
+        @extend .text-s;
+    }
 
-        p.last, ul.last, ol.last {
-            @extend .ext-last-margin;
-        }
+    p.last, ul.last, ol.last {
+        @extend .ext-last-margin;
     }
 }
+
+.text-m {
+    font-size: $text-m--size;
+    line-height: $text-m--line-height;
+
+    p, ul, ol {
+        @extend .text-m;
+    }
+
+    p.last, ul.last, ol.last {
+        @extend .ext-last-margin;
+    }
+}
+
+.text-l {
+    font-size: $text-l--size;
+    line-height: $text-l--line-height;
+
+    p, ul, ol {
+        @extend .text-l;
+    }
+
+    p.last, ul.last, ol.last {
+        @extend .ext-last-margin;
+    }
+}
+
+//@each $font-key, $font-val in $fonts-list {
+//    .text-#{$font-key} {
+//        font-size: $font-val;
+//        line-height: roundStep($font-val * $base-paragraph--line-height);
+//
+//        p, ul, ol {
+//            @extend .text-#{$font-key};
+//        }
+//
+//        p.last, ul.last, ol.last {
+//            @extend .ext-last-margin;
+//        }
+//    }
+//}
 
 .text-grid {
     background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='4'><rect x='0' y='3' width='1' height='1' fill='rgba(0,0,0,.1)'/></svg>") repeat rgba(255,0,255,.1);

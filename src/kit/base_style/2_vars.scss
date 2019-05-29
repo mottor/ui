@@ -63,24 +63,24 @@ $base-paragraph--margin: 1em !default;
 $base-list--left-margin: 1em !default;
 
 $font-size-small: 85% !default;
-$font-size-s: $base-font-size - 2;
-$font-size-m: $base-font-size;
-$font-size-l: $base-font-size + 2;
 
-//$line-height-s: roundStep($font-size-s * $base-paragraph--line-height);
-//$line-height-m: roundStep($font-size-m * $base-paragraph--line-height);
-//$line-height-l: roundStep($font-size-l * $base-paragraph--line-height);
-//$line-height-xl: roundStep($font-size-xl * $base-paragraph--line-height);
+$text-s--size: ($base-font-size - 2);
+$text-m--size: ($base-font-size);
+$text-l--size: ($base-font-size + 2);
+
+$text-s--line-height: roundStep($text-s--size * $base-paragraph--line-height);
+$text-m--line-height: roundStep($text-m--size * $base-paragraph--line-height);
+$text-l--line-height: roundStep($text-l--size * $base-paragraph--line-height);
 
 $fonts-list: (
-    s: $font-size-s,
-    m: $font-size-m,
-    l: $font-size-l
+    s: $text-s--size,
+    m: $text-m--size,
+    l: $text-l--size
 );
 
 // =============================
 // Headers
-$base-header--line-height: 1.25;
+$base-header--line-height: 1.3;
 $base-header--margin: (5 * $step) !default;
 
 // 300, 400, 600, 700
@@ -91,15 +91,15 @@ $base-header--margin: (5 * $step) !default;
 //    4: (size: $base-font-size, weight: 600)
 //);
 
-$header-1-font-size: roundEven($base-font-size * 2.6);
-$header-2-font-size: roundEven($base-font-size * 2);
-$header-3-font-size: roundEven($base-font-size * 1.4);
-$header-4-font-size: roundEven($base-font-size);
+$header-4--font-size: ($base-font-size + 2);
+$header-3--font-size: ($header-4--font-size + 4);
+$header-2--font-size: ($header-3--font-size + 4);
+$header-1--font-size: ($header-2--font-size + 4);
 
-$header-1-line-height: roundStep($header-1-font-size * 1.1);
-$header-2-line-height: roundStep($header-2-font-size * 1.2);
-$header-3-line-height: roundStep($header-3-font-size * 1.3);
-$header-4-line-height: roundStep($header-4-font-size * 1.4);
+$header-1--line-height: roundStep($header-1--font-size * $base-header--line-height);
+$header-2--line-height: roundStep($header-2--font-size * $base-header--line-height);
+$header-3--line-height: roundStep($header-3--font-size * $base-header--line-height);
+$header-4--line-height: roundStep($header-4--font-size * $base-header--line-height);
 
 // =============================
 // SVG buttons
