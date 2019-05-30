@@ -4,6 +4,7 @@
 }
 
 .var-dump--step:before { content: '#{$step}'; }
+.var-dump--test-var:before { content: '#{$test-var}'; }
 
 .var-dump--text-s-size:before { content: '#{$text-s--size}'; }
 .var-dump--text-s-line-height:before { content: '#{$text-s--line-height}'; }

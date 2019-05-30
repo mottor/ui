@@ -26,6 +26,7 @@ const dirRoot = process.cwd();
 const prod = ['y', 'yes', 'true', '1'].indexOf((process.env.UI_PROD || 'no').toLowerCase()) >= 0; //process.argv.indexOf('--prod') >= 0;
 const theme = process.env.UI_THEME || null;
 const version = process.env.UI_VERSION || 'v1.0';
+const testVar = 't2';
 
 var config = {
     standalone: true,
@@ -127,7 +128,8 @@ function compileUiStyle() {
         .pipe(plumber())
         // .pipe(_if(!prod, sourcemaps.init()))
         .pipe(sassVariables({
-            $env: prod ? 'prod' : 'dev'
+            '$env': prod ? 'prod' : 'dev',
+            '$test-var': testVar
         }))
         .pipe(sass({
             outputStyle: prod ? 'compressed' : 'expanded',
