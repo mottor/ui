@@ -2,6 +2,8 @@
 
 Mottor UI-kit
 
+[Advanced SCSS hacks](https://gist.github.com/jareware/4738651)
+
 ## Caution!
 
 Не надо делать @import шрифтов или других файлов.
@@ -51,5 +53,7 @@ Mottor UI-kit
 ## Сборка на srv6
 
     sudo -u app UI_PROD=no UI_VERSION=v1.0.10 UI_THEME=example ./gulp buildDocs
-    sudo -u app UI_PROD=no UI_CSS_NAME=mottor-ui-cera UI_VERSION=v1.0.10 UI_THEME=example ./gulp build
-    sudo -u app UI_PROD=no UI_CSS_NAME=mottor-ui-avenir UI_VERSION=v1.0.10 UI_THEME=example ./gulp build
+    sudo -u app UI_PROD=no UI_VERSION=v1.0.10 UI_THEME=example ./gulp build
+    sudo -u app UI_PROD=no UI_CSS_NAME=mottor-ui-cera UI_FONT_FAMILY1='Cera Pro' UI_VERSION=v1.0.10 UI_THEME=example ./gulp build
+    sudo -u app UI_PROD=no UI_CSS_NAME=mottor-ui-avenir UI_FONT_FAMILY1='Avenir Next Cyr' UI_VERSION=v1.0.10 UI_THEME=example ./gulp build
+    

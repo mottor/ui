@@ -6,11 +6,16 @@
 
 // 1. Override default variables
 $theme-name: 'example';
+
 $base-font-size: 16px;
-// $base-font-family: 'Noto Sans', Arial, sans-serif;
-//$base-font-family: 'Open Sans', Arial, sans-serif;
-$base-font-family: 'Cera Pro', Arial, sans-serif;
-//$base-font-family: 'Avenir Next Cyr', Arial, sans-serif;
+@if ($override-font-size != '') {
+    $base-font-size: $override-font-size * 1px;
+}
+
+$base-font-family: 'Open Sans';
+@if $override-font-family != '' {
+    $base-font-family: $override-font-family;
+}
 
 // 2. Import base CSS
 @import "../../base_style/0_start";

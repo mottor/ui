@@ -66,6 +66,18 @@ if (process.env.UI_CSS_NAME) {
     config.basename = process.env.UI_CSS_NAME;
 }
 
+var overrideFontFamily = '';
+if (process.env.UI_FONT_FAMILY) {
+    overrideFontFamily = process.env.UI_FONT_FAMILY;
+    util.log('Override font family to:', overrideFontFamily);
+}
+
+var overrideFontSize = '';
+if (process.env.UI_FONT_SIZE) {
+    overrideFontSize = Number(process.env.UI_FONT_SIZE);
+    util.log('Override font size to:', overrideFontSize);
+}
+
 util.log('Build dir:', config.dirBuild);
 util.log('Theme dir:', config.dirThemes);
 util.log('=============');
@@ -129,7 +141,9 @@ function compileUiStyle() {
         // .pipe(_if(!prod, sourcemaps.init()))
         .pipe(sassVariables({
             '$env': prod ? 'prod' : 'dev',
-            '$test-var': testVar
+            '$test-var': testVar,
+            '$override-font-size': overrideFontSize,
+            '$override-font-family': overrideFontFamily
         }))
         .pipe(sass({
             outputStyle: prod ? 'compressed' : 'expanded',

@@ -32,7 +32,7 @@ body {
     color: $primary-text-color;
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
-    font-family: $base-font-family, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-family: $base-font-family, $emoji-font-family, $default-font-family;
     font-weight: normal;
     font-style: normal;
     font-size: $base-font-size;
