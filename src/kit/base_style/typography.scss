@@ -151,6 +151,12 @@ ul {
     }
 }
 
+ul.hide-bullets {
+    li:before {
+        display: none;
+    }
+}
+
 .text-s {
     font-size: $text-s--size;
     line-height: $text-s--line-height;
