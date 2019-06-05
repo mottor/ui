@@ -128,10 +128,9 @@ p.last {
 //    &.last {@extend .last-paragraph-margin;}
 //}
 
-ul, ol {
-    @extend p;
-    margin-left: $base-list--left-margin;
-}
+//ul, ol {
+//    @extend p;
+//}
 
 ul {
     li {
@@ -148,6 +147,7 @@ ul.hide-bullets {
 
 ul.mtr-list--bullets {
     list-style-type: none;
+    margin-left: $base-list--left-margin;
 
     li {
         position: relative;
