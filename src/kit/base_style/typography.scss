@@ -134,12 +134,23 @@ ul, ol {
 }
 
 ul {
+    li {
+        font-size: inherit;
+        line-height: inherit;
+    }
+}
+
+ul.hide-bullets {
+    li:before {
+        display: none;
+    }
+}
+
+ul.mtr-list--bullets {
     list-style-type: none;
 
     li {
         position: relative;
-        font-size: inherit;
-        line-height: inherit;
     }
 
     li:before {
@@ -148,12 +159,7 @@ ul {
         top: 0;
         left: -1 * $base-list--left-margin;
         content: '\2022';
-    }
-}
-
-ul.hide-bullets {
-    li:before {
-        display: none;
+        // todo: можно здесь сделать просто круглый div, а то символ буллита не во всех шрифтах круглый
     }
 }
 
