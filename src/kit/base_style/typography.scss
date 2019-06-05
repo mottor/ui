@@ -135,7 +135,6 @@ p.last {
 ul {
     li {
         font-size: inherit;
-        line-height: inherit;
     }
 }
 
@@ -151,6 +150,7 @@ ul.mtr-list--bullets {
 
     li {
         position: relative;
+        line-height: inherit;
     }
 
     li:before {
