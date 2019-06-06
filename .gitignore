@@ -2,5 +2,6 @@
 /tmp/*
 /node_modules/*
 /vendor/
+/docs/build/*
 
 package-lock.json
