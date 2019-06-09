@@ -1,0 +1,55 @@
+Поля ввода
+
+Для инпутов может быть задана маска.
+Ошибки ввода.
+
+Типы инпутов:
+* текстовый
+* числовой (counter)
+* выбор цвета
+
+Состояния
+* hover (не всегда используется)
+* focused
+* disabled
+* заполнено правильно (зеленый)
+* заполнено неправильно (красный)
+
+Нужно также учитывать
+* текст placeholder-а (в обычном состоянии и в фокусе)
+* добавление иконки
+
+Подвиды инпутов:
+* выбор времени
+* выбор даты (календарь)
+* ввод данных карты
+* выбор цвета
+* ввод телефона
+* выбор файла для загрузки
+
+=================
+
+Инпут с красивым эффектом  фокуса
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
