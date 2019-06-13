@@ -37,6 +37,12 @@ $ed-toolbar--white-outline: rgba(255, 255, 255, .2);
     top: -1px;
 }
 
+.ed-toolbar__container--place-fixed-top-left {
+    top: 3 * $step;
+    left: 3 * $step;
+    transform: none;
+}
+
 .ed-toolbar__container--place-from-left {
     transform: translate(0, 0);
     left: 0;
@@ -62,6 +68,7 @@ $ed-toolbar--white-outline: rgba(255, 255, 255, .2);
     box-shadow: 0 0 0 1px $ed-toolbar--white-outline, // белая обводка на случай если темный фон
     0 3px 5px 0 rgba(0, 0, 0, 0.4); // темная тень от панельки
     background: #0af;
+    padding: 0 $ed-toolbar--side-padding;
     //margin: 0 4px;
     //float: left;
     display: flex;
@@ -88,17 +95,17 @@ $ed-toolbar--white-outline: rgba(255, 255, 255, .2);
     position: relative;
 }
 
-.ed-toolbar__item:first-child, .ed-toolbar__item--first {
-    border-top-left-radius: $ed-toolbar--full-border-radius;
-    border-bottom-left-radius: $ed-toolbar--full-border-radius;
-    padding-left: $ed-toolbar--side-padding;
-}
-
-.ed-toolbar__item:last-child, .ed-toolbar__item--last {
-    border-top-right-radius: $ed-toolbar--full-border-radius;
-    border-bottom-right-radius: $ed-toolbar--full-border-radius;
-    padding-right: $ed-toolbar--side-padding;
-}
+//.ed-toolbar__item:first-child, .ed-toolbar__item--first {
+//    border-top-left-radius: $ed-toolbar--full-border-radius;
+//    border-bottom-left-radius: $ed-toolbar--full-border-radius;
+//    padding-left: $ed-toolbar--side-padding;
+//}
+//
+//.ed-toolbar__item:last-child, .ed-toolbar__item--last {
+//    border-top-right-radius: $ed-toolbar--full-border-radius;
+//    border-bottom-right-radius: $ed-toolbar--full-border-radius;
+//    padding-right: $ed-toolbar--side-padding;
+//}
 
 .ed-toolbar__item--text {
     line-height: $ed-toolbar--height;
@@ -135,6 +142,22 @@ $ed-toolbar--white-outline: rgba(255, 255, 255, .2);
 }
 
 // =============================
+
+.ed-toolbar--minimizable {
+    transition: width .4s ease;
+}
+
+// этот класс используется для сворачивания панели
+.ed-toolbar__items-wrap {
+    overflow: hidden;
+    //width: 100%;
+}
+
+.ed-toolbar--minimized {
+    // делаем тулбар шириной с одну кнопку, учитывая паддинги тулбара
+    width: $svg-button--width + (2 * $ed-toolbar--side-padding) !important;
+}
+
 // =============================
 
 .debug {

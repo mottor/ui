@@ -32,7 +32,7 @@ body {
     color: $primary-text-color;
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
-    font-family: $base-font-family, $emoji-font-family, $default-font-family;
+    font-family: $base-font-family, $default-font-family; // удалил отсюда $emoji-font-family, т.к. получался странный отступ между словами
     font-weight: normal;
     font-style: normal;
     font-size: $base-font-size;

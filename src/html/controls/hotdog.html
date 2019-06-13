@@ -2,11 +2,23 @@
 <html>
 <head>
     <!--=include meta.html -->
+    <style type="text/css">
+        .section-example {
+            border: 1px solid #ffba33;
+            background: rgba(255, 186, 51, 0.1);
+            width: 100%;
+        }
+
+        .section-example--content {
+            margin: 100px 70px 30px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body class="docs debug theme--dark theme--light1">
 <!--=include nojs-nocss.html -->
 <!--content-start-->
-<div class="content-wrap">
+<div class="content-wrap allow-user-select">
     <div class="docs-block">
         <h1 style="color: #ddd;">Hotdog</h1>
         <div class="text">
@@ -14,6 +26,67 @@
             <p>Задача организации, в особенности же реализация намеченных плановых заданий обеспечивает широкому кругу (специалистов) участие в формировании форм развития. Равным образом реализация намеченных плановых заданий способствует подготовки и реализации модели развития. Задача организации, в особенности же дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание систем массового участия.</p>
         </div>
     </div>
+
+    <div class="docs-block">
+        <h2>Тулбар в секции</h2>
+        <p>Пример секции:</p>
+        <p>
+            <div class="section-example pos-rel">
+                <div class="ed-toolbar__container ed-toolbar__item-delimiter--v1 ed-toolbar-popover--drop-down ed-toolbar__container--place-fixed-top-left">
+                    <div class="ed-toolbar ed-toolbar--minimizable ed-toolbar--minimized clearfix">
+                        <div class="ed-toolbar__items-wrap">
+                            <div class="ed-toolbar__item ed-toolbar__item">
+                                <div class="ed-toolbar__item--text">Текст</div>
+                            </div>
+                            <div class="ed-toolbar__item">
+                                <div class="svg-button ed-toolbar__item-button">
+                                    <svg class="hotdog-panel__icon" viewBox="0 0 24 24" id="img__search-24" width="100%" height="100%">
+                                        <use xlink:href="/svg/sprite.svg#search"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="ed-toolbar__item-delimiter"></div>
+                            <div class="ed-toolbar__item ed-toolbar__item--openable js-ed-toolbar__item--openable">
+                                <div class="svg-button ed-toolbar__item-button">
+                                    <svg viewBox="0 0 24 24" width="100%" height="100%">
+                                        <use xlink:href="/svg/sprite.svg#ellipsis-h"></use>
+                                    </svg>
+                                </div>
+                                <div class="ed-toolbar-popover ed-toolbar-popover--menu">
+                                    <div class="ed-toolbar-popover-menu-item"><span>One</span></div>
+                                    <div class="ed-toolbar-popover-menu-item"><span>Two 2</span></div>
+                                    <div class="ed-toolbar-popover-menu-item"><span>Three 33</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ed-toolbar__item ed-toolbar__item--minimizer">
+                            <div class="svg-button ed-toolbar__item-button">
+                                <svg class="hotdog-panel__icon" viewBox="0 0 24 24" id="img__search-24" width="100%" height="100%">
+                                    <use xlink:href="/svg/sprite.svg#arrows-alt-h"></use>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="ed-toolbar clearfix ed-toolbar--stick-from-right">
+                        <div class="ed-toolbar__item ed-toolbar__item">
+                            <div class="ed-toolbar__item--text">индикаторы</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-example--content">
+        <p>--- контент секции ---</p>
+    </div>
+</div>
+</p>
+<p>У секции тулбар <strong>статичный</strong> (в отличие от блоков) и прицеплен к левому верхнему краю секции.</p>
+<p>Стили:</p>
+<ul class="mtr-list--bullets">
+    <li>Родитель тулбара должен иметь класс <code>pos-rel</code></li>
+    <li>Контейнер тулбара .ed-toolbar__container должен иметь класс <code>ed-toolbar__container--place-fixed-top-left</code></li>
+</ul>
+<p>Тулбар секции состоит из двух частей - основной и индикаторной.</p>
+</div>
 </div>
 
 <div class="ed-toolbar__basement">
@@ -109,7 +182,8 @@
     </div>
 </div>
 
-<script type="text/javascript" src="/jquery.min.js"></script>
+<!--<script type="text/javascript" src="/jquery.min.js"></script>-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script type="text/javascript">
     $(document).on('click', '.js-ed-toolbar__item--openable', function () {
         $(this).toggleClass('ed-toolbar__item--is-opened');
@@ -125,6 +199,39 @@
 
     $(document).on('click', '.ed-sidebar__close', function (e) {
         $('.ed-sidebar').css('right', '-100%');
+        return false;
+    });
+
+    $(document).on('click', '.ed-toolbar__item--minimizer', function (e) {
+        var $toolbar = $(this).closest('.ed-toolbar');
+        var $itemsWrap = $toolbar.find('.ed-toolbar__items-wrap');
+
+        if ($toolbar.hasClass('ed-toolbar--minimized')) {
+            var w = 0;
+
+            // получим ширины всех скрытых элементов
+            $itemsWrap.children().each(function () {
+                w += $(this).outerWidth();
+            });
+            // добавим ширину кнопки-раскрывалки
+            w += $('.ed-toolbar__item--minimizer').outerWidth();
+            // добавим паддинги самой панели
+            w += ($toolbar.outerWidth() - $toolbar.width());
+
+            $toolbar.css({width: w});
+            $toolbar.removeClass('ed-toolbar--minimized');
+            setTimeout(function () {
+                $toolbar.removeAttr('style');
+            }, 400);
+
+        } else {
+            $toolbar.css({'width': $toolbar.outerWidth()});
+            $toolbar.outerWidth();
+            $toolbar.addClass('ed-toolbar--minimized');
+            setTimeout(function () {
+                $toolbar.removeAttr('style');
+            }, 400);
+        }
         return false;
     });
 </script>

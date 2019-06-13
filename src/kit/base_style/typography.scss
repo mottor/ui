@@ -146,11 +146,12 @@ ul.hide-bullets {
 
 ul.mtr-list--bullets {
     list-style-type: none;
-    margin-left: $base-list--left-margin;
+    margin: 0 0 $base-paragraph--margin 0;
+    padding: 0 0 0 $base-list--left-margin;
 
     li {
         position: relative;
-        line-height: inherit;
+        line-height: ($base-paragraph--line-height * 1em);
     }
 
     li:before {

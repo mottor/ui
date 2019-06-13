@@ -93,6 +93,11 @@ code,
 pre {
     font-family: $base-monospaced-font-family;
     font-size: 95%;
+    background: #eee;
+    color: #c00;
+    padding: 2px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 /* Forms
