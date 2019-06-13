@@ -211,51 +211,83 @@
         var $wrap = $toolbar.find('.ed-toolbar__items-wrap');
         var $zzz = $toolbar.find('.zzz');
         var $zzz2 = $toolbar.find('.zzz2');
-        var speed = 0.3;
+        var speed = 0.2;
 
         if ($wrap.hasClass('collapsed')) {
             var wrapW = $zzz2.outerWidth();
             var toolbarW = $toolbar.outerWidth();
-            $zzz.addClass('big-width');
-            $wrap.css({width:0});
+            $wrap.css({width: 0});
             $toolbar.css({width: toolbarW});
+            $wrap.addClass('hide-overflow');
             $wrap.removeClass('collapsed');
-
             $wrap.outerWidth();
             $toolbar.outerWidth();
 
-            $wrap.css({width:wrapW});
+            $wrap.css({width: wrapW});
             $toolbar.css({width: toolbarW + wrapW});
-
             setTimeout(function () {
+                $wrap.removeClass('hide-overflow').removeAttr('style');
                 $toolbar.removeAttr('style');
-                setTimeout(function () {
-                    $zzz.removeClass('big-width');
-                    setTimeout(function () {
-                        $wrap.removeAttr('style');
-                    }, 100);
-                }, 100);
-            }, speed * 1000 + 10);
+            }, speed * 1000);
+
         } else {
             var wrapW = $wrap.outerWidth();
             var toolbarW = $toolbar.outerWidth();
-
             $wrap.css({width: wrapW});
             $toolbar.css({width: toolbarW});
-            $zzz.addClass('big-width');
-
             $wrap.outerWidth();
             $toolbar.outerWidth();
-
-            $wrap.css({width:0});
+            $wrap.addClass('hide-overflow');
+            $wrap.css({width: 0});
             $toolbar.css({width: toolbarW - wrapW});
-
             setTimeout(function () {
-                $wrap.addClass('collapsed').removeAttr('style');
+                $wrap.addClass('collapsed').removeClass('hide-overflow').removeAttr('style');
                 $toolbar.removeAttr('style');
-                $zzz.removeClass('big-width');
             }, speed * 1000);
         }
+        // if ($wrap.hasClass('collapsed')) {
+        //     var wrapW = $zzz2.outerWidth();
+        //     var toolbarW = $toolbar.outerWidth();
+        //     $zzz.addClass('big-width');
+        //     $wrap.css({width:0});
+        //     $toolbar.css({width: toolbarW});
+        //     $wrap.removeClass('collapsed');
+        //
+        //     $wrap.outerWidth();
+        //     $toolbar.outerWidth();
+        //
+        //     $wrap.css({width:wrapW});
+        //     $toolbar.css({width: toolbarW + wrapW});
+        //
+        //     setTimeout(function () {
+        //         $toolbar.removeAttr('style');
+        //         setTimeout(function () {
+        //             $zzz.removeClass('big-width');
+        //             setTimeout(function () {
+        //                 $wrap.removeAttr('style');
+        //             }, 100);
+        //         }, 100);
+        //     }, speed * 1000 + 10);
+        // } else {
+        //     var wrapW = $wrap.outerWidth();
+        //     var toolbarW = $toolbar.outerWidth();
+        //
+        //     $wrap.css({width: wrapW});
+        //     $toolbar.css({width: toolbarW});
+        //     $zzz.addClass('big-width');
+        //
+        //     $wrap.outerWidth();
+        //     $toolbar.outerWidth();
+        //
+        //     $wrap.css({width:0});
+        //     $toolbar.css({width: toolbarW - wrapW});
+        //
+        //     setTimeout(function () {
+        //         $wrap.addClass('collapsed').removeAttr('style');
+        //         $toolbar.removeAttr('style');
+        //         $zzz.removeClass('big-width');
+        //     }, speed * 1000);
+        // }
         return false;
     });
 </script>

@@ -144,18 +144,23 @@ $ed-toolbar--white-outline: rgba(255, 255, 255, .2);
 // =============================
 
 .ed-toolbar--minimizable {
-    transition: width .3s linear
+    transition: width .2s linear;
 }
 
 // этот класс используется для сворачивания панели
 .ed-toolbar__items-wrap {
-    overflow: hidden;
-    width: 100%;
+    //overflow: hidden;
+    //width: 100%;
     height: 100%;
-    transition: width .3s linear;
+    transition: width .2s linear;
+
+    &.hide-overflow {
+        overflow: hidden;
+    }
 
     &.collapsed {
         width: 0;
+        overflow: hidden;
 
         .zzz {
             width: 1000px;
