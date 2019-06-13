@@ -144,18 +144,44 @@ $ed-toolbar--white-outline: rgba(255, 255, 255, .2);
 // =============================
 
 .ed-toolbar--minimizable {
-    transition: width .4s ease;
+    transition: width .3s linear
 }
 
 // этот класс используется для сворачивания панели
 .ed-toolbar__items-wrap {
     overflow: hidden;
-    //width: 100%;
+    width: 100%;
+    height: 100%;
+    transition: width .3s linear;
+
+    &.collapsed {
+        width: 0;
+
+        .zzz {
+            width: 1000px;
+        }
+
+        .zzz2 {
+            float: left;
+        }
+    }
+}
+
+.zzz, .zzz2 {
+    height: 100%;
 }
 
 .ed-toolbar--minimized {
     // делаем тулбар шириной с одну кнопку, учитывая паддинги тулбара
-    width: $svg-button--width + (2 * $ed-toolbar--side-padding) !important;
+    //width: $svg-button--width + (2 * $ed-toolbar--side-padding) !important;
+
+    .ed-toolbar__items-wrap {
+        width: 0;
+    }
+}
+
+.zzz.big-width {
+    width: 1000px;
 }
 
 // =============================

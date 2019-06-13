@@ -33,29 +33,33 @@
         <p>
             <div class="section-example pos-rel">
                 <div class="ed-toolbar__container ed-toolbar__item-delimiter--v1 ed-toolbar-popover--drop-down ed-toolbar__container--place-fixed-top-left">
-                    <div class="ed-toolbar ed-toolbar--minimizable ed-toolbar--minimized clearfix">
-                        <div class="ed-toolbar__items-wrap">
-                            <div class="ed-toolbar__item ed-toolbar__item">
-                                <div class="ed-toolbar__item--text">Текст</div>
-                            </div>
-                            <div class="ed-toolbar__item">
-                                <div class="svg-button ed-toolbar__item-button">
-                                    <svg class="hotdog-panel__icon" viewBox="0 0 24 24" id="img__search-24" width="100%" height="100%">
-                                        <use xlink:href="/svg/sprite.svg#search"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="ed-toolbar__item-delimiter"></div>
-                            <div class="ed-toolbar__item ed-toolbar__item--openable js-ed-toolbar__item--openable">
-                                <div class="svg-button ed-toolbar__item-button">
-                                    <svg viewBox="0 0 24 24" width="100%" height="100%">
-                                        <use xlink:href="/svg/sprite.svg#ellipsis-h"></use>
-                                    </svg>
-                                </div>
-                                <div class="ed-toolbar-popover ed-toolbar-popover--menu">
-                                    <div class="ed-toolbar-popover-menu-item"><span>One</span></div>
-                                    <div class="ed-toolbar-popover-menu-item"><span>Two 2</span></div>
-                                    <div class="ed-toolbar-popover-menu-item"><span>Three 33</span></div>
+                    <div class="ed-toolbar ed-toolbar--minimizable clearfix">
+                        <div class="ed-toolbar__items-wrap collapsed">
+                            <div class="zzz">
+                                <div class="zzz2 clearfix">
+                                    <div class="ed-toolbar__item ed-toolbar__item">
+                                        <div class="ed-toolbar__item--text">Текст</div>
+                                    </div>
+                                    <div class="ed-toolbar__item">
+                                        <div class="svg-button ed-toolbar__item-button">
+                                            <svg class="hotdog-panel__icon" viewBox="0 0 24 24" id="img__search-24" width="100%" height="100%">
+                                                <use xlink:href="/svg/sprite.svg#search"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="ed-toolbar__item-delimiter"></div>
+                                    <div class="ed-toolbar__item ed-toolbar__item--openable js-ed-toolbar__item--openable">
+                                        <div class="svg-button ed-toolbar__item-button">
+                                            <svg viewBox="0 0 24 24" width="100%" height="100%">
+                                                <use xlink:href="/svg/sprite.svg#trash"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="ed-toolbar-popover ed-toolbar-popover--menu">
+                                            <div class="ed-toolbar-popover-menu-item"><span>One</span></div>
+                                            <div class="ed-toolbar-popover-menu-item"><span>Two 2</span></div>
+                                            <div class="ed-toolbar-popover-menu-item"><span>Three 33</span></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -204,33 +208,53 @@
 
     $(document).on('click', '.ed-toolbar__item--minimizer', function (e) {
         var $toolbar = $(this).closest('.ed-toolbar');
-        var $itemsWrap = $toolbar.find('.ed-toolbar__items-wrap');
+        var $wrap = $toolbar.find('.ed-toolbar__items-wrap');
+        var $zzz = $toolbar.find('.zzz');
+        var $zzz2 = $toolbar.find('.zzz2');
+        var speed = 0.3;
 
-        if ($toolbar.hasClass('ed-toolbar--minimized')) {
-            var w = 0;
+        if ($wrap.hasClass('collapsed')) {
+            var wrapW = $zzz2.outerWidth();
+            var toolbarW = $toolbar.outerWidth();
+            $zzz.addClass('big-width');
+            $wrap.css({width:0});
+            $toolbar.css({width: toolbarW});
+            $wrap.removeClass('collapsed');
 
-            // получим ширины всех скрытых элементов
-            $itemsWrap.children().each(function () {
-                w += $(this).outerWidth();
-            });
-            // добавим ширину кнопки-раскрывалки
-            w += $('.ed-toolbar__item--minimizer').outerWidth();
-            // добавим паддинги самой панели
-            w += ($toolbar.outerWidth() - $toolbar.width());
-
-            $toolbar.css({width: w});
-            $toolbar.removeClass('ed-toolbar--minimized');
-            setTimeout(function () {
-                $toolbar.removeAttr('style');
-            }, 400);
-
-        } else {
-            $toolbar.css({'width': $toolbar.outerWidth()});
+            $wrap.outerWidth();
             $toolbar.outerWidth();
-            $toolbar.addClass('ed-toolbar--minimized');
+
+            $wrap.css({width:wrapW});
+            $toolbar.css({width: toolbarW + wrapW});
+
             setTimeout(function () {
                 $toolbar.removeAttr('style');
-            }, 400);
+                setTimeout(function () {
+                    $zzz.removeClass('big-width');
+                    setTimeout(function () {
+                        $wrap.removeAttr('style');
+                    }, 100);
+                }, 100);
+            }, speed * 1000 + 10);
+        } else {
+            var wrapW = $wrap.outerWidth();
+            var toolbarW = $toolbar.outerWidth();
+
+            $wrap.css({width: wrapW});
+            $toolbar.css({width: toolbarW});
+            $zzz.addClass('big-width');
+
+            $wrap.outerWidth();
+            $toolbar.outerWidth();
+
+            $wrap.css({width:0});
+            $toolbar.css({width: toolbarW - wrapW});
+
+            setTimeout(function () {
+                $wrap.addClass('collapsed').removeAttr('style');
+                $toolbar.removeAttr('style');
+                $zzz.removeClass('big-width');
+            }, speed * 1000);
         }
         return false;
     });
