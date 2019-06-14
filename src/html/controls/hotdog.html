@@ -33,12 +33,20 @@
         <p>
             <div class="section-example pos-rel">
                 <div class="ed-toolbar__container ed-toolbar__item-delimiter--v1 ed-toolbar-popover--drop-down ed-toolbar__container--place-fixed-top-left">
-                    <div class="ed-toolbar ed-toolbar--minimizable clearfix">
-                        <div class="ed-toolbar__items-wrap collapsed">
-                            <div class="zzz">
-                                <div class="zzz2 clearfix">
-                                    <div class="ed-toolbar__item ed-toolbar__item">
-                                        <div class="ed-toolbar__item--text">Текст</div>
+                    <div class="ed-toolbar ed-toolbar--has-folders clearfix">
+                        <div class="ed-toolbar__item">
+                            <div class="ed-toolbar__item--text">2</div>
+                        </div>
+                        <div class="ed-toolbar__item-delimiter"></div>
+                        <div class="ed-toolbar__folder folded">
+                            <div class="ed-toolbar--fold-helper-1">
+                                <div class="ed-toolbar--fold-helper-2 clearfix">
+                                    <div class="ed-toolbar__item">
+                                        <div class="svg-button ed-toolbar__item-button">
+                                            <svg class="hotdog-panel__icon" viewBox="0 0 24 24" id="img__search-24" width="100%" height="100%">
+                                                <use xlink:href="/svg/sprite.svg#search"></use>
+                                            </svg>
+                                        </div>
                                     </div>
                                     <div class="ed-toolbar__item">
                                         <div class="svg-button ed-toolbar__item-button">
@@ -47,7 +55,6 @@
                                             </svg>
                                         </div>
                                     </div>
-                                    <div class="ed-toolbar__item-delimiter"></div>
                                     <div class="ed-toolbar__item ed-toolbar__item--openable js-ed-toolbar__item--openable">
                                         <div class="svg-button ed-toolbar__item-button">
                                             <svg viewBox="0 0 24 24" width="100%" height="100%">
@@ -84,12 +91,15 @@
 </div>
 </p>
 <p>У секции тулбар <strong>статичный</strong> (в отличие от блоков) и прицеплен к левому верхнему краю секции.</p>
-<p>Стили:</p>
-<ul class="mtr-list--bullets">
-    <li>Родитель тулбара должен иметь класс <code>pos-rel</code></li>
-    <li>Контейнер тулбара .ed-toolbar__container должен иметь класс <code>ed-toolbar__container--place-fixed-top-left</code></li>
-</ul>
 <p>Тулбар секции состоит из двух частей - основной и индикаторной.</p>
+<p>Как сделать сворачиваемые иконки:</p>
+<ul class="mtr-list--bullets">
+    <li>Родителю тулбара (секции) добавить класс <code>pos-rel</code>. Относительно него тулбар будет позиционироваться.</li>
+    <li>Контейнеру тулбара (.ed-toolbar__container) добавить класс <code>ed-toolbar__container--place-fixed-top-left</code>.</li>
+    <li>Самому тулбару (.ed-toolbar), в котором будут сворачиваемые иконки, добавляем класс <code>ed-toolbar--has-folders</code>.</li>
+    <li>Иконки, которые будут сворачиваться и разворачиваться, оборачиваются тремя элементами: <code>ed-toolbar__folder</code>, <code>ed-toolbar--fold-helper-1</code>, <code>ed-toolbar--fold-helper-2</code>. Они перечислены в порядке вложенности. Последний также должен иметь класс <code>clearfix</code>.</li>
+</ul>
+
 </div>
 </div>
 
@@ -208,86 +218,67 @@
 
     $(document).on('click', '.ed-toolbar__item--minimizer', function (e) {
         var $toolbar = $(this).closest('.ed-toolbar');
-        var $wrap = $toolbar.find('.ed-toolbar__items-wrap');
-        var $zzz = $toolbar.find('.zzz');
-        var $zzz2 = $toolbar.find('.zzz2');
+        var $wrap = $toolbar.find('.ed-toolbar__folder');
+        var $foldHelper1 = $toolbar.find('.ed-toolbar--fold-helper-1');
+        var $foldHelper2 = $toolbar.find('.ed-toolbar--fold-helper-2');
+        var wrapW, toolbarW;
+
+        // задает скорость сворачивания
+        // изменяя здесь надо также поменять задержку в CSS. Ищи слово "change5954"
         var speed = 0.2;
 
-        // if ($wrap.hasClass('collapsed')) {
-        //     var wrapW = $zzz2.outerWidth();
-        //     var toolbarW = $toolbar.outerWidth();
-        //     $wrap.css({width: 0});
-        //     $toolbar.css({width: toolbarW});
-        //     $wrap.addClass('hide-overflow');
-        //     $wrap.removeClass('collapsed');
-        //     $wrap.outerWidth();
-        //     $toolbar.outerWidth();
-        //
-        //     $wrap.css({width: wrapW});
-        //     $toolbar.css({width: toolbarW + wrapW});
-        //     setTimeout(function () {
-        //         $wrap.removeClass('hide-overflow').removeAttr('style');
-        //         $toolbar.removeAttr('style');
-        //     }, speed * 1000);
-        //
-        // } else {
-        //     var wrapW = $wrap.outerWidth();
-        //     var toolbarW = $toolbar.outerWidth();
-        //     $wrap.css({width: wrapW});
-        //     $toolbar.css({width: toolbarW});
-        //     $wrap.outerWidth();
-        //     $toolbar.outerWidth();
-        //     $wrap.addClass('hide-overflow');
-        //     $wrap.css({width: 0});
-        //     $toolbar.css({width: toolbarW - wrapW});
-        //     setTimeout(function () {
-        //         $wrap.addClass('collapsed').removeClass('hide-overflow').removeAttr('style');
-        //         $toolbar.removeAttr('style');
-        //     }, speed * 1000);
-        // }
+        if ($wrap.hasClass('folded')) {
+            wrapW = $foldHelper2.outerWidth();
+            toolbarW = $toolbar.outerWidth();
+            $foldHelper1.addClass('big-width');
 
-
-        if ($wrap.hasClass('collapsed')) {
-            var wrapW = $zzz2.outerWidth();
-            var toolbarW = $toolbar.outerWidth();
-            $zzz.addClass('big-width');
-            $wrap.css({width:0});
+            // задаем буквальные ширины блоков, в пикселях
+            $wrap.css({width: 0});
             $toolbar.css({width: toolbarW});
-            $wrap.removeClass('collapsed');
+            $wrap.removeClass('folded');
 
+            // это нужно чтобы спровофировать reflow браузера
             $wrap.outerWidth();
             $toolbar.outerWidth();
 
-            $wrap.css({width:wrapW});
+            // запускаем анимацию
+            $wrap.css({width: wrapW});
             $toolbar.css({width: toolbarW + wrapW});
 
             setTimeout(function () {
+                // подчищаем после завершения анимации
                 $toolbar.removeAttr('style');
+
+                // пришлось сделать такие вложенные setTimeout, т.к. иногда последняя иконка прыгала
                 setTimeout(function () {
-                    $zzz.removeClass('big-width');
+                    $foldHelper1.removeClass('big-width');
                     setTimeout(function () {
                         $wrap.removeAttr('style');
                     }, 100);
                 }, 100);
             }, speed * 1000 + 10);
         } else {
-            var wrapW = $wrap.outerWidth();
-            var toolbarW = $toolbar.outerWidth();
+            wrapW = $wrap.outerWidth();
+            toolbarW = $toolbar.outerWidth();
 
+            // задаем буквальные ширины блоков, в пикселях
             $wrap.css({width: wrapW});
             $toolbar.css({width: toolbarW});
-            $zzz.addClass('big-width');
+            $foldHelper1.addClass('big-width');
 
+            // это нужно чтобы спровофировать reflow браузера
             $wrap.outerWidth();
             $toolbar.outerWidth();
 
-            $wrap.css({width:0});
+            // запускаем анимацию
+            $wrap.css({width: 0});
             $toolbar.css({width: toolbarW - wrapW});
 
             setTimeout(function () {
-                $wrap.addClass('collapsed').removeAttr('style');
+                // подчищаем после завершения анимации
+                $wrap.addClass('folded').removeAttr('style');
                 $toolbar.removeAttr('style');
-                $zzz.removeClass('big-width');
+                $foldHelper1.removeClass('big-width');
             }, speed * 1000);
         }
 

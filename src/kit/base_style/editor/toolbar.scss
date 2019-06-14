@@ -142,51 +142,47 @@ $ed-toolbar--white-outline: rgba(255, 255, 255, .2);
 }
 
 // =============================
-
-.ed-toolbar--minimizable {
-    transition: width .2s linear;
+// Сворачивание иконок в панели
+%big-width {
+    width: 1000px;
 }
 
-// этот класс используется для сворачивания панели
-.ed-toolbar__items-wrap {
-    //overflow: hidden;
-    //width: 100%;
+.ed-toolbar--has-folders, .ed-toolbar__folder {
+    // задает скорость сворачивания
+    // изменяя здесь надо также поменять задержку в коде. Ищи слово "change5954"
+    transition: width 0.2s linear;
+}
+
+.ed-toolbar--fold-helper-1, .ed-toolbar--fold-helper-2 {
     height: 100%;
-    transition: width .2s linear;
+}
 
-    &.hide-overflow {
-        overflow: hidden;
-    }
+.ed-toolbar--fold-helper-1.big-width {
+    // для случая когда панель сворачивается - этот класс позволяет иконкам не переноситься ниже
+    @extend %big-width;
+}
 
-    &.collapsed {
+// это обертка иконок, которые могут сворачиваться
+.ed-toolbar__folder {
+    height: 100%;
+
+    &.folded {
+        // класс накидывается, когда иконки свёрнуты
+
         width: 0;
         overflow: hidden;
 
-        .zzz {
-            width: 1000px;
+        .ed-toolbar--fold-helper-1 {
+            // этот helper нужен чтобы задать очень большую ширину контейнера, чтобы иконки могли выстроиться в ряд, а не переносились вниз
+            @extend %big-width;
         }
 
-        .zzz2 {
+        .ed-toolbar--fold-helper-2 {
+            // float нужен чтобы этот div принял не 100% ширины, а ровно столько, сколько занимают иконки
+            // это нужно для дальнейшего разворачивания
             float: left;
         }
     }
-}
-
-.zzz, .zzz2 {
-    height: 100%;
-}
-
-.ed-toolbar--minimized {
-    // делаем тулбар шириной с одну кнопку, учитывая паддинги тулбара
-    //width: $svg-button--width + (2 * $ed-toolbar--side-padding) !important;
-
-    .ed-toolbar__items-wrap {
-        width: 0;
-    }
-}
-
-.zzz.big-width {
-    width: 1000px;
 }
 
 // =============================
