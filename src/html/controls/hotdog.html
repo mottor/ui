@@ -20,11 +20,16 @@
 <!--content-start-->
 <div class="content-wrap allow-user-select">
     <div class="docs-block">
-        <h1 style="color: #ddd;">Hotdog</h1>
+        <h1 style="color: #ddd;">Тулбар плавающий</h1>
         <div class="text">
             <p style="background: rgba(0,0,0,.03)">Равным образом дальнейшее развитие различных форм деятельности требуют определения и уточнения модели развития. Повседневная практика показывает, что укрепление и развитие структуры представляет собой интересный эксперимент проверки новых предложений. Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Задача организации, в особенности же постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание модели развития. Идейные соображения высшего порядка, а также консультация с широким активом требуют от нас анализа дальнейших направлений развития.</p>
             <p>Задача организации, в особенности же реализация намеченных плановых заданий обеспечивает широкому кругу (специалистов) участие в формировании форм развития. Равным образом реализация намеченных плановых заданий способствует подготовки и реализации модели развития. Задача организации, в особенности же дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание систем массового участия.</p>
         </div>
+    </div>
+
+    <div class="docs-block">
+        <h2>Правая панель</h2>
+        <p>Когда-нибудь про неё напишу...</p>
     </div>
 
     <div class="docs-block">
@@ -40,7 +45,7 @@
                         <div class="ed-toolbar__item-delimiter"></div>
                         <div class="ed-toolbar__folder folded">
                             <div class="ed-toolbar--fold-helper-1">
-                                <div class="ed-toolbar--fold-helper-2 clearfix">
+                                <div class="ed-toolbar--fold-helper-2">
                                     <div class="ed-toolbar__item">
                                         <div class="svg-button ed-toolbar__item-button">
                                             <svg class="hotdog-panel__icon" viewBox="0 0 24 24" id="img__search-24" width="100%" height="100%">
@@ -77,11 +82,17 @@
                                 </svg>
                             </div>
                         </div>
-
                     </div>
                     <div class="ed-toolbar clearfix ed-toolbar--stick-from-right">
                         <div class="ed-toolbar__item ed-toolbar__item">
                             <div class="ed-toolbar__item--text">индикаторы</div>
+                        </div>
+                        <div class="ed-toolbar__item ed-toolbar__item--icon">
+                            <div class="ed-toolbar__icon">
+                                <svg class="hotdog-panel__icon" viewBox="0 0 24 24" id="img__search-24" width="100%" height="100%">
+                                    <use xlink:href="/svg/sprite.svg#eye-off"></use>
+                                </svg>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -91,14 +102,23 @@
 </div>
 </p>
 <p>У секции тулбар <strong>статичный</strong> (в отличие от блоков) и прицеплен к левому верхнему краю секции.</p>
-<p>Тулбар секции состоит из двух частей - основной и индикаторной.</p>
-<p>Как сделать сворачиваемые иконки:</p>
+<p>Самое первое, что показывается в тулбаре - это порядковый номер секции. Основные иконки секции свернуты.</p>
+<h3>Как сделать сворачиваемые иконки</h3>
 <ul class="mtr-list--bullets">
     <li>Родителю тулбара (секции) добавить класс <code>pos-rel</code>. Относительно него тулбар будет позиционироваться.</li>
     <li>Контейнеру тулбара (.ed-toolbar__container) добавить класс <code>ed-toolbar__container--place-fixed-top-left</code>.</li>
     <li>Самому тулбару (.ed-toolbar), в котором будут сворачиваемые иконки, добавляем класс <code>ed-toolbar--has-folders</code>.</li>
-    <li>Иконки, которые будут сворачиваться и разворачиваться, оборачиваются тремя элементами: <code>ed-toolbar__folder</code>, <code>ed-toolbar--fold-helper-1</code>, <code>ed-toolbar--fold-helper-2</code>. Они перечислены в порядке вложенности. Последний также должен иметь класс <code>clearfix</code>.</li>
+    <li>Иконки, которые будут сворачиваться и разворачиваться, оборачиваются тремя элементами: <code>ed-toolbar__folder</code>, <code>ed-toolbar--fold-helper-1</code>, <code>ed-toolbar--fold-helper-2</code>. Они перечислены в порядке вложенности.</li>
+    <li>Для кнопки, которая сворачивает и разворачивает - добавить класс <code>ed-toolbar__item--minimizer</code>.</li>
 </ul>
+
+<h3>Индикаторы</h3>
+<p>Тулбар секции может иметь также часть с индикаторами. Это просто иконки, показывающие (например) что секция закреплена или скрыта. Они не нажимаются и имеют cursor: default.</p>
+<p>Добавить тулбар с индикаторами можно в контейнер ed-toolbar__container. Внутри него просто создается еще один тулбар.</p>
+<p>Чтобы сделать индикатор, добавляем элемент ed-toolbar__item с классом <code>ed-toolbar__item--icon</code>. У него внутри <code>ed-toolbar__icon</code>. И в нем уже svg-иконка.</p>
+
+<h3>@todo</h3>
+<p>сделать чтобы кнопка сворачивания/разворачивания не имела цвета на ховере.</p>
 
 </div>
 </div>
@@ -212,7 +232,7 @@
     });
 
     $(document).on('click', '.ed-sidebar__close', function (e) {
-        $('.ed-sidebar').css('right', '-100%');
+        $('.ed-sidebar').css('right', -1 * $('.ed-sidebar').outerWidth());
         return false;
     });
 

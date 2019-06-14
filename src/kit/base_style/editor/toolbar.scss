@@ -95,6 +95,30 @@ $ed-toolbar--white-outline: rgba(255, 255, 255, .2);
     position: relative;
 }
 
+.ed-toolbar__item--icon {
+    cursor: default;
+    width: $svg-button--width;
+    height: $svg-button--height;
+    padding: ($svg-button--height - $svg-button--svg-size)/2 ($svg-button--width - $svg-button--svg-size)/2;
+    box-sizing: border-box;
+}
+
+.ed-toolbar__icon {
+    width: $svg-button--svg-size;
+    height: $svg-button--svg-size;
+
+    svg {
+        fill: currentColor;
+        stroke: currentColor;
+    }
+}
+
+.theme--dark {
+    .ed-toolbar__icon {
+        color: rgba(255,255,255,.8);
+    }
+}
+
 //.ed-toolbar__item:first-child, .ed-toolbar__item--first {
 //    border-top-left-radius: $ed-toolbar--full-border-radius;
 //    border-bottom-left-radius: $ed-toolbar--full-border-radius;
@@ -165,6 +189,7 @@ $ed-toolbar--white-outline: rgba(255, 255, 255, .2);
 // это обертка иконок, которые могут сворачиваться
 .ed-toolbar__folder {
     height: 100%;
+    overflow: hidden;
 
     &.folded {
         // класс накидывается, когда иконки свёрнуты
