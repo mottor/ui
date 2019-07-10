@@ -108,7 +108,7 @@ $header-4--line-height: roundStep($header-4--font-size * $base-header--line-heig
 $svg-button--width: 40px;
 $svg-button--height: 48px;
 $svg-button--svg-size: 20px;
-$svg-button--hover-color: #2a79ff;
+$svg-button--hover-color: #62a8ea;
 
 // =============================
 // Editor panels
@@ -116,6 +116,6 @@ $svg-button--hover-color: #2a79ff;
 // доп. паддинги по краям, когда панель полностью загругленная.
 $ed-toolbar--side-padding: 6px; // Лучше указывать четное значение
 
-$dark-flow-panel--bg: rgba(3, 8, 15, .92);
+$dark-flow-panel--bg: rgba(53, 53, 53, .96);
 $dark-flow-panel--color-primary: #fff;
 $dark-flow-panel--delimiter-color: rgba(255, 255, 255, .3);
