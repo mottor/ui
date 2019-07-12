@@ -1,5 +1,5 @@
 $ed-sidebar--width: 300px;
-$ed-sidebar--header-height: 50px;
+$ed-sidebar--header-height: 40px;
 
 // ===============================
 
@@ -29,7 +29,7 @@ $ed-sidebar--header-height: 50px;
 
 .ed-sidebar__header {
     background: #eee;
-    //height: $ed-sidebar--header-height;
+    height: $ed-sidebar--header-height;
     position: absolute;
     top: 0;
     left: 0;
