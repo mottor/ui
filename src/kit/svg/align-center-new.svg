@@ -1,6 +1,6 @@
-<svg width="16" height="14" viewBox="0 0 16 14" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M3 13C3 12.4477 3.44772 12 4 12H12C12.5523 12 13 12.4477 13 13C13 13.5523 12.5523 14 12 14H4C3.44772 14 3 13.5523 3 13Z"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M0 9C0 8.44772 0.397969 8 0.888889 8H15.1111C15.602 8 16 8.44772 16 9C16 9.55228 15.602 10 15.1111 10H0.888889C0.397969 10 0 9.55228 0 9Z"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M3 5C3 4.44772 3.44772 4 4 4H12C12.5523 4 13 4.44772 13 5C13 5.55228 12.5523 6 12 6H4C3.44772 6 3 5.55228 3 5Z"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M0 1C0 0.447715 0.397969 0 0.888889 0H15.1111C15.602 0 16 0.447715 16 1C16 1.55228 15.602 2 15.1111 2H0.888889C0.397969 2 0 1.55228 0 1Z"/>
+<svg width="16" height="14" viewBox="0 0 16 14" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1H15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1 9H15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3 5H13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3 13H13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
