@@ -11,6 +11,10 @@ html {
     //-ms-touch-action: pan-x pan-y;
 }
 
+html.hide-body-overflow, html.hide-body-overflow body {
+    overflow: hidden;
+}
+
 :focus {
     outline: none;
 }

@@ -99,15 +99,15 @@ function watchDocsHtml() {
 
 function compileDocsStyle() {
     return gulp
-        .src(config.dirDocs + '/scss/main.scss')
+        .src(config.dirDocs + '/scss/*.scss')
         .pipe(plumber())
         .pipe(sass({
             outputStyle: prod ? 'compressed' : 'expanded',
             sourceComments: !prod
         }).on('error', sass.logError))
-        .pipe(rename('docs.css'))
+        //.pipe(rename('docs.css'))
         .pipe(autoprefixer({browsers: 'last 3 versions'}))
-        .pipe(gulp.dest(config.dirBuildHtml + '/css'))
+        .pipe(gulp.dest(config.dirBuildHtml + '/css/docs/'))
         .pipe(browserSync.stream())
         ;
 }

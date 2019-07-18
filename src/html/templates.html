@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--=include meta.html -->
+    <link rel="stylesheet" type="text/css" href="/css/docs/templates.css"/>
+</head>
+<body>
+    <div class="templates__header">
+
+    </div>
+    <div class="templates-categories__mobile-trigger">КАТЕГОРИИ V</div>
+    <div class="templates__container">
+        <div class="templates-categories">
+            <div class="templates-categories__header">
+                <div class="templates-categories__header-text">КАТЕГОРИИ</div>
+                <div class="templates-categories__closer"></div>
+            </div>
+            <div class="templates-categories__list">
+                <a class="templates-categories__item templates-categories__item--selected" href="#">Все</a>
+                <a class="templates-categories__item" href="#">Товары</a>
+                <a class="templates-categories__item" href="#">Реклама</a>
+<!--                <a class="templates-categories__item" href="#">Услуги</a>-->
+<!--                <a class="templates-categories__item" href="#">Авто</a>-->
+<!--                <a class="templates-categories__item" href="#">Мебель</a>-->
+                <a class="templates-categories__item" href="#">Длинное название звание ние е</a>
+            </div>
+        </div>
+        <div class="templates-list clearfix">
+            <div class="templates-list__item">1</div>
+            <div class="templates-list__item">2</div>
+            <div class="templates-list__item">3</div>
+            <div class="templates-list__item">4</div>
+            <div class="templates-list__item">5</div>
+            <div class="templates-list__item">6</div>
+            <div class="templates-list__item">7</div>
+            <div class="templates-list__item">8</div>
+        </div>
+    </div>
+    <div class="mark"></div>
+    <div class="mark2"></div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function toggleMobileCategoriesWnd() {
+            var container = $('.templates__container');
+            var cls = 'templates__container--show-categories';
+
+            if (container.hasClass(cls)) {
+                // hide
+                $('html').removeClass('hide-body-overflow');
+                $('body').css({'paddingRight': 0});
+                container.removeClass(cls);
+            } else {
+                // show
+                var bodyW = $('body').width();
+                $('html').addClass('hide-body-overflow');
+                var newBodyW = $('body').width();
+                if (newBodyW != bodyW) {
+                    $('body').css({'paddingRight': newBodyW - bodyW});
+                }
+                container.addClass(cls);
+            }
+        }
+
+        $(document).on('click', '.templates-categories__mobile-trigger', function () {
+            toggleMobileCategoriesWnd();
+        });
+        $(document).on('click', '.templates-categories__closer', function () {
+            toggleMobileCategoriesWnd();
+        });
+    </script>
+</body>
+</html>

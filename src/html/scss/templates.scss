@@ -1,0 +1,309 @@
+$templates__container_vert_padding: 80px;
+$templates__container_side_padding: 100px;
+$mobile_side_paddings: 20px;
+
+$categories_width: 220px;
+$categories_gap_with_tpl_list: 30px;
+
+$tpl_min_width: 300px;
+$tpl_max_width: 500px;
+
+$tpl_gap: 60px;
+$mobile_tpl_gap: 40px;
+
+$mobile_wnd_trigger_height: 58px;
+$mobile_wnd_header_height: 58px;
+
+// ------------------------------------
+// ниже уже идут рассчеты, не трогать
+// всё что можно менять - находится выше :))
+//@if $mobile_tpl_gap > $mobile_site_paddings {
+//    // если $mobile_tpl_gap будет больше, то появится горизонтальный скролл
+//    // мы его убираем ограничивая $mobile_tpl_gap значением $mobile_site_paddings
+//    $mobile_tpl_gap: $mobile_site_paddings;
+//}
+$hacky_margins: $tpl_gap;
+//$mobile_hacky_margins: $mobile_tpl_gap;
+$col3_min_width: 2*$templates__container_side_padding + $categories_width + $categories_gap_with_tpl_list + 2*$tpl_gap + 3*$tpl_min_width;
+$col2_min_width: 2*$templates__container_side_padding + $categories_width + $categories_gap_with_tpl_list + $tpl_gap + 2*$tpl_min_width;
+$mobile_col2_min_width: 2*$mobile_side_paddings + $mobile_tpl_gap + 2*$tpl_min_width;
+$collapse_categories_width: 2*$templates__container_side_padding + $categories_width + $categories_gap_with_tpl_list + $tpl_min_width;
+
+
+body {
+    background: #fff;
+}
+
+.templates__header {
+    height: 100px;
+    background: #f4f4f4;
+}
+
+.templates__container {
+    padding: $templates__container_vert_padding $templates__container_side_padding;
+}
+
+.templates-categories {
+    float: left;
+    width: $categories_width;
+    /*background: rgba(81, 255, 96, 0.38);*/
+}
+
+.templates-categories__header {
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.templates-categories__header-text {
+    font-size: 12px;
+    color: #717171;
+}
+
+.templates-categories__closer {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    background: rgba(255, 0, 255, 0.25);
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.templates-categories__item, .templates-categories__item:visited, .templates-categories__item:focus {
+    display: block;
+    font-size: 16px;
+    padding: 10px 0;
+    line-height: 1.4;
+    color: #767676;
+    text-decoration: none;
+}
+
+.templates-categories__item:hover {
+    color: #313131;
+    text-decoration: none;
+}
+
+.templates-categories__item--selected, .templates-categories__item--selected:visited, .templates-categories__item--selected:focus {
+    font-weight: bold;
+    color: #222;
+}
+
+.templates-categories__mobile-trigger {
+    display: none;
+    border-bottom: 1px solid #d4d4d4;
+    border-top: 1px solid #d4d4d4;
+    padding: 0 $mobile_side_paddings;
+    box-sizing: content-box;
+    height: $mobile_wnd_trigger_height;
+    line-height: $mobile_wnd_trigger_height;
+    cursor: pointer;
+}
+
+.mark {
+//    position: fixed;
+//    top: 0;
+//    right: 0;
+//    bottom: 0;
+//    width: $templates__container_side_padding;
+//    background: rgba(0, 170, 255, 0.2);
+    display: none;
+}
+//
+.mark2 {
+//    position: fixed;
+//    left: 0;
+//    right: 0;
+//    bottom: 0;
+//    height: $templates__container_vert_padding;
+//    background: rgba(0, 170, 255, 0.2);
+    display: none;
+}
+
+.templates-list {
+    //display: flex;
+    //flex-flow: row wrap;
+    //justify-content: space-between;
+    //align-content: flex-start;
+    margin-top: 0;
+    margin-right: 0; //-1*$hacky_margins;
+    margin-bottom: 0;
+    margin-left: ($categories_width + $categories_gap_with_tpl_list);
+}
+
+.templates-list__item {
+    /* width 400 - 600 px */
+    border-radius: 4px;
+    background: rgba(68, 142, 255, 0.4);
+    min-height: 100px;
+    /*margin-bottom: 30px;*/
+    //max-width: 400px;
+    margin-top: $tpl_gap;
+    margin-right: $tpl_gap;
+    margin-bottom: 0;
+    margin-left: 0;
+    max-width: $tpl_max_width;
+    float: left;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px;
+}
+
+.templates-list__item:first-child {
+    margin-top: 0;
+}
+
+// десктопный вид, 3 колонки
+@media (min-width: $col3_min_width) {
+    .templates-list__item {
+        width: calc((100% - #{$tpl_gap*2}) / 3);
+    }
+    .templates-list__item:nth-child(3n) { // убираем у каждого 3го элемента паддинг справа
+        margin-right: 0;
+    }
+    .templates-list__item:nth-child(2), .templates-list__item:nth-child(3) { // убираем паддинг для самых верхних элементов
+        margin-top: 0;
+    }
+}
+
+// десктопный вид, 2 колонки
+@media (min-width: $col2_min_width) and (max-width: $col3_min_width - 1) {
+    .templates-list__item {
+        width: calc((100% - #{$tpl_gap}) / 2);
+    }
+    .templates-list__item:nth-child(2n) { // убираем у каждого 2го элемента паддинг справа
+        margin-right: 0;
+    }
+    .templates-list__item:nth-child(2) { // убираем паддинг для самых верхних элементов
+        margin-top: 0;
+    }
+}
+
+// десктопный вид, 1 колонка
+@media (min-width: $collapse_categories_width) and (max-width: $col2_min_width - 1) {
+    .templates-list {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    .templates-list__item {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        float: none;
+    }
+}
+
+// мобильный вид, 2 колонки
+@media (min-width: $mobile_col2_min_width) and (max-width: $collapse_categories_width - 1) {
+    .templates-list {
+    }
+    .templates-list__item {
+        width: calc((100% - #{$mobile_tpl_gap}) / 2);
+        margin-right: $mobile_tpl_gap;
+        margin-top: $mobile_tpl_gap;
+    }
+    .templates-list__item:nth-child(2n) { // убираем у каждого 2го элемента паддинг справа
+        margin-right: 0;
+    }
+    .templates-list__item:nth-child(2) { // убираем паддинг для самых верхних элементов
+        margin-top: 0;
+    }
+}
+
+// мобильный вид, 1 колонка
+@media (max-width: $mobile_col2_min_width - 1) {
+    .templates-list {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    .templates-list__item {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: $mobile_tpl_gap;
+        float: none;
+    }
+}
+
+// эти правила срабатывают когда срывается список категорий
+@media (max-width: $collapse_categories_width - 1) {
+    .templates__container {
+        padding: $mobile_side_paddings;
+    }
+    .templates-categories__header {
+        padding: 0 20px;
+        //margin-bottom: 26px;
+        border-bottom: 1px solid #d4d4d4;
+        box-sizing: border-box;
+        height: $mobile_wnd_header_height + 1;
+        line-height: $mobile_wnd_header_height;
+        margin: 0;
+    }
+    .templates-categories__closer {
+        display: block;
+    }
+
+    .templates-categories {
+        position: fixed;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        background: #fff;
+        transform: translateY(100%);
+        z-index: 2;
+        //transition: transform 600ms cubic-bezier(.694,0,.335,1),-webkit-transform 600ms cubic-bezier(.694,0,.335,1);
+        transition: transform 500ms ease;
+    }
+
+    .templates__container--show-categories .templates-categories {
+        transform: translateY(0);
+    }
+    .templates-categories__list {
+        padding: 30px 40px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        position: absolute;
+        top: $mobile_wnd_header_height + 1;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .templates-list {
+        margin-left: 0;
+    }
+    .mark {
+        width: $mobile_side_paddings;
+    }
+    .mark2 {
+        height: $mobile_side_paddings;
+    }
+    .templates-categories__mobile-trigger {
+        display: block;
+    }
+}
+
+//@media (min-width: 500px) and (max-width: 1024px) {
+//    .templates-list__item {
+//        width: calc(50% - 35px);
+//        margin-bottom: 80px;
+//    }
+//}
+//
+//@media (min-width: 1024px) and (max-width: 1600px) {
+//    .templates-list__item {
+//        width: calc(50% - 35px);
+//        margin-bottom: 80px;
+//    }
+//}
+//
+//@media (min-width: 1601px) {
+//    .templates-list__item {
+//        width: calc(50% - 15px);
+//        margin-bottom: 30px;
+//    }
+//}
