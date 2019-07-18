@@ -269,10 +269,10 @@ body {
         width: 100vw;
         top: 0;
         background: #fff;
-        transform: translateY(100%);
+        transform: translateY(110%);
         z-index: 2;
-        //transition: transform 600ms cubic-bezier(.694,0,.335,1),-webkit-transform 600ms cubic-bezier(.694,0,.335,1);
-        transition: transform 500ms ease;
+        transition: transform 600ms cubic-bezier(.694,0,.335,1);
+        //transition: transform 500ms ease;
     }
 
     .templates__container--show-categories .templates-categories {
