@@ -160,7 +160,7 @@ body {
     background-position: 50% 0;
     background-size: cover;
     background-repeat: no-repeat;
-    transition: background-position 3s linear;
+    transition: background-position 3s ease;
 }
 
 .templates-list__item:hover .templates-list__item-image {
