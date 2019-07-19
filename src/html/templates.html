@@ -5,76 +5,107 @@
     <link rel="stylesheet" type="text/css" href="/css/docs/templates.css"/>
 </head>
 <body>
-    <div class="templates__header">
+<div class="templates__header">
 
-    </div>
-    <div class="templates-categories__mobile-trigger">КАТЕГОРИИ V</div>
-    <div class="templates__container">
-        <div class="templates-categories">
-            <div class="templates-categories__header">
-                <div class="templates-categories__header-text">КАТЕГОРИИ</div>
-                <div class="templates-categories__closer"></div>
-            </div>
-            <div class="templates-categories__list">
-                <a class="templates-categories__item templates-categories__item--selected" href="#">Все</a>
-                <a class="templates-categories__item" href="#">Товары</a>
-                <a class="templates-categories__item" href="#">Реклама</a>
-<!--                <a class="templates-categories__item" href="#">Услуги</a>-->
-<!--                <a class="templates-categories__item" href="#">Авто</a>-->
-<!--                <a class="templates-categories__item" href="#">Мебель</a>-->
-                <a class="templates-categories__item" href="#">Длинное название звание ние е</a>
-            </div>
+</div>
+<div class="templates-categories__mobile-trigger">КАТЕГОРИИ V</div>
+<div class="templates__container">
+    <div class="templates-categories">
+        <div class="templates-categories__header">
+            <div class="templates-categories__header-text">КАТЕГОРИИ</div>
+            <div class="templates-categories__closer"></div>
         </div>
-        <div class="templates-list clearfix">
-            <div class="templates-list__item">
+        <div class="templates-categories__list">
+            <a class="templates-categories__item templates-categories__item--selected" href="#">Все</a>
+            <a class="templates-categories__item" href="#">Товары</a>
+            <a class="templates-categories__item" href="#">Реклама</a>
+            <!--                <a class="templates-categories__item" href="#">Услуги</a>-->
+            <!--                <a class="templates-categories__item" href="#">Авто</a>-->
+            <!--                <a class="templates-categories__item" href="#">Мебель</a>-->
+            <a class="templates-categories__item" href="#">Длинное название звание ние е</a>
+        </div>
+    </div>
+    <div class="templates-list clearfix">
+        <div class="templates-list__item">
+            <div class="templates-list__item-thumb">
                 <div class="templates-list__item-image" style="background-image: url('https://userassets.pagecloud.com/theme-screenshots/coast-home-desktop2x.jpg')"></div>
             </div>
-            <div class="templates-list__item">
+            <div class="templates-list__item-info">
+                <div class="templates-list__info-title-wrap">
+                    <div class="templates-list__info-title">WEXLEY</div>
+                    <div class="templates-list__info-title-icon"></div>
+                </div>
+                <div class="templates-list__info-desc">A mosaic gallery that adapts to the size of your images makes this an optimal website template for photographers and creative professionals.</div>
+            </div>
+        </div>
+        <div class="templates-list__item">
+            <div class="templates-list__item-thumb">
                 <div class="templates-list__item-image" style="background-image: url('https://userassets.pagecloud.com/theme-screenshots/oslo-home-desktop2x.jpg')"></div>
             </div>
-            <div class="templates-list__item">
-                <div class="templates-list__item-image" style="background-image: url('https://userassets.pagecloud.com/theme-screenshots/savy-sc-home-desktop2x.jpg')"></div>
+            <div class="templates-list__item-info">
+                <div class="templates-list__info-title-wrap">
+                    <div class="templates-list__info-title">WELLS</div>
+                    <div class="templates-list__info-title-icon"></div>
+                </div>
+                <div class="templates-list__info-desc">The unique gallery of this website template pulls visitors deep into your visual work.</div>
             </div>
-            <div class="templates-list__item">
-                <div class="templates-list__item-image" style="background-image: url('https://userassets.pagecloud.com/theme-screenshots/escape-sc-home-desktop2x.jpg')"></div>
+        </div>
+        <div class="templates-list__item">
+            <div class="templates-list__item-thumb">
+            <div class="templates-list__item-image" style="background-image: url('https://userassets.pagecloud.com/theme-screenshots/savy-sc-home-desktop2x.jpg')"></div>
             </div>
-            <div class="templates-list__item">
-                <div class="templates-list__item-image" style="background-image: url('https://userassets.pagecloud.com/theme-screenshots/nido-sc-home-desktop2x.jpg')"></div>
+            <div class="templates-list__item-info">
+                <div class="templates-list__info-title-wrap">
+                    <div class="templates-list__info-title">AVENUE</div>
+                    <div class="templates-list__info-title-icon"></div>
+                </div>
+                <div class="templates-list__info-desc">Clean, straight lines and an adaptive grid layout create a classic website template to highlight your unique portfolio.</div>
+            </div>
+        </div>
+        <div class="templates-list__item">
+            <div class="templates-list__item-thumb">
+            <div class="templates-list__item-image" style="background-image: url('https://userassets.pagecloud.com/theme-screenshots/escape-sc-home-desktop2x.jpg')"></div>
+            </div>
+        </div>
+        <div class="templates-list__item">
+            <div class="templates-list__item-thumb">
+            <div class="templates-list__item-image" style="background-image: url('https://userassets.pagecloud.com/theme-screenshots/nido-sc-home-desktop2x.jpg')"></div>
             </div>
         </div>
     </div>
-    <div class="mark"></div>
-    <div class="mark2"></div>
+</div>
+<div class="mark"></div>
+<div class="mark2"></div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.js" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        function toggleMobileCategoriesWnd() {
-            var container = $('.templates__container');
-            var cls = 'templates__container--show-categories';
+<script src="https://code.jquery.com/jquery-3.4.1.slim.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    function toggleMobileCategoriesWnd() {
+        var container = $('.templates__container');
+        var cls = 'templates__container--show-categories';
 
-            if (container.hasClass(cls)) {
-                // hide
-                $('html').removeClass('hide-body-overflow');
-                $('body').css({'paddingRight': 0});
-                container.removeClass(cls);
-            } else {
-                // show
-                var bodyW = $('body').width();
-                $('html').addClass('hide-body-overflow');
-                var newBodyW = $('body').width();
-                if (newBodyW != bodyW) {
-                    $('body').css({'paddingRight': newBodyW - bodyW});
-                }
-                container.addClass(cls);
+        if (container.hasClass(cls)) {
+            // hide
+            $('html').removeClass('hide-body-overflow');
+            $('body').css({'paddingRight': 0});
+            container.removeClass(cls);
+        } else {
+            // show
+            var bodyW = $('body').width();
+            $('html').addClass('hide-body-overflow');
+            var newBodyW = $('body').width();
+            if (newBodyW != bodyW) {
+                $('body').css({'paddingRight': newBodyW - bodyW});
             }
+            container.addClass(cls);
         }
+    }
 
-        $(document).on('click', '.templates-categories__mobile-trigger', function () {
-            toggleMobileCategoriesWnd();
-        });
-        $(document).on('click', '.templates-categories__closer', function () {
-            toggleMobileCategoriesWnd();
-        });
-    </script>
+    $(document).on('click', '.templates-categories__mobile-trigger', function () {
+        toggleMobileCategoriesWnd();
+    });
+    $(document).on('click', '.templates-categories__closer', function () {
+        toggleMobileCategoriesWnd();
+    });
+</script>
 </body>
 </html>

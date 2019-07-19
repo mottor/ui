@@ -68,7 +68,7 @@ body {
     width: 24px;
     height: 24px;
     background: rgba(255, 0, 255, 0.25);
-    border-radius: 100px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
@@ -135,9 +135,7 @@ body {
 
 .templates-list__item {
     /* width 400 - 600 px */
-    border-radius: 4px;
-    background: rgba(68, 142, 255, 0.4);
-    min-height: 100px;
+    //background: rgba(68, 142, 255, 0.4);
     /*margin-bottom: 30px;*/
     //max-width: 400px;
     margin-top: $tpl_gap;
@@ -146,12 +144,20 @@ body {
     margin-left: 0;
     max-width: $tpl_max_width;
     float: left;
-    box-sizing: border-box;
-    text-align: center;
+
+    //text-align: center;
     //padding: 20px;
-    border: 1px solid #e5e5e5;
-    box-shadow: 0 1px 2px rgba(0,0,0,.15);
+
+    //box-shadow: 0 1px 2px rgba(0,0,0,.15);
+
+}
+
+.templates-list__item-thumb {
     overflow: hidden;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    min-height: 100px;
+    box-sizing: border-box;
 }
 
 .templates-list__item-image {
@@ -160,12 +166,43 @@ body {
     background-position: 50% 0;
     background-size: cover;
     background-repeat: no-repeat;
-    transition: background-position 3s ease;
+    //transition: background-position 3s ease;
 }
 
-.templates-list__item:hover .templates-list__item-image {
-    background-position-y: 100%;
+.templates-list__item-info {
+    margin-top: 16px;
 }
+
+.templates-list__info-title-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.templates-list__info-title {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #222;
+}
+
+.templates-list__info-title-icon {
+    background: rgba(255, 0, 255, 0.25);
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.templates-list__info-desc {
+    margin-top: 8px;
+    line-height: 1.5;
+    color: #000;
+}
+
+//.templates-list__item:hover .templates-list__item-image {
+//    background-position-y: 100%;
+//}
 
 .templates-list__item:first-child {
     margin-top: 0;
@@ -179,6 +216,9 @@ body {
     .templates-list__item:nth-child(3n) { // убираем у каждого 3го элемента паддинг справа
         margin-right: 0;
     }
+    .templates-list__item:nth-child(4n) {
+        clear: both;
+    }
     .templates-list__item:nth-child(2), .templates-list__item:nth-child(3) { // убираем паддинг для самых верхних элементов
         margin-top: 0;
     }
@@ -191,6 +231,9 @@ body {
     }
     .templates-list__item:nth-child(2n) { // убираем у каждого 2го элемента паддинг справа
         margin-right: 0;
+    }
+    .templates-list__item:nth-child(3n) {
+        clear: both;
     }
     .templates-list__item:nth-child(2) { // убираем паддинг для самых верхних элементов
         margin-top: 0;
@@ -222,6 +265,9 @@ body {
     }
     .templates-list__item:nth-child(2n) { // убираем у каждого 2го элемента паддинг справа
         margin-right: 0;
+    }
+    .templates-list__item:nth-child(3n) {
+        clear: both;
     }
     .templates-list__item:nth-child(2) { // убираем паддинг для самых верхних элементов
         margin-top: 0;
