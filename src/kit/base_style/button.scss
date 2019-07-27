@@ -35,7 +35,6 @@ $button-l--border-radius: round($text-l--size * $button-corners-ratio);
     //line-height: $button-height;
     //border-radius: $button-radius;
     //background: #c00;
-    line-height: 1;
     display: inline-block;
     text-decoration: none;
     outline: none;
@@ -46,7 +45,13 @@ $button-l--border-radius: round($text-l--size * $button-corners-ratio);
     padding: 0;
     white-space: nowrap;
     text-overflow: ellipsis;
+    text-shadow: none;
     user-select: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    zoom: 1;
+
     //border: 1px solid transparent;
     //@include buttonSize($base-font-size);
 
@@ -60,6 +65,10 @@ $button-l--border-radius: round($text-l--size * $button-corners-ratio);
 
     &.button--focused {
         box-shadow: inset 0 0 0 1px #fff, 0 0 0 2px #5199db;
+    }
+
+    &::-moz-focus-inner {
+        border: 0;
     }
 }
 

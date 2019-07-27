@@ -133,6 +133,7 @@ p.last {
 //}
 
 ul {
+    line-height: ($base-paragraph--line-height * 1em);
     li {
         font-size: inherit;
     }
