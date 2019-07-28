@@ -70,11 +70,11 @@ $button--secondary--color: #333;
         vertical-align: top;
     }
 
-    span {
-        height: $base-icon-size;
-        line-height: $base-icon-size;
-        display: inline-block;
-    }
+    //span {
+    //    height: $base-icon-size;
+    //    line-height: $base-icon-size;
+    //    display: inline-block;
+    //}
 
     &.mtr-btn--loading::before {
         border-color: transparent $button--default-color $button--default-color $button--default-color;
