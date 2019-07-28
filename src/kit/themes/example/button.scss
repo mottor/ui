@@ -150,6 +150,7 @@ $buttonSizes: (
         .mtr-btn__icon {
             width: $tmpIconSize;
             height: $tmpIconSize;
+            line-height: $tmpIconSize;
             display: inline-block;
         }
 
