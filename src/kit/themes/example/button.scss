@@ -30,7 +30,8 @@ $button--secondary--color: #333;
 }
 
 @function buttonVertPadding($button-height, $line-height) {
-    @return round(($button-height - $line-height)/2);
+    //@return round(($button-height - $line-height)/2);
+    @return round(($button-height - $line-height)/2) - 2 * $button--border-size;
 }
 
 @function buttonHorizPadding($button-height) {
@@ -42,44 +43,44 @@ $button--secondary--color: #333;
 }
 
 // M size
-$button--m--height: buttonHeight($button--m--font-size);
-$button--m--vert-padding: buttonVertPadding($button--m--height, $button--m--icon-size);
-$button--m--horiz-padding: buttonHorizPadding($button--m--height);
-$button--m--min-width: buttonMinWidth($button--m--font-size);
-
-.var-dump--button-m-font-size:before {content: "#{$button--m--font-size}";}
-.var-dump--button-m-height:before {content: "#{$button--m--height}";}
-.var-dump--button-m-horiz-padding:before {content: "#{$button--m--horiz-padding}";}
-.var-dump--button-m-min-width:before {content: "#{$button--m--min-width}";}
-
-.var-info--button-m-horiz-padding {width: $button--m--horiz-padding;}
-.var-info--button-m-height {height: $button--m--height;}
-
-// S size
-$button--s--height: buttonHeight($button--s--font-size);
-$button--s--vert-padding: buttonVertPadding($button--s--height, $button--s--icon-size);
-$button--s--horiz-padding: buttonHorizPadding($button--s--height);
-$button--s--min-width: buttonMinWidth($button--s--font-size);
-
-.var-dump--button-s-font-size:before {content: "#{$button--s--font-size}";}
-.var-dump--button-s-height:before {content: "#{$button--s--height}";}
-.var-dump--button-s-horiz-padding:before {content: "#{$button--s--horiz-padding}";}
-.var-dump--button-s-min-width:before {content: "#{$button--s--min-width}";}
-.var-info--button-s-horiz-padding {width: $button--s--horiz-padding;}
-.var-info--button-s-height {height: $button--s--height;}
-
-// L size
-$button--l--height: buttonHeight($button--l--font-size);
-$button--l--vert-padding: buttonVertPadding($button--l--height, $button--l--icon-size);
-$button--l--horiz-padding: buttonHorizPadding($button--l--height);
-$button--l--min-width: buttonMinWidth($button--l--font-size);
-
-.var-dump--button-l-font-size:before {content: "#{$button--l--font-size}";}
-.var-dump--button-l-height:before {content: "#{$button--l--height}";}
-.var-dump--button-l-horiz-padding:before {content: "#{$button--l--horiz-padding}";}
-.var-dump--button-l-min-width:before {content: "#{$button--l--min-width}";}
-.var-info--button-l-horiz-padding {width: $button--l--horiz-padding;}
-.var-info--button-l-height {height: $button--l--height;}
+//$button--m--height: buttonHeight($button--m--font-size);
+//$button--m--vert-padding: buttonVertPadding($button--m--height, $button--m--icon-size);
+//$button--m--horiz-padding: buttonHorizPadding($button--m--height);
+//$button--m--min-width: buttonMinWidth($button--m--font-size);
+//
+//.var-dump--button-m-font-size:before {content: "#{$button--m--font-size}";}
+//.var-dump--button-m-height:before {content: "#{$button--m--height}";}
+//.var-dump--button-m-horiz-padding:before {content: "#{$button--m--horiz-padding}";}
+//.var-dump--button-m-min-width:before {content: "#{$button--m--min-width}";}
+//
+//.var-info--button-m-horiz-padding {width: $button--m--horiz-padding;}
+//.var-info--button-m-height {height: $button--m--height;}
+//
+//// S size
+//$button--s--height: buttonHeight($button--s--font-size);
+//$button--s--vert-padding: buttonVertPadding($button--s--height, $button--s--icon-size);
+//$button--s--horiz-padding: buttonHorizPadding($button--s--height);
+//$button--s--min-width: buttonMinWidth($button--s--font-size);
+//
+//.var-dump--button-s-font-size:before {content: "#{$button--s--font-size}";}
+//.var-dump--button-s-height:before {content: "#{$button--s--height}";}
+//.var-dump--button-s-horiz-padding:before {content: "#{$button--s--horiz-padding}";}
+//.var-dump--button-s-min-width:before {content: "#{$button--s--min-width}";}
+//.var-info--button-s-horiz-padding {width: $button--s--horiz-padding;}
+//.var-info--button-s-height {height: $button--s--height;}
+//
+//// L size
+//$button--l--height: buttonHeight($button--l--font-size);
+//$button--l--vert-padding: buttonVertPadding($button--l--height, $button--l--icon-size);
+//$button--l--horiz-padding: buttonHorizPadding($button--l--height);
+//$button--l--min-width: buttonMinWidth($button--l--font-size);
+//
+//.var-dump--button-l-font-size:before {content: "#{$button--l--font-size}";}
+//.var-dump--button-l-height:before {content: "#{$button--l--height}";}
+//.var-dump--button-l-horiz-padding:before {content: "#{$button--l--horiz-padding}";}
+//.var-dump--button-l-min-width:before {content: "#{$button--l--min-width}";}
+//.var-info--button-l-horiz-padding {width: $button--l--horiz-padding;}
+//.var-info--button-l-height {height: $button--l--height;}
 
 
 @mixin buttonSize($font-size) {
@@ -184,14 +185,17 @@ $buttonSizes: (
 @each $sizeCode, $v in $buttonSizes {
     $tmpFontSize: map-get($v, 'font-size');
     $tmpIconSize: map-get($v, 'icon-size');
-    $tmpHeight: roundEven($tmpFontSize * $button--height-ratio);
-    $tmpVertPadding: round(($tmpHeight - $tmpIconSize)/2) - 2 * $button--border-size;
+
+    $tmpHeight: buttonHeight($tmpFontSize);
+    $tmpVertPadding: buttonVertPadding($tmpHeight, $tmpIconSize);
+    $tmpHorizPadding: buttonHorizPadding($tmpHeight);
+    $tmpMinWidth: buttonMinWidth($tmpFontSize);
 
     .mtr-btn--#{$sizeCode} {
         font-size: map-get($v, 'font-size');
         height: $tmpHeight;
-        padding: $tmpVertPadding round($tmpHeight * $button--horiz-padding-ratio);
-        min-width: roundEven($tmpFontSize * $button--min-width-ratio);
+        padding: $tmpVertPadding $tmpHorizPadding;
+        min-width: $tmpMinWidth;
         line-height: $tmpIconSize;
 
         // при нажатии текст кнопки смещается вниз на 1 пх
@@ -226,6 +230,14 @@ $buttonSizes: (
             padding-right: 0;
         }
     }
+
+    .var-dump--button-#{$sizeCode}-font-size:before {content: "#{$tmpFontSize}";}
+    .var-dump--button-#{$sizeCode}-height:before {content: "#{$tmpHeight}";}
+    .var-dump--button-#{$sizeCode}-horiz-padding:before {content: "#{$tmpHorizPadding}";}
+    .var-dump--button-#{$sizeCode}-min-width:before {content: "#{$tmpMinWidth}";}
+
+    .var-info--button-#{$sizeCode}-horiz-padding {width: $tmpHorizPadding;}
+    .var-info--button-#{$sizeCode}-height {height: $tmpHeight;}
 }
 
 // Размеры
