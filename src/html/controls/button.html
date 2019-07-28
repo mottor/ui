@@ -9,7 +9,7 @@
 <div class="content-wrap">
     <div class="docs-block">
         <h1>Кнопка</h1>
-        <h2>Заметки</h2>
+        <!--<h2>Заметки</h2>
         <div class="text">
             <p>Состояния:</p>
             <ul>
@@ -32,7 +32,7 @@
             <ul>
                 <li>Normal (обычная кнопка с полной заливкой)</li>
                 <li>Outlined (только обводка)</li>
-                <li>Text (без фона, как ссылка)</li>
+                <li>Link (без фона, как ссылка)</li>
             </ul>
             <p>Наличие иконки:</p>
             <ul>
@@ -45,345 +45,336 @@
                 <li>Small</li>
                 <li>Large</li>
             </ul>
-        </div>
-        <h2>Текст-рыба</h2>
-        <div class="text">
-            <p>
-                Время от времени мы автоматически пропускаем запрос от какого-нибудь воркера, чтобы посмотреть, не ожил ли всё-таки сервис. Если он отвечает адекватно, то мы снова включаем его в работу.
-            </p>
-            <p>
-                Всё это делается для того, чтобы свести ситуацию к предыдущей схеме с репликацией. Вместо того чтобы ждать секунду, перед тем как понять, что хост недоступен, мы сразу получаем ошибку и переходим на резервный хост
-            </p>
-        </div>
-        <h2>Состояния</h2>
-        <table class="docs-example-table">
-            <tr>
-                <td>Обычное</td>
-                <td>
-                    <button class="mtr-btn">Кнопка</button>
-                </td>
-            </tr>
-            <tr>
-                <td>При наведении курсора (hover)</td>
-                <td>
-                    <button class="mtr-btn button-primary button--hover"><span class="button-text">Кнопка</span></button>
-                </td>
-            </tr>
-            <tr>
-                <td>В момент фокуса</td>
-                <td>
-                    <button class="mtr-btn button-primary button--focused"><span class="button-text">Кнопка</span></button>
-                </td>
-            </tr>
-            <tr>
-                <td>В момент нажатия (active)</td>
-                <td>
-                    <button class="mtr-btn button-primary button--active"><span class="button-text">Кнопка</span></button>
-                </td>
-            </tr>
-            <tr>
-                <td>Неактивная (disabled)</td>
-                <td>
-                    <button class="mtr-btn button-primary button--disabled"><span class="button-text">Кнопка</span></button>
-                </td>
-            </tr>
-            <tr>
-                <td>Состояние загрузки</td>
-                <td>
-                    <button class="mtr-btn button-primary button--loading"><span class="button-text">Кнопка</span></button>
-                </td>
-            </tr>
-        </table>
-        <h2>Размеры</h2>
-        <table class="docs-example-table full-width">
-            <tr>
-                <td>S</td>
-                <td>M</td>
-                <td>L</td>
-            </tr>
-            <tr>
-                <td style="height: 100px;">
-                    <div class="pos-rel float-left">
-                        <button class="mtr-btn mtr-btn--s mtr-btn--primary">Кнопка</button>
-                        <div class="pos-abs var-info--button-s-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; left: 0; height: 20px; transform: translateY(3px);">
-                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-4px); padding-top: 5px;"><span class="var-dump--button-s-horiz-padding"></span></div>
-                        </div>
-                        <div class="pos-abs var-info--button-s-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; right: 0; height: 20px; transform: translateY(3px);">
-                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-4px); padding-top: 5px;"><span class="var-dump--button-s-horiz-padding"></span></div>
-                        </div>
-                        <div class="pos-abs var-info--button-s-height" style="border: 1px solid rgba(255,0,255,1); border-left:0; border-right: 0; top:0; bottom: 0; left: 100%; width: 18px; transform: translateX(3px);">
-                            <div class="pos-abs text-center" style="border-left: 1px solid #f0f; top:0; left: 100%; right: 0; bottom: 0; font-size: 10px; transform: translateX(-5px); padding-left: 5px; display: flex; align-items: center;"><span class="var-dump--button-s-height"></span></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="pos-rel float-left">
-                        <button class="mtr-btn mtr-btn--m mtr-btn--primary">Кнопка</button>
-                        <div class="pos-abs var-info--button-m-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; left: 0; height: 20px; transform: translateY(3px);">
-                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-4px); padding-top: 5px;"><span class="var-dump--button-m-horiz-padding"></span></div>
-                        </div>
-                        <div class="pos-abs var-info--button-m-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; right: 0; height: 20px; transform: translateY(3px);">
-                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-4px); padding-top: 5px;"><span class="var-dump--button-m-horiz-padding"></span></div>
-                        </div>
-                        <div class="pos-abs var-info--button-m-height" style="border: 1px solid rgba(255,0,255,1); border-left:0; border-right: 0; top:0; bottom: 0; left: 100%; width: 18px; transform: translateX(3px);">
-                            <div class="pos-abs text-center" style="border-left: 1px solid #f0f; top:0; left: 100%; right: 0; bottom: 0; font-size: 10px; transform: translateX(-5px); padding-left: 5px; display: flex; align-items: center;"><span class="var-dump--button-m-height"></span></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="pos-rel float-left">
-                        <button class="mtr-btn mtr-btn--l mtr-btn--primary">Кнопка</button>
-                        <div class="pos-abs var-info--button-l-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; left: 0; height: 20px; transform: translateY(3px);">
-                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-4px); padding-top: 5px;"><span class="var-dump--button-l-horiz-padding"></span></div>
-                        </div>
-                        <div class="pos-abs var-info--button-l-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; right: 0; height: 20px; transform: translateY(3px);">
-                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-4px); padding-top: 5px;"><span class="var-dump--button-l-horiz-padding"></span></div>
-                        </div>
-                        <div class="pos-abs var-info--button-l-height" style="border: 1px solid rgba(255,0,255,1); border-left:0; border-right: 0; top:0; bottom: 0; left: 100%; width: 18px; transform: translateX(3px);">
-                            <div class="pos-abs text-center" style="border-left: 1px solid #f0f; top:0; left: 100%; right: 0; bottom: 0; font-size: 10px; transform: translateX(-5px); padding-left: 5px; display: flex; align-items: center;"><span class="var-dump--button-l-height"></span></div>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <tr class="text-s" style="color: #999;">
-                <td>
-                    <div>font-size: <span class="var-dump--button-s-font-size"></span></div>
-                    <div>min-width: <span class="var-dump--button-s-min-width"></span></div>
-                </td>
-                <td>
-                    <div>font-size: <span class="var-dump--button-m-font-size"></span></div>
-                    <div>min-width: <span class="var-dump--button-m-min-width"></span></div>
-                </td>
-                <td>
-                    <div>font-size: <span class="var-dump--button-l-font-size"></span></div>
-                    <div>min-width: <span class="var-dump--button-l-min-width"></span></div>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3" style="height: 50px;"></td>
-            </tr>
-            <tr>
-                <td><button class="mtr-btn mtr-btn--s mtr-btn--primary"><div class="mtr-btn__icon"><svg viewBox="0 0 24 24" id="img__ic-integrations"><path fill="currentColor" d="M18.071 10.172L20.9 7.343a1 1 0 0 1 1.415 1.414l-2.829 2.829 2.122 2.121-4.243 4.243a6 6 0 0 1-8.485 0l-.707-.707-4.243 4.242a1 1 0 1 1-1.414-1.414l4.242-4.243-.707-.707a6 6 0 0 1 0-8.485l4.243-4.243 2.121 2.122 2.829-2.829a1 1 0 1 1 1.414 1.415l-2.829 2.828 4.243 4.243zm-7.778-4.95L7.464 8.05a4 4 0 0 0 0 5.657l2.829 2.829a4 4 0 0 0 5.657 0l2.828-2.829-8.485-8.485z"></path></svg></div><span>Кнопка</span></button></td>
-                <td><button class="mtr-btn mtr-btn--m mtr-btn--primary"><div class="mtr-btn__icon"><svg viewBox="0 0 24 24" id="img__ic-integrations"><path fill="currentColor" d="M18.071 10.172L20.9 7.343a1 1 0 0 1 1.415 1.414l-2.829 2.829 2.122 2.121-4.243 4.243a6 6 0 0 1-8.485 0l-.707-.707-4.243 4.242a1 1 0 1 1-1.414-1.414l4.242-4.243-.707-.707a6 6 0 0 1 0-8.485l4.243-4.243 2.121 2.122 2.829-2.829a1 1 0 1 1 1.414 1.415l-2.829 2.828 4.243 4.243zm-7.778-4.95L7.464 8.05a4 4 0 0 0 0 5.657l2.829 2.829a4 4 0 0 0 5.657 0l2.828-2.829-8.485-8.485z"></path></svg></div><span>Кнопка</span></button></td>
-                <td><button class="mtr-btn mtr-btn--l mtr-btn--primary"><div class="mtr-btn__icon"><svg viewBox="0 0 24 24" id="img__ic-integrations"><path fill="currentColor" d="M18.071 10.172L20.9 7.343a1 1 0 0 1 1.415 1.414l-2.829 2.829 2.122 2.121-4.243 4.243a6 6 0 0 1-8.485 0l-.707-.707-4.243 4.242a1 1 0 1 1-1.414-1.414l4.242-4.243-.707-.707a6 6 0 0 1 0-8.485l4.243-4.243 2.121 2.122 2.829-2.829a1 1 0 1 1 1.414 1.415l-2.829 2.828 4.243 4.243zm-7.778-4.95L7.464 8.05a4 4 0 0 0 0 5.657l2.829 2.829a4 4 0 0 0 5.657 0l2.828-2.829-8.485-8.485z"></path></svg></div><span>Кнопка</span></button></td>
-            </tr>
-        </table>
-        <table class="docs-example-table" style="margin-top: 100px;">
+        </div>-->
+
+        <h2 class="mt5">Цвета кнопок</h2>
+        <table class="docs-example-table full-width vam">
             <tr>
                 <td></td>
-                <td>S</td>
-                <td>M</td>
-                <td>L</td>
-                <td>XL</td>
-            </tr>
-            <tr>
-                <td>Default</td>
-                <td>
-                    <button class="mtr-btn mtr-btn--s">Кнопка</button>
-                </td>
-                <td>
-                    <button class="mtr-btn mtr-btn--m">Кнопка</button>
-                </td>
-                <td>
-                    <button class="mtr-btn mtr-btn--l">Кнопка</button>
-                </td>
-                <td>
-                    <button class="mtr-btn mtr-btn--xl">Кнопка</button>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="5">
-                    <hr/>
-                </td>
+                <td>Filled</td>
+                <td>Outlined</td>
+                <td>Link</td>
             </tr>
             <tr>
                 <td>Primary</td>
                 <td>
-                    <button class="mtr-btn mtr-btn--s mtr-btn--primary">Кнопка</button>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--primary"><span>Кнопка</span></button>
                 </td>
                 <td>
-                    <button class="mtr-btn mtr-btn--m mtr-btn--primary">Кнопка</button>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--primary mtr-btn--outlined"><span>Кнопка</span></button>
                 </td>
                 <td>
-                    <button class="mtr-btn mtr-btn--l mtr-btn--primary">Кнопка</button>
-                </td>
-                <td>
-                    <button class="mtr-btn mtr-btn--xl mtr-btn--primary">Кнопка</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Primary bordered</td>
-                <td>
-                    <button class="mtr-btn mtr-btn--s mtr-btn--primary-bordered">Кнопка</button>
-                </td>
-                <td>
-                    <button class="mtr-btn mtr-btn--m mtr-btn--primary-bordered">Кнопка</button>
-                </td>
-                <td>
-                    <button class="mtr-btn mtr-btn--l mtr-btn--primary-bordered">Кнопка</button>
-                </td>
-                <td>
-                    <button class="mtr-btn mtr-btn--xl mtr-btn--primary-bordered">Кнопка</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Primary flat</td>
-                <td class="text-center">
-                    <button class="mtr-btn mtr-btn--s mtr-btn--primary-flat">Кнопка</button>
-                </td>
-                <td class="text-center">
-                    <button class="mtr-btn mtr-btn--m mtr-btn--primary-flat">Кнопка</button>
-                </td>
-                <td class="text-center">
-                    <button class="mtr-btn mtr-btn--l mtr-btn--primary-flat">Кнопка</button>
-                </td>
-                <td class="text-center">
-                    <button class="mtr-btn mtr-btn--xl mtr-btn--primary-flat">Кнопка</button>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="5">
-                    <hr/>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--primary mtr-btn--link"><span>Кнопка</span></button>
                 </td>
             </tr>
             <tr>
                 <td>Secondary</td>
                 <td>
-                    <button class="mtr-btn mtr-btn--s mtr-btn--secondary">Кнопка</button>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--secondary"><span>Кнопка</span></button>
                 </td>
                 <td>
-                    <button class="mtr-btn mtr-btn--m mtr-btn--secondary">Кнопка</button>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--secondary mtr-btn--outlined"><span>Кнопка</span></button>
                 </td>
                 <td>
-                    <button class="mtr-btn mtr-btn--l mtr-btn--secondary">Кнопка</button>
-                </td>
-                <td>
-                    <button class="mtr-btn mtr-btn--xl mtr-btn--secondary">Кнопка</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Secondary bordered</td>
-                <td>
-                    <button class="mtr-btn mtr-btn--s mtr-btn--secondary-bordered">Кнопка</button>
-                </td>
-                <td>
-                    <button class="mtr-btn mtr-btn--m mtr-btn--secondary-bordered">Кнопка</button>
-                </td>
-                <td>
-                    <button class="mtr-btn mtr-btn--l mtr-btn--secondary-bordered">Кнопка</button>
-                </td>
-                <td>
-                    <button class="mtr-btn mtr-btn--xl mtr-btn--secondary-bordered">Кнопка</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Secondary flat</td>
-                <td class="text-center">
-                    <button class="mtr-btn mtr-btn--s mtr-btn--secondary-flat">Кнопка</button>
-                </td>
-                <td class="text-center">
-                    <button class="mtr-btn mtr-btn--m mtr-btn--secondary-flat">Кнопка</button>
-                </td>
-                <td class="text-center">
-                    <button class="mtr-btn mtr-btn--l mtr-btn--secondary-flat">Кнопка</button>
-                </td>
-                <td class="text-center">
-                    <button class="mtr-btn mtr-btn--xl mtr-btn--secondary-flat">Кнопка</button>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="5">
-                    <hr/>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--secondary mtr-btn--link"><span>Кнопка</span></button>
                 </td>
             </tr>
             <tr>
                 <td>Danger</td>
                 <td>
-                    <button class="mtr-btn mtr-btn--s mtr-btn--danger">Нет</button>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--danger"><span>Кнопка</span></button>
                 </td>
                 <td>
-                    <button class="mtr-btn mtr-btn--m mtr-btn--danger">Нет</button>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--danger mtr-btn--outlined"><span>Кнопка</span></button>
                 </td>
                 <td>
-                    <button class="mtr-btn mtr-btn--l mtr-btn--danger">Нет</button>
-                </td>
-                <td>
-                    <button class="mtr-btn mtr-btn--xl mtr-btn--danger">Нет</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Danger bordered</td>
-                <td>
-                    <button class="mtr-btn mtr-btn--s mtr-btn--danger-bordered">Кнопка</button>
-                </td>
-                <td>
-                    <button class="mtr-btn mtr-btn--m mtr-btn--danger-bordered">Кнопка</button>
-                </td>
-                <td>
-                    <button class="mtr-btn mtr-btn--l mtr-btn--danger-bordered">Кнопка</button>
-                </td>
-                <td>
-                    <button class="mtr-btn mtr-btn--xl mtr-btn--danger-bordered">Кнопка</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Danger flat</td>
-                <td class="text-center">
-                    <button class="mtr-btn mtr-btn--s mtr-btn--danger-flat">Кнопка</button>
-                </td>
-                <td class="text-center">
-                    <button class="mtr-btn mtr-btn--m mtr-btn--danger-flat">Кнопка</button>
-                </td>
-                <td class="text-center">
-                    <button class="mtr-btn mtr-btn--l mtr-btn--danger-flat">Кнопка</button>
-                </td>
-                <td class="text-center">
-                    <button class="mtr-btn mtr-btn--xl mtr-btn--danger-flat">Кнопка</button>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="5">
-                    <hr/>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--danger mtr-btn--link"><span>Кнопка</span></button>
                 </td>
             </tr>
             <tr>
                 <td>Pay</td>
                 <td>
-                    <button class="mtr-btn mtr-btn--s mtr-btn--pay">Кнопка</button>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--pay"><span>Кнопка</span></button>
                 </td>
                 <td>
-                    <button class="mtr-btn mtr-btn--m mtr-btn--pay">Кнопка</button>
+
                 </td>
                 <td>
-                    <button class="mtr-btn mtr-btn--l mtr-btn--pay">Кнопка</button>
-                </td>
-                <td>
-                    <button class="mtr-btn mtr-btn--xl mtr-btn--pay">Кнопка</button>
+
                 </td>
             </tr>
         </table>
 
-        <h2>Разные типы элементов</h2>
-        <p>(должны быть полностью одинаковы)</p>
+
+        <h2 class="mt5">Типы кнопок</h2>
+        <table class="docs-example-table full-width vam">
+            <tr>
+                <td style="width: 50%">
+                    <div><strong>Filled</strong></div>
+                    <div class="text-s">обычная кнопка с полной заливкой</div>
+                </td>
+                <td>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--primary"><span>Кнопка</span></button>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <div><strong>Outlined</strong></div>
+                    <div class="text-s">только обводка, без заливки</div>
+                </td>
+                <td>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--primary mtr-btn--outlined"><span>Кнопка</span></button>
+                </td>
+                <td>
+                    <code>mtr-btn--outlined</code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div><strong>Link</strong></div>
+                    <div class="text-s">без фона и обводки, выглядит как ссылка</div>
+                </td>
+                <td>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--primary mtr-btn--link"><span>Кнопка</span></button>
+                </td>
+                <td>
+                    <code>mtr-btn--link</code>
+                </td>
+            </tr>
+        </table>
+
+
+        <h2 class="mt5">Состояния</h2>
+        <table class="docs-example-table full-width vam">
+            <tr>
+                <td>Normal</td>
+                <td>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--primary">Кнопка</button>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Hover</td>
+                <td>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--primary mtr-btn--hover"><span class="button-text">Кнопка</span></button>
+                </td>
+                <td class="text-s">при наведении</td>
+            </tr>
+            <tr>
+                <td>Focus</td>
+                <td>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--primary mtr-btn--focused"><span class="button-text">Кнопка</span></button>
+                </td>
+                <td class="text-s">в момент фокуса</td>
+            </tr>
+            <tr>
+                <td>Active</td>
+                <td>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--primary mtr-btn--active"><span class="button-text">Кнопка</span></button>
+                </td>
+                <td class="text-s">в момент нажатия</td>
+            </tr>
+            <tr>
+                <td>Disabled</td>
+                <td>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--primary mtr-btn--disabled"><span class="button-text">Кнопка</span></button>
+                </td>
+                <td class="text-s">неактивная</td>
+            </tr>
+            <tr>
+                <td>Loading</td>
+                <td>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--primary mtr-btn--loading"><span class="button-text">Кнопка</span></button>
+                </td>
+                <td class="text-s">состояние загрузки</td>
+            </tr>
+        </table>
+
+
+        <h2 class="mt5">Размеры</h2>
+        <table class="docs-example-table full-width">
+            <tr>
+                <td style="width: 50%">
+                    <div><strong>Small</strong></div>
+                    <div class="text-s mt1">
+                        <div>font-size: <span class="var-dump--button-s-font-size"></span></div>
+                        <div>min-width: <span class="var-dump--button-s-min-width"></span></div>
+                    </div>
+                </td>
+                <td style="height: 100px">
+                    <div class="pos-rel float-left">
+                        <button class="mtr-btn mtr-btn--s mtr-btn--primary">Кнопка</button>
+                        <div class="pos-abs var-info--button-s-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; left: 0; height: 9px; transform: translateY(3px);">
+                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-5px); padding-top: 7px;"><span class="var-dump--button-s-horiz-padding"></span></div>
+                        </div>
+                        <div class="pos-abs var-info--button-s-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; right: 0; height: 9px; transform: translateY(3px);">
+                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-5px); padding-top: 7px;"><span class="var-dump--button-s-horiz-padding"></span></div>
+                        </div>
+                        <div class="pos-abs var-info--button-s-height" style="border: 1px solid rgba(255,0,255,1); border-left:0; border-right: 0; top:0; bottom: 0; left: 100%; width: 9px; transform: translateX(3px);">
+                            <div class="pos-abs text-center" style="border-left: 1px solid #f0f; top:0; left: 100%; right: 0; bottom: 0; font-size: 10px; transform: translateX(-5px); padding-left: 7px; display: flex; align-items: center;"><span class="var-dump--button-s-height"></span></div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <code>mtr-btn--s</code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div><strong>Medium</strong></div>
+                    <div class="text-s mt1">
+                    <div>font-size: <span class="var-dump--button-m-font-size"></span></div>
+                    <div>min-width: <span class="var-dump--button-m-min-width"></span></div>
+                    </div>
+                </td>
+                <td style="height: 100px">
+                    <div class="pos-rel float-left">
+                        <button class="mtr-btn mtr-btn--m mtr-btn--primary">Кнопка</button>
+                        <div class="pos-abs var-info--button-m-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; left: 0; height: 9px; transform: translateY(3px);">
+                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-5px); padding-top: 7px;"><span class="var-dump--button-m-horiz-padding"></span></div>
+                        </div>
+                        <div class="pos-abs var-info--button-m-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; right: 0; height: 9px; transform: translateY(3px);">
+                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-5px); padding-top: 7px;"><span class="var-dump--button-m-horiz-padding"></span></div>
+                        </div>
+                        <div class="pos-abs var-info--button-m-height" style="border: 1px solid rgba(255,0,255,1); border-left:0; border-right: 0; top:0; bottom: 0; left: 100%; width: 9px; transform: translateX(3px);">
+                            <div class="pos-abs text-center" style="border-left: 1px solid #f0f; top:0; left: 100%; right: 0; bottom: 0; font-size: 10px; transform: translateX(-5px); padding-left: 7px; display: flex; align-items: center;"><span class="var-dump--button-m-height"></span></div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <code>mtr-btn--m</code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div><strong>Large</strong></div>
+                    <div class="text-s mt1">
+                    <div>font-size: <span class="var-dump--button-l-font-size"></span></div>
+                    <div>min-width: <span class="var-dump--button-l-min-width"></span></div>
+                    </div>
+                </td>
+                <td style="height: 100px">
+                    <div class="pos-rel float-left">
+                        <button class="mtr-btn mtr-btn--l mtr-btn--primary"><span>Кнопка</span></button>
+                        <div class="pos-abs var-info--button-l-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; left: 0; height: 9px; transform: translateY(3px);">
+                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-5px); padding-top: 7px;"><span class="var-dump--button-l-horiz-padding"></span></div>
+                        </div>
+                        <div class="pos-abs var-info--button-l-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; right: 0; height: 9px; transform: translateY(3px);">
+                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-5px); padding-top: 7px;"><span class="var-dump--button-l-horiz-padding"></span></div>
+                        </div>
+                        <div class="pos-abs var-info--button-l-height" style="border: 1px solid rgba(255,0,255,1); border-left:0; border-right: 0; top:0; bottom: 0; left: 100%; width: 9px; transform: translateX(3px);">
+                            <div class="pos-abs text-center" style="border-left: 1px solid #f0f; top:0; left: 100%; right: 0; bottom: 0; font-size: 10px; transform: translateX(-5px); padding-left: 7px; display: flex; align-items: center;"><span class="var-dump--button-l-height"></span></div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <code>mtr-btn--l</code>
+                </td>
+            </tr>
+        </table>
+
+
+        <h2 class="mt5">Кнопка с иконкой</h2>
+        <p>Текст внутри кнопки нужно обернуть в span. Перед текстом (или после) добавить <code>div.mtr-btn__icon</code>, внутри которого поместить svg-иконку.</p>
+        <table class="docs-example-table full-width vam">
+            <tr>
+                <td style="width: 50%">
+                    <div>Small</div>
+                </td>
+                <td>
+                    <div class="pos-rel float-left">
+                        <button class="mtr-btn mtr-btn--s mtr-btn--primary"><div class="mtr-btn__icon"><svg viewBox="0 0 24 24" id="img__ic-integrations"><path fill="currentColor" d="M18.071 10.172L20.9 7.343a1 1 0 0 1 1.415 1.414l-2.829 2.829 2.122 2.121-4.243 4.243a6 6 0 0 1-8.485 0l-.707-.707-4.243 4.242a1 1 0 1 1-1.414-1.414l4.242-4.243-.707-.707a6 6 0 0 1 0-8.485l4.243-4.243 2.121 2.122 2.829-2.829a1 1 0 1 1 1.414 1.415l-2.829 2.828 4.243 4.243zm-7.778-4.95L7.464 8.05a4 4 0 0 0 0 5.657l2.829 2.829a4 4 0 0 0 5.657 0l2.828-2.829-8.485-8.485z"></path></svg></div><span>Кнопка</span></button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>Medium</div>
+                </td>
+                <td>
+                    <div class="pos-rel float-left">
+                        <button class="mtr-btn mtr-btn--m mtr-btn--primary"><div class="mtr-btn__icon"><svg viewBox="0 0 24 24" id="img__ic-integrations"><path fill="currentColor" d="M18.071 10.172L20.9 7.343a1 1 0 0 1 1.415 1.414l-2.829 2.829 2.122 2.121-4.243 4.243a6 6 0 0 1-8.485 0l-.707-.707-4.243 4.242a1 1 0 1 1-1.414-1.414l4.242-4.243-.707-.707a6 6 0 0 1 0-8.485l4.243-4.243 2.121 2.122 2.829-2.829a1 1 0 1 1 1.414 1.415l-2.829 2.828 4.243 4.243zm-7.778-4.95L7.464 8.05a4 4 0 0 0 0 5.657l2.829 2.829a4 4 0 0 0 5.657 0l2.828-2.829-8.485-8.485z"></path></svg></div><span>Кнопка</span></button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>Large</div>
+                </td>
+                <td>
+                    <div class="pos-rel float-left">
+                        <button class="mtr-btn mtr-btn--l mtr-btn--primary"><div class="mtr-btn__icon"><svg viewBox="0 0 24 24" id="img__ic-integrations"><path fill="currentColor" d="M18.071 10.172L20.9 7.343a1 1 0 0 1 1.415 1.414l-2.829 2.829 2.122 2.121-4.243 4.243a6 6 0 0 1-8.485 0l-.707-.707-4.243 4.242a1 1 0 1 1-1.414-1.414l4.242-4.243-.707-.707a6 6 0 0 1 0-8.485l4.243-4.243 2.121 2.122 2.829-2.829a1 1 0 1 1 1.414 1.415l-2.829 2.828 4.243 4.243zm-7.778-4.95L7.464 8.05a4 4 0 0 0 0 5.657l2.829 2.829a4 4 0 0 0 5.657 0l2.828-2.829-8.485-8.485z"></path></svg></div><span>Кнопка</span></button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+        <h2 class="mt5">Кнопка icon-only</h2>
+        <p>Нужно добавить класс <code>mtr-btn--icon-only</code>.</p>
+        <table class="docs-example-table full-width vam">
+            <tr>
+                <td style="width: 50%">
+                    <div>Small</div>
+                </td>
+                <td>
+                    <button class="mtr-btn mtr-btn--s mtr-btn--primary mtr-btn--icon-only"><div class="mtr-btn__icon"><svg viewBox="0 0 24 24" id="img__ic-integrations"><path fill="currentColor" d="M18.071 10.172L20.9 7.343a1 1 0 0 1 1.415 1.414l-2.829 2.829 2.122 2.121-4.243 4.243a6 6 0 0 1-8.485 0l-.707-.707-4.243 4.242a1 1 0 1 1-1.414-1.414l4.242-4.243-.707-.707a6 6 0 0 1 0-8.485l4.243-4.243 2.121 2.122 2.829-2.829a1 1 0 1 1 1.414 1.415l-2.829 2.828 4.243 4.243zm-7.778-4.95L7.464 8.05a4 4 0 0 0 0 5.657l2.829 2.829a4 4 0 0 0 5.657 0l2.828-2.829-8.485-8.485z"></path></svg></div></button>
+                </td>
+                <td>
+                    <button class="mtr-btn mtr-btn--s mtr-btn--primary mtr-btn--outlined mtr-btn--icon-only"><div class="mtr-btn__icon"><svg viewBox="0 0 24 24" id="img__ic-integrations"><path fill="currentColor" d="M18.071 10.172L20.9 7.343a1 1 0 0 1 1.415 1.414l-2.829 2.829 2.122 2.121-4.243 4.243a6 6 0 0 1-8.485 0l-.707-.707-4.243 4.242a1 1 0 1 1-1.414-1.414l4.242-4.243-.707-.707a6 6 0 0 1 0-8.485l4.243-4.243 2.121 2.122 2.829-2.829a1 1 0 1 1 1.414 1.415l-2.829 2.828 4.243 4.243zm-7.778-4.95L7.464 8.05a4 4 0 0 0 0 5.657l2.829 2.829a4 4 0 0 0 5.657 0l2.828-2.829-8.485-8.485z"></path></svg></div></button>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%">
+                    <div>Medium</div>
+                </td>
+                <td>
+                    <div class="pos-rel float-left">
+                        <button class="mtr-btn mtr-btn--m mtr-btn--primary mtr-btn--icon-only"><div class="mtr-btn__icon"><svg viewBox="0 0 24 24" id="img__ic-integrations"><path fill="currentColor" d="M18.071 10.172L20.9 7.343a1 1 0 0 1 1.415 1.414l-2.829 2.829 2.122 2.121-4.243 4.243a6 6 0 0 1-8.485 0l-.707-.707-4.243 4.242a1 1 0 1 1-1.414-1.414l4.242-4.243-.707-.707a6 6 0 0 1 0-8.485l4.243-4.243 2.121 2.122 2.829-2.829a1 1 0 1 1 1.414 1.415l-2.829 2.828 4.243 4.243zm-7.778-4.95L7.464 8.05a4 4 0 0 0 0 5.657l2.829 2.829a4 4 0 0 0 5.657 0l2.828-2.829-8.485-8.485z"></path></svg></div></button>
+                    </div>
+                </td>
+                <td>
+                    <button class="mtr-btn mtr-btn--m mtr-btn--primary mtr-btn--outlined mtr-btn--icon-only"><div class="mtr-btn__icon"><svg viewBox="0 0 24 24" id="img__ic-integrations"><path fill="currentColor" d="M18.071 10.172L20.9 7.343a1 1 0 0 1 1.415 1.414l-2.829 2.829 2.122 2.121-4.243 4.243a6 6 0 0 1-8.485 0l-.707-.707-4.243 4.242a1 1 0 1 1-1.414-1.414l4.242-4.243-.707-.707a6 6 0 0 1 0-8.485l4.243-4.243 2.121 2.122 2.829-2.829a1 1 0 1 1 1.414 1.415l-2.829 2.828 4.243 4.243zm-7.778-4.95L7.464 8.05a4 4 0 0 0 0 5.657l2.829 2.829a4 4 0 0 0 5.657 0l2.828-2.829-8.485-8.485z"></path></svg></div></button>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%">
+                    <div>Large</div>
+                </td>
+                <td>
+                    <div class="pos-rel float-left">
+                        <button class="mtr-btn mtr-btn--l mtr-btn--primary mtr-btn--icon-only"><div class="mtr-btn__icon"><svg viewBox="0 0 24 24" id="img__ic-integrations"><path fill="currentColor" d="M18.071 10.172L20.9 7.343a1 1 0 0 1 1.415 1.414l-2.829 2.829 2.122 2.121-4.243 4.243a6 6 0 0 1-8.485 0l-.707-.707-4.243 4.242a1 1 0 1 1-1.414-1.414l4.242-4.243-.707-.707a6 6 0 0 1 0-8.485l4.243-4.243 2.121 2.122 2.829-2.829a1 1 0 1 1 1.414 1.415l-2.829 2.828 4.243 4.243zm-7.778-4.95L7.464 8.05a4 4 0 0 0 0 5.657l2.829 2.829a4 4 0 0 0 5.657 0l2.828-2.829-8.485-8.485z"></path></svg></div></button>
+                    </div>
+                </td>
+                <td>
+                    <button class="mtr-btn mtr-btn--l mtr-btn--primary mtr-btn--outlined mtr-btn--icon-only"><div class="mtr-btn__icon"><svg viewBox="0 0 24 24" id="img__ic-integrations"><path fill="currentColor" d="M18.071 10.172L20.9 7.343a1 1 0 0 1 1.415 1.414l-2.829 2.829 2.122 2.121-4.243 4.243a6 6 0 0 1-8.485 0l-.707-.707-4.243 4.242a1 1 0 1 1-1.414-1.414l4.242-4.243-.707-.707a6 6 0 0 1 0-8.485l4.243-4.243 2.121 2.122 2.829-2.829a1 1 0 1 1 1.414 1.415l-2.829 2.828 4.243 4.243zm-7.778-4.95L7.464 8.05a4 4 0 0 0 0 5.657l2.829 2.829a4 4 0 0 0 5.657 0l2.828-2.829-8.485-8.485z"></path></svg></div></button>
+                </td>
+            </tr>
+        </table>
+
+
+        <h2 class="mt5">Разные типы тегов</h2>
+        <p>Кнопки должны выглядеть и работать одинаково, вне зависимости от тега:</p>
         <p>
-        <table class="docs-example-table">
+        <table class="docs-example-table vam">
             <tr>
                 <td>button</td>
                 <td>
                     <button class="mtr-btn mtr-btn--s mtr-btn--primary">Btn</button>
                 </td>
                 <td>
-                    <button class="mtr-btn mtr-btn--s mtr-btn--primary-bordered">Btn</button>
+                    <button class="mtr-btn mtr-btn--s mtr-btn--primary mtr-btn--outlined">Btn</button>
                 </td>
                 <td>
-                    <button class="mtr-btn mtr-btn--s mtr-btn--primary-flat">Btn</button>
+                    <button class="mtr-btn mtr-btn--s mtr-btn--primary mtr-btn--link">Btn</button>
                 </td>
             </tr>
             <tr>
                 <td>span</td>
                 <td><span class="mtr-btn mtr-btn--s mtr-btn--primary">Btn</span></td>
-                <td><span class="mtr-btn mtr-btn--s mtr-btn--primary-bordered">Btn</span></td>
-                <td><span class="mtr-btn mtr-btn--s mtr-btn--primary-flat">Btn</span></td>
+                <td><span class="mtr-btn mtr-btn--s mtr-btn--primary mtr-btn--outlined">Btn</span></td>
+                <td><span class="mtr-btn mtr-btn--s mtr-btn--primary mtr-btn--link">Btn</span></td>
             </tr>
             <tr>
                 <td>div</td>
@@ -391,17 +382,17 @@
                     <div class="mtr-btn mtr-btn--s mtr-btn--primary">Btn</div>
                 </td>
                 <td>
-                    <div class="mtr-btn mtr-btn--s mtr-btn--primary-bordered">Btn</div>
+                    <div class="mtr-btn mtr-btn--s mtr-btn--primary mtr-btn--outlined">Btn</div>
                 </td>
                 <td>
-                    <div class="mtr-btn mtr-btn--s mtr-btn--primary-flat">Btn</div>
+                    <div class="mtr-btn mtr-btn--s mtr-btn--primary mtr-btn--link">Btn</div>
                 </td>
             </tr>
             <tr>
                 <td>a</td>
-                <td><a class="mtr-btn mtr-btn--s mtr-btn--primary">Btn</a></td>
-                <td><a class="mtr-btn mtr-btn--s mtr-btn--primary-bordered">Btn</a></td>
-                <td><a class="mtr-btn mtr-btn--s mtr-btn--primary-flat">Btn</a></td>
+                <td><a class="mtr-btn mtr-btn--s mtr-btn--primary" href="#">Btn</a></td>
+                <td><a class="mtr-btn mtr-btn--s mtr-btn--primary mtr-btn--outlined" href="#">Btn</a></td>
+                <td><a class="mtr-btn mtr-btn--s mtr-btn--primary mtr-btn--link" href="#">Btn</a></td>
             </tr>
         </table>
         </p>

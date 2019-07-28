@@ -106,7 +106,7 @@ $button--l--min-width: buttonMinWidth($button--l--font-size);
     }
 }
 
-@mixin buttonFlat() {
+@mixin buttonLink() {
     min-width: 0;
     padding-right: 0;
     padding-left: 0;
@@ -125,7 +125,7 @@ $button--l--min-width: buttonMinWidth($button--l--font-size);
 .mtr-btn {
     background-color: rgba(226, 17, 32, 0.1);
     color: #d82e03;
-    border: none; // $button--border-size solid $button--default-color;
+    border: $button--border-size solid transparent;
     border-radius: $button--border-radius;
     //line-height: $base-icon-size;
 
@@ -169,7 +169,7 @@ a.mtr-btn {
 $buttonSizes: (
     's': (
         'font-size': $base-font-size - 2,
-        'icon-size': 16px
+        'icon-size': 16px,
     ),
     'm': (
         'font-size': $base-font-size,
@@ -185,7 +185,7 @@ $buttonSizes: (
     $tmpFontSize: map-get($v, 'font-size');
     $tmpIconSize: map-get($v, 'icon-size');
     $tmpHeight: roundEven($tmpFontSize * $button--height-ratio);
-    $tmpVertPadding: round(($tmpHeight - $tmpIconSize)/2);
+    $tmpVertPadding: round(($tmpHeight - $tmpIconSize)/2) - 2 * $button--border-size;
 
     .mtr-btn--#{$sizeCode} {
         font-size: map-get($v, 'font-size');
@@ -194,25 +194,36 @@ $buttonSizes: (
         min-width: roundEven($tmpFontSize * $button--min-width-ratio);
         line-height: $tmpIconSize;
 
-        &:active {
+        // при нажатии текст кнопки смещается вниз на 1 пх
+        &:active, &.mtr-btn--active {
             padding-top: ($tmpVertPadding + 1);
             padding-bottom: ($tmpVertPadding - 1);
         }
 
+        // расстояние между элементами внутри кнопки
         > * ~ * {
             margin-left: round($tmpHeight * $button--inside-padding-ratio);
         }
 
+        // любые спаны внутри кнопки
         span {
             height: $tmpIconSize;
             line-height: $tmpIconSize;
             display: inline-block;
         }
 
+        // иконка в кнопке
         .mtr-btn__icon {
             width: $tmpIconSize;
             height: $tmpIconSize;
             display: inline-block;
+        }
+
+        &.mtr-btn--icon-only {
+            width: $tmpHeight;
+            min-width: $tmpHeight;
+            padding-left: 0;
+            padding-right: 0;
         }
     }
 }
@@ -304,15 +315,15 @@ $buttonSizes: (
 //}
 
 // Extra Large
-.mtr-btn--xl {
-    @include buttonSize($button--xl--font-size);
-
-    .mtr-btn__icon {
-        width: 24px;
-        height: 24px;
-        margin-right: 8px;
-    }
-}
+//.mtr-btn--xl {
+//    @include buttonSize($button--xl--font-size);
+//
+//    .mtr-btn__icon {
+//        width: 24px;
+//        height: 24px;
+//        margin-right: 8px;
+//    }
+//}
 
 
 // Типы
@@ -322,15 +333,15 @@ $buttonSizes: (
 // Primary (без рамки, синяя)
 .mtr-btn--primary {
     color: $button--primary--color;
-    border-color: $button--primary--bg-color;
+    // border-color: $button--primary--bg-color;
     background-color: $button--primary--bg-color;
 
-    &:hover {
+    &:hover, &.mtr-btn--hover {
         border-color: #336eea;
         background-color: #336eea;
     }
 
-    &:active {
+    &:active, &.mtr-btn--active {
         border-color: #3562d5;
         background-color: #3562d5;
     }
@@ -350,16 +361,17 @@ a.mtr-btn--primary {
     }
 }
 
-.mtr-btn--primary-bordered {
+
+.mtr-btn--primary.mtr-btn--outlined {
     color: $button--primary--bg-color;
     border-color: #5594ff;
     background-color: transparent;
 
-    &:hover {
+    &:hover, &.mtr-btn--hover {
         background-color: #f7faff;
     }
 
-    &:active {
+    &:active, &.mtr-btn--active {
         background-color: #f3f7ff;
     }
 
@@ -372,21 +384,22 @@ a.mtr-btn--primary {
     }
 }
 
-a.mtr-btn--primary-bordered {
+a.mtr-btn--primary.mtr-btn--outlined {
     &:hover, &:active, &:visited, &:focus {
         color: $button--primary--bg-color;
     }
 }
 
-.mtr-btn--primary-flat {
-    @include buttonFlat;
+
+.mtr-btn--primary.mtr-btn--link {
+    @include buttonLink;
     color: $button--primary--bg-color;
 
-    &:hover {
+    &:hover, &.mtr-btn--hover {
         color: #336eea;
     }
 
-    &:active {
+    &:active, &.mtr-btn--active {
         color: #3562d5;
     }
 
@@ -399,25 +412,27 @@ a.mtr-btn--primary-bordered {
     }
 }
 
-a.mtr-btn--primary-flat {
+a.mtr-btn--primary.mtr-btn--link {
     &:visited, &:focus {
         color: $button--primary--bg-color;
     }
 }
 
 
+// =====================================================================
 // Secondary (без рамки, серая)
+// =====================================================================
 .mtr-btn--secondary {
     color: $button--secondary--color;
-    // border-color: #f5f5f5;
+    //border-color: #f5f5f5;
     background-color: hsla(0, 0%, 96%, 1);
 
-    &:hover {
+    &:hover, &.mtr-btn--hover {
         // border-color: #f0f0f0;
         background-color: hsla(0, 0%, 94%, 1);
     }
 
-    &:active {
+    &:active, &.mtr-btn--active {
         // border-color: #ebebeb;
         background-color: hsla(0, 0%, 92%, 1);
     }
@@ -431,16 +446,24 @@ a.mtr-btn--primary-flat {
     }
 }
 
-.mtr-btn--secondary-bordered {
+a.mtr-btn--secondary {
+    &:visited, &:focus {
+        color: $button--secondary--color;
+    }
+}
+
+// -------------
+
+.mtr-btn--secondary.mtr-btn--outlined {
     color: $button--secondary--color;
     border-color: #cccccc;
     background-color: transparent;
 
-    &:hover {
+    &:hover, &.mtr-btn--hover {
         background-color: #fafafa;
     }
 
-    &:active {
+    &:active, &.mtr-btn--active {
         background-color: #f5f5f5;
     }
 
@@ -453,15 +476,23 @@ a.mtr-btn--primary-flat {
     }
 }
 
-.mtr-btn--secondary-flat {
-    @include buttonFlat;
+a.mtr-btn--secondary.mtr-btn--outlined {
+    &:visited, &:focus {
+        color: $button--secondary--color;
+    }
+}
+
+// -------------
+
+.mtr-btn--secondary.mtr-btn--link {
+    @include buttonLink;
     color: #999;
 
-    &:hover {
+    &:hover, &.mtr-btn--hover {
         color: #666;
     }
 
-    &:active {
+    &:active, &.mtr-btn--active {
         color: #333;
     }
 
@@ -474,19 +505,21 @@ a.mtr-btn--primary-flat {
     }
 }
 
-// Success
+
+// =====================================================================
 // Danger
+// =====================================================================
 .mtr-btn--danger {
     color: #ffffff;
     border-color: #d92929;
     background-color: #d92929;
 
-    &:hover {
+    &:hover, &.mtr-btn--hover {
         border-color: #c71414;
         background-color: #c71414;
     }
 
-    &:active {
+    &:active, &.mtr-btn--active {
         border-color: #b80d0d;
         background-color: #b80d0d;
     }
@@ -500,16 +533,16 @@ a.mtr-btn--primary-flat {
     }
 }
 
-.mtr-btn--danger-bordered {
+.mtr-btn--danger.mtr-btn--outlined {
     color: #d92929;
     border-color: #e15454;
     background-color: transparent;
 
-    &:hover {
+    &:hover, &.mtr-btn--hover {
         background-color: #fef7f7;
     }
 
-    &:active {
+    &:active, &.mtr-btn--active {
         background-color: #fdf2f2;
     }
 
@@ -522,15 +555,15 @@ a.mtr-btn--primary-flat {
     }
 }
 
-.mtr-btn--danger-flat {
-    @include buttonFlat;
+.mtr-btn--danger.mtr-btn--link {
+    @include buttonLink;
     color: #d92929;
 
-    &:hover {
+    &:hover, &.mtr-btn--hover {
         color: #c71414;
     }
 
-    &:active {
+    &:active, &.mtr-btn--active {
         color: #d92929;
     }
 
@@ -543,14 +576,15 @@ a.mtr-btn--primary-flat {
     }
 }
 
+// =====================================================================
 // Pay
+// =====================================================================
 .mtr-btn--pay { // #ffd54b, #ffbb39
     color: #404040;
-    border-color: #ffd54b;
-    background: #ffd54b;
+    //border-color: #ffd54b;
+    background: #b478fd;
+    color: #fff;
 }
-
-// Link (без заливки)
 
 
 
@@ -559,7 +593,7 @@ a.mtr-btn--primary-flat {
 .mtr-btn--loading {
     opacity: 1;
     position: relative;
-    color: transparent; // скрываем текст кнопки
+    color: transparent !important; // скрываем текст кнопки
     @include buttonDisabled();
 
     &::before {
