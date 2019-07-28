@@ -11,7 +11,7 @@
         <h1>Кнопка</h1>
         <h2>Заметки</h2>
         <div class="text">
-            <p>Состояния кнопки:</p>
+            <p>Состояния:</p>
             <ul>
                 <li>Normal</li>
                 <li>Hover</li>
@@ -21,23 +21,27 @@
                 <li>Disabled</li>
                 <li>Loading</li>
             </ul>
-            <p>Цвета кнопок:</p>
+            <p>Цвета:</p>
             <ul>
                 <li>Primary (Синяя)</li>
                 <li>Secondary (Обычная - серая)</li>
                 <li>Danger (красная)</li>
+                <li>Transparent (без заливки)</li>
             </ul>
-            <p>Типы кнопок:</p>
+            <p>Типы:</p>
             <ul>
                 <li>Normal (обычная кнопка с полной заливкой)</li>
                 <li>Outlined (только обводка)</li>
                 <li>Text (без фона, как ссылка)</li>
+            </ul>
+            <p>Наличие иконки:</p>
+            <ul>
                 <li>With icon (иконка + текст)</li>
                 <li>Only icon (только иконка, без текста)</li>
             </ul>
-            <p>Размеры кнопок:</p>
+            <p>Размеры:</p>
             <ul>
-                <li>Middle (основной)</li>
+                <li>Medium (основной)</li>
                 <li>Small</li>
                 <li>Large</li>
             </ul>
@@ -91,7 +95,80 @@
             </tr>
         </table>
         <h2>Размеры</h2>
-        <table class="docs-example-table">
+        <table class="docs-example-table full-width">
+            <tr>
+                <td>S</td>
+                <td>M</td>
+                <td>L</td>
+            </tr>
+            <tr>
+                <td style="height: 100px;">
+                    <div class="pos-rel float-left">
+                        <button class="mtr-btn mtr-btn--s mtr-btn--primary">Кнопка</button>
+                        <div class="pos-abs var-info--button-s-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; left: 0; height: 20px; transform: translateY(3px);">
+                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-4px); padding-top: 5px;"><span class="var-dump--button-s-horiz-padding"></span></div>
+                        </div>
+                        <div class="pos-abs var-info--button-s-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; right: 0; height: 20px; transform: translateY(3px);">
+                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-4px); padding-top: 5px;"><span class="var-dump--button-s-horiz-padding"></span></div>
+                        </div>
+                        <div class="pos-abs var-info--button-s-height" style="border: 1px solid rgba(255,0,255,1); border-left:0; border-right: 0; top:0; bottom: 0; left: 100%; width: 18px; transform: translateX(3px);">
+                            <div class="pos-abs text-center" style="border-left: 1px solid #f0f; top:0; left: 100%; right: 0; bottom: 0; font-size: 10px; transform: translateX(-5px); padding-left: 5px; display: flex; align-items: center;"><span class="var-dump--button-s-height"></span></div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="pos-rel float-left">
+                        <button class="mtr-btn mtr-btn--m mtr-btn--primary">Кнопка</button>
+                        <div class="pos-abs var-info--button-m-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; left: 0; height: 20px; transform: translateY(3px);">
+                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-4px); padding-top: 5px;"><span class="var-dump--button-m-horiz-padding"></span></div>
+                        </div>
+                        <div class="pos-abs var-info--button-m-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; right: 0; height: 20px; transform: translateY(3px);">
+                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-4px); padding-top: 5px;"><span class="var-dump--button-m-horiz-padding"></span></div>
+                        </div>
+                        <div class="pos-abs var-info--button-m-height" style="border: 1px solid rgba(255,0,255,1); border-left:0; border-right: 0; top:0; bottom: 0; left: 100%; width: 18px; transform: translateX(3px);">
+                            <div class="pos-abs text-center" style="border-left: 1px solid #f0f; top:0; left: 100%; right: 0; bottom: 0; font-size: 10px; transform: translateX(-5px); padding-left: 5px; display: flex; align-items: center;"><span class="var-dump--button-m-height"></span></div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="pos-rel float-left">
+                        <button class="mtr-btn mtr-btn--l mtr-btn--primary">Кнопка</button>
+                        <div class="pos-abs var-info--button-l-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; left: 0; height: 20px; transform: translateY(3px);">
+                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-4px); padding-top: 5px;"><span class="var-dump--button-l-horiz-padding"></span></div>
+                        </div>
+                        <div class="pos-abs var-info--button-l-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; right: 0; height: 20px; transform: translateY(3px);">
+                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-4px); padding-top: 5px;"><span class="var-dump--button-l-horiz-padding"></span></div>
+                        </div>
+                        <div class="pos-abs var-info--button-l-height" style="border: 1px solid rgba(255,0,255,1); border-left:0; border-right: 0; top:0; bottom: 0; left: 100%; width: 18px; transform: translateX(3px);">
+                            <div class="pos-abs text-center" style="border-left: 1px solid #f0f; top:0; left: 100%; right: 0; bottom: 0; font-size: 10px; transform: translateX(-5px); padding-left: 5px; display: flex; align-items: center;"><span class="var-dump--button-l-height"></span></div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="text-s" style="color: #999;">
+                <td>
+                    <div>font-size: <span class="var-dump--button-s-font-size"></span></div>
+                    <div>min-width: <span class="var-dump--button-s-min-width"></span></div>
+                </td>
+                <td>
+                    <div>font-size: <span class="var-dump--button-m-font-size"></span></div>
+                    <div>min-width: <span class="var-dump--button-m-min-width"></span></div>
+                </td>
+                <td>
+                    <div>font-size: <span class="var-dump--button-l-font-size"></span></div>
+                    <div>min-width: <span class="var-dump--button-l-min-width"></span></div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="height: 50px;"></td>
+            </tr>
+            <tr>
+                <td><button class="mtr-btn mtr-btn--s mtr-btn--primary"><div class="mtr-btn__icon"><svg viewBox="0 0 24 24" id="img__ic-integrations"><path fill="currentColor" d="M18.071 10.172L20.9 7.343a1 1 0 0 1 1.415 1.414l-2.829 2.829 2.122 2.121-4.243 4.243a6 6 0 0 1-8.485 0l-.707-.707-4.243 4.242a1 1 0 1 1-1.414-1.414l4.242-4.243-.707-.707a6 6 0 0 1 0-8.485l4.243-4.243 2.121 2.122 2.829-2.829a1 1 0 1 1 1.414 1.415l-2.829 2.828 4.243 4.243zm-7.778-4.95L7.464 8.05a4 4 0 0 0 0 5.657l2.829 2.829a4 4 0 0 0 5.657 0l2.828-2.829-8.485-8.485z"></path></svg></div><span>Кнопка</span></button></td>
+                <td><button class="mtr-btn mtr-btn--m mtr-btn--primary"><div class="mtr-btn__icon"><svg viewBox="0 0 24 24" id="img__ic-integrations"><path fill="currentColor" d="M18.071 10.172L20.9 7.343a1 1 0 0 1 1.415 1.414l-2.829 2.829 2.122 2.121-4.243 4.243a6 6 0 0 1-8.485 0l-.707-.707-4.243 4.242a1 1 0 1 1-1.414-1.414l4.242-4.243-.707-.707a6 6 0 0 1 0-8.485l4.243-4.243 2.121 2.122 2.829-2.829a1 1 0 1 1 1.414 1.415l-2.829 2.828 4.243 4.243zm-7.778-4.95L7.464 8.05a4 4 0 0 0 0 5.657l2.829 2.829a4 4 0 0 0 5.657 0l2.828-2.829-8.485-8.485z"></path></svg></div><span>Кнопка</span></button></td>
+                <td><button class="mtr-btn mtr-btn--l mtr-btn--primary"><div class="mtr-btn__icon"><svg viewBox="0 0 24 24" id="img__ic-integrations"><path fill="currentColor" d="M18.071 10.172L20.9 7.343a1 1 0 0 1 1.415 1.414l-2.829 2.829 2.122 2.121-4.243 4.243a6 6 0 0 1-8.485 0l-.707-.707-4.243 4.242a1 1 0 1 1-1.414-1.414l4.242-4.243-.707-.707a6 6 0 0 1 0-8.485l4.243-4.243 2.121 2.122 2.829-2.829a1 1 0 1 1 1.414 1.415l-2.829 2.828 4.243 4.243zm-7.778-4.95L7.464 8.05a4 4 0 0 0 0 5.657l2.829 2.829a4 4 0 0 0 5.657 0l2.828-2.829-8.485-8.485z"></path></svg></div><span>Кнопка</span></button></td>
+            </tr>
+        </table>
+        <table class="docs-example-table" style="margin-top: 100px;">
             <tr>
                 <td></td>
                 <td>S</td>
@@ -330,14 +407,6 @@
         </p>
         <p>Не надо использовать <code>input[type=submit]</code> или <code>input[type=button]</code>! Для них неправилно выглядит состояние загрузки. <strong>Лучше использовать</strong> - <code>button[type=submit]</code>.</p>
 
-        <h2>Кнопка с иконкой</h2>
-
-        <p>
-            <button class="mtr-btn mtr-btn--m mtr-btn--primary mtr-btn--has-icon">
-                <svg class="mtr-btn__icon" viewBox="0 0 24 24" id="img__plus-24" width="100%" height="100%"><path fill="currentColor" d="M18 13h-5v5a1 1 0 0 1-2 0v-5H6a1 1 0 0 1 0-2h5V6a1 1 0 0 1 2 0v5h5a1 1 0 0 1 0 2z"></path></svg>
-                Button
-            </button>
-        </p>
     </div>
 </div>
 
