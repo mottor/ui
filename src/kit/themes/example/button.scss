@@ -1,111 +1,47 @@
-$button--m--font-size: $base-font-size; // 14
-$button--m--icon-size: 18px;
-
-$button--s--font-size: $button--m--font-size - 2; // 12
-$button--s--icon-size: 16px;
-
-$button--l--font-size: $button--m--font-size + 2; // 16
-$button--l--icon-size: 20px;
-
-$button--xl--font-size: $button--m--font-size + 6; // 20
+//$button--m--font-size: $base-font-size; // 14
+//$button--m--icon-size: 18px;
+//
+//$button--s--font-size: $button--m--font-size - 2; // 12
+//$button--s--icon-size: 16px;
+//
+//$button--l--font-size: $button--m--font-size + 2; // 16
+//$button--l--icon-size: 20px;
+//
+//$button--xl--font-size: $button--m--font-size + 6; // 20
 
 $button--default-color: #333;
 $button--border-radius: 4px;
 $button--border-size: 1px;
 
 $button--height-ratio: 2.5;
-$button--horiz-padding-ratio: 0.5; //1.3;
+$button--horiz-padding-ratio: 0.5;
 $button--min-width-ratio: 6;
 $button--inside-padding-ratio: 0.2;
 
 $button--primary--color: #fff;
 $button--primary--bg-color: #2a79ff;
 $button--secondary--color: #333;
-//$button--m--height: roundEven($button--m--font-size * $button--height-ratio);
-//$button--m--padding-sides: roundEven($button--m--font-size * 1.2);
-//$button--m--padding: round(($button--m--height - (2 * $button--border-size) - $button--m--font-size)/2);
+
 
 @function buttonHeight($font-size) {
+    // высота кнопки должна быть кратна 2
     @return roundEven($font-size * $button--height-ratio);
 }
 
 @function buttonVertPadding($button-height, $line-height) {
-    //@return round(($button-height - $line-height)/2);
+    // padding учитывает размер обводки
     @return round(($button-height - $line-height)/2) - 2 * $button--border-size;
 }
 
 @function buttonHorizPadding($button-height) {
-    @return round($button-height * $button--horiz-padding-ratio);
+    // padding учитывает размер обводки
+    @return round($button-height * $button--horiz-padding-ratio) - 2 * $button--border-size;
 }
 
 @function buttonMinWidth($font-size) {
-    @return roundEven($font-size * $button--min-width-ratio);
+    @return round($font-size * $button--min-width-ratio);
 }
 
-// M size
-//$button--m--height: buttonHeight($button--m--font-size);
-//$button--m--vert-padding: buttonVertPadding($button--m--height, $button--m--icon-size);
-//$button--m--horiz-padding: buttonHorizPadding($button--m--height);
-//$button--m--min-width: buttonMinWidth($button--m--font-size);
-//
-//.var-dump--button-m-font-size:before {content: "#{$button--m--font-size}";}
-//.var-dump--button-m-height:before {content: "#{$button--m--height}";}
-//.var-dump--button-m-horiz-padding:before {content: "#{$button--m--horiz-padding}";}
-//.var-dump--button-m-min-width:before {content: "#{$button--m--min-width}";}
-//
-//.var-info--button-m-horiz-padding {width: $button--m--horiz-padding;}
-//.var-info--button-m-height {height: $button--m--height;}
-//
-//// S size
-//$button--s--height: buttonHeight($button--s--font-size);
-//$button--s--vert-padding: buttonVertPadding($button--s--height, $button--s--icon-size);
-//$button--s--horiz-padding: buttonHorizPadding($button--s--height);
-//$button--s--min-width: buttonMinWidth($button--s--font-size);
-//
-//.var-dump--button-s-font-size:before {content: "#{$button--s--font-size}";}
-//.var-dump--button-s-height:before {content: "#{$button--s--height}";}
-//.var-dump--button-s-horiz-padding:before {content: "#{$button--s--horiz-padding}";}
-//.var-dump--button-s-min-width:before {content: "#{$button--s--min-width}";}
-//.var-info--button-s-horiz-padding {width: $button--s--horiz-padding;}
-//.var-info--button-s-height {height: $button--s--height;}
-//
-//// L size
-//$button--l--height: buttonHeight($button--l--font-size);
-//$button--l--vert-padding: buttonVertPadding($button--l--height, $button--l--icon-size);
-//$button--l--horiz-padding: buttonHorizPadding($button--l--height);
-//$button--l--min-width: buttonMinWidth($button--l--font-size);
-//
-//.var-dump--button-l-font-size:before {content: "#{$button--l--font-size}";}
-//.var-dump--button-l-height:before {content: "#{$button--l--height}";}
-//.var-dump--button-l-horiz-padding:before {content: "#{$button--l--horiz-padding}";}
-//.var-dump--button-l-min-width:before {content: "#{$button--l--min-width}";}
-//.var-info--button-l-horiz-padding {width: $button--l--horiz-padding;}
-//.var-info--button-l-height {height: $button--l--height;}
-
-
-@mixin buttonSize($font-size) {
-    $h: roundEven($font-size * $button--height-ratio);
-    // $pv: round(($h - (2 * $button--border-size) - $font-size)/2);
-    $pv: round(($h - $base-icon-size)/2);
-    $ph: round($h * $button--horiz-padding-ratio);
-
-    font-size: $font-size;
-    height: $h;
-    //padding: ($pv - 1px) (roundEven($font-size * 1.2)) ($pv + 1px);
-    padding: $pv $ph;
-    min-width: roundEven($font-size * $button--min-width-ratio);
-
-    &:active {
-        //padding: $pv (roundEven($font-size * 1.2)) $pv;
-        padding-top: ($pv + 1);
-        padding-bottom: ($pv - 1);
-    }
-
-    &.mtr-btn--loading::before {
-        width: $font-size;
-        height: $font-size;
-    }
-}
 
 @mixin buttonLink() {
     min-width: 0;
@@ -151,12 +87,6 @@ a.mtr-btn {
     }
 }
 
-//.mtr-btn--has-icon {
-//    display: -ms-flexbox;
-//    display: flex;
-//    -ms-flex-align: center;
-//    align-items: center;
-//}
 
 // Состояния
 // ---------
@@ -229,102 +159,22 @@ $buttonSizes: (
             padding-left: 0;
             padding-right: 0;
         }
+
+        &.mtr-btn--loading::before {
+            width: $tmpFontSize;
+            height: $tmpFontSize;
+        }
     }
 
     .var-dump--button-#{$sizeCode}-font-size:before {content: "#{$tmpFontSize}";}
     .var-dump--button-#{$sizeCode}-height:before {content: "#{$tmpHeight}";}
-    .var-dump--button-#{$sizeCode}-horiz-padding:before {content: "#{$tmpHorizPadding}";}
+    .var-dump--button-#{$sizeCode}-horiz-padding:before {content: "#{$tmpHorizPadding + $button--border-size}";}
     .var-dump--button-#{$sizeCode}-min-width:before {content: "#{$tmpMinWidth}";}
 
-    .var-info--button-#{$sizeCode}-horiz-padding {width: $tmpHorizPadding;}
+    .var-info--button-#{$sizeCode}-horiz-padding {width: $tmpHorizPadding + $button--border-size}
     .var-info--button-#{$sizeCode}-height {height: $tmpHeight;}
 }
 
-// Размеры
-// ---------
-// Normal (medium)
-//.mtr-btn--m {
-//    // @include buttonSize($button--m--font-size);
-//    font-size: $button--m--font-size;
-//    height: $button--m--height;
-//    padding: $button--m--vert-padding $button--m--horiz-padding;
-//    min-width: $button--m--min-width;
-//    line-height: $button--m--icon-size;
-//
-//    &:active {
-//        padding-top: ($button--m--vert-padding + 1);
-//        padding-bottom: ($button--m--vert-padding - 1);
-//    }
-//
-//    span {
-//        height: $button--m--icon-size;
-//        line-height: $button--m--icon-size;
-//        display: inline-block;
-//    }
-//
-//    .mtr-btn__icon {
-//        width: $button--m--icon-size;
-//        height: $button--m--icon-size;
-//        display: inline-block;
-//        margin-right: ($button--m--icon-size/2);
-//    }
-//}
-//
-//// Small
-//.mtr-btn--s {
-//    // @include buttonSize($button--s--font-size);
-//    font-size: $button--s--font-size;
-//    height: $button--s--height;
-//    padding: $button--s--vert-padding $button--s--horiz-padding;
-//    min-width: $button--s--min-width;
-//    line-height: $button--s--icon-size;
-//
-//    &:active {
-//        padding-top: ($button--s--vert-padding + 1);
-//        padding-bottom: ($button--s--vert-padding - 1);
-//    }
-//
-//    span {
-//        height: $button--s--icon-size;
-//        line-height: $button--s--icon-size;
-//        display: inline-block;
-//    }
-//
-//    .mtr-btn__icon {
-//        width: $button--s--icon-size;
-//        height: $button--s--icon-size;
-//        display: inline-block;
-//        margin-right: ($button--s--icon-size/2);
-//    }
-//}
-//
-//// Large
-//.mtr-btn--l {
-//    // @include buttonSize($button--l--font-size);
-//    font-size: $button--l--font-size;
-//    height: $button--l--height;
-//    padding: $button--l--vert-padding $button--l--horiz-padding;
-//    min-width: $button--l--min-width;
-//    line-height: $button--l--icon-size;
-//
-//    &:active {
-//        padding-top: ($button--l--vert-padding + 1);
-//        padding-bottom: ($button--l--vert-padding - 1);
-//    }
-//
-//    span {
-//        height: $button--l--icon-size;
-//        line-height: $button--l--icon-size;
-//        display: inline-block;
-//    }
-//
-//    .mtr-btn__icon {
-//        width: $button--l--icon-size;
-//        height: $button--l--icon-size;
-//        display: inline-block;
-//        margin-right: ($button--l--icon-size/2);
-//    }
-//}
 
 // Extra Large
 //.mtr-btn--xl {
