@@ -32,7 +32,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 b, strong, .bold {
     font-weight: bold;
-    vertical-align: top; // почему-то шрифт расширяет line-height. этот стиль исправляет основной текст, но тот что жирный получается не по линии
 }
 
 i, em, .italic {
