@@ -65,10 +65,15 @@ $button--secondary--color: #333;
     border: $button--border-size solid transparent;
     border-radius: $button--border-radius;
     //line-height: $base-icon-size;
+    // transition: .3s cubic-bezier(.175,.885,.32,1.275) padding!important;
 
     > * {
         vertical-align: top;
     }
+
+    //&:hover {
+    //    box-shadow: 0 1px 4px rgba(29,28,29,.3);
+    //}
 
     //span {
     //    height: $base-icon-size;
