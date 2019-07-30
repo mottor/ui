@@ -1,0 +1,27 @@
+.mtr-input {
+    user-select: text;
+    appearance: none;
+    outline: none;
+    background: none;
+    box-sizing: border-box;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 4px;
+    border: 1px solid #cad2d2;
+    -webkit-text-fill-color: currentColor;
+    display: inline-block;
+    cursor: text;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 200px;
+    vertical-align: top;
+
+    &:focus {
+        border-color: #95a5a6;
+    }
+}
+
+.mtr-input--block {
+    display: block;
+    width: 100%;
+}

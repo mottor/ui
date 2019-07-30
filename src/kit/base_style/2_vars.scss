@@ -17,6 +17,14 @@ $default-font-family: Arial, sans-serif !default;
 $base-monospaced-font-family: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace !default;
 $base-icon-size: 24px !default;
 
+$button--height-ratio: 2.5;
+$button--horiz-padding-ratio: 0.5;
+$button--min-width-ratio: 6;
+$button--inner-elems-padding-ratio: 0.2;
+
+$button--border-radius: 4px;
+$button--border-size: 1px;
+
 // =============================
 // Colors
 $color-white: #fff !default;

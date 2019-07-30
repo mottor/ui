@@ -10,51 +10,14 @@
 //$button--xl--font-size: $button--m--font-size + 6; // 20
 
 $button--default-color: #333;
-$button--border-radius: 4px;
-$button--border-size: 1px;
 
-$button--height-ratio: 2.5;
-$button--horiz-padding-ratio: 0.5;
-$button--min-width-ratio: 6;
-$button--inside-padding-ratio: 0.2;
 
 $button--primary--color: #fff;
 $button--primary--bg-color: #2a79ff;
 $button--secondary--color: #333;
 
 
-@function buttonHeight($font-size) {
-    // высота кнопки должна быть кратна 2
-    @return roundEven($font-size * $button--height-ratio);
-}
 
-@function buttonVertPadding($button-height, $line-height) {
-    // padding учитывает размер обводки
-    @return round(($button-height - $line-height)/2) - 2 * $button--border-size;
-}
-
-@function buttonHorizPadding($button-height) {
-    // padding учитывает размер обводки
-    @return round($button-height * $button--horiz-padding-ratio) - 2 * $button--border-size;
-}
-
-@function buttonMinWidth($font-size) {
-    @return round($font-size * $button--min-width-ratio);
-}
-
-
-@mixin buttonLink() {
-    min-width: 0;
-    padding-right: 0;
-    padding-left: 0;
-    border-color: transparent;
-    background-color: transparent;
-}
-
-@mixin buttonDisabled() {
-    pointer-events: none;
-    cursor: default;
-}
 
 // ============================================================
 
@@ -136,7 +99,7 @@ $buttonSizes: (
 
         // расстояние между элементами внутри кнопки
         > * ~ * {
-            margin-left: round($tmpHeight * $button--inside-padding-ratio);
+            margin-left: round($tmpHeight * $button--inner-elems-padding-ratio);
         }
 
         // любые спаны внутри кнопки

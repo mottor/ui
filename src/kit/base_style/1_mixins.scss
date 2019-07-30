@@ -14,6 +14,27 @@
     }
 }
 
+@function buttonHeight($font-size) {
+    // высота кнопки зависит от шрифта
+    // (должна быть кратна 2)
+    @return roundEven($font-size * $button--height-ratio);
+}
+
+@function buttonVertPadding($button-height, $line-height) {
+    // padding учитывает размер обводки
+    @return round(($button-height - $line-height)/2) - 2 * $button--border-size;
+}
+
+@function buttonHorizPadding($button-height) {
+    // padding учитывает размер обводки
+    @return round($button-height * $button--horiz-padding-ratio) - 2 * $button--border-size;
+}
+
+@function buttonMinWidth($font-size) {
+    @return round($font-size * $button--min-width-ratio);
+}
+
+
 @mixin word-wrap() {
     /* These are technically the same, but use both */
     overflow-wrap: break-word;
@@ -50,4 +71,17 @@
     border-right: $sides solid transparent;
     border-top: $main solid $color;
     border-bottom: 0;
+}
+
+@mixin buttonLink() {
+    min-width: 0;
+    padding-right: 0;
+    padding-left: 0;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+@mixin buttonDisabled() {
+    pointer-events: none;
+    cursor: default;
 }
