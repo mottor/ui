@@ -9,6 +9,14 @@
 <div class="content-wrap">
     <div class="docs-block">
         <h1>Кнопка</h1>
+        <p>
+            Базовый класс кнопки - <code>mtr-btn</code>.<br/>
+            Минимально для кнопки нужно задать 3 класса: базовый, размер и тип.
+        <pre style="padding: 16px;">
+&lt;button class="mtr-btn mtr-btn--m mtr-btn--primary"&gt;
+    &lt;span>Кнопка&lt;/span&gt;
+&lt;/button&gt;</pre>
+        </p>
         <!--<h2>Заметки</h2>
         <div class="text">
             <p>Состояния:</p>
@@ -214,6 +222,32 @@
         <table class="docs-example-table full-width">
             <tr>
                 <td style="width: 50%">
+                    <div><strong>Extra Small</strong></div>
+                    <div class="text-s mt1">
+                        <div>font-size: <span class="var-dump--button-xs-font-size"></span></div>
+                        <div>min-width: <span class="var-dump--button-xs-min-width"></span></div>
+                    </div>
+                </td>
+                <td style="height: 100px">
+                    <div class="pos-rel float-left">
+                        <button class="mtr-btn mtr-btn--xs mtr-btn--primary">Кнопка</button>
+                        <div class="pos-abs var-info--button-xs-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; left: 0; height: 9px; transform: translateY(3px);">
+                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-5px); padding-top: 7px;"><span class="var-dump--button-xs-horiz-padding"></span></div>
+                        </div>
+                        <div class="pos-abs var-info--button-xs-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; right: 0; height: 9px; transform: translateY(3px);">
+                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-5px); padding-top: 7px;"><span class="var-dump--button-xs-horiz-padding"></span></div>
+                        </div>
+                        <div class="pos-abs var-info--button-xs-height" style="border: 1px solid rgba(255,0,255,1); border-left:0; border-right: 0; top:0; bottom: 0; left: 100%; width: 9px; transform: translateX(3px);">
+                            <div class="pos-abs text-center" style="border-left: 1px solid #f0f; top:0; left: 100%; right: 0; bottom: 0; font-size: 10px; transform: translateX(-5px); padding-left: 7px; display: flex; align-items: center;"><span class="var-dump--button-xs-height"></span></div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <code>mtr-btn--xs</code>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <div><strong>Small</strong></div>
                     <div class="text-s mt1">
                         <div>font-size: <span class="var-dump--button-s-font-size"></span></div>
@@ -288,6 +322,32 @@
                 </td>
                 <td>
                     <code>mtr-btn--l</code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div><strong>Extra Large</strong></div>
+                    <div class="text-s mt1">
+                    <div>font-size: <span class="var-dump--button-xl-font-size"></span></div>
+                    <div>min-width: <span class="var-dump--button-xl-min-width"></span></div>
+                    </div>
+                </td>
+                <td style="height: 100px">
+                    <div class="pos-rel float-left">
+                        <button class="mtr-btn mtr-btn--xl mtr-btn--primary"><span>Кнопка</span></button>
+                        <div class="pos-abs var-info--button-xl-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; left: 0; height: 9px; transform: translateY(3px);">
+                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-5px); padding-top: 7px;"><span class="var-dump--button-xl-horiz-padding"></span></div>
+                        </div>
+                        <div class="pos-abs var-info--button-xl-horiz-padding" style="border: 1px solid rgba(255,0,255,1); border-top:0; border-bottom: 0; top:100%; right: 0; height: 9px; transform: translateY(3px);">
+                            <div class="pos-abs text-center" style="border-top: 1px solid #f0f; top:100%; left: 0; right: 0; font-size: 10px; transform: translateY(-5px); padding-top: 7px;"><span class="var-dump--button-xl-horiz-padding"></span></div>
+                        </div>
+                        <div class="pos-abs var-info--button-xl-height" style="border: 1px solid rgba(255,0,255,1); border-left:0; border-right: 0; top:0; bottom: 0; left: 100%; width: 9px; transform: translateX(3px);">
+                            <div class="pos-abs text-center" style="border-left: 1px solid #f0f; top:0; left: 100%; right: 0; bottom: 0; font-size: 10px; transform: translateX(-5px); padding-left: 7px; display: flex; align-items: center;"><span class="var-dump--button-xl-height"></span></div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <code>mtr-btn--xl</code>
                 </td>
             </tr>
         </table>

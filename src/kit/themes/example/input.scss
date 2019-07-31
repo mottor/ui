@@ -16,7 +16,7 @@
         border-color: #80bdff;
         background-color: #fff;
         outline: 0;
-        //box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+        box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
     }
 
     &::placeholder {
@@ -41,6 +41,6 @@
     .mtr-input--#{$sizeCode} {
         font-size: $tmpFontSize;
         height: $tmpHeight;
-        line-height: $tmpHeight - 2 * $button--border-size;
+        line-height: $tmpHeight;
     }
 }

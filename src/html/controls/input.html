@@ -11,7 +11,7 @@
         <h1>Text fields</h1>
         <p>
             Базовый класс поля - <code>mtr-input</code>.<br/>
-            Минимально для инпута нужно назначать этот класс и класс размера.
+            Минимально для инпута нужно назначать 2 класса: базовый и размер.
             <pre style="padding: 16px;">
 &lt;input class="mtr-input mtr-input--m" type="text"/&gt;</pre>
         </p>
@@ -35,6 +35,11 @@
         <p>
             Поле на всю ширину (класс mtr-input--block):<br/>
             <input class="mtr-input mtr-input--m mtr-input--block"/>
+        </p>
+        <p>
+            В сочетании с кнопкой:<br/>
+            <input class="mtr-input mtr-input--m" value="Значение"/>
+            <button class="mtr-btn mtr-btn--m mtr-btn--primary">Кнопка</button>
         </p>
 
 
@@ -82,6 +87,11 @@
         <h2 class="mt5">Размеры полей</h2>
         <table class="docs-example-table full-width vam">
             <tr>
+                <td>Extra Small</td>
+                <td><input class="mtr-input mtr-input--xs" value="Текст"/></td>
+                <td><code>mtr-input--xs</code></td>
+            </tr>
+            <tr>
                 <td>Small</td>
                 <td><input class="mtr-input mtr-input--s" value="Текст"/></td>
                 <td><code>mtr-input--s</code></td>
@@ -95,6 +105,11 @@
                 <td>Large</td>
                 <td><input class="mtr-input mtr-input--l" value="Текст"/></td>
                 <td><code>mtr-input--l</code></td>
+            </tr>
+            <tr>
+                <td>Extra Large</td>
+                <td><input class="mtr-input mtr-input--xl" value="Текст"/></td>
+                <td><code>mtr-input--xl</code></td>
             </tr>
         </table>
 
