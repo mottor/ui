@@ -10,17 +10,94 @@
     <div class="docs-block">
         <h1>Text fields</h1>
         <p>
-            <input class="mtr-input mtr-input--m"/> <button class="mtr-btn mtr-btn--m mtr-btn--primary">Отправить</button>
+            Базовый класс поля - <code>mtr-input</code>.<br/>
+            Минимально для инпута нужно назначать этот класс и класс размера.
+            <pre style="padding: 16px;">
+&lt;input class="mtr-input mtr-input--m" type="text"/&gt;</pre>
         </p>
         <p>
+            Ширина текстового поля по умолчанию = <span class="var-dump var-dump--base-input-width"></span>.<br/>
+            Но его можно сделать на всю ширину блока с помощью класса <code>mtr-input--block</code>.
+        </p>
+        <p>
+            Пустое поле:<br/>
+            <input class="mtr-input mtr-input--m"/>
+        </p>
+        <p>
+            Поле не заполнено, но с плейсхолдером:<br/>
+            <input class="mtr-input mtr-input--m" placeholder="Введите текст"/>
+        </p>
+        <p>
+            Поле с текстом:<br/>
+            <input class="mtr-input mtr-input--m" value="Значение1"/>
+        </p>
+
+        <p>
+            Поле на всю ширину (класс mtr-input--block):<br/>
             <input class="mtr-input mtr-input--m mtr-input--block"/>
         </p>
 
-        <p class="mt4">
-            <input class="mtr-input mtr-input--s"/></p>
-            <input class="mtr-input mtr-input--m"/></p>
-            <input class="mtr-input mtr-input--l"/>
-        </p>
+
+        <h2 class="mt5">Состояния</h2>
+        <style type="text/css">
+            .table-input-states input {width: 120px;}
+            .table-input-states input ~ input {margin-left: 16px;}
+        </style>
+        <table class="docs-example-table full-width vam table-input-states">
+            <tr>
+                <td>Normal</td>
+                <td>
+                    <input class="mtr-input mtr-input--m" placeholder="Placeholder" value=""/>
+                    <input class="mtr-input mtr-input--m" value="Значение"/>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Hover</td>
+                <td>
+                    <input class="mtr-input mtr-input--m mtr-input--hovered" placeholder="Placeholder" value=""/>
+                    <input class="mtr-input mtr-input--m mtr-input--hovered" value="Значение"/>
+                </td>
+                <td><code>mtr-input--hovered</code></td>
+            </tr>
+            <tr>
+                <td>Focus</td>
+                <td>
+                    <input class="mtr-input mtr-input--m mtr-input--focused" placeholder="Placeholder" value=""/>
+                    <input class="mtr-input mtr-input--m mtr-input--focused" value="Значение"/>
+                </td>
+                <td><code>mtr-input--focused</code></td>
+            </tr>
+            <tr>
+                <td>Disabled</td>
+                <td>
+                    <input class="mtr-input mtr-input--m mtr-input--disabled" placeholder="Placeholder" value=""/>
+                    <input class="mtr-input mtr-input--m mtr-input--disabled" value="Значение"/>
+                </td>
+                <td><code>mtr-input--disabled</code></td>
+            </tr>
+        </table>
+
+
+        <h2 class="mt5">Размеры полей</h2>
+        <table class="docs-example-table full-width vam">
+            <tr>
+                <td>Small</td>
+                <td><input class="mtr-input mtr-input--s" value="Текст"/></td>
+                <td><code>mtr-input--s</code></td>
+            </tr>
+            <tr>
+                <td>Medium</td>
+                <td><input class="mtr-input mtr-input--m" value="Текст"/></td>
+                <td><code>mtr-input--m</code></td>
+            </tr>
+            <tr>
+                <td>Large</td>
+                <td><input class="mtr-input mtr-input--l" value="Текст"/></td>
+                <td><code>mtr-input--l</code></td>
+            </tr>
+        </table>
+
 
         <h2 class="mt5">Заметки</h2>
         <ol>

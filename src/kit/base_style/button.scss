@@ -1,14 +1,14 @@
-$button-height-ratio: 2.5;
-$button-padding-ratio: 1.3;
-$button-corners-ratio: 0.3;
+//$button-height-ratio: 2.5;
+//$button-padding-ratio: 1.3;
+//$button-corners-ratio: 0.3;
 
-$button-height: roundEven($base-font-size * $button-height-ratio);
-$button-sides-padding: roundEven($base-font-size * $button-padding-ratio);
-$button-radius: round($base-font-size * $button-corners-ratio);
+//$button-height: roundEven($base-font-size * $button-height-ratio);
+//$button-sides-padding: roundEven($base-font-size * $button-padding-ratio);
+//$button-radius: round($base-font-size * $button-corners-ratio);
 
-$button-l--height: roundEven($text-l--size * $button-height-ratio);
-$button-l--sides-padding: roundEven($text-l--size * $button-padding-ratio);
-$button-l--border-radius: round($text-l--size * $button-corners-ratio);
+//$button-l--height: roundEven($text-l--size * $button-height-ratio);
+//$button-l--sides-padding: roundEven($text-l--size * $button-padding-ratio);
+//$button-l--border-radius: round($text-l--size * $button-corners-ratio);
 
 //@mixin buttonSize($font-size) {
 //    font-size: $font-size;

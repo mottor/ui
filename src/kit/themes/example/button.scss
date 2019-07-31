@@ -60,24 +60,11 @@ a.mtr-btn {
 // Disabled
 // Loading
 
-$buttonSizes: (
-    's': (
-        'font-size': $base-font-size - 2,
-        'icon-size': 16px,
-    ),
-    'm': (
-        'font-size': $base-font-size,
-        'icon-size': 18px
-    ),
-    'l': (
-        'font-size': $base-font-size + 2,
-        'icon-size': 20px
-    ),
-);
+
 
 @each $sizeCode, $v in $buttonSizes {
     $tmpFontSize: map-get($v, 'font-size');
-    $tmpIconSize: map-get($v, 'icon-size');
+    $tmpIconSize: buttonIconSize($tmpFontSize);
 
     $tmpHeight: buttonHeight($tmpFontSize);
     $tmpVertPadding: buttonVertPadding($tmpHeight, $tmpIconSize);
@@ -162,7 +149,7 @@ $buttonSizes: (
     // border-color: $button--primary--bg-color;
     background-color: $button--primary--bg-color;
 
-    &:hover, &.mtr-btn--hover {
+    &:hover, &.mtr-btn--hovered {
         border-color: #336eea;
         background-color: #336eea;
     }
@@ -193,7 +180,7 @@ a.mtr-btn--primary {
     border-color: #5594ff;
     background-color: transparent;
 
-    &:hover, &.mtr-btn--hover {
+    &:hover, &.mtr-btn--hovered {
         background-color: #f7faff;
     }
 
@@ -221,7 +208,7 @@ a.mtr-btn--primary.mtr-btn--outlined {
     @include buttonLink;
     color: $button--primary--bg-color;
 
-    &:hover, &.mtr-btn--hover {
+    &:hover, &.mtr-btn--hovered {
         color: #336eea;
     }
 
@@ -253,7 +240,7 @@ a.mtr-btn--primary.mtr-btn--link {
     //border-color: #f5f5f5;
     background-color: #f5f5f7;
 
-    &:hover, &.mtr-btn--hover {
+    &:hover, &.mtr-btn--hovered {
         // border-color: #f0f0f0;
         background-color: #f0f0f3;
     }
@@ -285,7 +272,7 @@ a.mtr-btn--secondary {
     border-color: #cccccc;
     background-color: transparent;
 
-    &:hover, &.mtr-btn--hover {
+    &:hover, &.mtr-btn--hovered {
         background-color: #fafafa;
     }
 
@@ -314,7 +301,7 @@ a.mtr-btn--secondary.mtr-btn--outlined {
     @include buttonLink;
     color: #999;
 
-    &:hover, &.mtr-btn--hover {
+    &:hover, &.mtr-btn--hovered {
         color: #666;
     }
 
@@ -340,7 +327,7 @@ a.mtr-btn--secondary.mtr-btn--outlined {
     border-color: #d92929;
     background-color: #d92929;
 
-    &:hover, &.mtr-btn--hover {
+    &:hover, &.mtr-btn--hovered {
         border-color: #c71414;
         background-color: #c71414;
     }
@@ -364,7 +351,7 @@ a.mtr-btn--secondary.mtr-btn--outlined {
     border-color: #e15454;
     background-color: transparent;
 
-    &:hover, &.mtr-btn--hover {
+    &:hover, &.mtr-btn--hovered {
         background-color: #fef7f7;
     }
 
@@ -385,7 +372,7 @@ a.mtr-btn--secondary.mtr-btn--outlined {
     @include buttonLink;
     color: #d92929;
 
-    &:hover, &.mtr-btn--hover {
+    &:hover, &.mtr-btn--hovered {
         color: #c71414;
     }
 

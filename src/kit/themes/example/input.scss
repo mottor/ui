@@ -1,38 +1,46 @@
 .mtr-input {
     // transition: border-color 600ms;
     border-radius: $button--border-radius;
-    border: $button--border-size solid #c3c2cf;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    border: $button--border-size solid hsla(245, 12%, 89%, 1);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, background-color .15s ease-in-out;
+    background-color: hsla(210, 25%, 98%, 1);
+    color: #333;
 
-
-    &:hover {
+    &:hover, &.mtr-input--hovered {
         border-color: #827f9b;
     }
 
-    &:focus {
+    &:focus, &.mtr-input--focused {
         // border: 1px solid #5795ff;
-        color: #495057;
-        background-color: #fff;
+        //color: #495057;
         border-color: #80bdff;
+        background-color: #fff;
         outline: 0;
-        box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+        //box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
+
+    &::placeholder {
+        color: #aaa;
     }
 }
 
-.mtr-input--s {
-    font-size: ($base-font-size - 2);
-    height: buttonHeight($base-font-size - 2);
-    line-height: buttonHeight($base-font-size - 2) - 2 * $button--border-size;
+.mtr-input--disabled {
+    background-color: hsla(210, 25%, 94%, 1);
+    border-color: transparent;
+    color: #bbb;
+
+    &::placeholder {
+        color: #bbb;
+    }
 }
 
-.mtr-input--m {
-    font-size: $base-font-size;
-    height: buttonHeight($base-font-size);
-    line-height: buttonHeight($base-font-size) - 2 * $button--border-size;
-}
+@each $sizeCode, $v in $buttonSizes {
+    $tmpFontSize: map-get($v, 'font-size');
+    $tmpHeight: buttonHeight($tmpFontSize);
 
-.mtr-input--l {
-    font-size: ($base-font-size + 2);
-    height: buttonHeight($base-font-size + 2);
-    line-height: buttonHeight($base-font-size + 2) - 2 * $button--border-size;
+    .mtr-input--#{$sizeCode} {
+        font-size: $tmpFontSize;
+        height: $tmpHeight;
+        line-height: $tmpHeight - 2 * $button--border-size;
+    }
 }

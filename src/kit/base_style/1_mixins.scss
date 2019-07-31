@@ -34,6 +34,10 @@
     @return round($font-size * $button--min-width-ratio);
 }
 
+@function buttonIconSize($font-size) {
+    @return $font-size + 2;
+}
+
 
 @mixin word-wrap() {
     /* These are technically the same, but use both */

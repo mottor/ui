@@ -13,7 +13,7 @@
     display: inline-block;
     cursor: text;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    width: 200px;
+    width: $base--input-width;
     vertical-align: top;
 
     &:focus {
@@ -21,7 +21,17 @@
     }
 }
 
+.mtr-input--disabled {
+    pointer-events: none;
+    cursor: default;
+    //opacity: 0.7;
+}
+
 .mtr-input--block {
     display: block;
     width: 100%;
+}
+
+.var-dump--base-input-width:before {
+    content: '#{$base--input-width}';
 }
