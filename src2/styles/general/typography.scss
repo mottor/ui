@@ -1,0 +1,193 @@
+$font-family-data: (
+    base: #{-apple-system,
+  'BlinkMacSystemFont',
+  'San Francisco',
+  'Roboto',
+  'Segoe UI',
+  'Helvetica Neue',
+  sans-serif},
+    monospace: #{Monaco,
+  Consolas,
+  'Lucida Console',
+  monospace},
+);
+
+$line-height-data: (
+    body: (
+        base: 20px,
+    ),
+    caption: (
+        base: 20px,
+        large-screen: 16px,
+    ),
+    heading: (
+        base: 24px,
+    ),
+    subheading: (
+        base: 16px,
+    ),
+    input: (
+        base: 24px,
+    ),
+    button: (
+        base: 16px,
+    ),
+    button-large: (
+        base: 20px,
+    ),
+    display-x-large: (
+        base: 36px,
+        large-screen: 44px,
+    ),
+    display-large: (
+        base: 28px,
+        large-screen: 32px,
+    ),
+    display-medium: (
+        base: 28px,
+        large-screen: 32px,
+    ),
+    display-small: (
+        base: 24px,
+        large-screen: 28px,
+    ),
+);
+
+$font-size-data: (
+    caption: (
+        base: 13px,
+        large-screen: 12px,
+    ),
+    heading: (
+        base: 17px,
+        large-screen: 16px,
+    ),
+    subheading: (
+        base: 13px,
+        large-screen: 12px,
+    ),
+    input: (
+        base: 16px,
+        large-screen: 14px,
+    ),
+    body: (
+        base: 15px,
+        large-screen: 14px,
+    ),
+    button: (
+        base: 15px,
+        large-screen: 14px,
+    ),
+    button-large: (
+        base: 17px,
+        large-screen: 16px,
+    ),
+    display-x-large: (
+        base: 27px,
+        large-screen: 42px,
+    ),
+    display-large: (
+        base: 24px,
+        large-screen: 28px,
+    ),
+    display-medium: (
+        base: 21px,
+        large-screen: 26px,
+    ),
+    display-small: (
+        base: 16px,
+        large-screen: 20px,
+    ),
+);
+
+/// Returns the font stack for a given family.
+///
+/// @param {String} $family - The key for the given family.
+/// @return {Number} The font stack for the family.
+
+@function font-family($family: base) {
+    $fetched-value: map-get($font-family-data, $family);
+
+    @if $fetched-value != null {
+        @return $fetched-value;
+    } @else {
+        @error 'Font family `#{$family}` not found. Available font families: #{available-names($font-family-data)}';
+    }
+}
+
+/// Returns the line height for a given text style and variant.
+///
+/// @param {String} $style - The font style.
+/// @param {String} $variant [base] - The variant on the font-size.
+/// @return {Number} The line-height for the text-style.
+
+@function line-height($style, $variant: base) {
+    $fetched-line-height: map-get(map-get($line-height-data, $style), $variant);
+
+    @if type-of($fetched-line-height) != null {
+        @return $fetched-line-height;
+    } @else {
+        @error 'Line height `#{$style} - #{$variant}` not found. Available line heights: #{available-names($line-height-data)}';
+    }
+}
+
+/// Returns the font size for a given text style and variant.
+///
+/// @param {String} $style - The font style.
+/// @param {String} $variant [base] - The variant on the font-size.
+/// @return {Number} The font-size for the text-style.
+
+@function font-size($style, $variant: base) {
+    $fetched-font-size: map-get(map-get($font-size-data, $style), $variant);
+
+    @if type-of($fetched-font-size) != null {
+        @return $fetched-font-size;
+    } @else {
+        @error 'Font size `#{$style} - #{$variant}` not found. Available font sizes: #{available-names($line-height-data)}';
+    }
+}
+
+
+@mixin text-style-button {
+    font-size: font-size(button);
+    font-weight: 400;
+    line-height: line-height(button);
+
+    text-transform: initial;
+    letter-spacing: initial;
+
+    //@include when-typography-not-condensed {
+    //    font-size: font-size(button, large-screen);
+    //}
+}
+
+@mixin text-style-button-large {
+    font-size: font-size(button-large);
+    font-weight: 400;
+    line-height: line-height(button-large);
+
+    text-transform: initial;
+    letter-spacing: initial;
+
+    //@include when-typography-not-condensed {
+    //    font-size: font-size(button-large, large-screen);
+    //}
+}
+
+@mixin text-style-body {
+    font-size: font-size(body);
+    font-weight: 400;
+    line-height: line-height(body);
+
+    text-transform: initial;
+    letter-spacing: initial;
+
+    //@include when-typography-not-condensed {
+    //    font-size: font-size(body, large-screen);
+    //}
+}
+
+@mixin text-emphasis-normal($for-background: null) {
+    font-weight: 400;
+    color: color(ink, $for-background: $for-background);
+}

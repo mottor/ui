@@ -16,6 +16,8 @@ const fs = require('fs');
 const exec = require('child_process').exec;
 const sassVariables = require('gulp-sass-variables');
 const svgSprite = require('gulp-svg-sprite');
+const concat = require('gulp-concat');
+const merge = require('merge-stream');
 
 // const replace = require('gulp-replace');
 // const sourcemaps = require('gulp-sourcemaps');
@@ -161,6 +163,74 @@ function compileUiStyle() {
         ;
 }
 
+function _zz() {
+    var rootStream = gulp
+        .src(dirRoot + '/src2/styles/root.scss')
+        .pipe(sass({
+            outputStyle: prod ? 'compressed' : 'expanded',
+            sourceComments: !prod
+        }).on('error', sass.logError))
+        .pipe(concat('root-files.scss'));
+
+    var componentsStream = gulp
+        .src(dirRoot + '/src2/components/**/*.scss')
+        .pipe(sass({
+            outputStyle: prod ? 'compressed' : 'expanded',
+            sourceComments: !prod
+        }).on('error', sass.logError))
+        .pipe(concat('scss-files.scss'));
+
+    return merge(rootStream, componentsStream)
+        .pipe(concat('styles.css'))
+        //.pipe(minify())
+        .pipe(autoprefixer())
+        .pipe(gulp.dest('docs/src2'))
+        .pipe(browserSync.stream());
+}
+
+function zzWatch() {
+    gulp.watch([dirRoot + '/src2/styles/**/*.scss', dirRoot + '/src2/components/**/*.scss'], _zz);
+}
+
+function compileNewStyleComponents() {
+    return gulp
+        .src(dirRoot + '/src2/components/**/*.scss')
+        .pipe(sass({
+            outputStyle: prod ? 'compressed' : 'expanded',
+            sourceComments: !prod
+        }).on('error', sass.logError))
+        .pipe(gulp.dest(dirRoot + '/docs/src2/css'))
+        ;
+}
+
+function compileNewStyle_Root() {
+    return gulp
+        .src(dirRoot + '/src2/styles/root.scss')
+        .pipe(sass({
+            outputStyle: prod ? 'compressed' : 'expanded',
+            sourceComments: !prod
+        }).on('error', sass.logError))
+        .pipe(gulp.dest(dirRoot + '/docs/src2'))
+        ;
+}
+
+function compileNewStyle_All() {
+    return gulp
+        .src([dirRoot + '/docs/src2/root.css', dirRoot + '/docs/src2/css/**/*.css'])
+        // .pipe(rename({basename: 'full'}))
+        .pipe(concat('full.css'))
+        .pipe(gulp.dest(dirRoot + '/docs/src2'))
+        ;
+}
+
+function watchNewStyleScss() {
+    gulp.watch(['/src2/components/**/*.scss', dirRoot + '/src2/styles/**/*.scss'], gulp.series(compileNewStyle_Root, compileNewStyleComponents));
+}
+
+function watchNewStyleCss() {
+    gulp.watch(dirRoot + '/docs/src2/**/*.css', compileNewStyle_All);
+}
+
 function compileFonts() {
     return gulp
         .src(config.dirSrc + '/fonts/**/*')
@@ -209,9 +279,18 @@ exports.watchDocs = watchDocs;
 const buildUi = gulp.series(clean, gulp.parallel(compileUiScript, compileUiStyle, compileSvg, compileFonts)/*, gitAdd*/);
 const watchUi = gulp.series(buildUi, gulp.parallel(watchUiStyle, watchUiSvg));
 
+const compileNewCss = gulp.series(compileNewStyle_Root, compileNewStyleComponents, compileNewStyle_All);
+const watchNewCss = gulp.series(compileNewCss, gulp.parallel(watchNewStyleScss, watchNewStyleCss));
+const _zzWatch = gulp.series(_zz, zzWatch);
+
 exports.build = buildUi;
 exports.buildFonts = compileFonts;
 exports.watch = watchUi;
+// exports.compileUiStyle2 = compileNewStyleComponents;
+exports.compileNewCss = compileNewCss;
+exports.zz = _zz;
+exports.zzWatch = _zzWatch;
+// exports.watchNewCss = watchNewCss;
 
 function startServer() {
     browserSync.init({
@@ -225,3 +304,14 @@ function startServer() {
 }
 const serve = gulp.series(buildDocs, buildUi, startServer);
 exports.serve = serve;
+
+function startZzServer() {
+    browserSync.init({
+        server: {
+            baseDir: dirRoot + '/docs/src2'
+        }
+    });
+    _zzWatch();
+    gulp.watch(dirRoot + '/docs/src2/**/*.html').on('change', browserReload);
+}
+exports.zzServe = startZzServer;

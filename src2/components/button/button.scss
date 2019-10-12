@@ -1,0 +1,78 @@
+@import "../../styles/general";
+
+//$button-icon-size: 24px;
+
+//$slim-min-height: 30px;
+//$slim-vertical-padding: ($slim-min-height - line-height(body) - 2px) / 2;
+//$large-min-height: 44px;
+//$large-vertical-padding: ($large-min-height - line-height(body) - 2px) / 2;
+
+.m-btn {
+    @include button-base;
+}
+
+.m-btn__content {
+    @include button-base-content;
+}
+
+.m-btn__icon {
+    @include button-base-icon;
+    background: rgba(0, 170, 255, 0.3);
+}
+
+.m-btn--icon-only {
+    @include button-icon-only-size();
+}
+
+.m-btn--small {
+    @include button-size(small);
+
+    &.m-btn--icon-only {
+        @include button-icon-only-size(small);
+    }
+}
+
+.m-btn--large {
+    @include button-size(large);
+
+    &.m-btn--icon-only {
+        @include button-icon-only-size(large);
+    }
+}
+
+
+.m-btn--primary {
+    //--p-button-color: var(--p-branded-action);
+    //--p-button-color-hover: var(--p-branded-action-hovered);
+    //--p-button-color-active: var(--p-branded-action-pressed);
+    @include button-filled(color('indigo'), color('indigo', 'dark'));
+    //@include recolor-icon(color('white'));
+
+    &.disabled {
+        //--p-button-color-disabled: var(--p-branded-action-disabled);
+        @include button-filled-disabled(color('indigo'));
+    }
+}
+
+//.m-btn--slim {
+//    min-height: $slim-min-height;
+//    padding: $slim-vertical-padding spacing(base-tight);
+//}
+//
+//.m-btn--large {
+//    min-height: $large-min-height;
+//    min-width: $large-min-height;
+//    padding: $large-vertical-padding 24px;
+//
+//    .m-btn__content {
+//        @include text-style-button-large;
+//    }
+//}
+
+.m-btn--full-width {
+    @include button-full-width;
+}
+
+.m-btn--disabled, .m-btn[disabled] {
+    @include button-base-disabled;
+}

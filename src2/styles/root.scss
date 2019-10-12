@@ -1,0 +1,60 @@
+@import "./general";
+
+html,
+body {
+    @include text-style-body;
+    @include text-emphasis-normal;
+}
+
+html,
+body,
+button {
+    font-family: font-family();
+}
+
+html {
+    position: relative;
+    font-size: v('base-font-size', 14px);
+
+    // Make type rendering look crisper
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; // This needs to come after -webkit-font-smoothing
+
+    // Disable auto-enlargement of small text in Safari
+    text-size-adjust: 100%;
+
+    // Enable kerning and optional ligatures
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: color('sky', 'light');
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+    border-style: none;
+}

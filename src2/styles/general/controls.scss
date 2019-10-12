@@ -1,0 +1,17 @@
+@import "../tokens/step";
+
+$control-height-data: (
+    small: (9 * $step),
+    base: (12 * $step),
+    large: (15 * $step),
+);
+
+@function control-height($variant: base) {
+    $fetched-value: map-get($control-height-data, $variant);
+
+    @if type-of($fetched-value) == number {
+        @return $fetched-value;
+    } @else {
+        @error 'Control height variant `#{$variant}` not found. Available variants: #{available-names($control-height-data)}';
+    }
+}
