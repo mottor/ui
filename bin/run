@@ -1,0 +1,3 @@
+#!/bin/bash
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+docker run --rm -it -u "$(id -u):$(id -g)" -v "$ROOT"/:/home/node/app -w /home/node/app node:6.17.1 $*
