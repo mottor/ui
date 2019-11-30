@@ -1,3 +1,5 @@
 #!/bin/bash
+CUR_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/" && pwd)"
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-docker run --rm -it -u "$(id -u):$(id -g)" -v "$ROOT"/:/home/node/app -w /home/node/app node:6.17.1 $*
+UI_BUILD_DIR="$(cd "$(grep UI_BUILD_DIR "$CUR_DIR"/.env | cut -d '=' -f 2-)" && pwd)"
+docker run --rm --env-file "$ROOT"/bin/.env -it -u "$(id -u):$(id -g)" -v "$ROOT"/:/home/node/app -v "$UI_BUILD_DIR":/home/node/app/dist -w /home/node/app node:6.17.1 $*

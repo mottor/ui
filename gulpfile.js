@@ -1,5 +1,6 @@
 'use strict';
 
+const UI_BUILDER_DOCKER = 'docker';
 const gulp = require('gulp');
 const _if = require('gulp-if');
 const del = require('del');
@@ -8,7 +9,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
-const util = require('gulp-util');
+const log = require('fancy-log');
 const csso = require('gulp-csso');
 const cssimport = require('gulp-cssimport');
 const include = require('gulp-include');
@@ -16,11 +17,9 @@ const fs = require('fs');
 const exec = require('child_process').exec;
 const sassVariables = require('gulp-sass-variables');
 const svgSprite = require('gulp-svg-sprite');
+const colors = require('ansi-colors');
 
-// const replace = require('gulp-replace');
-// const sourcemaps = require('gulp-sourcemaps');
-// const cssnano = require("cssnano");
-// const postcss = require("gulp-postcss");
+log(process.env.UI_PROD);
 
 const dirRoot = process.cwd();
 const prod = ['y', 'yes', 'true', '1'].indexOf((process.env.UI_PROD || 'no').toLowerCase()) >= 0; //process.argv.indexOf('--prod') >= 0;
@@ -35,8 +34,8 @@ var config = {
 
 //---------------------------
 
-util.log('Root:', dirRoot);
-util.log('Env:', prod ? util.colors.red('Prod') : util.colors.green('Dev'));
+log('Root:', dirRoot);
+log('Env:', prod ? colors.red('Prod') : colors.green('Dev'));
 
 config.dirBuild = dirRoot + '/docs/build';
 config.dirBuildHtml = dirRoot + '/docs/build';
@@ -48,8 +47,8 @@ config.dirDocs = config.dirSrc + '/html';
 config.dirThemes = config.dirKit + '/themes';
 
 if (null !== theme && fs.existsSync(config.dirThemes + '/' + theme)) {
-    util.log('Theme:', util.colors.green(theme));
-    util.log('Version:', util.colors.green(version));
+    log('Theme:', colors.green(theme));
+    log('Version:', colors.green(version));
     config.dirBuild += '/themes/' + theme + '/' + version;
     config.dirThemes += '/' + theme;
     config.exactTheme = true;
@@ -59,7 +58,11 @@ if (null !== theme && fs.existsSync(config.dirThemes + '/' + theme)) {
 }
 
 if (process.env.UI_BUILD_DIR) {
-    config.dirBuild = process.env.UI_BUILD_DIR;
+    if (UI_BUILDER_DOCKER === process.env.UI_BUILDER) {
+        config.dirBuild = dirRoot + '/dist';
+    } else {
+        config.dirBuild = process.env.UI_BUILD_DIR;
+    }
 }
 
 if (process.env.UI_CSS_NAME) {
@@ -69,18 +72,18 @@ if (process.env.UI_CSS_NAME) {
 var overrideFontFamily = '';
 if (process.env.UI_FONT_FAMILY) {
     overrideFontFamily = process.env.UI_FONT_FAMILY;
-    util.log('Override font family to:', overrideFontFamily);
+    log('Override font family to:', overrideFontFamily);
 }
 
 var overrideFontSize = '';
 if (process.env.UI_FONT_SIZE) {
     overrideFontSize = Number(process.env.UI_FONT_SIZE);
-    util.log('Override font size to:', overrideFontSize);
+    log('Override font size to:', overrideFontSize);
 }
 
-util.log('Build dir:', config.dirBuild);
-util.log('Theme dir:', config.dirThemes);
-util.log('=============');
+log('Build dir:', config.dirBuild);
+log('Theme dir:', config.dirThemes);
+log('=============');
 //---------------------------
 
 function clean() {
