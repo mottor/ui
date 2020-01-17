@@ -2,5 +2,9 @@
     "name": "mottor/ui",
     "description": "Mottor UI-kit",
     "type": "library",
-    "require": {}
+    "require": {},
+    "scripts": {
+        "build": "gulp build"
+        "prod": "gulp build"
+    }
 }
