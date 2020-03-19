@@ -4,7 +4,7 @@
     "type": "library",
     "require": {},
     "scripts": {
-        "build": "gulp build"
+        "build": "gulp build",
         "prod": "gulp build"
     }
 }
