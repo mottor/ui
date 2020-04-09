@@ -2,7 +2,16 @@
 
 Mottor UI-kit
 
-[Advanced SCSS hacks](https://gist.github.com/jareware/4738651)
+## Сборка для вставки в Мотор
+
+1. Создать свой файл ./bin/.env (на базе ./bin/.env.dist)
+2. Если node_modules еще не установлены, запустить
+
+        ./bin/npm-install
+    
+3. Сборка (на основе .env)
+    
+        ./bin/run npm run build
 
 ## Caution!
 
@@ -28,22 +37,7 @@ Mottor UI-kit
 
     UI_PROD=no UI_VERSION=v1.0 UI_THEME=example ./gulp serve
     
-#### Сборка для вставки в Мотор
-
-    Создать свой файл ./bin/.env на базе .env.dist
-    
-Потом
-
-    ./bin/run npm run build
-
-Устаревшие методы:
-
-~~UI_PROD=yes UI_VERSION=v1.0.12 UI_THEME=example UI_BUILD_DIR=/home/tony/projects/lpmotor1/web/mottor-ui UI_FONT_FAMILY='Noto Sans' UI_FONT_SIZE=14 ./gulp build~~
-~~UI_PROD=yes UI_VERSION=v1.0.12 UI_THEME=example UI_BUILD_DIR=/Users/user/projects/lpmotor1/web/mottor-ui UI_FONT_FAMILY='Noto Sans' UI_FONT_SIZE=14 ./gulp build~~
-~~UI_PROD=yes UI_VERSION=v1.0.6 UI_THEME=example UI_BUILD_DIR=/Users/user/Sites/lpmotor1/web/mottor-ui ./gulp build~~
-~~UI_PROD=yes UI_VERSION=v1.0.6 UI_THEME=example UI_BUILD_DIR=/Users/sotty/projects/lpmotor1/web/mottor-ui ./gulp build~~
-    
-#### Список всех тасков:
+## Список всех тасков:
 
 * buildDocs
 * watchDocs
@@ -65,4 +59,7 @@ Mottor UI-kit
     sudo -u app UI_PROD=no UI_VERSION=v1.0.10 UI_THEME=example ./gulp build
     sudo -u app UI_PROD=no UI_CSS_NAME=mottor-ui-cera UI_FONT_FAMILY1='Cera Pro' UI_VERSION=v1.0.10 UI_THEME=example ./gulp build
     sudo -u app UI_PROD=no UI_CSS_NAME=mottor-ui-avenir UI_FONT_FAMILY1='Avenir Next Cyr' UI_VERSION=v1.0.10 UI_THEME=example ./gulp build
-    
+
+## Материалы
+
+[Advanced SCSS hacks](https://gist.github.com/jareware/4738651)
