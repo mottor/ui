@@ -35,6 +35,9 @@
     "type": "git",
     "url": "ssh://git@collab.lpmotor.ru:7999/lpm/mottor-ui.git"
   },
+  "browserslist": [
+    "last 3 versions"
+  ],
   "author": "Alexandr Bakulin",
   "license": "ISC"
 }

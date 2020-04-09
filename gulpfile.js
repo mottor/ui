@@ -109,7 +109,7 @@ function compileDocsStyle() {
             sourceComments: !prod
         }).on('error', sass.logError))
         //.pipe(rename('docs.css'))
-        .pipe(autoprefixer({browsers: 'last 3 versions'}))
+        .pipe(autoprefixer())
         .pipe(gulp.dest(config.dirBuildHtml + '/css/docs/'))
         .pipe(browserSync.stream())
         ;
@@ -154,7 +154,7 @@ function compileUiStyle() {
         }).on('error', sass.logError))
         .pipe(_if(prod, cssimport()))
         .pipe(rename({basename: config.basename + (prod ? '.min' : '')}))
-        .pipe(autoprefixer({browsers: 'last 3 versions'}))
+        .pipe(autoprefixer())
         .pipe(_if(prod, csso()))
         // .pipe(postcss([autoprefixer({browsers: 'last 3 versions'}), cssnano()]))
         // .pipe(_if(!prod, sourcemaps.write()))
