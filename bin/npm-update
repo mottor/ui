@@ -1,0 +1,4 @@
+#!/bin/bash
+CUR_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/" && pwd)"
+
+$CUR_DIR/run npm update --unsafe-perm=true --allow-root --cache /tmp/empty-cache
