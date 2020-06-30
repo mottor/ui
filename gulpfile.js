@@ -71,7 +71,7 @@ if (process.env.UI_CSS_NAME) {
 
 var overrideFontFamily = '';
 if (process.env.UI_FONT_FAMILY) {
-    overrideFontFamily = process.env.UI_FONT_FAMILY;
+    overrideFontFamily = process.env.UI_FONT_FAMILY.replace(/("|')/g, '');
     log('Override font family to:', overrideFontFamily);
 }
 
