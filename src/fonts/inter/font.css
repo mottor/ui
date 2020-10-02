@@ -1,0 +1,15 @@
+/*https://google-webfonts-helper.herokuapp.com/fonts/inter?subsets=cyrillic,latin*/
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('inter-v2-latin_cyrillic-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('inter-v2-latin_cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('inter-v2-latin_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('inter-v2-latin_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
+    url('inter-v2-latin_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('inter-v2-latin_cyrillic-regular.svg#Inter') format('svg'); /* Legacy iOS */
+
+    font-display: swap;
+}
